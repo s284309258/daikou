@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Mybatis.iml" filepath="$PROJECT_DIR$/Mybatis/Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Swagger/Swagger.iml" filepath="$PROJECT_DIR$/Swagger/Swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Web/Web.iml" filepath="$PROJECT_DIR$/Web/Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springbootwork.iml" filepath="$PROJECT_DIR$/springbootwork.iml" />
+    </modules>
+  </component>
+</project>

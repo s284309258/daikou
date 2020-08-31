@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cff.springbootwork.mybatis.dao.UserInfoDao" >
+    <resultMap id="BaseResultMap" type="com.cff.springbootwork.mybatis.domain.UserInfo" >
+        <id property="user_name" column="userName" />
+        <result column="passwd" jdbcType="VARCHAR" property="passwd" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="valid" jdbcType="INTEGER" property="valid" />
+        <result column="user_type" jdbcType="VARCHAR" property="userType" />
+    </resultMap>
+
+    <select id="testIfSql" resultMap="BaseResultMap">
+      	SELECT * FROM user_info WHERE mobile = #{mobile}
+      	 <if test='userType != null and userType != ""'>
+		    AND user_type = #{userType} 
+		 </if>
+    </select>
+    
+    <select id="testForeachSql" resultMap="BaseResultMap">
+      	SELECT * FROM user_info WHERE mobile IN (
+      	<foreach item="item" index="index" collection="mobileList"
+      		open="(" separator="," close=")">
+        		#{item}
+  		</foreach>
+    </select>
+    
+    <select id="testBindSql" resultMap="BaseResultMap">
+    	<bind name="tableName" value="item.getIdentifyTable()" />
+      	SELECT * FROM ${tableName} WHERE mobile = #{item.mobile}
+    </select>
+    
+    <select id="testPageSql" resultMap="BaseResultMap">
+    	<bind name="startNum" value="page*pageSize" />
+      	SELECT * FROM user_info ORDER BY mobile ASC LIMIT #{pageSize} OFFSET #{startNum}
+    </select>
+    
+    <select id="testTrimSql" resultMap="BaseResultMap">
+    	SELECT * FROM user_info 
+    	<trim prefix="WHERE" prefixOverrides="AND">
+		  <if test='item.userType != null and item.userType != ""'>
+		    AND user_type = #{item.userType} 
+		 </if>
+		 <if test='item.mobile != null and item.mobile != ""'>
+		    AND mobile = #{item.mobile} 
+		 </if>
+		</trim>
+    </select>
+
+    <update id="testUpdateWhenSql">
+      update user_info set
+        <choose>
+		    <when test="userType!=null">
+		      user_type=#{user_type}
+		    </when>
+		    <otherwise>
+		      user_type='0000'
+		    </otherwise>
+		</choose>
+		WHERE user_name = #{userName}
+    </update>
+    
+    <update id="testSetSql">
+      update user_info set
+        <set>
+        	<if test='item.userType != null and item.userType != ""'>
+		    user_type = #{item.userType}, 
+		 	</if>
+		 	<if test='item.mobile != null and item.mobile != ""'>
+		    mobile = #{item.mobile} 
+		 	</if>
+	    </set>
+	  where user_name = #{item.userName}
+    </update>
+</mapper>
