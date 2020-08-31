@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>公共导航</title>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<style>
+			*{margin: 0;padding: 0;font-size: 16px;}
+			#footer{position: fixed;bottom: 0px;left: 0px;width: 100%;    box-shadow: 0px -2px 5px rgba(0,0,0,.1);}
+			#footer ul{display: flex;width: 100%;justify-content: center;align-items: center;padding: 10px 0px;}
+			#footer ul li{list-style: none;width: 33.333%;}
+			#footer ul li a{display: flex;justify-content: center;align-items: center;flex-direction: column;text-decoration: none;color: black;}
+			#footer ul li a p{display: block;font-size: 0.9rem;color: #666666;}
+			#footer ul li a p i{width:100%;display: block;text-align: center;line-height: 0px;}
+			#footer ul li a p i img{width: 100%;}
+			#footer ul li a p i:nth-child(1){display: none;}
+		</style>
+
+	</head>
+	<body>
+		<div id="footer">
+			<ul>
+				<li>
+					<a href="/m9/user/index"><p><i><img src="/static/backup/img/home.png"/></i><i><img src="/static/backup/img/home2.png"/></i></p><p>首页</p></a>
+				</li>
+				<li>
+					<a href="/m9/order/Order"><p><i><img src="/static/backup/img/dingdan.png"/></i><i><img src="/static/backup/img/dingdan1.png"/></i></p><p>订单</p></a>
+				</li>
+				<li>
+					<a href="/m9/user/self"><p><i><img src="/static/backup/img/shoping1.png"/></i><i><img src="/static/backup/img/shoping.png"/></i></p><p>我的</p></a>
+				</li>
+				<!--'<li>
+					<a href="#"><p><i><img src="img/fontimg/1.png"/></i><i><img src="img/fontimg/2.png"/></i></p><p>四页</p></a>
+				</li>'-->
+			</ul>
+		</div>
+	</body>
+</html>

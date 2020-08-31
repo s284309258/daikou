@@ -1,0 +1,31 @@
+<html>
+<body>
+<div class="col-xs-12">
+    <p>授权人签名：</p> （正楷有效，禁用草书）
+    <div class="canvasDiv">
+        <div id="editing_area">
+            <canvas id="canvasEdit"></canvas>
+        </div>
+    </div>
+    <div class="btn-box">
+        <button id="sign_ok" >确认</button>
+        <button id="sign_clear" class="btn btn-default" >重写</button>
+        <!-- <input type="file" id="imgTest" type="file" onchange="imgChange(event)" accept=".gif,.jpg,.jpeg,.png"> -->
+    </div>
+    <div id="signature">
+        <!-- <p>写上签名并点击预览</p> -->
+        <div class="imgDiv">
+            <span id="sign_show"></span>
+        </div>
+    </div>
+</div>
+<script src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/esign.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //初始化动作，根据DOM的ID不同进行自定义，如果不写则内部默认取这四个
+        $().esign("canvasEdit", "sign_show", "sign_clear", "sign_ok");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			.or_btn{width:100%;display: flex;margin: 5% auto 0px;position: fixed;bottom: 0px;}
+			.or_btn a{display: block;font-size: 1rem;color: white;text-align: center;padding: 3% 0px;}
+			.or_btn a:first-child{width: 30% !important;background: #EB4B40;display: none;}
+			.or_btn a:last-child{width: 100%;background: #577AEF;}
+            .mask0{overflow-y: scroll;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,.5);top: 0px;left: 0px;z-index: 999;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+            .mask0 .check_img{width: 80vw;min-height: 60vh;background: white;border-radius: 10px;padding: 5%;}
+            .mask0 .check_img img{width: 100%;}
+            .mask0 .check_img h1{text-align: center;font-size: 1rem;padding: 5% 0px;}
+            .close_img{width: 100%;text-align: center;margin: 5%;}
+            .close_img img{width: 6%;}
+            .mask2 .check_qr{background: white;padding: 20px;width: 50vw;height: 50vw;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+		</style>
+	</head>
+	<body>
+    <input type="hidden" id="oid" th:value="${order.id}">
+    <input type="hidden" id="quantity" th:value="${order.quantity}">
+	<input type="hidden" id="eos_address" th:value="${order['eos_address']}"/>
+	<input type="hidden" id="confirm_date" th:value="${order['confirm_date']}"/>
+		<div class="mask2" style="display: none;" >
+			<div class="check_qr">
+				<div id="qrcode">
+				
+			</div>
+			<div class="copydiv"><p id="vi_code4" style="width: 100%;word-break: break-all;" th:text="${order['eos_address']}">45h6dfh45dyhtehetetshdf</p><i class="iconfont  copyBtn" data-clipboard-target="#vi_code4" onclick="copy()">复制地址</i></div>
+			</div>
+		</div>
+    <div class="mask0" style="display: none;" >
+
+        <div class="check_img">
+            <h1>打款凭证</h1>
+			<img th:src="${order['eos_poto']}" alt=""/>
+        </div>
+        <div class="close_img"><img src="/static/backup/img/close.png"/></div>
+    </div>
+		<div class="head_order">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>订单详情</h1>
+			<div class="waiting">
+				<h2>待放行</h2>
+				<div class="Count_time">
+					<span id="_h">00</span>:
+            		<span id="_m">00</span>:
+            		<span id="_s">00</span>
+				</div>
+				<p>请在<i th:text="${confirmSysem}"></i>小时内完成操作,超出时间将取消订单 并对你的账号进行警告,累计<i th:text="${warn_count_confirm}"></i>次将进行封号处理.</p>
+			</div>
+		</div>
+		<div class="order-list">
+			<ul>
+				<li>
+					<div class="list1">
+						<em><img src="/static/backup/img/EOS.png"/></em>
+						<div class="esolist">
+                            <p><span>求购数量：</span><i th:text="${order['quantity']}"></i>EOS</p>
+                           <!-- <p><span>求购单价：</span><i th:text="${order['quantity_price']}"></i></p>-->
+                            <p style="margin-top: 3%;"><span>交易总额：</span><i th:text="${order['quantity_total']}"></i></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list2">
+					<span>买家联系方式</span>
+                        <p th:text="${user['telphone']}?${user['telphone']}"></p>
+					</div>
+				</li>
+				<li>
+					<div class="list3">
+					<span>买家姓名</span>
+                        <p th:text="${user['real_name']}?${user['real_name']}"></p>
+					</div>
+				</li>
+				<li>
+					<div class="list5">
+						<span>收款二维码</span>
+						<span class="iconfont icon-chakan chek"><i  style="font-size: .9rem">查看二维码</i></span>
+					</div>
+					<div class="list6" style="display: flex;">
+						<p>交易凭证</p>
+						<span class="iconfont icon-chakan"><i class="chek0" style="font-size: .9rem">已上传</i></span>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="or_btn" >
+			<a href="javascript:;" id="shen" >申诉</a>
+			<a href="javascript:transfer_confirm()">确认收款</a>
+	</div>
+	<div class="mask" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+		<div class="serve-box">
+			<div class="servetop">
+				<h1>联 系 客 服</h1>
+				<h6>Contact customer service</h6>
+				<div class="qrbox">
+					<div id="qrcode1">
+
+					</div>
+				</div>
+			</div>
+			<div class="buttom">
+				<ul>
+					<li>
+						<span>客服微信：</span>
+						<p id="vi_code1" >Retc001</p >
+						<strong data-clipboard-target="#vi_code1" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+					<li>
+						<span>客服邮箱：</span>
+						<p id="vi_code2" >155555545225@163.com</p >
+						<strong data-clipboard-target="#vi_code2" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+					<li>
+						<span>官方邮箱：</span>
+						<p id="vi_code3" >r657485@gmail.com</p >
+						<strong data-clipboard-target="#vi_code3" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tipss">
+				<p>客服工作时间:10:00-20:00</p >
+				<span>
+    禁止向任何人透露账号密码,客服不会 主动向你讨要账号密码,谨防上当受骗
+   </span>
+			</div>
+		</div>
+		<span class="close_img"><img src="/static/backup/img/close.png"/></span>
+	</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+			<script>
+			function copy(){
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			clipboard.on('error', function(e) {
+            console.log(e);
+        });
+
+}
+				$('.mask').hide();
+			jQuery(function(){
+
+			jQuery('#qrcode').qrcode({
+				width: 150,
+				height: 150,
+				text: $("#eos_address").val()
+				});
+		});		
+	$(function () { 
+  $('.chek').click(function (event) { 
+    //取消事件冒泡 
+    event.stopPropagation(); 
+    //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。 
+  $('.mask2').fadeToggle('slow'); 
+      return false;
+  }); 
+  
+    $('.mask2').click(function(event){
+        var _con = $('.check_qr');  // 设置目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){ 
+           $('.mask2').fadeToggle('slow');     //淡出消失
+        }
+   });
+});
+		$('#shen').click(function(){
+				$('.mask').show();
+			});
+			$('.close_img').click(function(){
+				$('.mask').hide();
+			});
+            $('.chek0').click(function(){
+                $('.mask0').show();
+            });
+            $('.close_img img').click(function(){
+                $('.mask0').hide();
+            });
+
+            </script>
+			 <script type="text/javascript">
+            //倒计时
+        function GetRTime(){
+        	var confirm_date = $("#confirm_date").val();
+            var EndTime= new Date(confirm_date);   //终止时间
+            var NowTime = new Date();
+            var t =EndTime.getTime() - NowTime.getTime();
+            var d=parseInt(t/ 1000 / 60 / 60 / 24);
+            h=parseInt(t/ 1000 / 60 / 60 % 24);
+            m=parseInt(t/ 1000 / 60 % 60);
+            s=parseInt(t/ 1000 % 60);
+            h <10 ? h = '0' +h :h =h;
+            m <10 ? m = '0' +m :m =m;
+            s <10 ? s = '0' +s :s =s;
+            //console.log(d+'天'+h+'时'+m+'分'+s+'秒');
+
+            //将倒计时赋值到div中
+            document.getElementById("_h").innerHTML = h ;
+            document.getElementById("_m").innerHTML = m ;
+            document.getElementById("_s").innerHTML = s ;
+            if( h < 4){
+            	$('#shen').show();
+            }
+            if(t < 0){
+			document.getElementById("_h").innerHTML = '00' ;
+            document.getElementById("_m").innerHTML = '00' ;
+            document.getElementById("_s").innerHTML = '00' ;
+                clearTimeout(GetRTime);
+                return false;
+            }
+            setTimeout(GetRTime,1000);
+        }
+        GetRTime();
+       
+       </script>
+
+    <script>
+
+        function transfer_confirm(){
+            $.ajax({
+                type : "POST",
+                url : '/m9/order/transfer_confirm',
+                dataType : "json",
+                data : {
+                    id:$("#oid").val(),
+                    quantity:$("#quantity").val()
+                },
+                success : function(data) {
+                    if(data.success==true){
+						layer.msg(data.msg, {
+							icon: 6,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+								window.location.href = "/m9/user/index";
+							}
+						});
+                    } else {
+                        layer.msg(data.msg,{icon:5,time : 1000});
+                    }
+                }
+            })
+        }
+    </script>
+	</body>
+</html>

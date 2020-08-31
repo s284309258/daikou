@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/reset.css" />
+			<link rel="stylesheet" href="/css/layui.css" />
+			<title>证件信息</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="/img/w-back.png"/></i>
+				<h1 th:text="${user.real_name}">陈一</h1>
+			</header>
+			<main class="main">
+				<div class="seach-list-warp">
+					<ul class="item-details">
+						<li>
+							<span>姓名：</span>
+							<span th:text="${user.real_name}">陈一</span>
+						</li>
+						<li>
+							<span>手机号：</span>
+							<span th:text="${user.user_tel}">13542124512</span>
+						</li>
+						<li>
+							<span>金额：</span>
+							<span th:text="${user.amount}">￥5000</span>
+						</li>
+						<li>
+							<span>身份证号码：</span>
+							<span th:text="${user.user_card}">47300818841127815X</span>
+						</li>
+						<li>
+							<span>开户行：</span>
+							<span th:text="${user.bank_name}">工商银行</span>
+						</li>
+						<li>
+							<span>银行卡号：</span>
+							<span th:text="${user.bank_account}">6228 2855 5645 1253</span>
+						</li>
+						<li>
+							<span>开户时间：</span>
+							<span th:text="${user.create_time}">2018/09/05 15:34:07</span>
+						</li>
+						<li>
+							<span>归属业务员：</span>
+							<span th:text="${user.staff_name}">林娜</span>
+						</li>
+						<li>
+							<span>代扣协议：</span>
+							<span >已签订</span>
+						</li>
+						<li>
+							<span>证件照：</span>
+							<span></span>
+						</li>
+					</ul>
+					<div class="certificates-img seaImg">
+						<ul>
+							<li>
+								<img th:src="${user.card_poto1}" />
+							</li>
+							<li>
+								<img th:src="${user.card_poto2}" />
+							</li>
+							<li>
+								<img th:src="${user.acc_poto1}" />
+							</li>
+							<li>
+								<img th:src="${user.acc_poto2}" />
+							</li>
+							<li>
+								<img th:src="${user.person_poto}" />
+							</li>
+							<li>
+								<img src="/img/index-bg.png" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			
+			</main>
+			<!--  遮罩层 -->
+			<div class="mask-img"></div>
+			<div class="picture">
+				<div class="box">
+			  <img class="img" src="" alt="" />
+			 <!-- <div class="left"><img src="../../img/back.png" alt="" /></div>
+			  <div class="right"><img src="../../img/next.png" alt="" /></div> -->
+			  </div>
+			</div>
+			<script src="/js/jquery-1.11.3.min.js"></script>
+			<script src="/js/img.js"></script>
+		</body>
+</html>

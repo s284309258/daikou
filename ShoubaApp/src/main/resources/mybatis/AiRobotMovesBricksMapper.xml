@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.AiRobotMovesBricksDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.AiRobotMovesBricksDO">
+		select
+		`id`,`user_id`,`money`,`create_time`,`update_time`,`status`,`state`,`type`,`robot_profit`
+		from t_ai_robot_moves_bricks where id = #{value}
+	</select>
+	<!-- 查询超过24小时以后可领取的利息，启动状态下，等待中的记录 -->
+	<update id="updateStastAble">
+		update t_ai_robot_moves_bricks set state=1,status=0
+		where user_id = #{userId} and status=2 and state=1  and update_time &lt;=(NOW() - interval 24 hour)  
+	</update>
+	<!-- 一键启动 -->
+	<update id="updateKeyStart">
+		update t_ai_robot_moves_bricks set state=1 where user_id = #{userId} and
+		status=0 and state=0
+	</update>
+	<!-- 取出 -->
+	<update id="updateKeyStartGet">
+		update t_ai_robot_moves_bricks set state=0,status=1
+		where user_id = #{userId} and status=0 and state=1 and id=#{id}
+	</update>
+	<select id="list"
+		resultType="com.renegade.domain.AiRobotMovesBricksDO">
+		select
+		*
+		from t_ai_robot_moves_bricks
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="state != null and state != ''"> and state = #{state} </if>
+			<if test="type != null and type != ''"> and type = #{type} </if>
+			<if test="robotProfit != null and robotProfit != ''"> and robot_profit = #{robotProfit} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by update_time desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_ai_robot_moves_bricks
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="state != null and state != ''"> and state = #{state} </if>
+			<if test="type != null and type != ''"> and type = #{type} </if>
+			<if test="robotProfit != null and robotProfit != ''"> and robot_profit = #{robotProfit} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.AiRobotMovesBricksDO"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		t_ai_robot_moves_bricks
+		(
+		`user_id`,
+		`money`,
+		`type`,
+		`robot_profit`
+		)
+		values
+		(
+		#{userId},
+		#{money},
+		#{type},
+		#{robotProfit}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.AiRobotMovesBricksDO">
+		update t_ai_robot_moves_bricks
+		<set>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="money != null">`money` = #{money}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="state != null">`state` = #{state}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="robotProfit != null">`robot_profit` = #{robotProfit}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from t_ai_robot_moves_bricks where id =
+		#{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_ai_robot_moves_bricks where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

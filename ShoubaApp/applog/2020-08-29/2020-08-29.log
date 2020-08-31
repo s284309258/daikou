@@ -1,0 +1,1202 @@
+2020-08-29 17:16:16 -Starting ShouBaApplication on PC-201905161910 with PID 8896 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-29 17:16:16 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-29 17:16:16 -The following profiles are active: dev
+2020-08-29 17:16:17 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:16:17 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:16:17 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:16:17 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:16:18 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:16:18 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:16:18 -Finished Spring Data repository scanning in 46ms. Found 0 repository interfaces.
+2020-08-29 17:16:18 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:16:18 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:16:18 -Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-08-29 17:16:18 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$47303e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:16:18 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de4e2b14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:16:19 -Tomcat initialized with port(s): 8686 (http)
+2020-08-29 17:16:19 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:16:19 -Starting service [Tomcat]
+2020-08-29 17:16:19 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-29 17:16:19 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-29 17:16:19 -Initializing Spring embedded WebApplicationContext
+2020-08-29 17:16:19 -Root WebApplicationContext: initialization completed in 2843 ms
+2020-08-29 17:16:19 -xss filter init~~~~~~~~~~~~
+2020-08-29 17:16:20 -Renegade-四叶草-Hikari - Starting...
+2020-08-29 17:16:20 -Renegade-四叶草-Hikari - Start completed.
+2020-08-29 17:16:20 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-29 17:16:20 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-29 17:16:20 -HHH000206: hibernate.properties not found
+2020-08-29 17:16:20 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-29 17:16:21 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-29 17:16:21 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-29 17:16:21 -Redisson 3.9.1
+2020-08-29 17:16:22 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:16:22 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:16:23 -Using default implementation for ThreadExecutor
+2020-08-29 17:16:23 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-29 17:16:23 -Quartz Scheduler v.2.3.0 created.
+2020-08-29 17:16:23 -RAMJobStore initialized.
+2020-08-29 17:16:23 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-29 17:16:23 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-29 17:16:23 -Quartz scheduler version: 2.3.0
+2020-08-29 17:16:23 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@79aba813
+2020-08-29 17:16:23 -Initializing ExecutorService
+2020-08-29 17:16:23 -Initializing ExecutorService 'asyncExecutor'
+2020-08-29 17:16:23 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-29 17:16:23 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-29 17:16:24 -Initializing ExecutorService 'taskScheduler'
+2020-08-29 17:16:24 -Starting Quartz Scheduler now
+2020-08-29 17:16:24 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-29 17:16:24 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-29 17:16:24 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:16:24 -Using a shared selector for servlet write/read
+2020-08-29 17:16:24 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-29 17:16:24 -Started ShouBaApplication in 8.657 seconds (JVM running for 9.909)
+2020-08-29 17:16:58 -A cookie header was received [1594017985,1594035870,1594887285] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-08-29 17:16:58 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-29 17:16:58 -Initializing Servlet 'dispatcherServlet'
+2020-08-29 17:16:58 -Completed initialization in 13 ms
+2020-08-29 17:16:58 -==>请求参数 : [{}]
+2020-08-29 17:16:58 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:16:58 -==>请求头: null格式: GET
+2020-08-29 17:16:58 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:16:58 -耗时 : 2
+2020-08-29 17:16:58 -<==返回值 : redirect:/login
+2020-08-29 17:16:58 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5f0d6796]
+2020-08-29 17:16:58 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:16:58 -==>请求头: null格式: GET
+2020-08-29 17:16:58 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:16:58 -耗时 : 8
+2020-08-29 17:16:58 -<==返回值 : /login
+2020-08-29 17:17:04 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@18414a94]
+2020-08-29 17:17:04 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:17:04 -==>请求头: null格式: GET
+2020-08-29 17:17:04 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:17:04 -耗时 : 0
+2020-08-29 17:17:04 -<==返回值 : /login
+2020-08-29 17:17:15 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@10336c28, org.apache.catalina.connector.ResponseFacade@e86788a, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598692635469, sign=7C6EEB16AB8A7799F44189916C275749}]
+2020-08-29 17:17:15 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:17:15 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:17:15 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:17:15 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:17:15 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:17:15 -<==      Total: 1
+2020-08-29 17:17:15 -耗时 : 80
+2020-08-29 17:17:15 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@57cd7084
+2020-08-29 17:17:17 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@239835c9, org.apache.catalina.connector.ResponseFacade@e86788a, {}]
+2020-08-29 17:17:17 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:17:17 -==>请求头: null格式: GET
+2020-08-29 17:17:17 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:17:17 -耗时 : 2
+2020-08-29 17:17:17 -<==返回值 : /staff/index
+2020-08-29 17:17:19 -==>请求参数 : []
+2020-08-29 17:17:19 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:17:19 -==>请求头: null格式: GET
+2020-08-29 17:17:19 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:17:19 -耗时 : 0
+2020-08-29 17:17:19 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:25:08 -==>请求参数 : [{}]
+2020-08-29 17:25:08 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:25:08 -==>请求头: null格式: GET
+2020-08-29 17:25:08 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:25:08 -耗时 : 0
+2020-08-29 17:25:08 -<==返回值 : redirect:/login
+2020-08-29 17:25:08 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5d77797a]
+2020-08-29 17:25:08 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:25:08 -==>请求头: null格式: GET
+2020-08-29 17:25:08 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:25:08 -耗时 : 0
+2020-08-29 17:25:08 -<==返回值 : /login
+2020-08-29 17:25:15 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@10336c28, org.apache.catalina.connector.ResponseFacade@2bdca1b4, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598693115637, sign=3683985AE52DD387854A0333F6A02EEE}]
+2020-08-29 17:25:15 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:25:15 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:25:15 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:25:15 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:25:15 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:25:15 -<==      Total: 1
+2020-08-29 17:25:15 -耗时 : 16
+2020-08-29 17:25:15 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@56c0fc08
+2020-08-29 17:25:17 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2ca426e, org.apache.catalina.connector.ResponseFacade@2bdca1b4, {}]
+2020-08-29 17:25:17 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:25:17 -==>请求头: null格式: GET
+2020-08-29 17:25:17 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:25:17 -耗时 : 0
+2020-08-29 17:25:17 -<==返回值 : /staff/index
+2020-08-29 17:25:18 -==>请求参数 : []
+2020-08-29 17:25:18 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:25:18 -==>请求头: null格式: GET
+2020-08-29 17:25:18 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:25:18 -耗时 : 0
+2020-08-29 17:25:18 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:25:33 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:25:33 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:25:33 -==>请求头: null格式: GET
+2020-08-29 17:25:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:25:33 -耗时 : 0
+2020-08-29 17:25:33 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:26:56 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:26:56 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:26:56 -==>请求头: null格式: GET
+2020-08-29 17:26:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:26:56 -耗时 : 0
+2020-08-29 17:26:56 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:26:57 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:26:57 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:26:57 -==>请求头: null格式: GET
+2020-08-29 17:26:57 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:26:57 -耗时 : 0
+2020-08-29 17:26:57 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:26:57 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:26:57 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:26:57 -==>请求头: null格式: GET
+2020-08-29 17:26:57 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:26:57 -耗时 : 0
+2020-08-29 17:26:57 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:26:57 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:26:57 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:26:57 -==>请求头: null格式: GET
+2020-08-29 17:26:57 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:26:57 -耗时 : 0
+2020-08-29 17:26:57 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:26:57 -==>请求参数 : [{real_name=aaaaa, user_card=431021198709040034, user_tel=18124242084, bank_account=6336223366995522, bank_name=aaa, amount=366, stage=, stage_amount=}, {}]
+2020-08-29 17:26:57 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:26:57 -==>请求头: null格式: GET
+2020-08-29 17:26:57 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:26:57 -耗时 : 1
+2020-08-29 17:26:57 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:27:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-08-29 17:27:18 -Shutting down ExecutorService 'taskScheduler'
+2020-08-29 17:27:18 -Shutting down ExecutorService 'asyncExecutor'
+2020-08-29 17:27:18 -Shutting down Quartz Scheduler
+2020-08-29 17:27:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2020-08-29 17:27:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-08-29 17:27:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0xebb63310, L:/127.0.0.1:59267 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0x63b2a0fb, L:/127.0.0.1:59263 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0x6003fb44, L:/127.0.0.1:59261 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0xcfd4e015, L:/127.0.0.1:59265 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0x989af73f, L:/127.0.0.1:59269 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0x3d3bf7de, L:/127.0.0.1:59262 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0xfd4b005c, L:/127.0.0.1:59266 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0xb2cfa32f, L:/127.0.0.1:59270 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Exception occured. Channel: [id: 0xad462837, L:/127.0.0.1:59268 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-29 17:27:18 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-29 17:27:18 -Renegade-四叶草-Hikari - Shutdown initiated...
+2020-08-29 17:27:18 -Renegade-四叶草-Hikari - Shutdown completed.
+2020-08-29 17:27:58 -Starting ShouBaApplication on PC-201905161910 with PID 18712 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-29 17:27:58 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-29 17:27:58 -The following profiles are active: dev
+2020-08-29 17:27:58 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:27:58 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:27:58 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:27:58 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:27:59 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:27:59 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:27:59 -Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2020-08-29 17:27:59 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:27:59 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:27:59 -Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2020-08-29 17:27:59 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$86f5597b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:27:59 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$60d080ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:28:00 -Tomcat initialized with port(s): 8686 (http)
+2020-08-29 17:28:00 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:28:00 -Starting service [Tomcat]
+2020-08-29 17:28:00 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-29 17:28:00 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-29 17:28:00 -Initializing Spring embedded WebApplicationContext
+2020-08-29 17:28:00 -Root WebApplicationContext: initialization completed in 2208 ms
+2020-08-29 17:28:00 -xss filter init~~~~~~~~~~~~
+2020-08-29 17:28:00 -Renegade-四叶草-Hikari - Starting...
+2020-08-29 17:28:01 -Renegade-四叶草-Hikari - Start completed.
+2020-08-29 17:28:01 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-29 17:28:01 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-29 17:28:01 -HHH000206: hibernate.properties not found
+2020-08-29 17:28:01 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-29 17:28:01 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-29 17:28:01 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-29 17:28:01 -Redisson 3.9.1
+2020-08-29 17:28:02 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:28:02 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:28:03 -Using default implementation for ThreadExecutor
+2020-08-29 17:28:03 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-29 17:28:03 -Quartz Scheduler v.2.3.0 created.
+2020-08-29 17:28:03 -RAMJobStore initialized.
+2020-08-29 17:28:03 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-29 17:28:03 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-29 17:28:03 -Quartz scheduler version: 2.3.0
+2020-08-29 17:28:03 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@1b444b5
+2020-08-29 17:28:03 -Initializing ExecutorService
+2020-08-29 17:28:03 -Initializing ExecutorService 'asyncExecutor'
+2020-08-29 17:28:03 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-29 17:28:03 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-29 17:28:04 -Initializing ExecutorService 'taskScheduler'
+2020-08-29 17:28:04 -Starting Quartz Scheduler now
+2020-08-29 17:28:04 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-29 17:28:04 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-29 17:28:04 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:28:04 -Using a shared selector for servlet write/read
+2020-08-29 17:28:04 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-29 17:28:04 -Started ShouBaApplication in 6.977 seconds (JVM running for 8.08)
+2020-08-29 17:28:20 -A cookie header was received [1594017985,1594035870,1594887285; JSESSIONID=F0B73313E989D7ECD236B144B4370B3B] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-08-29 17:28:20 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-29 17:28:20 -Initializing Servlet 'dispatcherServlet'
+2020-08-29 17:28:20 -Completed initialization in 12 ms
+2020-08-29 17:28:20 -==>请求参数 : [{}]
+2020-08-29 17:28:20 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:28:20 -==>请求头: null格式: GET
+2020-08-29 17:28:20 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:28:20 -耗时 : 1
+2020-08-29 17:28:20 -<==返回值 : redirect:/login
+2020-08-29 17:28:20 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@46104e4c]
+2020-08-29 17:28:20 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:28:20 -==>请求头: null格式: GET
+2020-08-29 17:28:20 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:28:20 -耗时 : 7
+2020-08-29 17:28:20 -<==返回值 : /login
+2020-08-29 17:28:26 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@4b0ca4be, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598693306765, sign=A56E21C9BAFB5EF8858BB8B5EE96965E}]
+2020-08-29 17:28:26 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:28:26 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:28:26 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:28:26 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:28:26 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:28:26 -<==      Total: 1
+2020-08-29 17:28:26 -耗时 : 59
+2020-08-29 17:28:26 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@ab3a8bc
+2020-08-29 17:28:29 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@50f14579, org.apache.catalina.connector.ResponseFacade@4b0ca4be, {}]
+2020-08-29 17:28:29 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:28:29 -==>请求头: null格式: GET
+2020-08-29 17:28:29 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:28:29 -耗时 : 1
+2020-08-29 17:28:29 -<==返回值 : /staff/index
+2020-08-29 17:28:30 -==>请求参数 : []
+2020-08-29 17:28:30 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:28:30 -==>请求头: null格式: GET
+2020-08-29 17:28:30 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:28:30 -耗时 : 0
+2020-08-29 17:28:30 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:28:46 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:28:46 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:28:46 -==>请求头: null格式: GET
+2020-08-29 17:28:46 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:28:46 -耗时 : 1
+2020-08-29 17:28:46 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:30:04 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:30:04 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:30:04 -==>请求头: null格式: GET
+2020-08-29 17:30:04 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:30:04 -耗时 : 0
+2020-08-29 17:30:04 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:30:04 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:30:04 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:30:04 -==>请求头: null格式: GET
+2020-08-29 17:30:04 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:30:04 -耗时 : 0
+2020-08-29 17:30:04 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:30:04 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:30:04 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:30:04 -==>请求头: null格式: GET
+2020-08-29 17:30:04 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:30:04 -耗时 : 0
+2020-08-29 17:30:04 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:30:21 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:30:21 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@25180b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@36b0c06, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@23a91fa7, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7bc16c9, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2ff1a375, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:30:21 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:30:21 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryWXWHurfAkNhLiIQq格式: POST
+2020-08-29 17:30:21 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:30:22 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:30:22 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/5796538f-1d60-4229-a058-168ec4b5c9dftimg.jpg(String), http://cdn.szbypos.com/17161cd2-fe85-466e-9fb1-4a1aa811a23dtimg.jpg(String), http://cdn.szbypos.com/09962281-985c-45d2-8bbd-c395f00a88c3timg.jpg(String), http://cdn.szbypos.com/b88f5c02-0d1f-46d1-98b0-eccf9c729cc2timg.jpg(String), http://cdn.szbypos.com/399d73da-d6fa-4ba1-8bee-959a6e3e1cb9timg.jpg(String)
+2020-08-29 17:30:22 -<==    Updates: 1
+2020-08-29 17:30:22 -耗时 : 988
+2020-08-29 17:30:22 -<==返回值 : /staff/sign
+2020-08-29 17:31:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@78dc8444, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1b7678fc, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@29709239, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@34091495, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@286b48f4, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryM78OKDBAeMdDrvAu格式: POST
+2020-08-29 17:31:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7b2b0ff4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@56d30638, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a0dc98b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@39ccdade, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1abb36bc, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryaw74x5mvtNFC9TzG格式: POST
+2020-08-29 17:31:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/ad2964fb-e461-4392-a4c6-682c88999c0etimg.jpg(String), http://cdn.szbypos.com/fd5a55eb-9c7c-4dcc-881a-224b5855d680timg.jpg(String), http://cdn.szbypos.com/7e1ddfc6-a6cc-4bd2-a938-ed1a9ddbbb8ftimg.jpg(String), http://cdn.szbypos.com/5c915c60-630b-4d8c-866a-be6c84db973dtimg.jpg(String), http://cdn.szbypos.com/e867cca3-9cce-48d6-bf8c-2d0d753f250ftimg.jpg(String)
+2020-08-29 17:31:01 -<==    Updates: 1
+2020-08-29 17:31:01 -耗时 : 492
+2020-08-29 17:31:01 -<==返回值 : /staff/sign
+2020-08-29 17:31:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/d049cef8-9eca-4bd5-9daf-e686912cc193timg.jpg(String), http://cdn.szbypos.com/2d0baf1c-aef5-49e3-af15-94b47a5f3edetimg.jpg(String), http://cdn.szbypos.com/a7b6b2c6-c4f4-44ae-a001-799574f9a273timg.jpg(String), http://cdn.szbypos.com/8397e140-6743-4fc1-ac8e-6e682ac74e59timg.jpg(String), http://cdn.szbypos.com/e3f5c166-2a51-4cb4-b172-22932ccdf9c4timg.jpg(String)
+2020-08-29 17:31:01 -<==    Updates: 1
+2020-08-29 17:31:01 -耗时 : 514
+2020-08-29 17:31:01 -<==返回值 : /staff/sign
+2020-08-29 17:31:39 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:31:39 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:31:39 -==>请求头: null格式: GET
+2020-08-29 17:31:39 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:31:39 -耗时 : 0
+2020-08-29 17:31:39 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:31:56 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:56 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@491c0e5, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@718c9cb4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3cd620df, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@569224a3, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5c8e407c, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:56 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:56 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundarywcu8O0z1eTfPIZda格式: POST
+2020-08-29 17:31:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:57 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:57 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/19b4abc3-ffb3-4809-a600-74366ebd21f1timg.jpg(String), http://cdn.szbypos.com/b9ced634-c037-44e0-ba6a-1be719f3310btimg.jpg(String), http://cdn.szbypos.com/02d61e10-f276-4d9f-bdae-be76869039f4timg.jpg(String), http://cdn.szbypos.com/82ba6a87-9427-47b7-b677-7cf57c7f24actimg.jpg(String), http://cdn.szbypos.com/d7af8ece-5991-4582-8035-4cc518e09345timg.jpg(String)
+2020-08-29 17:31:57 -<==    Updates: 1
+2020-08-29 17:31:57 -耗时 : 747
+2020-08-29 17:31:57 -<==返回值 : /staff/sign
+2020-08-29 17:31:58 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:58 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3e87c418, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@345ed785, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5aac56a2, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@24c74c7f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@24e0ebfb, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:58 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:58 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryvekXBnHkZERR2OAs格式: POST
+2020-08-29 17:31:58 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:58 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:58 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@41997f21, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@52265910, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@46698f45, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4e7584c0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@441f9a58, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:58 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:58 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryq1zNcU2maCAYmv5w格式: POST
+2020-08-29 17:31:58 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:58 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:58 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@650d4176, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@ee0f186, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1e0bdc0c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@177adf3e, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@18733a56, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:58 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:58 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundary6NhPV2TX2B3otWGl格式: POST
+2020-08-29 17:31:58 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@4b0ca4be, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4d47d00f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2117916b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@afe85c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6c27b7cd, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1f13d5ee, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundary0A0zHJDrWllsB6n7格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1063974e, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@28675c94, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@233733cb, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@614936e1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6d1c0461, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryAQ6moWoas5nY9Mmr格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:59 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/dc9759a4-b1ff-4c7c-a80a-3b832b57ac2ftimg.jpg(String), http://cdn.szbypos.com/1caf9df0-fa79-4459-bd4f-be7bd8c73dactimg.jpg(String), http://cdn.szbypos.com/4ce8e75b-58a0-4d5b-9d3e-2542bfb96bcbtimg.jpg(String), http://cdn.szbypos.com/2ff7854e-ac7d-4f6d-86d0-938fcc6ad7datimg.jpg(String), http://cdn.szbypos.com/e99357c0-d2da-484f-9289-29632d6bf0ddtimg.jpg(String)
+2020-08-29 17:31:59 -<==    Updates: 1
+2020-08-29 17:31:59 -耗时 : 854
+2020-08-29 17:31:59 -<==返回值 : /staff/sign
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@300477be, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@683537e3, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@631c986d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@32b9489b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@211360f5, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryUJ2CWWiwjxHG5njU格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@39adf039, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@52427c86, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@bf6ba11, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6fb91073, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@39430985, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@78a4f467, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryAAgrk5oBYhJlerGo格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:59 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/44b7b4ca-5067-42b9-a952-925463c01830timg.jpg(String), http://cdn.szbypos.com/b2c94313-c821-4f6c-be37-f6a46eaf1690timg.jpg(String), http://cdn.szbypos.com/c796779d-af4f-46a7-900e-c15ed141fbc2timg.jpg(String), http://cdn.szbypos.com/bcd1fec3-0f7d-4c8f-bbf9-c41c3313e8f6timg.jpg(String), http://cdn.szbypos.com/4d4a4350-aecf-419e-b8e4-749de79a6cfetimg.jpg(String)
+2020-08-29 17:31:59 -<==    Updates: 1
+2020-08-29 17:31:59 -耗时 : 1034
+2020-08-29 17:31:59 -<==返回值 : /staff/sign
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@58d0f8ea, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@55096374, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3415b4ab, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@64164c2d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3b5effed, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryvWEBGCCQA6eDtIIC格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:59 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/e1c33edf-525d-47d7-8daa-8db9b75df21atimg.jpg(String), http://cdn.szbypos.com/afc721fd-a361-434a-ab4a-a171c4160748timg.jpg(String), http://cdn.szbypos.com/bf5c43dc-db51-44f0-acba-5f64f8e0e9fctimg.jpg(String), http://cdn.szbypos.com/35b246c8-b39e-435a-86e4-ba9e6a338ee9timg.jpg(String), http://cdn.szbypos.com/284ce237-3f19-4c53-86a1-7a4e9db86471timg.jpg(String)
+2020-08-29 17:31:59 -<==    Updates: 1
+2020-08-29 17:31:59 -耗时 : 1027
+2020-08-29 17:31:59 -<==返回值 : /staff/sign
+2020-08-29 17:31:59 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:59 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/73c99552-5951-425c-8ed2-1e8f67bdf4f5timg.jpg(String), http://cdn.szbypos.com/fcf1558a-d29d-4798-ab03-85cb4fd1dc1ctimg.jpg(String), http://cdn.szbypos.com/70c35066-fee8-43ea-bf70-d060094d9284timg.jpg(String), http://cdn.szbypos.com/50246e12-199b-4682-b235-c1fbbf8ca7abtimg.jpg(String), http://cdn.szbypos.com/a8e54d44-ce5e-4024-bdc4-87c28e72050btimg.jpg(String)
+2020-08-29 17:31:59 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:31:59 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/f7639b92-68b5-4ca5-aebd-68023d85f849timg.jpg(String), http://cdn.szbypos.com/c827250b-f4fa-4c6d-a486-24d6914d7536timg.jpg(String), http://cdn.szbypos.com/c09bf90d-8114-4764-8a12-62a0d8d71c1atimg.jpg(String), http://cdn.szbypos.com/cf6aa42b-58a9-46bc-99e2-cb89c19728b6timg.jpg(String), http://cdn.szbypos.com/c123aa43-e73c-4479-a816-e4eb0245b41ftimg.jpg(String)
+2020-08-29 17:31:59 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:31:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2077649c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2319760b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6de07699, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@d51488d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@16199e3f, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:31:59 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:31:59 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryVmx2nVacMF0BmTGA格式: POST
+2020-08-29 17:31:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:31:59 -<==    Updates: 1
+2020-08-29 17:31:59 -耗时 : 906
+2020-08-29 17:31:59 -<==返回值 : /staff/sign
+2020-08-29 17:31:59 -<==    Updates: 1
+2020-08-29 17:31:59 -耗时 : 739
+2020-08-29 17:31:59 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/2724acfc-6f84-419a-a7f5-696db9af84aatimg.jpg(String), http://cdn.szbypos.com/2d2dc465-c029-4389-8d42-5c0fb8678059timg.jpg(String), http://cdn.szbypos.com/3c36957c-aa2d-4ae6-965d-57fcd6a8f567timg.jpg(String), http://cdn.szbypos.com/853df61f-3518-4ccf-b822-375636f1552ctimg.jpg(String), http://cdn.szbypos.com/67ec8d97-a08a-42f8-a762-e0ac990c0ef2timg.jpg(String)
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 748
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5719a42a, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@67aa141f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3258a296, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2242748c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3860bc1a, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryJLJRIoRaPNRSXYXh格式: POST
+2020-08-29 17:32:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/01fc82cd-2e94-415b-85d3-47d172d54301timg.jpg(String), http://cdn.szbypos.com/9ca000e6-8d29-4eac-8f94-563a6e8778bbtimg.jpg(String), http://cdn.szbypos.com/4d354fa2-d7d4-40f6-9b2d-72b831e06e25timg.jpg(String), http://cdn.szbypos.com/7adb1f41-77b5-4d55-b335-66589fb71dc1timg.jpg(String), http://cdn.szbypos.com/0cfeddd4-67ef-4f32-b6a1-05b3dc1f5a9atimg.jpg(String)
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 743
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@b181cf1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@761c8a5a, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5b738c36, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5edc4a25, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@15e83a9b, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundary7E6cq5MySKJAqAnh格式: POST
+2020-08-29 17:32:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/33d120c8-1118-4014-9840-fe891611de01timg.jpg(String), http://cdn.szbypos.com/240dbd01-6b10-4f40-942a-86f96e362532timg.jpg(String), http://cdn.szbypos.com/82d74cb8-324f-4343-aed6-9a8f5b353d30timg.jpg(String), http://cdn.szbypos.com/bfe362a0-9384-4e7d-be73-9b3dcf61cf34timg.jpg(String), http://cdn.szbypos.com/50d0737b-c10c-45d1-a14e-5683367aa8datimg.jpg(String)
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 706
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/f64393b5-4ce2-4c12-a54b-2afd8c8cba22timg.jpg(String), http://cdn.szbypos.com/78f80b03-1439-447f-987f-131209e867c2timg.jpg(String), http://cdn.szbypos.com/abe8b908-4652-4a6f-9f99-9316916c13detimg.jpg(String), http://cdn.szbypos.com/ce99cb58-49ca-4cba-af2e-f42661f4e26btimg.jpg(String), http://cdn.szbypos.com/a5ae46d9-2483-4901-93dc-0037079785f0timg.jpg(String)
+2020-08-29 17:32:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a0506fc, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6e9f3aa1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3d507598, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@51208dc0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@13d053fe, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryTP51BYDX9rkJqlvs格式: POST
+2020-08-29 17:32:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 631
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/4607acb2-55c5-4243-afc5-ea1bce4a041etimg.jpg(String), http://cdn.szbypos.com/0c127ea6-7930-46e1-960e-6c23383a2965timg.jpg(String), http://cdn.szbypos.com/3bfe8d22-e41a-4237-8175-584ba08f40c2timg.jpg(String), http://cdn.szbypos.com/df092782-4d5e-4d64-8687-75faab4c0615timg.jpg(String), http://cdn.szbypos.com/674d49de-584b-459f-abe2-2606322fb166timg.jpg(String)
+2020-08-29 17:32:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@402f65c9, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@467b56e1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@469a9ed5, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@43ad95, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3bf98179, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryzoqFE7LUKmvgMyRa格式: POST
+2020-08-29 17:32:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 564
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:00 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:00 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@50d7465, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5d0b8595, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@35ee595c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@24726649, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4a3290fe, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:00 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:00 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryAv96lAs2ozEp1IpD格式: POST
+2020-08-29 17:32:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:00 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:00 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/4373fd03-2810-40c0-82c5-6881c6ed03e4timg.jpg(String), http://cdn.szbypos.com/c92b5ce7-4ec8-4a1e-baaf-b4f82f659f0ctimg.jpg(String), http://cdn.szbypos.com/91bdf9ac-c9b7-490b-8b40-761b045bc692timg.jpg(String), http://cdn.szbypos.com/d32325f7-699c-44e4-a8f7-edcf61446c8etimg.jpg(String), http://cdn.szbypos.com/3b57d0f1-0446-42f9-8dba-973126f9901ctimg.jpg(String)
+2020-08-29 17:32:00 -<==    Updates: 1
+2020-08-29 17:32:00 -耗时 : 610
+2020-08-29 17:32:00 -<==返回值 : /staff/sign
+2020-08-29 17:32:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/6c855f80-7f27-4dd9-9b76-c0e59a9fa155timg.jpg(String), http://cdn.szbypos.com/2054bbfb-bd5c-424c-a95e-d68ff1760978timg.jpg(String), http://cdn.szbypos.com/79133e53-22c3-4450-9f7d-9ed3af86781etimg.jpg(String), http://cdn.szbypos.com/e8c36ea5-5748-451d-90d8-fcdcac27a4b7timg.jpg(String), http://cdn.szbypos.com/c31cfd8f-a08c-4b52-8c4b-36e7e3944230timg.jpg(String)
+2020-08-29 17:32:01 -<==    Updates: 1
+2020-08-29 17:32:01 -耗时 : 553
+2020-08-29 17:32:01 -<==返回值 : /staff/sign
+2020-08-29 17:32:01 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:01 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4597cdf2, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@51901a4f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@25fab7c0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3ea7b802, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@45a41a79, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:01 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:01 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundarygNTxpa9UNpuo2PWq格式: POST
+2020-08-29 17:32:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/e2794023-96a7-49db-baa4-b752155e431dtimg.jpg(String), http://cdn.szbypos.com/6af2103c-3211-4d4f-a18a-8162cb70f9aatimg.jpg(String), http://cdn.szbypos.com/112923e1-26f1-4d7f-b4bc-2fbd25a1b249timg.jpg(String), http://cdn.szbypos.com/4d5d333e-bb44-486f-9b70-a39e20c70a35timg.jpg(String), http://cdn.szbypos.com/6a0e09a3-eaee-4032-afe5-8b5a57712848timg.jpg(String)
+2020-08-29 17:32:01 -<==    Updates: 1
+2020-08-29 17:32:01 -耗时 : 522
+2020-08-29 17:32:01 -<==返回值 : /staff/sign
+2020-08-29 17:32:01 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:01 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1e37083d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@247990e0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7f84f82f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4f39f54a, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@69697a70, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:01 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:01 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryd8TyMyhSbjIO5yUp格式: POST
+2020-08-29 17:32:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/5754b7b7-065c-48ce-a81e-ec42b4f203fctimg.jpg(String), http://cdn.szbypos.com/8dd75784-ffdb-4d4f-80c2-07161a0444ebtimg.jpg(String), http://cdn.szbypos.com/115d988c-218b-40fe-800e-a198a44a47aatimg.jpg(String), http://cdn.szbypos.com/9833cc8a-6f36-4954-a15c-4d2ad71ad640timg.jpg(String), http://cdn.szbypos.com/d536d6a1-a215-4b68-af42-410ec55289fdtimg.jpg(String)
+2020-08-29 17:32:01 -<==    Updates: 1
+2020-08-29 17:32:01 -耗时 : 489
+2020-08-29 17:32:01 -<==返回值 : /staff/sign
+2020-08-29 17:32:01 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:01 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@33e485ae, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@589aaa3e, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@204c4c8, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@115e72d4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6805ca4, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:01 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:01 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundarytCre1HoGgReJtmi5格式: POST
+2020-08-29 17:32:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:01 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:01 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/f4aff779-6800-4237-94c8-e34d60e74d0ftimg.jpg(String), http://cdn.szbypos.com/d43eec97-82ef-4e98-88db-3e0ef5c1d623timg.jpg(String), http://cdn.szbypos.com/a145dc60-e0c8-46e1-ac05-043ced916254timg.jpg(String), http://cdn.szbypos.com/b9e57a13-c4c4-42ee-8e91-6a826143db0ftimg.jpg(String), http://cdn.szbypos.com/743ca3d3-5a35-432e-b53d-e510d0c9cf1etimg.jpg(String)
+2020-08-29 17:32:01 -<==    Updates: 1
+2020-08-29 17:32:01 -耗时 : 563
+2020-08-29 17:32:01 -<==返回值 : /staff/sign
+2020-08-29 17:32:02 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:02 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/a86807a9-b67c-482d-a978-71cc6857f2bdtimg.jpg(String), http://cdn.szbypos.com/f047f80d-cbb0-4ecd-a5d1-6ad2c32b4e13timg.jpg(String), http://cdn.szbypos.com/8e4ceab9-6914-4318-b9cb-7837611ec537timg.jpg(String), http://cdn.szbypos.com/81797fac-bbb9-4d5d-a85f-512990af24b1timg.jpg(String), http://cdn.szbypos.com/6cf79ac6-e488-414c-93af-607e1a1d3437timg.jpg(String)
+2020-08-29 17:32:02 -<==    Updates: 1
+2020-08-29 17:32:02 -耗时 : 773
+2020-08-29 17:32:02 -<==返回值 : /staff/sign
+2020-08-29 17:32:02 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:02 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/0cc13d11-03eb-4b47-bea0-37c30bd2e94ftimg.jpg(String), http://cdn.szbypos.com/2c3ab62d-3798-4676-8e61-0f750f27336ctimg.jpg(String), http://cdn.szbypos.com/c52579af-dfa0-4297-ab89-5adb46f41bf5timg.jpg(String), http://cdn.szbypos.com/4afe48ad-6e2f-4fd8-9942-fa1ccbd747aftimg.jpg(String), http://cdn.szbypos.com/75682a8c-025b-427a-aa34-7bed71411b11timg.jpg(String)
+2020-08-29 17:32:02 -<==    Updates: 1
+2020-08-29 17:32:02 -耗时 : 735
+2020-08-29 17:32:02 -<==返回值 : /staff/sign
+2020-08-29 17:32:03 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a02d2f2, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@61351e61, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@af61e4a, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6191b689, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1d787d0b, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:03 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:03 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryfWnEOP2QP8qhQnRT格式: POST
+2020-08-29 17:32:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:03 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6106338c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6cf2edf2, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5865d32, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3ea6f0b5, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6e6c3ebe, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:03 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:03 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryN8HAGo5Q6l2zMtYC格式: POST
+2020-08-29 17:32:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:03 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@603a8586, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@569713e0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2bf20420, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5494cf03, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@603676a2, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:03 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:03 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryPhgWErQ2hEXUSSl5格式: POST
+2020-08-29 17:32:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:03 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:03 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/5a1c9eef-1d71-42b1-bdca-ebc1296e8fcdtimg.jpg(String), http://cdn.szbypos.com/bb5fcd4b-09c6-4f80-a3b8-6e9948e10948timg.jpg(String), http://cdn.szbypos.com/b66c2ec9-015c-40f2-a91d-6406ae88e764timg.jpg(String), http://cdn.szbypos.com/8ce861f2-35e5-4862-9323-c698a1e07de3timg.jpg(String), http://cdn.szbypos.com/2de4729a-74dd-44f1-9479-9a667c722a01timg.jpg(String)
+2020-08-29 17:32:03 -<==    Updates: 1
+2020-08-29 17:32:03 -耗时 : 436
+2020-08-29 17:32:03 -<==返回值 : /staff/sign
+2020-08-29 17:32:03 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3aaed975, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7e488568, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@30f91f85, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2e152e5b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@623c2f9d, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:03 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:03 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryWFFP5BnTIjc1NU0Y格式: POST
+2020-08-29 17:32:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:03 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:03 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/fbee2a63-2d8c-48c2-90f6-ab873dc837cdtimg.jpg(String), http://cdn.szbypos.com/4b3fa302-d1d1-4717-9a75-54951422dc80timg.jpg(String), http://cdn.szbypos.com/57ec638c-0173-45d0-8174-9dae3935231atimg.jpg(String), http://cdn.szbypos.com/0fffaf98-6514-4fbc-851c-c2c2c866498btimg.jpg(String), http://cdn.szbypos.com/19f1cf34-196a-40ce-8e53-5890b625d9d6timg.jpg(String)
+2020-08-29 17:32:03 -<==    Updates: 1
+2020-08-29 17:32:03 -耗时 : 539
+2020-08-29 17:32:03 -<==返回值 : /staff/sign
+2020-08-29 17:32:03 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3d25e277, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4ee0250b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5109ac3d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@65ad9a91, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7709ea09, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:03 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:03 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundarykrVemBc66OSpGflM格式: POST
+2020-08-29 17:32:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:03 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:03 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/39947502-e6a8-441c-84ab-cf6127e7aee5timg.jpg(String), http://cdn.szbypos.com/175bb14d-3d61-4324-a964-0763258e482ftimg.jpg(String), http://cdn.szbypos.com/20c71421-128c-4c35-b008-e6bcbdcc1785timg.jpg(String), http://cdn.szbypos.com/f5345724-b923-422a-a294-1ff2543e7dc1timg.jpg(String), http://cdn.szbypos.com/8167d997-a325-4487-b345-b8e7b6510376timg.jpg(String)
+2020-08-29 17:32:04 -<==    Updates: 1
+2020-08-29 17:32:04 -耗时 : 446
+2020-08-29 17:32:04 -<==返回值 : /staff/sign
+2020-08-29 17:32:04 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:04 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2a4ac64b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@74d6e89, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@e819ed2, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7ec728cc, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@243c1c1, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:04 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:04 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryFYR1uaAGVXsBlaM7格式: POST
+2020-08-29 17:32:04 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:04 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:04 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/e7d69af3-4ea6-409f-aadc-efe932a5e54dtimg.jpg(String), http://cdn.szbypos.com/fb1c1168-6459-4164-ae7b-a187260d3d81timg.jpg(String), http://cdn.szbypos.com/23710465-f0df-42a4-8672-c38b0d848fc6timg.jpg(String), http://cdn.szbypos.com/f29ce67c-6a01-4f46-a6d3-2543a0a346aftimg.jpg(String), http://cdn.szbypos.com/3b320ae5-3d2f-40e2-a7e6-4743a2f15ccetimg.jpg(String)
+2020-08-29 17:32:04 -<==    Updates: 1
+2020-08-29 17:32:04 -耗时 : 546
+2020-08-29 17:32:04 -<==返回值 : /staff/sign
+2020-08-29 17:32:04 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:04 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3faaad5d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@66b0f310, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1afca6cf, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@76c653ad, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1c6cc86d, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:04 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:04 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryDwQtjFze9xAWY6MK格式: POST
+2020-08-29 17:32:04 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:04 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:04 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/ae36041c-8976-4dad-8dea-517a1ca209f6timg.jpg(String), http://cdn.szbypos.com/d8426763-7c3d-44f5-b3e9-33d2ebde90e3timg.jpg(String), http://cdn.szbypos.com/790485a8-fd10-49e6-bfec-d6aa3ac3bf38timg.jpg(String), http://cdn.szbypos.com/058e2779-6bdc-4800-bc75-af40bc7aa2ddtimg.jpg(String), http://cdn.szbypos.com/eae553c5-b085-42e0-9fc1-fe44faefc9a4timg.jpg(String)
+2020-08-29 17:32:04 -<==    Updates: 1
+2020-08-29 17:32:04 -耗时 : 448
+2020-08-29 17:32:04 -<==返回值 : /staff/sign
+2020-08-29 17:32:04 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:04 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/d8927376-431b-49d0-9105-ec08fb947635timg.jpg(String), http://cdn.szbypos.com/5c38c419-8277-4152-95e1-1130ddcda18etimg.jpg(String), http://cdn.szbypos.com/ba5d813b-4b3d-4a87-8b8f-f8932a15b801timg.jpg(String), http://cdn.szbypos.com/b10e2ec6-9386-4ad0-8b47-091dba697b6atimg.jpg(String), http://cdn.szbypos.com/3db0cb92-fcb9-45f0-9ef0-5e93bf1b36b6timg.jpg(String)
+2020-08-29 17:32:04 -<==    Updates: 1
+2020-08-29 17:32:04 -耗时 : 452
+2020-08-29 17:32:04 -<==返回值 : /staff/sign
+2020-08-29 17:32:04 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:04 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/3310ad54-e371-4379-b770-2e4c0ab1c0e3timg.jpg(String), http://cdn.szbypos.com/5242ed2c-f573-475e-909a-544370a88e0atimg.jpg(String), http://cdn.szbypos.com/537f0317-a52b-462f-88f6-076c55ae389btimg.jpg(String), http://cdn.szbypos.com/5b67d0e2-e0e8-4df7-9094-3951fea6a691timg.jpg(String), http://cdn.szbypos.com/ffaaa0f2-a092-48d3-8b50-28abba0c53aatimg.jpg(String)
+2020-08-29 17:32:04 -<==    Updates: 1
+2020-08-29 17:32:04 -耗时 : 453
+2020-08-29 17:32:04 -<==返回值 : /staff/sign
+2020-08-29 17:32:08 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:08 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@75b888ca, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2c15ecd1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7a5e8d0b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@211c37f8, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@10d305c9, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:08 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:08 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryc1IouCnYc8jXTY9E格式: POST
+2020-08-29 17:32:08 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:09 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:09 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@750f5d65, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5f7de721, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@62ca5e83, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@378fc6ed, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@38e4510c, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:09 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:09 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundary2A6JMB4AxAHrhRMe格式: POST
+2020-08-29 17:32:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:09 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:09 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@631fcf65, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5b50d20e, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3ca693fb, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@247dfd5f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@8b54193, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@55283229, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:09 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:09 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryPR90wxrJgNpRDFhi格式: POST
+2020-08-29 17:32:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:09 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:09 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/801e3dd7-6a1b-4838-a459-8b15e202a5a0timg.jpg(String), http://cdn.szbypos.com/e5f8ce66-227a-4341-831a-84618f8a5125timg.jpg(String), http://cdn.szbypos.com/556b1a40-71e0-49c0-9975-835cbebf1e9atimg.jpg(String), http://cdn.szbypos.com/790f15a5-17af-4d30-831c-e5674e861713timg.jpg(String), http://cdn.szbypos.com/872a2a62-574a-4b7c-95c6-680b209eeb86timg.jpg(String)
+2020-08-29 17:32:09 -<==    Updates: 1
+2020-08-29 17:32:09 -耗时 : 490
+2020-08-29 17:32:09 -<==返回值 : /staff/sign
+2020-08-29 17:32:09 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:09 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@9484a7, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2103c9bc, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@a765329, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@61d1b42f, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@284b3c4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3d75d401, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:09 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:09 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundary6p8ZV4EmtT63Fnxr格式: POST
+2020-08-29 17:32:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:09 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:09 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/f03826dc-3bc5-4285-96f9-46abb9eb0599timg.jpg(String), http://cdn.szbypos.com/64d2b9f4-e01c-4908-8fbb-2b09bb0e4bf7timg.jpg(String), http://cdn.szbypos.com/b5f85026-b39d-4289-9ad1-40a2f77cc7c3timg.jpg(String), http://cdn.szbypos.com/e80cf9db-8c90-487e-bd7f-4cd90642b1d3timg.jpg(String), http://cdn.szbypos.com/b8a11a54-ae22-44ab-b46e-29ca8102d7fetimg.jpg(String)
+2020-08-29 17:32:09 -<==    Updates: 1
+2020-08-29 17:32:09 -耗时 : 588
+2020-08-29 17:32:09 -<==返回值 : /staff/sign
+2020-08-29 17:32:09 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:09 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/c83b9d8c-85b8-42b9-a3fc-e22a532b3e63timg.jpg(String), http://cdn.szbypos.com/7409953b-e7cd-4a8c-8d6c-31bac172ff5ftimg.jpg(String), http://cdn.szbypos.com/5eb435b6-fa6c-42c2-8dfe-8a7e4e89a712timg.jpg(String), http://cdn.szbypos.com/e526e45e-6aad-411e-a9b9-860dcf76bd80timg.jpg(String), http://cdn.szbypos.com/28056ce9-cf8d-4562-87a9-635d4a38b626timg.jpg(String)
+2020-08-29 17:32:09 -<==    Updates: 1
+2020-08-29 17:32:09 -耗时 : 490
+2020-08-29 17:32:09 -<==返回值 : /staff/sign
+2020-08-29 17:32:09 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:32:09 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@7f97b571, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@351bddb4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@534dbead, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@21b3212d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@33db0ab7, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@58468705, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:32:09 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:32:09 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryjMAWtCUvEKJ0WDn5格式: POST
+2020-08-29 17:32:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:32:09 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:09 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/de61fed3-6616-4c7f-aadc-cac7b3900882timg.jpg(String), http://cdn.szbypos.com/3d87d041-5d6a-4eb0-bbd4-561c1bbb3ed6timg.jpg(String), http://cdn.szbypos.com/27b0030f-de6e-48a7-ae28-f96403c34012timg.jpg(String), http://cdn.szbypos.com/5f7481c7-95de-453e-b3ce-4b9e7870fc67timg.jpg(String), http://cdn.szbypos.com/0bfd90d0-4b2d-4dc2-a1fc-45568f217beatimg.jpg(String)
+2020-08-29 17:32:09 -<==    Updates: 1
+2020-08-29 17:32:09 -耗时 : 477
+2020-08-29 17:32:09 -<==返回值 : /staff/sign
+2020-08-29 17:32:10 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:32:10 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/3b868958-9308-4757-9682-b40d43448c38timg.jpg(String), http://cdn.szbypos.com/5a5139da-7b0d-42c5-9705-05e4f19110fftimg.jpg(String), http://cdn.szbypos.com/f765f19b-c73e-456c-ad55-bf80eb6b7bf4timg.jpg(String), http://cdn.szbypos.com/612398bd-5338-47fc-9f98-3d1fea270bc4timg.jpg(String), http://cdn.szbypos.com/dc455b30-75a6-41a5-bb8f-559832234f49timg.jpg(String)
+2020-08-29 17:32:10 -<==    Updates: 1
+2020-08-29 17:32:10 -耗时 : 432
+2020-08-29 17:32:10 -<==返回值 : /staff/sign
+2020-08-29 17:35:01 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:01 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:01 -==>请求头: null格式: GET
+2020-08-29 17:35:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:01 -耗时 : 1
+2020-08-29 17:35:01 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:01 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:01 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:01 -==>请求头: null格式: GET
+2020-08-29 17:35:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:01 -耗时 : 1
+2020-08-29 17:35:01 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:01 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:01 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:01 -==>请求头: null格式: GET
+2020-08-29 17:35:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:01 -耗时 : 0
+2020-08-29 17:35:01 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:21 ----------------------com.renegade.util.pub.AdvFunUtil@68821f6
+2020-08-29 17:35:21 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@4b0ca4be, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@42556db3, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2e122c3, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1d405543, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@39f7375b, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5026fd23, {real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}]
+2020-08-29 17:35:21 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:35:21 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryZO8AS3xWj8b6zK5i格式: POST
+2020-08-29 17:35:21 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:35:21 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:35:21 -==> Parameters: ffff(String), 431021198709040034(String), 18124242084(String), 6336332211000022(String), 1212(String), 123(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/f6b1b32b-095a-47bd-b70e-5bf1ea483bfbtimg.jpg(String), http://cdn.szbypos.com/01519f25-e870-4311-9cc8-cd4e64a939c7timg.jpg(String), http://cdn.szbypos.com/8f5a598c-7780-4482-a1d7-5ecb98e29494timg.jpg(String), http://cdn.szbypos.com/9531fbc0-6545-438a-a3de-3fc03e79aae8timg.jpg(String), http://cdn.szbypos.com/dab89b9e-954c-41ad-a5ee-2cef07eb86e2timg.jpg(String)
+2020-08-29 17:35:21 -<==    Updates: 1
+2020-08-29 17:35:21 -耗时 : 389
+2020-08-29 17:35:21 -<==返回值 : /staff/sign
+2020-08-29 17:35:44 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:44 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:44 -==>请求头: null格式: GET
+2020-08-29 17:35:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:44 -耗时 : 0
+2020-08-29 17:35:44 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:44 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:44 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:44 -==>请求头: null格式: GET
+2020-08-29 17:35:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:44 -耗时 : 1
+2020-08-29 17:35:44 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:45 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:45 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:45 -==>请求头: null格式: GET
+2020-08-29 17:35:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:45 -耗时 : 0
+2020-08-29 17:35:45 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:45 -==>请求参数 : [{real_name=ffff, user_card=431021198709040034, user_tel=18124242084, bank_account=6336332211000022, bank_name=1212, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:35:45 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:35:45 -==>请求头: null格式: GET
+2020-08-29 17:35:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:35:45 -耗时 : 0
+2020-08-29 17:35:45 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:35:50 -==>请求参数 : [{}]
+2020-08-29 17:35:50 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:35:50 -==>请求头: null格式: GET
+2020-08-29 17:35:50 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:35:50 -耗时 : 1
+2020-08-29 17:35:50 -<==返回值 : redirect:/login
+2020-08-29 17:35:50 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@2d489ff4]
+2020-08-29 17:35:50 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:35:50 -==>请求头: null格式: GET
+2020-08-29 17:35:50 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:35:50 -耗时 : 0
+2020-08-29 17:35:50 -<==返回值 : /login
+2020-08-29 17:35:56 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuyan, timeStamp=1598693756836, sign=B1CF9A4EBC17F006A6C9403DC5B1E4AB}]
+2020-08-29 17:35:56 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:35:56 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:35:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:35:56 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:35:56 -==> Parameters: yewuyuyan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:35:56 -<==      Total: 0
+2020-08-29 17:35:56 -耗时 : 20
+2020-08-29 17:35:56 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@736116c4
+2020-08-29 17:36:07 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7993fd0, org.apache.catalina.connector.ResponseFacade@6d00e5db, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598693767636, sign=3454870DEDA980E2D5FC7485BC23256C}]
+2020-08-29 17:36:07 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:36:07 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:36:07 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:36:07 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:36:07 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:36:07 -<==      Total: 1
+2020-08-29 17:36:07 -耗时 : 21
+2020-08-29 17:36:07 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@41a5e99a
+2020-08-29 17:36:09 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4490277a, org.apache.catalina.connector.ResponseFacade@6d00e5db, {}]
+2020-08-29 17:36:09 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:36:09 -==>请求头: null格式: GET
+2020-08-29 17:36:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:36:09 -耗时 : 0
+2020-08-29 17:36:09 -<==返回值 : /staff/index
+2020-08-29 17:36:10 -==>请求参数 : []
+2020-08-29 17:36:10 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:36:10 -==>请求头: null格式: GET
+2020-08-29 17:36:10 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:36:10 -耗时 : 0
+2020-08-29 17:36:10 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:36:26 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:36:26 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:36:26 -==>请求头: null格式: GET
+2020-08-29 17:36:26 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:36:26 -耗时 : 1
+2020-08-29 17:36:26 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:37:26 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:37:26 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:37:26 -==>请求头: null格式: GET
+2020-08-29 17:37:26 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:37:26 -耗时 : 0
+2020-08-29 17:37:26 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:37:43 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:37:43 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:37:43 -==>请求头: null格式: GET
+2020-08-29 17:37:43 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:37:43 -耗时 : 0
+2020-08-29 17:37:43 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:37:44 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:37:44 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:37:44 -==>请求头: null格式: GET
+2020-08-29 17:37:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:37:44 -耗时 : 0
+2020-08-29 17:37:44 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:37:44 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:37:44 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:37:44 -==>请求头: null格式: GET
+2020-08-29 17:37:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:37:44 -耗时 : 0
+2020-08-29 17:37:44 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:38:27 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:38:27 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:38:27 -==>请求头: null格式: GET
+2020-08-29 17:38:27 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:38:27 -耗时 : 0
+2020-08-29 17:38:27 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:38:27 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:38:27 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:38:27 -==>请求头: null格式: GET
+2020-08-29 17:38:27 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:38:27 -耗时 : 1
+2020-08-29 17:38:27 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:38:38 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:38:38 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:38:38 -==>请求头: null格式: GET
+2020-08-29 17:38:38 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:38:38 -耗时 : 0
+2020-08-29 17:38:38 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:38:39 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:38:39 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:38:39 -==>请求头: null格式: GET
+2020-08-29 17:38:39 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:38:39 -耗时 : 0
+2020-08-29 17:38:39 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:38:39 -==>请求参数 : [{real_name=cccc, user_card=431021198709040034, user_tel=18124242084, bank_account=6336558899887777, bank_name=ddd, amount=123, stage=, stage_amount=}, {}]
+2020-08-29 17:38:39 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:38:39 -==>请求头: null格式: GET
+2020-08-29 17:38:39 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:38:39 -耗时 : 0
+2020-08-29 17:38:39 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:42:57 -Starting ShouBaApplication on PC-201905161910 with PID 16400 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-29 17:42:57 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-29 17:42:57 -The following profiles are active: dev
+2020-08-29 17:42:58 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:42:58 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:42:58 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:42:58 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-29 17:42:58 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:42:58 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:42:58 -Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
+2020-08-29 17:42:58 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-29 17:42:58 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-29 17:42:58 -Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2020-08-29 17:42:58 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$48cd8cac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:42:58 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$22a8b3dc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-29 17:42:59 -Tomcat initialized with port(s): 8686 (http)
+2020-08-29 17:42:59 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:42:59 -Starting service [Tomcat]
+2020-08-29 17:42:59 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-29 17:42:59 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-29 17:42:59 -Initializing Spring embedded WebApplicationContext
+2020-08-29 17:42:59 -Root WebApplicationContext: initialization completed in 1915 ms
+2020-08-29 17:42:59 -xss filter init~~~~~~~~~~~~
+2020-08-29 17:42:59 -Renegade-四叶草-Hikari - Starting...
+2020-08-29 17:43:00 -Renegade-四叶草-Hikari - Start completed.
+2020-08-29 17:43:00 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-29 17:43:00 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-29 17:43:00 -HHH000206: hibernate.properties not found
+2020-08-29 17:43:00 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-29 17:43:00 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-29 17:43:00 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-29 17:43:00 -Redisson 3.9.1
+2020-08-29 17:43:01 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:43:01 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-29 17:43:02 -Using default implementation for ThreadExecutor
+2020-08-29 17:43:02 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-29 17:43:02 -Quartz Scheduler v.2.3.0 created.
+2020-08-29 17:43:02 -RAMJobStore initialized.
+2020-08-29 17:43:02 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-29 17:43:02 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-29 17:43:02 -Quartz scheduler version: 2.3.0
+2020-08-29 17:43:02 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@571d0925
+2020-08-29 17:43:02 -Initializing ExecutorService
+2020-08-29 17:43:02 -Initializing ExecutorService 'asyncExecutor'
+2020-08-29 17:43:02 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-29 17:43:02 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-29 17:43:03 -Initializing ExecutorService 'taskScheduler'
+2020-08-29 17:43:03 -Starting Quartz Scheduler now
+2020-08-29 17:43:03 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-29 17:43:03 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-29 17:43:03 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-29 17:43:03 -Using a shared selector for servlet write/read
+2020-08-29 17:43:03 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-29 17:43:03 -Started ShouBaApplication in 6.565 seconds (JVM running for 7.589)
+2020-08-29 17:43:31 -A cookie header was received [1594017985,1594035870,1594887285; JSESSIONID=2CB07B6BF2617A51332F08D66C22F52E] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-08-29 17:43:31 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-29 17:43:31 -Initializing Servlet 'dispatcherServlet'
+2020-08-29 17:43:31 -Completed initialization in 14 ms
+2020-08-29 17:43:31 -==>请求参数 : [{}]
+2020-08-29 17:43:31 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:43:31 -==>请求头: null格式: GET
+2020-08-29 17:43:31 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:43:31 -耗时 : 1
+2020-08-29 17:43:31 -<==返回值 : redirect:/login
+2020-08-29 17:43:31 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@13fae060]
+2020-08-29 17:43:31 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:43:31 -==>请求头: null格式: GET
+2020-08-29 17:43:31 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:43:31 -耗时 : 7
+2020-08-29 17:43:31 -<==返回值 : /login
+2020-08-29 17:43:39 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@2a403cb8, org.apache.catalina.connector.ResponseFacade@5c35ea78, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598694218996, sign=BF0A63025C250EE804A9EBD5C7F4E4EA}]
+2020-08-29 17:43:39 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:43:39 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:43:39 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:43:39 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:43:39 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:43:39 -<==      Total: 1
+2020-08-29 17:43:39 -耗时 : 63
+2020-08-29 17:43:39 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7a106948
+2020-08-29 17:43:41 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@18d4a992, org.apache.catalina.connector.ResponseFacade@5c35ea78, {}]
+2020-08-29 17:43:41 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:43:41 -==>请求头: null格式: GET
+2020-08-29 17:43:41 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:43:41 -耗时 : 1
+2020-08-29 17:43:41 -<==返回值 : /staff/index
+2020-08-29 17:43:42 -==>请求参数 : []
+2020-08-29 17:43:42 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:43:42 -==>请求头: null格式: GET
+2020-08-29 17:43:42 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:43:42 -耗时 : 0
+2020-08-29 17:43:42 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:44:01 -==>请求参数 : [{real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}, {}]
+2020-08-29 17:44:01 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:44:01 -==>请求头: null格式: GET
+2020-08-29 17:44:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:44:01 -耗时 : 0
+2020-08-29 17:44:01 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:44:21 ----------------------com.renegade.util.pub.AdvFunUtil@10a0d93a
+2020-08-29 17:44:21 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@2a403cb8, org.apache.catalina.connector.ResponseFacade@5c35ea78, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3295f132, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3ce6a155, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7aef37b5, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@b3a4fb7, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@16bb2383, {real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}]
+2020-08-29 17:44:21 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:44:21 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryMjMML2RlXkF6mXTK格式: POST
+2020-08-29 17:44:21 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:44:22 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:44:22 -==> Parameters: 213123(String), 431021198902020011(String), 18124242084(String), 2002336655222222(String), 666(String), 666(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/0598038a-f20d-46d5-92bb-216c100c7079timg.jpg(String), http://cdn.szbypos.com/b5119c87-b6af-41af-917e-5f9a0d10878atimg.jpg(String), http://cdn.szbypos.com/55889cea-6bee-4a04-bb5e-6096fb5f0185timg.jpg(String), http://cdn.szbypos.com/3f3c1b67-9c44-4475-a4df-31e9e8cd96f8timg.jpg(String), http://cdn.szbypos.com/1cb47e26-7fd7-405f-a48d-dd99f308223ftimg.jpg(String)
+2020-08-29 17:44:22 -<==    Updates: 1
+2020-08-29 17:44:22 -耗时 : 934
+2020-08-29 17:44:22 -<==返回值 : /staff/sign
+2020-08-29 17:44:33 -==>请求参数 : [{real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}, {}]
+2020-08-29 17:44:33 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:44:33 -==>请求头: null格式: GET
+2020-08-29 17:44:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:44:33 -耗时 : 0
+2020-08-29 17:44:33 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:44:33 -==>请求参数 : [{real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}, {}]
+2020-08-29 17:44:33 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:44:33 -==>请求头: null格式: GET
+2020-08-29 17:44:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:44:33 -耗时 : 0
+2020-08-29 17:44:33 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:44:33 -==>请求参数 : [{real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}, {}]
+2020-08-29 17:44:33 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:44:33 -==>请求头: null格式: GET
+2020-08-29 17:44:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:44:33 -耗时 : 0
+2020-08-29 17:44:33 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:44:33 -==>请求参数 : [{real_name=213123, user_card=431021198902020011, user_tel=18124242084, bank_account=2002336655222222, bank_name=666, amount=666, stage=, stage_amount=}, {}]
+2020-08-29 17:44:33 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:44:33 -==>请求头: null格式: GET
+2020-08-29 17:44:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:44:33 -耗时 : 0
+2020-08-29 17:44:33 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:46:57 -==>请求参数 : [{}]
+2020-08-29 17:46:57 -==>请求地址 : http://localhost:8686/
+2020-08-29 17:46:57 -==>请求头: null格式: GET
+2020-08-29 17:46:57 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 17:46:57 -耗时 : 0
+2020-08-29 17:46:57 -<==返回值 : redirect:/login
+2020-08-29 17:46:57 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@4cb8c0ef]
+2020-08-29 17:46:57 -==>请求地址 : http://localhost:8686/login
+2020-08-29 17:46:57 -==>请求头: null格式: GET
+2020-08-29 17:46:57 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 17:46:57 -耗时 : 0
+2020-08-29 17:46:57 -<==返回值 : /login
+2020-08-29 17:56:07 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@34959a44, org.apache.catalina.connector.ResponseFacade@3df114ca, {login_pwd=9db06bcff9248837f86d1a6bcf41c9e7, login_name=yewuyuan, timeStamp=1598694967323, sign=5F6971EFE974016255B3F7C2C4E3AA2B}]
+2020-08-29 17:56:07 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-29 17:56:07 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-29 17:56:07 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-29 17:56:07 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-29 17:56:07 -==> Parameters: yewuyuan(String), 9db06bcff9248837f86d1a6bcf41c9e7(String)
+2020-08-29 17:56:07 -<==      Total: 1
+2020-08-29 17:56:07 -耗时 : 21
+2020-08-29 17:56:07 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@1c3b9750
+2020-08-29 17:56:09 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1465c9ee, org.apache.catalina.connector.ResponseFacade@3df114ca, {}]
+2020-08-29 17:56:09 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-29 17:56:09 -==>请求头: null格式: GET
+2020-08-29 17:56:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-29 17:56:09 -耗时 : 1
+2020-08-29 17:56:09 -<==返回值 : /staff/index
+2020-08-29 17:57:00 -==>请求参数 : []
+2020-08-29 17:57:00 -==>请求地址 : http://localhost:8686/yilian/api/staffCheckInUser
+2020-08-29 17:57:00 -==>请求头: null格式: GET
+2020-08-29 17:57:00 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-29 17:57:00 -耗时 : 0
+2020-08-29 17:57:00 -<==返回值 : /staff/staffCheckInUser
+2020-08-29 17:57:16 -==>请求参数 : [{real_name=rrrrr, user_card=431021199012120021, user_tel=13552535506, bank_account=6626336655224411, bank_name=888, amount=8888, stage=, stage_amount=}, {}]
+2020-08-29 17:57:16 -==>请求地址 : http://localhost:8686/yilian/api/uploadPhoto
+2020-08-29 17:57:16 -==>请求头: null格式: GET
+2020-08-29 17:57:16 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.uploadPhoto
+2020-08-29 17:57:16 -耗时 : 0
+2020-08-29 17:57:16 -<==返回值 : /staff/uploadPhoto
+2020-08-29 17:57:40 ----------------------com.renegade.util.pub.AdvFunUtil@10a0d93a
+2020-08-29 17:57:40 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@34959a44, org.apache.catalina.connector.ResponseFacade@632ce877, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@42335a74, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5280f0a, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3bb51577, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3f5e2d26, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@67e62043, {real_name=rrrrr, user_card=431021199012120021, user_tel=13552535506, bank_account=6626336655224411, bank_name=888, amount=8888, stage=, stage_amount=}]
+2020-08-29 17:57:40 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:57:40 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryA6tcrnTBTbgIBEx8格式: POST
+2020-08-29 17:57:40 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:57:40 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:57:40 -==> Parameters: rrrrr(String), 431021199012120021(String), 13552535506(String), 6626336655224411(String), 888(String), 8888(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/2b0a98ff-08b7-4e8a-a7d2-5833bb933d26timg.jpg(String), http://cdn.szbypos.com/acb0d613-7e0d-4b0f-8162-a4d69286259ftimg.jpg(String), http://cdn.szbypos.com/394c3a90-1c9b-47d4-896e-63be27208cadtimg.jpg(String), http://cdn.szbypos.com/ee33465f-fa5f-4e5c-88d6-694fba08c4aatimg.jpg(String), http://cdn.szbypos.com/1c11fe53-dfac-46fc-95d8-341bbf20a2f1timg.jpg(String)
+2020-08-29 17:57:40 -<==    Updates: 1
+2020-08-29 17:57:40 -耗时 : 487
+2020-08-29 17:57:40 -<==返回值 : /staff/sign
+2020-08-29 17:57:54 ----------------------com.renegade.util.pub.AdvFunUtil@10a0d93a
+2020-08-29 17:57:54 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@34959a44, org.apache.catalina.connector.ResponseFacade@5c35ea78, {}, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@61b8692e, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@7fcf7e7, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3c79f8f4, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@4d63fbe8, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6fb01a73, {real_name=rrrrr, user_card=431021199012120021, user_tel=13552535506, bank_account=6626336655224411, bank_name=888, amount=8888, stage=, stage_amount=}]
+2020-08-29 17:57:54 -==>请求地址 : http://localhost:8686/yilian/api/openUser
+2020-08-29 17:57:54 -==>请求头: multipart/form-data; boundary=----WebKitFormBoundaryYKEsLaCkzBnckgkV格式: POST
+2020-08-29 17:57:54 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUser
+2020-08-29 17:57:54 -==>  Preparing: insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state) values(?,?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,1) 
+2020-08-29 17:57:54 -==> Parameters: rrrrr(String), 431021199012120021(String), 13552535506(String), 6626336655224411(String), 888(String), 8888(String), 0(String), 0(String), 12(Long), 贷款业务员(String), 13965656544(String), 110(Long), 贷款合作公司(String), 0(String), null, http://cdn.szbypos.com/03b53616-b9e7-445e-8745-eb2490c75749timg.jpg(String), http://cdn.szbypos.com/882b8881-d057-472d-9f8e-d82330a0f928timg.jpg(String), http://cdn.szbypos.com/980ea466-6cea-4fee-b02c-642464d99745timg.jpg(String), http://cdn.szbypos.com/7c0afdd0-4845-4628-94d9-d49eeef189d3timg.jpg(String), http://cdn.szbypos.com/b9417047-5ffb-4483-9a2f-d18b2fc8f2d6timg.jpg(String)
+2020-08-29 17:57:54 -<==    Updates: 1
+2020-08-29 17:57:54 -耗时 : 465
+2020-08-29 17:57:54 -<==返回值 : /staff/sign
+2020-08-29 18:00:02 -==>请求参数 : [{}]
+2020-08-29 18:00:02 -==>请求地址 : http://localhost:8686/
+2020-08-29 18:00:02 -==>请求头: null格式: GET
+2020-08-29 18:00:02 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-29 18:00:02 -耗时 : 0
+2020-08-29 18:00:02 -<==返回值 : redirect:/login
+2020-08-29 18:00:02 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@784999d9]
+2020-08-29 18:00:02 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:00:02 -==>请求头: null格式: GET
+2020-08-29 18:00:02 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:00:02 -耗时 : 1
+2020-08-29 18:00:02 -<==返回值 : /login
+2020-08-29 18:01:09 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@17fed440]
+2020-08-29 18:01:09 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:01:09 -==>请求头: null格式: GET
+2020-08-29 18:01:09 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:01:09 -耗时 : 1
+2020-08-29 18:01:09 -<==返回值 : /login
+2020-08-29 18:01:09 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@1edddb17]
+2020-08-29 18:01:09 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:01:09 -==>请求头: null格式: GET
+2020-08-29 18:01:09 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:01:09 -耗时 : 0
+2020-08-29 18:01:09 -<==返回值 : /login
+2020-08-29 18:01:09 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@35998561]
+2020-08-29 18:01:09 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:01:09 -==>请求头: null格式: GET
+2020-08-29 18:01:09 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:01:09 -耗时 : 1
+2020-08-29 18:01:09 -<==返回值 : /login
+2020-08-29 18:01:09 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@355e6483]
+2020-08-29 18:01:09 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:01:09 -==>请求头: null格式: GET
+2020-08-29 18:01:09 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:01:09 -耗时 : 0
+2020-08-29 18:01:09 -<==返回值 : /login
+2020-08-29 18:01:10 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@4a5e6d97]
+2020-08-29 18:01:10 -==>请求地址 : http://localhost:8686/login
+2020-08-29 18:01:10 -==>请求头: null格式: GET
+2020-08-29 18:01:10 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-29 18:01:10 -耗时 : 0
+2020-08-29 18:01:10 -<==返回值 : /login

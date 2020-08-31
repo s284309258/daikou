@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<script src="../../js/vue.js"></script>
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<style>
+			header{background: url(../../img/index-bg.png) no-repeat !important;background-size: 100% 100% !important;}
+			.footer-bg{background: url(../../img/for_-bg.png) no-repeat;background-size: 100% 100%;height: 25vw;}
+		</style>
+		<title>首页</title>
+	</head>
+	<body>
+		<header >
+			<h1>首页</h1>
+		</header>
+		<main class="main">
+			<div class="index-warp">
+				<img src="../../img/logo-.png" />
+				<h2 th:text="${real_name}">丰昱辉</h2>
+			</div>
+			<ul class="index-ilst">
+				
+				<li>
+					<a href="/yilian/api/openAgent">
+						<span>
+							<img src="../../img/blue-d.png" class="icon-list"/>
+							机构信息录入
+						</span>
+						<span>
+							<!-- <i>1</i> -->
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/orgQuery">
+						<span>
+							<img src="../../img/jigou.png" class="icon-list"/>
+							机构管理
+						</span>
+						<span>
+							<!-- <i>1</i> -->
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/openCompany">
+						<span>
+							<img src="../../img/xinxi-2.png" class="icon-list"/>
+							公司信息录入
+						</span>
+						<img src="../../img/next.png" class="next"/>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/allCompanies">
+						<span class="">
+							<img src="../../img/gongsi.png" class="icon-list"/>
+							公司管理
+						</span>
+						<img src="../../img/next.png" class="next"/>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/withholdAudit2">
+						<span>
+							<img src="../../img/dksh.png" class="icon-list"/>
+							扣款审核
+						</span>
+						<span>
+							<i th:text="${auditNum}">1</i>
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/userInfoList">
+						<span>
+							<img src="../../img/kfzil.png" class="icon-list"/>
+							客户资料记录
+						</span>
+						<span>
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/deductList">
+						<span>
+							<img src="../../img/red-b.png" class="icon-list"/>
+							扣款记录
+						</span>
+						<span>
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+			</ul>
+		<button class="sign-out" onclick="logout()">退出登录</button>
+		</main>
+		<div class="footer-bg"></div>
+		<script type="text/javascript">
+			function logout() {
+				window.location.href = "/yilian/api/logout";
+			}
+		</script>
+	</body>
+</html>

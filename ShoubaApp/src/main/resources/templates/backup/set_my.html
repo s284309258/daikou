@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>个人中心</h1>
+			
+		</div>
+		<ul class="setlist">
+			<li><a href="/m9/user/set_name">
+				<span>修改昵称</span>
+				<span style="display: flex;align-items: center;" th:if="${user['nick_name']}?${user['nick_name']}" th:text="${user.nick_name}"><i class="iconfont icon-xiayige"></i></span></a>
+			</li>
+			<li><a href="/m9/user/set_photo">
+				<span>修改头像</span>
+				<i class="iconfont icon-xiayige"></i></a>
+			</li>
+			<li><a href="/m9/user/sign_recode">
+				<span>签到记录</span>
+				<i class="iconfont icon-xiayige"></i></a>
+			</li>
+			<li><a href="/m9/user/address">
+				<span>收币地址</span>
+				<span style="display: flex;align-items: center;" ><i class="iconfont icon-xiayige"></i></span></a>
+			</li>
+		</ul>
+		
+	</body>
+</html>

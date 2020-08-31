@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<title>公司管理</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+		</style>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>公司管理</h1>
+		</header>
+		<main class="main">
+			<div class="agent-seach">
+				<span>
+					<img src="../../img/seach.png" />
+					<input type="search" placeholder="搜索公司名称"v-model="keywords" />
+				</span>
+				<span>查询</span>
+			</div>
+			<div class="seach-list-warp">
+				<ul class="seach-list" >
+					<li v-for="item in seach(keywords)" :key="item.id">
+						<a :href="agentCompanyDetail(item.id)">
+							<span class="seach-name">{{item.org_name}}</span>
+							<img src="../../img/next.png" class="next"/>
+						</a>
+					</li>
+					
+				</ul>
+			</div>
+		</main>
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/vue.js"></script>
+		<script type="text/javascript">
+			var vmm = new Vue({
+				el:'.main',
+				data:{
+					keywords:'',
+					company:[]
+					
+				},
+				created(){
+					this.getdata();
+					},
+				methods:{
+					getdata(){
+						var that = this;
+						jQuery.ajax({
+							type:'post',
+							datatype:'json',
+							async:false,
+							url:'/yilian/api/agentCompanies',
+							
+							success:function(res){
+								console.log(res);
+								if(res.errorCode == 00000){
+									that.company= res.data
+									console.log(that.company);
+								}
+							},
+							error:function(res){
+								console.log(res)
+								layer.msg(res)
+							}	
+							
+						})
+						
+					},
+					seach(keywords){
+						return this.company.filter(item => {
+							console.log(keywords);
+							if (item.org_name.indexOf(keywords) != -1) {
+								console.log(keywords);
+								return item
+							} //filter方法来循环数组返回的是一个符合条件的新数组
+						})
+						},
+						agentCompanyDetail:function(val){
+					         return '/yilian/api/agentCompanyDetail/'+val
+					     },
+				},
+				
+				
+				
+			}) 
+		</script>
+	</body>
+</html>

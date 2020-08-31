@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.ResonancePoolRecordDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		select
+		`id`,`resonance_id`,`user_id`,`money`,`create_time`,`update_time`,`status`
+		from t_resonance_pool_record where id = #{value}
+	</select>
+	<select id="getByUserId"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		select * from t_resonance_pool_record where resonance_id=#{resonanceId} and
+		user_id
+		=#{userId} AND status =#{status}
+	</select>
+	<!-- 查看个人共振记录 -->
+	<select id="getUserRecord"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		select * from t_resonance_pool_record where user_id
+		=#{userId} AND status =#{staus}
+	</select>
+	<!-- 查看个人共振历史记录 -->
+	<select id="getUserHistoryRecord"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		 SELECT t3.money,rss.level1,t3.create_time
+		 FROM  t_resonance_pool_record t3,	 
+		 ( select (@ranking_list:=@ranking_list+1) as level1,t.create_time,t.id from t_resonance_pool t,(SELECT @ranking_list:=0)AS var where resonance_status =1
+     GROUP BY  id  ORDER BY create_time  DESC) rss  WHERE t3.resonance_id=rss.id   AND t3.user_id=#{userId}
+	</select>
+
+	<select id="getUserLevel"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		select t.* from t_resonance_pool_record t ,t_front_user t1
+		where
+		t1.user_limitsss=#{level} and resonance_id = #{resonanceId}  AND t.user_id=t1.user_id
+	</select>
+	<select id="getUserLevelNum" resultType="int">
+<!-- 		select count(1) from
+		t_resonance_pool_record t ,t_front_user t1 where
+		t1.user_limitsss=#{level} and resonance_id = #{resonanceId} and status
+		=0 -->
+		
+		SELECT COUNT(1) from  
+		t_resonance_pool_record t  LEFT JOIN  t_front_user t1  ON t.user_id=t1.user_id  WHERE  t1.user_limitsss=#{level}
+		and resonance_id = #{resonanceId} 
+	</select>
+
+	<!--个人投放,判断是否存在记录 -->
+	<insert id="saveSelefPutInto">
+		insert into t_resonance_pool_record
+		(
+		`resonance_id`,
+		`user_id`,
+		`money`
+		) select #{resonanceId},#{userId},#{money} FROM DUAL
+		WHERE NOT EXISTS (SELECT 1 FROM t_resonance_pool_record WHERE user_id
+		= #{userId} and status=0 and resonance_id=#{resonanceId})
+	</insert>
+	<select id="getHistoryCount" resultType="java.util.HashMap">
+		SELECT COUNT(IF(level1=1,TRUE,NULL))AS count1,
+		COUNT(IF(level2=1,TRUE,NULL))AS count2, 10 AS count3
+<!-- 		,
+		SUM(IF(level1=1,money,0)) as money1, SUM(IF(level2=1,money,0)) as
+		money2, SUM(IF(level3=1,money,0)) as money3 -->
+		FROM t_resonance_pool_record tt WHERE tt.resonance_id=#{resonanceId}
+	</select>
+
+	<!--排行榜查询指定用户第几名 -->
+	<select id="getRankingResonance" resultType="java.util.HashMap">
+		SELECT rn.user_id,t1.user_name,t1.user_tel,money,
+		cast(ranking_list as
+		char) as rankingList,level1,level2,level3,create_time
+		FROM
+		(
+		SELECT
+		user_id,@ranking_list:=@ranking_list+1 AS
+		ranking_list,level1,level2,level3,money,create_time
+		FROM
+		t_resonance_pool_record,(SELECT
+		@ranking_list:=0)AS var
+		<where>
+			status=#{status}
+			<if test="resonanceId != null and resonanceId != ''"> and resonance_id = #{resonanceId} </if>
+		</where>
+		ORDER BY money  desc
+		) rn LEFT JOIN t_front_user t1 ON
+		rn.user_id=t1.user_id
+		WHERE
+		<if test="userId != null and userId != ''">
+			rn.user_id=#{userId}
+		</if>
+	</select>
+	<!--共振排行榜查询 -->
+	<select id="listRankingResonance" resultType="java.util.HashMap">
+		SELECT t.user_id ,cast(@ranking_list:=@ranking_list+1 AS CHAR )
+		AS
+		ranking_list,t1.user_name,t1.user_tel,level1,level2,level3,t.id,money
+		FROM
+		t_resonance_pool_record t,(SELECT @ranking_list:=0)AS
+		var,t_front_user
+		t1
+		<where>
+			t.user_id=t1.user_id
+			<if test="resonanceId != null and resonanceId != ''">
+				and resonance_id = #{resonanceId}
+			</if>
+			<if test="status != null and status != ''">
+				AND status=#{status}
+			</if>
+		</where>
+		ORDER BY money desc 
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="list"
+		resultType="com.renegade.domain.ResonancePoolRecordDO">
+		select
+		`id`,`resonance_id`,`user_id`,`money`,`create_time`,`update_time`,`status`
+		from t_resonance_pool_record
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="resonanceId != null and resonanceId != ''"> and resonance_id = #{resonanceId} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="level1 != null and level1 != ''"> and level1 = #{level1} </if>
+			<if test="level2 != null and level2 != ''"> and level2 = #{level2} </if>
+			<if test="level3 != null and level3 != ''"> and level3 = #{level3} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_resonance_pool_record
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="resonanceId != null and resonanceId != ''"> and resonance_id = #{resonanceId} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="level1 != null and level1 != ''"> and level1 = #{level1} </if>
+			<if test="level2 != null and level2 != ''"> and level2 = #{level2} </if>
+			<if test="level3 != null and level3 != ''"> and level3 = #{level3} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.ResonancePoolRecordDO"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		t_resonance_pool_record
+		(
+		`resonance_id`,
+		`user_id`,
+		`money`
+		)
+		values
+		(
+		#{resonanceId},
+		#{userId},
+		#{money}
+		)
+	</insert>
+	<update id="update"
+		parameterType="com.renegade.domain.ResonancePoolRecordDO">
+		update t_resonance_pool_record
+		<set>
+			<if test="money != null">`money` = `money`+#{money}, </if>
+		</set>
+		where resonance_id = #{resonanceId} and user_id = #{userId} and status
+		= 0
+	</update>
+	<update id="updateStatus"
+		parameterType="com.renegade.domain.ResonancePoolRecordDO">
+		update t_resonance_pool_record
+		<set>
+			<if test="level1 != null and level1 != ''">`level1` =#{level1}, </if>
+			<if test="level2 != null and level2 != ''">`level2` =#{level2}, </if>
+			<if test="level3 != null and level3 != ''">`level3` =#{level3}, </if>
+			status=1
+		</set>
+		<where>
+		  	user_id = #{userId}  and id=#{id} 
+		</where>
+	
+	</update>
+	<delete id="remove">
+		delete from t_resonance_pool_record where id =
+		#{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_resonance_pool_record where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

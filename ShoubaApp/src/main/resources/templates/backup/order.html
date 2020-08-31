@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/nav.js" ></script>
+		<style>
+		#footer ul li:nth-child(2) a i:nth-child(1){display: block !important;}
+		#footer ul li:nth-child(2) a i:nth-child(2){display: none !important;}
+		#footer ul li:nth-child(2) a p{color: #4D80F0;}
+		</style>
+	</head>
+	<body style="background: #eeeeee;">
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>订单</h1>
+			<select id="chooseZone" onchange="onChooseZone(this)">
+				<option value="4" th:checked="${zone4}">4币区</option>
+				<option value="40" th:selected="${zone40}">40币区</option>
+			</select>
+		</div>
+		<div class="order-main">
+			<div class="tab">
+				<a href="javascript:;" class="active">买单<span class="active1"></span></a>
+				<a href="javascript:;">卖单<span></span></a>
+
+			</div>
+			<p style="width: 100%;background: #EEEEEE;height: 3px;"></p>
+			<div class="con on">
+				<div class="buy">
+					<span>时间</span>
+					<span>数量</span>
+					<span>单价</span>
+					<span>总额</span>
+					<span>状态</span>
+				</div>
+				<ul th:each="user: ${userList}">
+					<li>
+						<span th:text="${user.cre_date}"></span>
+						<span th:text="${user.quantity}"></span>
+						<span th:text="${user.quantity_price}"></span>
+						<span th:text="${user.quantity_total}"></span>
+						<span class="blue" th:switch="${user.state}">
+							<p th:case="4">
+								<a th:href="'/m9/order/Order_detail2?id='+${user.id}">待确认</a>
+							</p>
+							<p th:case="5">
+								<a th:href="'/m9/order/Order_details?id='+${user.id}">待打款</a>
+							</p>
+							<p th:case="3">
+								<a th:href="'/m9/order/Order_details3?id='+${user.id}">已完成</a>
+							</p>
+							<p th:case="1">
+								<a th:href="'/m9/order/Purchase?id='+${user.id}">求购中</a>
+							</p>
+<!--							<p th:case="2">-->
+<!--								<a href="#">已撤单</a>-->
+<!--							</p>-->
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="con">
+				<div class="buy">
+					<span>时间</span>
+					<span>数量</span>
+					<span>单价</span>
+					<span>总额</span>
+					<span>状态</span>
+				</div>
+				<ul th:each="buyer: ${buyerList}">
+					<li>
+						<span th:text="${buyer.cre_date}"></span>
+						<span th:text="${buyer.quantity}"></span>
+						<span th:text="${buyer.quantity_price}"></span>
+						<span th:text="${buyer.quantity_total}"></span>
+						<span class="blue" th:switch="${buyer.state}">
+							<p th:case="4">
+								<a th:href="'/m9/order/sale_order?id='+${buyer.id}">待确认</a>
+							</p>
+							<p th:case="5">
+								<a th:href="'/m9/order/sale_order1?id='+${buyer.id}">待付款</a>
+							</p>
+							<p th:case="3">
+								<a th:href="'/m9/order/sale_order2?id='+${buyer.id}">已完成</a>
+							</p>
+						</span>
+					</li>
+				</ul>
+			</div>
+
+			
+		</div>
+		<div id="footer"></div>
+		<script>
+			//切换
+			$(".tab a").click(function() {
+				var index = $(".tab a").index($(this));
+				$(".tab a").removeClass("active").eq(index).addClass("active");
+				$(".tab span").removeClass("active1").eq(index).addClass("active1");
+				$(".con").removeClass("on").eq(index).addClass("on");
+			})
+
+			function onChooseZone(elem){
+				var ckd = $(elem).val();
+				window.location.href='/m9/order/Order?zone='+ckd;
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<title>扣款记录</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+				
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+				<h1>扣款记录</h1>
+			</header>
+			<main class="main">
+				<form name="form" method="get" action="/yilian/api/deductRecord">
+				<div class="agent-seach">
+					<span>
+						<img src="../../img/seach.png" />
+						<input type="search" th:name="real_name" placeholder="姓名"/>
+					</span>
+					<span onclick="deductRecordQuery()">查询</span>
+				</div>
+				<div class="seach-list-warp">
+					<div class="details-warp">
+						<div class="details-item">
+							<ul class="item-txt" th:each="rd: ${record}">
+								<div th:if="${rd.amount}>1">
+									<li>
+										<span>姓名：</span>
+										<span th:text="${rd.real_name}">陈一</span>
+									</li>
+									<li>
+										<span>扣款金额：</span>
+										<span class="blod color-blue" th:text="${rd.amount}">￥2000</span>
+									</li>
+									<li>
+										<span>手机号：</span>
+										<span th:text="${rd.user_tel}">13542124512</span>
+									</li>
+									<li>
+										<span>发起扣款时间：</span>
+										<span th:text="${rd.apply_datetime}">2018/09/05 15:34:07</span>
+									</li>
+									<li>
+										<span>实际扣款时间：</span>
+										<span th:text="${rd[paytime]}?${rd[paytime]}">2018/09/05 15:34:07</span>
+									</li>
+									<li>
+										<span>拒绝原因：</span>
+										<span th:text="${rd[approve1_mark]}?${rd[approve1_mark]}"></span>
+									</li>
+									<li>
+										<span>状态：</span>
+										<span class="blod color-blue" th:switch="${rd.status}">
+										<p th:case="06">扣款中</p>
+										<p th:case="90">审核拒绝</p>
+										<p th:case="94">扣款成功</p>
+										<p th:case="91">扣款失败</p>
+										<p th:case="99">扣款成功</p>
+										<p th:case="96">扣款成功</p>
+									</span>
+									</li>
+								</div>
+
+<!--								<li>-->
+<!--									<span>备注：</span>-->
+<!--&lt;!&ndash;									<span th:text="${rd.approve2_mark}"></span>&ndash;&gt;-->
+<!--								</li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				</form>
+			</main>
+
+			<script type="text/javascript">
+				function deductRecordQuery(){
+					document.forms[0].submit();
+				}
+			</script>
+		</body>
+</html>
+

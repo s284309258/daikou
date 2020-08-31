@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			body{width: 100%;}
+			.notice{width: 100%;}
+			.notice ul{display: flex;justify-content: center;align-items: center;flex-direction: column;}
+			.notice ul li{border-bottom: 1px solid rgba(239, 239, 239,.8);padding: 3% 0px;width: 100%;}
+			.notice ul li a{width: 100%;display: block;}
+			.notice ul li  h3{padding:0px  5% ;display: flex;align-items: center;justify-content: space-between;margin: 0 auto;}
+			.notice ul li  h3 span{color: #333333;display: block;font-size: 0.95rem;width: 70%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+			.notice ul li p time{display: block;font-size: .7rem;color: #999999}
+			.notice ul li p{display: block;text-align: right;width:90%;}
+			.notice ul li  #con{font-size: .8rem;color: #666666;padding: 3% 5%;text-indent: 2rem;letter-spacing: 2px;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>公告</h1>
+		</div>
+		<div class="notice">
+			<ul>
+				<li>
+					<h3><span th:text="${frontNotice.boticeTip}">最好的JavaScript数据可视化库最好的JavaScript数据可视化库最好的JavaScript数据可视化库</span>
+					</h3>
+					<div id="con" th:text="${frontNotice.noticeDesc}">在 JS 程序中，为了实现漂亮的图形、图表和数据可视化，我们选择使用开源库。生活在数据爆炸的时代，我们开发的每一个应用程序几乎都使用或者借助数据来提升用户体验。为了帮助你轻松地为你最喜欢的应用程序添加漂亮的数据可视化，这里列出了 2019 年最好的 JavaScript 数据可视化库（排名不分先后）
+					</div>
+					<p><time th:text="${#dates.format(frontNotice.createTime, 'yyyy-MM-dd HH:mm:ss')}">2019-01-01</time></p>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+	</body>
+</html>

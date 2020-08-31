@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<style>
+			.layui-layer-content{text-align: center !important;font-size: 1rem !important;}
+			.layui-layer-title{display: none !important;}
+			.layui-layer-dialog{border-radius: 10px !important;}
+			.layui-layer-close1{display: none !important;}
+			.layui-layer-btn{display: flex !important;justify-content: space-between !important;border-top: 1px solid #E6E6E6 !important;}
+			.layui-layer-btn0{background: none !important;color: #0077FF !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.layui-layer-btn1{background: none !important;color: #777777 !important;font-weight: bold !important;border: none !important;outline: none !important;}
+		</style>
+		<title>扣款审核</title>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>扣款审核</h1>
+		</header>
+		<div class="main-list">
+			<ul th:each="rd: ${record}">
+				<li class="audit-warp" th:if="${rd.amount}>1">
+					<dl>
+						<dt>
+							<span>姓名：</span>
+							<span th:text="${rd.real_name}">亚亚</span>
+						</dt>
+						<dt>
+							<span>扣款金额：</span>
+							<span class="color-blue" th:text="${rd.amount}">￥1000.00</span>
+						</dt>
+						<dt>
+							<span>手机号：</span>
+							<span th:text="${rd.user_tel}">13542124512</span>
+						</dt>
+						<dt>
+							<span>身份证号码：</span>
+							<span th:text="${rd.user_card}">54227819631118675X</span>
+						</dt>
+						<dt>
+							<span>录入时间：</span>
+							<span th:text="${rd.create_time}">2018/09/05 15:34:07</span>
+						</dt>
+						<dt>
+							<span>扣款协议：</span>
+							<a th:href="@{'/yilian/api/sign/'+${rd.user_id}}">已签订<img src="../../img/next.png" class="next" /></a>
+						</dt>
+						<dt>
+							<span>证件信息：</span>
+							<a th:href="@{'/yilian/api/withholdUserDetail/'+${rd.user_id}}"><img src="../../img/next.png" class="next" /></a>
+						</dt>
+						<dt>
+							<span>申请时间：</span>
+							<span th:text="${rd.apply_datetime}">2018/09/05 15:34:07</span>
+						</dt>
+						<dt>
+							<span>拒绝原因：</span>
+							<textarea rows="3" cols="20" th:id="@{'reason'+${rd.id}}" name="remark"></textarea>
+						</dt>
+						<dt class="flex-right">
+							<button type="button" id="refuse" th:onclick="refuseDeductOne([[${rd.id}]])">拒绝扣款</button>
+							<button type="button" id="agree" th:onclick="agreeDeductOne([[${rd.id}]])">同意扣款</button>
+						</dt>
+					</dl>
+				</li>
+			</ul>
+		</div>
+
+		<!-- js -->
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			// $('#agree').click(function() {
+			// 	layer.confirm('同意扣款', {
+			// 		// offset: [200, 600],
+			// 		btn: ['确定', '取消'] //按钮
+			// 	}, function() {
+			// 		$.ajax({
+			// 			url:'/yilian/api/agreeDeductOne/',
+			// 			type:'post',
+			// 			success:function(result){
+			// 				layer.msg(result.message);
+			// 			}
+			// 		});
+			// 	}, function() {
+			// 		layer.msg('扣款取消')
+			// 	});
+			// })
+
+			function refuseDeductOne(order_id){
+				var reason = $("#reason"+order_id).val();
+				//debugger
+				if(reason==""){
+					return layer.msg("拒绝原因不能为空");
+				}
+				$.ajax({
+					url:'/yilian/api/refuseDeductOne/'+order_id,
+					data:{
+						remark:reason
+					},
+					type:'post',
+					success:function(result){
+						layer.msg(result.message,{
+							end:function(){
+								window.location.href = "/yilian/api/withholdAudit";
+							}
+						});
+					},
+					error:function(result){
+						layer.msg(result.message);
+					}
+				});
+			}
+
+			function agreeDeductOne(order_id){
+				layer.confirm('同意扣款', {
+					// offset: [200, 600],
+					btn: ['确定', '取消'] //按钮
+				}, function() {
+					$.ajax({
+						url:'/yilian/api/agreeDeductOne/'+order_id,
+						type:'post',
+						success:function(result){
+							layer.msg(result.message,{
+								end:function(){
+									window.location.href = "/yilian/api/withholdAudit";
+								}
+							});
+						},
+						error:function(result){
+							layer.msg(result.message);
+						}
+					});
+				}, function() {
+					layer.msg('扣款取消')
+				});
+			}
+		</script>
+	</body>
+</html>

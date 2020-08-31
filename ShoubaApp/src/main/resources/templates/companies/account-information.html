@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<link rel="stylesheet" href="../../css/layui.css" />
+			<title>证件信息</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+				<h1>证件信息</h1>
+			</header>
+			<main class="main" v-for="item in details">
+				<div class="seach-list-warp">
+					<ul class="item-details">
+						<li>
+							<span>姓名：</span>
+							<span>{{item.real_name}}</span>
+						</li>
+						<li>
+							<span>手机号：</span>
+							<span>{{item.user_tel}}</span>
+						</li>
+						<li>
+							<span>身份证号码：</span>
+							<span>{{item.user_card}}</span>
+						</li>
+						<li>
+							<span>金额：</span>
+							<span class="color-blue">￥{{item.amount}}</span>
+						</li>
+						<li>
+							<span>开户行：</span>
+							<span>{{item.bank_name}}</span>
+						</li>
+						<li>
+							<span>银行卡号：</span>
+							<span>{{item.bank_account}}</span>
+						</li>
+						<li>
+							<span>开户时间：</span>
+							<span>{{item.create_time}}</span>
+						</li>
+						<li>
+							<span>归属业务员：</span>
+							<span >{{item.staff_name}}</span>
+						</li>
+						<li>
+							<span>代扣协议：</span>
+							<a href="sign-success.html">已签订<img src="../../img/next.png" class="next"/></a>
+						</li>
+						<li>
+							<span>证件信息：</span>
+							<span></span>
+						</li>
+					</ul> 
+					<div class="certificates-img">
+						<ul>
+							
+							<li>
+								<img :src="item.acc_poto1" />
+							</li>
+							<li>
+								<img :src="item.acc_poto2" />
+							</li>
+							<li>
+								<img :src="item.card_poto1" />
+							</li>
+							<li>
+								<img :src="item.card_poto2" />
+							</li>
+							<li>
+								<img :src="item.person_poto" />
+							</li>
+							<li>
+								<img src="../../img/index-bg.png" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			
+			</main>
+	</head>
+	<script src="../../js/jquery-3.5.1.js"></script>
+	<script src="../../js/vue.js"></script>
+	<script type="text/javascript">
+		var vmm = new Vue({
+			el: ".main",
+			data: {
+				keywords: '',
+				details: {},
+			},
+			mounted() {
+				this.getdata()
+			},
+			methods: {
+				getdata: function() {
+					var that = this;
+					jQuery.ajax({
+						type: 'post',
+						url: '/yilian/api/withholdUserInfo',
+						success: function(res) {
+							console.log(res);
+							if (res.errorCode == 00000) {
+								that.details = res.data
+							}
+						},
+						error: function(res) {
+							console.log(res);
+							layer.msg(res)
+						}
+					})
+				},
+				
+				
+			}
+		})
+	</script>
+	<body>
+	</body>
+</html>

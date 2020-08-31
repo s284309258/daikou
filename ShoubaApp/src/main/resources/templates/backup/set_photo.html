@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/gVerify.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/core.js" ></script>
+		<style>
+			.touImg{border: 1px solid #e5e5e5;position: relative;width:60px; height: 60px;background:#e5e5e5;border-radius: 50%;margin: 5% auto;}
+			.touImg img{border-radius: 50%;border: 1px solid #e5e5e5}
+			.ok{position: relative;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>修改头像</h1>
+		</div>
+
+
+
+
+		<form enctype="multipart/form-data" id="author_form">
+			<div id="xmTanDiv_1" class="touImg">
+	                         	<input type="hidden" id="uploadOrderid" name="id" value="">
+	                            <input type="file" name="browerfile" id="xdaTanFileImg_1" style="width: 55px; height: 50px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_1(this)" accept="image/*"/>
+	                         	<i style="border-radius: 50px;overflow:hidden;z-index:1;">
+	                         		<img style="width: 100%;height: 100%;display:block;" id="xmTanImg_1"/>
+	                         	</i>
+                        	</div>
+			<div class="ok" onclick="save_poto()">保存</div>
+		</form>
+
+
+
+
+
+		<script>
+			
+			function save_poto(){
+				var formData = new FormData($('#author_form')[0]);
+				$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'/m9/user/uploadFile',
+					cache : false,
+					data : formData,
+					processData : false, //data值是FormData对象，不需要对数据做处理。
+					contentType : false,//设置contentType值，因为是由<form>表单构造的FormData对象，且已经声明了属性enctype="multipart/form-data"，所以这里设置为false。
+					success : function(result) {
+						if(result.success==true){
+							layer.msg(result.msg, {
+								icon: 1,//提示的样式
+								time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								end:function(){
+									window.location.href = "/m9/user/index";
+								}
+							});
+						}else{
+							layer.msg(result.msg, {
+								icon: 2,//提示的样式
+								time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								end:function(){
+
+								}
+							});
+						}
+					},
+					error : function(result){
+					}
+				});
+			}
+
+		function xmTanUploadImg_1(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择!');return false;
+		}
+		var img = document.getElementById("xmTanImg_1");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+
+</script>
+	</body>
+</html>

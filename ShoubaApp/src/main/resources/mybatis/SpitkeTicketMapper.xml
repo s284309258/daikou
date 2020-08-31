@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.SpitkeTicketDao">
+
+	<select id="get" resultType="com.renegade.domain.SpitkeTicketDO">
+		select
+		`id`,`goods_id`,`user_id`,`spike_ticket`,`status`,`state`,`create_time`
+		from t_spitke_ticket where id = #{value}
+	</select>
+	<!-- 一对多 -->
+	<resultMap type="com.renegade.domain.SpotGoodsDO"
+		id="resultMap1">
+		<id property="goodsId" column="goods_id" />
+		<result property="goodsName" column="goods_name" />
+		<result property="goodsDesc" column="goods_desc" />
+		<collection property="spitkeTicketDOs"
+			ofType="com.renegade.domain.SpitkeTicketDO">
+			<id property="id" column="id" />
+			<result property="spikeTicket" column="spike_ticket" />
+			<result property="goodsId" column="goods_id" />
+		</collection>
+	</resultMap>
+	<!-- 抵扣券详情 -->
+	<select id="listTicketsDetail" resultMap="resultMap1" parameterType="com.renegade.domain.SpitkeTicketDO">
+		select
+		t.*,t1.goods_name,t1.goods_desc,t1.goods_id
+		from t_spitke_ticket t right join t_spot_goods t1 on
+		t1.goods_id=t.goods_id
+		where t.user_id = #{userId} and
+		t.status=#{status}
+	</select>
+	<!-- 消费秒杀券 -->
+	<update id="updateExpenseTickets">
+		update t_spitke_ticket set status=1 where status=0
+		and goods_id=#{goodsId}
+		and user_id = #{userId} 
+		order by create_time
+		limit #{num}
+	</update>
+	<!--统计使用和未使用的秒杀券  -->
+	<select id="countNum" resultType="java.util.HashMap">
+		select count(if(status=1,TRUE,NULL))as num1,count(if(status=0,TRUE,NULL))as num2
+		,`status` from t_spitke_ticket where user_id =#{userId}	
+	</select>
+	<!-- 统计某个商品某个用户持有秒杀券 -->
+	<select id="countUserNum" resultType="int">
+	 select count(1) from t_spitke_ticket  where user_id =#{userId}	 and  status=0 and goods_id=#{goodsId}
+	</select>
+	<select id="list"
+		resultType="com.renegade.domain.SpitkeTicketDO">
+		select
+		`id`,`goods_id`,`user_id`,`spike_ticket`,`status`,`state`,`create_time`
+		from t_spitke_ticket
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="goodsId != null and goodsId != ''"> and goods_id = #{goodsId} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="spikeTicket != null and spikeTicket != ''"> and spike_ticket = #{spikeTicket} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="state != null and state != ''"> and state = #{state} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_spitke_ticket
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="goodsId != null and goodsId != ''"> and goods_id = #{goodsId} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="spikeTicket != null and spikeTicket != ''"> and spike_ticket = #{spikeTicket} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="state != null and state != ''"> and state = #{state} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.SpitkeTicketDO"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_spitke_ticket
+		(
+		`goods_id`,
+		`user_id`,
+		`spike_ticket`
+		)
+		values
+		(
+		#{goodsId},
+		#{userId},
+		#{spikeTicket}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.SpitkeTicketDO">
+		update t_spitke_ticket
+		<set>
+			<if test="goodsId != null">`goods_id` = #{goodsId}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="spikeTicket != null">`spike_ticket` = #{spikeTicket}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="state != null">`state` = #{state}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from t_spitke_ticket where id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_spitke_ticket where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

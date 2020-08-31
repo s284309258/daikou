@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<style>
+			.layui-layer-content{text-align: center !important;font-size: 1rem !important;}
+			.layui-layer-title{display: none !important;}
+			.layui-layer-dialog{border-radius: 10px !important;}
+			.layui-layer-close1{display: none !important;}
+			.btn-bg{background: #0077FF !important;}
+			.layui-layer-btn{display: flex !important;justify-content: space-between !important;border-top: 1px solid #E6E6E6 !important;}
+			.layui-layer-btn0{background: none !important;color: #0077FF !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.layui-layer-btn1{background: none !important;color: #777777 !important;font-weight: bold !important;border: none !important;outline: none !important;}
+		</style>
+		<title>代扣审核</title>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>代扣审核</h1>
+		</header>
+		<div class="information-list">
+			<ul>
+				<li>
+					<span>姓名：</span>
+					<span>姜伟</span>
+				</li>
+				<li>
+					<span>手机号：</span>
+					<span>13542124512</span>
+				</li>
+				<li>
+					<span>代扣协议：</span>
+					<a href="account-information.html">已签订<img class="next" src="../../img/next.png" /></a>
+				</li>
+				<li>
+					<span>代扣金额：</span>
+					<input type="number" placeholder="请输入金额" id="money" />
+				</li>
+				<p class="withhold-btn"><button type="button" id="sub">发起扣款</button></p>
+			</ul>
+		</div>
+
+		<!-- js -->
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<!-- . -->
+
+		<script type="text/javascript">
+			$(function(){
+			  $('input').on('input propertychange', function() {
+			 
+			   if($.trim($('#money').val()) !== ""){
+			      $('#sub').css({"background-color":"#0077FF","color":"white","border":"none"});
+				  $('#sub').prop('disabled','true');
+			    } else {
+			       $('#sub').css({"background-color":"#ffffff","color":"#777777","border":"1px solid #707070"});
+				   $('#sub').prop('disabled','disabled');
+			    }
+			  });
+			
+			});
+		</script>
+	</body>
+</html>

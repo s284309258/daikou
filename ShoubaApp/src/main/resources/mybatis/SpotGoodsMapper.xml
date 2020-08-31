@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.SpotGoodsDao">
+	<select id="listTypeGoods"
+		resultType="com.renegade.domain.SpotGoodsDO">
+		select t1.*,t2.category_name
+		from t_spot_goods t1 left join
+		t_goods_category t2 on
+		t1.goods_category=t2.id
+		where goods_user_id =
+		#{goodsUserId} and goods_id=#{goodsId}
+	</select>
+
+	<select id="get" resultType="com.renegade.domain.SpotGoodsDO">
+		select
+		*
+		from t_spot_goods where
+		goods_id = #{value}
+	</select>
+	<!-- 卖单增加商品库存 -->
+	<update id="updateStockNum">
+		update t_spot_goods set
+		goods_stock=goods_stock+#{goodsStock} where goods_id=#{goodsId}
+	</update>
+	<update id="reduceStockNum">
+		update t_spot_goods set
+		goods_stock=goods_stock-#{goodsStock} where goods_id=#{goodsId} and
+		goods_stock-#{goodsStock} &gt;=0
+	</update>
+	<!-- 卖单增加商品销量 -->
+	<update id="updateSaleNum">
+		update t_spot_goods set
+		goods_sales=goods_sales+#{goodsSales} where goods_id=#{goodsId}
+	</update>
+	<!-- 减少商品库存增加商品销量 -->
+	<update id="updateSaleStockNum">
+		update t_spot_goods set
+		goods_sales=goods_sales+#{goodsStock},goods_stock=goods_stock-#{goodsStock}
+		where goods_id=#{goodsId} and goods_stock-#{goodsStock} &gt;=0
+	</update>
+	<!--减少秒杀库存  -->
+	<update id="updateSaleSpikeNum">
+		update t_spot_goods set
+		goods_name_en=goods_name_en-#{goodsNameEn}
+		where goods_id=#{goodsId} and goods_name_en-#{goodsNameEn} &gt;=0
+	</update>
+
+	<select id="listGoodsCategory"
+		resultType="com.renegade.domain.SpotGoodsDO">
+		select
+		t.*,if(t.goods_user_id=0,"vs官方旗舰店",(select profile from
+		t_front_user where user_id=t.goods_user_id)) as goodsBrandEn
+		from
+		t_spot_goods t
+		<where>
+			<if test="goodsId != null and goodsId != ''"> and goods_id = #{goodsId} </if>
+			<if test="goodsCategory != null and goodsCategory != ''"> and goods_category = #{goodsCategory} </if>
+			<if test="goodsStatus != null and goodsStatus != ''"> and goods_status = #{goodsStatus} </if>
+		</where>
+	</select>
+	<select id="list" resultType="com.renegade.domain.SpotGoodsDO">
+		select
+		*
+		from t_spot_goods
+		<where>
+			<if test="goodsId != null and goodsId != ''"> and goods_id = #{goodsId} </if>
+			<if test="goodsName != null and goodsName != ''"> and goods_name = #{goodsName} </if>
+			<if test="goodsOriginPrice != null and goodsOriginPrice != ''"> and goods_origin_price = #{goodsOriginPrice} </if>
+			<if test="goodsPrice != null and goodsPrice != ''"> and goods_price = #{goodsPrice} </if>
+			<if test="goodsCategory != null and goodsCategory != ''"> and goods_category = #{goodsCategory} </if>
+			<if test="goodsItemno != null and goodsItemno != ''"> and goods_itemNO = #{goodsItemno} </if>
+			<if test="goodsBrand != null and goodsBrand != ''"> and goods_brand = #{goodsBrand} </if>
+			<if test="goodsDesc != null and goodsDesc != ''"> and goods_desc = #{goodsDesc} </if>
+			<if test="goodsPicture != null and goodsPicture != ''"> and goods_picture = #{goodsPicture} </if>
+			<if test="goodsPictureDesc != null and goodsPictureDesc != ''"> and goods_picture_desc = #{goodsPictureDesc} </if>
+			<if test="goodsStock != null and goodsStock != ''"> and goods_stock = #{goodsStock} </if>
+			<if test="goodsSales != null and goodsSales != ''"> and goods_sales = #{goodsSales} </if>
+			<if test="goodsStatus != null and goodsStatus != ''"> and goods_status = #{goodsStatus} </if>
+			<if test="goodsFirst != null and goodsFirst != ''"> and goods_first = #{goodsFirst} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="goodsPostage != null and goodsPostage != ''"> and goods_postage = #{goodsPostage} </if>
+			<if test="goodsNameEn != null and goodsNameEn != ''"> and goods_name_en = #{goodsNameEn} </if>
+			<if test="goodsBrandEn != null and goodsBrandEn != ''"> and goods_brand_en = #{goodsBrandEn} </if>
+			<if test="goodsUserId != null and goodsUserId != ''"> and goods_user_id = #{goodsUserId} </if>
+			<if test="goodsState != null and goodsState != ''"> and goods_state = #{goodsState} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by goods_id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_spot_goods
+		<where>
+			<if test="goodsId != null and goodsId != ''"> and goods_id = #{goodsId} </if>
+			<if test="goodsName != null and goodsName != ''"> and goods_name = #{goodsName} </if>
+			<if test="goodsOriginPrice != null and goodsOriginPrice != ''"> and goods_origin_price = #{goodsOriginPrice} </if>
+			<if test="goodsPrice != null and goodsPrice != ''"> and goods_price = #{goodsPrice} </if>
+			<if test="goodsCategory != null and goodsCategory != ''"> and goods_category = #{goodsCategory} </if>
+			<if test="goodsItemno != null and goodsItemno != ''"> and goods_itemNO = #{goodsItemno} </if>
+			<if test="goodsBrand != null and goodsBrand != ''"> and goods_brand = #{goodsBrand} </if>
+			<if test="goodsDesc != null and goodsDesc != ''"> and goods_desc = #{goodsDesc} </if>
+			<if test="goodsPicture != null and goodsPicture != ''"> and goods_picture = #{goodsPicture} </if>
+			<if test="goodsPictureDesc != null and goodsPictureDesc != ''"> and goods_picture_desc = #{goodsPictureDesc} </if>
+			<if test="goodsStock != null and goodsStock != ''"> and goods_stock = #{goodsStock} </if>
+			<if test="goodsSales != null and goodsSales != ''"> and goods_sales = #{goodsSales} </if>
+			<if test="goodsStatus != null and goodsStatus != ''"> and goods_status = #{goodsStatus} </if>
+			<if test="goodsFirst != null and goodsFirst != ''"> and goods_first = #{goodsFirst} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="goodsPostage != null and goodsPostage != ''"> and goods_postage = #{goodsPostage} </if>
+			<if test="goodsNameEn != null and goodsNameEn != ''"> and goods_name_en = #{goodsNameEn} </if>
+			<if test="goodsBrandEn != null and goodsBrandEn != ''"> and goods_brand_en = #{goodsBrandEn} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.SpotGoodsDO"
+		useGeneratedKeys="true" keyProperty="goodsId">
+		insert into t_spot_goods
+		(
+		`goods_name`,
+		`goods_user_id`,
+		`goods_origin_price`,
+		`goods_price`,
+		`goods_category`,
+		`goods_itemNO`,
+		`goods_brand`,
+		`goods_desc`,
+		`goods_picture`,
+		`goods_picture_desc`,
+		`goods_stock`,
+		`goods_first`,
+		`create_time`,
+		goods_name_en
+		)
+		values
+		(
+		#{goodsName},
+		#{goodsUserId},
+		#{goodsOriginPrice},
+		#{goodsPrice},
+		#{goodsCategory},
+		#{goodsItemno},
+		#{goodsBrand},
+		#{goodsDesc},
+		#{goodsPicture},
+		#{goodsPictureDesc},
+		#{goodsStock},
+		#{goodsFirst},
+		#{createTime},
+		#{goodsNameEn}
+		)
+	</insert>
+	<update id="updatePutWay">
+		update t_spot_goods set goods_status=1 where
+		goods_status='-1' and
+		goods_state=1 and goods_id=#{goodsId}
+	</update>
+	<update id="updatePullWay">
+		update t_spot_goods set goods_status=-1 where
+		goods_status='1' and
+		goods_state=1 and goods_id=#{goodsId}
+	</update>
+	<update id="update"
+		parameterType="com.renegade.domain.SpotGoodsDO">
+		update t_spot_goods
+		<set>
+			<if test="goodsName != null">`goods_name` = #{goodsName}, </if>
+			<if test="goodsOriginPrice != null">`goods_origin_price` = #{goodsOriginPrice}, </if>
+			<if test="goodsPrice != null">`goods_price` = #{goodsPrice}, </if>
+			<if test="goodsCategory != null">`goods_category` = #{goodsCategory}, </if>
+			<if test="goodsItemno != null">`goods_itemNO` = #{goodsItemno}, </if>
+			<if test="goodsDesc != null">`goods_desc` = #{goodsDesc}, </if>
+			<if test="goodsPicture != null">`goods_picture` = #{goodsPicture}, </if>
+			<if test="goodsPictureDesc != null">`goods_picture_desc` = #{goodsPictureDesc}, </if>
+			<if test="goodsStock != null">`goods_stock` = #{goodsStock}, </if>
+			<if test="goodsNameEn != null">`goods_name_en` = #{goodsNameEn}, </if>
+			<if test="goodsFirst != null">`goods_first` = #{goodsFirst}, </if>
+			goods_status='1'
+		</set>
+		where goods_id = #{goodsId}
+	</update>
+
+	<delete id="remove">
+		delete from t_spot_goods where goods_id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_spot_goods where goods_id in
+		<foreach item="goodsId" collection="array" open="("
+			separator="," close=")">
+			#{goodsId}
+		</foreach>
+	</delete>
+
+</mapper>

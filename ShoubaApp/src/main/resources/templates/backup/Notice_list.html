@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../../static/backup/css/css.css" />
+		<link rel="stylesheet" href="../../static/backup/css/font.css" />
+		<style>
+			.noticelist{width: 100%;}
+			.noticelist ul{display: flex;justify-content: center;align-items: center;flex-direction: column;}
+			.noticelist ul li{width: 100%;}
+			.noticelist ul li h3{font-size:.95rem;font-weight: normal;color: #333333;padding: 5%;word-break: break-all;}
+			.noticelist ul li time{display: block;margin: 0 5%;color: #555555;font-size: .9rem;}
+			.noticelist ul li p{display: block;word-break: break-all;padding: 5%;font-size: .9rem;color: #8D8D8D;line-height: 20px;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>公告详情</h1>
+		</div>
+		<div class="noticelist">
+			<ul th:each="frontNoticeDo:${frontNoticeDOs}">
+				<li>
+				<a th:href="@{'/editNotice/'+${frontNoticeDo.noticeId}}">
+					<h3  th:text="${frontNoticeDo.boticeTip}"></h3>
+					<time th:text="${#dates.format(frontNoticeDo.createTime, 'yyyy-MM-dd HH:mm:ss')}">2019-01-01</time>
+					</a>
+					<h1 class="line" style="margin-top: 3%;"></h1>
+				</li>
+				<li>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

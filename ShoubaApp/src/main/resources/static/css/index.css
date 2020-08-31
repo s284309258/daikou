@@ -1,0 +1,15 @@
+header{height: 20vh; }
+header h1{text-align: center;font-size: 1.2rem;padding: 5% 0px 3%;font-weight: 500;color: white;}
+.index-warp{display: flex;justify-content: center;flex-direction: column;align-items: center;}
+.index-warp img{width: 25vw;height: 25vw;}
+.index-warp h2{text-align: center;font-size: 1.1rem;margin-top: .8rem;letter-spacing: 2px;}
+.index-ilst{width: 92%;margin: 2rem auto 0px;}
+.index-ilst li{display: block;width: 100%;border-bottom: 1px solid #E6E6E6;padding-bottom: 3%;margin-top: 5%;}
+.index-ilst li a{display: flex;justify-content: space-between;font-size: .95rem;align-items: center;}
+.index-ilst li a .icon-list{width: 1.5rem;height: 1.5rem;vertical-align: middle;margin-right: 5px;}
+.index-ilst li a .next{width: 1rem;height: 1rem;}
+.index-ilst li a span:nth-child(2){display: flex;align-items: center;}
+.index-ilst li a span:nth-child(2) i{display: block;background: #0077FF;color: white;width: 10vw;text-align: center;margin-right: .5rem;
+border-radius: 10px;}
+.sign-out{display: block;appearance: none;-webkit-appearance: none;width: 80%;margin: 2rem auto 0px;color: white;background: #0077FF;border-radius: 20px;padding: 8px 0px;outline: none;}
+.main{width: 100%;}

@@ -1,0 +1,63 @@
+renegade:
+  #uploadPath: f:/var/files/
+  uploadPath: /data/app
+  #上午交易的时间段
+  startTimeAm: 903000
+  endTimeAm: 113000
+  #下午交易的时间段
+  startTimePm: 130000
+  endTimePm: 150000
+  startWeek: 2
+  endWeek: 6
+  #实名验证key
+  realNameKey: 23f9f61732bd251b72bc6ebcaff5a816
+  #实名验证接口
+  realNameUrl: http://v.juhe.cn/telecom/query
+  informationUrl: http://47.74.131.15/index.php/Home/Bitcoin/get_market_detail
+logging:
+  level:
+    root: info
+    com.renegade: debug
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jiudeli_app_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=true&autoReconnect=true&useAffectedRows=true
+    username: root
+    password: jiudeli1q20
+    hikari:
+    #池中维护的最小空闲连接数 minIdle<0或者minIdle>maxPoolSize,则被重置为maxPoolSize
+      minimum-idle: 3
+       #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)  如果maxPoolSize小于1，则会被重置。当minIdle<=0被重置为DEFAULT_POOL_SIZE则为10;如果minIdle>0则重置为minIdle的值
+      maximum-pool-size: 17
+      auto-commit: true
+      #连接允许在池中闲置的最长时间（毫秒），超时则被释放（retired），缺省:10分钟 
+      idle-timeout: 600000
+      pool-name: Renegade-四叶草-Hikari
+     # 一个连接的生命时长即最长生命周期（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';）
+      max-lifetime: 1800000
+      #如果驱动程序支持JDBC4，我们强烈建议您不要设置此属性
+      #connection-test-query: SELECT 1
+      #等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒 
+      connection-timeout: 49000
+  redis:
+    database: 11
+    #cluster:
+      #nodes: 127.0.0.1:4379,127.0.0.1:5379,127.0.0.1:6379,127.0.0.1:7379,127.0.0.1:8379,127.0.0.1:9379
+      #nodes: 127.0.0.1:6379
+    host: 127.0.0.1
+    port: 6379
+    password: jiudeli1q20
+    # 连接超时时间（毫秒）
+    timeout: 10000
+    expire-seconds: 120
+    #jedis:
+    pool:
+        # 连接池中的最大空闲连接
+        max-idle: 49
+        # 连接池中的最小空闲连接
+        min-idle: 9
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 20000
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1

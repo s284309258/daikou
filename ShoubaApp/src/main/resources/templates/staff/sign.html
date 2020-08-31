@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/reset.css" />
+		<title>代扣协议</title>
+		<style>
+			* {touch-action: pan-y; /* 签名的时候滑动会报错,使用全局样式样式去掉 */}
+			.js-signature canvas{width: 90vw !important;background: white;border: none;}
+			.btn{outline: none !important;background: none;}
+			#signature{margin:20px 0px ;}
+			#signature div{width: 90vw;overflow: hidden;}
+			 table{width: 100%;}
+			 table tr{width: 100%;}
+           table tr td:nth-child(1){width: 20% !important;}
+			table,table tr th, table tr td { border:1px solid #0094ff; text-indent: 0px !important;}
+			table { min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse; padding:2px;}
+		.canvasDiv{ width:100%;height: 30vw; border: 1px dotted #666;margin-bottom: 1rem;}
+		.imgDiv{ margin-bottom: 1rem;margin-top: 15px;background: white;}
+		.btnDiv{ margin-top: 15px;}
+		#canvasEdit{ width:100%;height: 30vw;}
+		#sign_show img{width: 100%;height: 100%;}
+		</style>
+
+
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="/img/w-back.png"/></i>
+			<h1>代扣协议</h1>
+			<button class="saveBtn">完成</button>
+		</header>
+		<main class ="sign">
+			<input type="hidden" name="user_id" id="user_id" th:value="${data.id}">
+			<h3 class="Sign-title">委托扣款授权书</h3>
+			<div class="Sign-title-content">
+				鉴于授权人与其服务公司（被授权人）签署了合作协议或服务合同（以下简称“合同”），现授权人郑重声明已仔细阅知、理解下述各项规定并同意遵守：
+				<br>一、授权人同意被授权人在合同约定的期限内，委托银行或者第三方支付机构从本授权书指定的银行账户内以约定的资费标准划付应付的费用。
+				<br>二、授权人在指定账户中必须留有足够余额，否则因账户余额不足或不可归责于被授权人委托方的任何事由，导致无法及时扣款或者扣款信息错误、失败，责任由授权人自行承担。授权人不得以任何理由拒绝付款，若双方有争议，可通过法律途径解决。
+				<br>三、合同效力中止或者终止后，本授权书效力同时中止或者终止，被授权人应停止或终止委托划付款项。
+				<br>四、未经授权人本人同意所进行的所有划付款项行为均视为违约行为，未经授权人本人同意向除此次授权关联方以外渠道泄露授权人个人信息的行为均视为违约行为，授权人可向被授权人追究其应承担的法律责任。
+				<br>五、本授权书自授权人签字确认之日起生效，至根据合同约定完成划付中止或者终止授权、或授权人与被授权人协商确认授权账户终止或合同效力终止时终止。
+				<br>六、授权人拟中止、终止授权账户或者变更账户、其它信息的，需提前7个工作日向被授权人递交书面通知，否则自行承担所造成的风险损失。
+				<br>七、授权人保证使被授权人免于因根据本授权条款行事而看可能发生或招致的全部责任、损失、赔偿、行动、程序、要求、费用和开支（不论何种性质及如何发生），并承诺向被授权人补偿，但被授权人需根据诚实信用原则行事。
+
+				<br>八、授权人资料及缴费帐户
+				<table>
+					<tr >
+						<td> 银行卡户名：</td>
+						<td><span th:text="${data.real_name}">张氏</span></td>
+					</tr>
+					<tr>
+						<td>银行卡开户银行：</td>
+						<td><span th:text="${data.bank_name}">民生银行</span></td>
+					</tr>
+					<tr>
+						<td>银行卡账号：</td>
+						<td><span th:text="${data.bank_account}">6226200600660188</span></td>
+					</tr>
+					<tr>
+						<td>身份证号码：</td>
+						<td><span th:text="${data.user_card}">4310211999020110102266</span></td>
+					</tr>
+					<tr>
+						<td>手机号码：</td>
+						<td><span th:text="${data.user_tel}">18675570207</span></td>
+					</tr>
+					<tr>
+						<td  rowspan="2">代扣金额(人民币)：</td>
+						<td align="left"><span>一次性(分期)扣款</span><span th:text="${data.amount}">30</span>元</td>
+					</tr>
+					<tr>
+					  <td align="left">分期扣款：  分<span th:text="${data.stage}">5</span> 期 ，每期扣<span th:text="${data.stage_amount}">5000</span>（若每期扣款金额不一致，则根据合同扣款）</td>
+					</tr>
+					
+					
+				</table>
+				<br>九、授权人承诺因上述付款账户被挂失、冻结、销户、结清等原因导致无法成功付款及所造成的一切经济、行政纠纷和违约责任等全部由授权人承担。
+				<br>十、授权人声明：本人已充分知悉理解上述条款，通过手机、电脑或其他设备的应用界面输入并提交由第三方向本人发送的短信验证码并且确认同意或签名，即视本人操作并签订了此委托扣款协议书。本人认可此电子协议的有效性和证据效力，与本人亲笔签名具有同等法律效力。本人同意手持证件照可作为相关法律依据。
+
+			</div>
+<!--            <include src="./signphoto.html"></include>-->
+			<div class="row">
+				<div class="col-xs-12">
+					<p>授权人签名：</p> （正楷有效，禁用草书）
+					<div class="canvasDiv">
+					    <div id="editing_area">
+					        <canvas id="canvasEdit"></canvas>
+					    </div>
+					</div>
+					<div class="btn-box">
+					<button id="sign_ok" >确认</button>
+					<button id="sign_clear" class="btn btn-default" >重写</button>
+                   <!-- <input type="file" id="imgTest" type="file" onchange="imgChange(event)" accept=".gif,.jpg,.jpeg,.png"> -->
+                    </div>
+					<div id="signature">
+						<!-- <p>写上签名并点击预览</p> -->
+						<div class="imgDiv">
+						    <span id="sign_show"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../../js/esign.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//初始化动作，根据DOM的ID不同进行自定义，如果不写则内部默认取这四个
+				$().esign("canvasEdit", "sign_show", "sign_clear", "sign_ok");
+			});
+		</script>
+
+	<script>
+		$(".saveBtn").click(function(){
+			console.log($("#sign_show"));
+			if($("#sign_show")[0].childNodes[0]=="undefined" || $("#sign_show")[0].childNodes[0]==null){
+				layer.msg("请签署协议");
+			}else{
+				$.ajax({
+					url:'/yilian/api/signSave',
+					type:'post',
+					data:{
+						imageBase64:$("#sign_show")[0].childNodes[0].src,
+						user_id:$("#user_id").val()
+					},
+					success:function (result) {
+						if(result.errorCode=="00000"){
+							layer.msg("资料录入完成,请扣款一元验证银行卡",{
+								end:function(){
+									window.location.href = "/yilian/api/withholdUser";
+								}
+							});
+						}else{
+							layer.msg(result.message);
+						}
+					}
+				});
+			}
+
+		});
+	</script>
+	
+	</body>
+</html>

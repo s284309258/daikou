@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.yilian.YilianMapper">
+	<insert id="insertUser12" parameterType="java.util.Map" useGeneratedKeys="true" keyColumn="id" keyProperty="map.id">
+		insert into yl_user_info(real_name,user_card,user_tel,bank_account,bank_name,amount,stage,stage_amount,staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,card_poto1,card_poto2,acc_poto1,acc_poto2,person_poto,state)
+            values(#{map.real_name},#{map.user_card},#{map.user_tel},#{map.bank_account},#{map.bank_name},#{map.amount},#{map.stage},#{map.stage_amount},#{map.staff_no},
+            #{map.staff_name},#{map.staff_tel},#{map.org_no},#{map.org_name},#{map.org_agent},#{map.org_agent_name},#{map.card_poto1},#{map.card_poto2},#{map.acc_poto1},#{map.acc_poto2},#{map.person_poto},1)
+	</insert>
+</mapper>

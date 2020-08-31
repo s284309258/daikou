@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renegade.dao.SpotOrderDao">
+	<!-- 统计用户的提货订单 -->
+	<select id="findDeliverNumByUserId"
+		resultType="java.lang.Integer">
+		select count(*) from t_spot_order where order_user =#{userId}
+	</select>
+	<select id="getOrderNo" resultType="com.renegade.domain.SpotOrder"> 
+	select * from  t_spot_order where order_no=#{orderNo}
+	</select>
+	<update id="updateDeliveryOrder" parameterType="com.renegade.domain.SpotOrder">
+	   update t_spot_order set order_status='JD'
+	   where order_no=#{orderNo} and order_status='XD'
+	</update>
+	<!--投诉订单  -->
+	<update id="updateComplainStatus">
+	    update t_spot_order set order_status='ST' where order_no=#{orderNo} and (order_status='JD' or order_status='FH') 
+	    and order_user=#{userId}
+	</update>
+	<!-- 超过七天未确认收货的订单 -->
+	<select id="listOrderDetail" resultType="com.renegade.domain.SpotOrder">
+	 select * from  t_spot_order where order_status='FH' and TO_DAYS(NOW())-TO_DAYS(diliver_time)&gt;=7
+	</select>
+	<!-- 确认发货 -->
+	<update id="updateDeliverGoods">
+		update t_spot_order set
+		courier_no=#{courierNo},courier_name=#{courierName},diliver_time=now(),order_status='FH'
+		where delivery_order_id=#{orderId} and order_status='JD'
+	</update>
+	<select id="getOrderdetail"
+		resultType="com.renegade.domain.SpotOrder">
+		select * from t_spot_order where delivery_order_id=#{orderId}
+	</select>
+	<!-- 从未支付变为已挂售 -->
+     <update id="updateGsStatus">
+        update t_spot_order set
+		order_status='TH',sing_time=now() where delivery_order_id=#{orderNo}
+		and order_user=#{userId} and order_status='XD'
+      </update>
+	<!--确认收货 -->
+	<update id="confirmDelivery">
+		update t_spot_order set
+		order_status='SH',sing_time=now() where delivery_order_id=#{orderNo}
+		and order_user=#{userId} and order_status='FH'
+	</update>
+	<update id="confirmDeliveryUser">
+		update t_spot_order set
+		order_status='SH',sing_time=now() where delivery_order_id=#{orderNo}
+		and order_user=#{userId} and (order_status='FH' or order_status='TW')
+	</update>
+	<!-- 订单管理 -->
+	<select id="findeliverByUserIdOrder" resultType="java.util.Map">
+		select
+		t1.goods_name AS goodsName,
+		t1.goods_price AS goodsPrice,
+		t.goods_num AS
+		goodsNum,
+		(CASE t.order_status
+		WHEN 'XD' THEN
+		'已支付可挂售的'
+		WHEN 'JD' THEN
+		'已支付待发货'
+		WHEN 'FH' THEN
+		'已发货'
+		WHEN 'SH' THEN
+		'已签收'
+		WHEN 'ST' THEN
+		'投诉中'
+		WHEN 'TZ' THEN
+		'投诉处理完成店铺被封'
+		WHEN 'TW' THEN
+		'投诉订单已发货'
+		WHEN 'TH'
+		THEN
+		'已挂售'
+		ELSE
+		'其他'
+		END ) as status,
+		t.delivery_order_id as
+		deliveryOrderId,
+		t.order_no as
+		orderNo,
+		t1.goods_id as goodsId,
+		t.user_mark as userMark,
+		t.receiving_address as receivingAddress,
+		t.receiving_name as receivingName,
+		t.received_phone as receivedPhone,
+		t.courier_name
+		as courierName,
+		t.courier_no as courierNo,
+		t.store_id as storeId,
+		t1.goods_name_en as
+		goodsNameEn,
+		t.order_sj_pay as orderSjPay,
+		t1.goods_desc as goodsImg,
+		DATE_FORMAT(t.create_time,'%Y-%c-%d %H:%i:%s')AS createTime,
+		DATE_FORMAT(t.pay_time,'%Y-%c-%d %H:%i:%s')AS payTime,
+		DATE_FORMAT(t.diliver_time,'%Y-%c-%d %H:%i:%s')AS diliverTime,
+		DATE_FORMAT(t.sing_time,'%Y-%c-%d %H:%i:%s')AS singTime,
+	IFNULL((select `profile` from t_front_user t2 where t2.user_id=t.store_id),"VFS官方旗舰店") as name 
+		from
+		t_spot_order t left join t_spot_goods t1
+		on
+		t.goods_id=t1.goods_id
+		<where>
+			<if test="userId != null and userId != ''"> and t.order_user = #{userId} </if>
+			<if test="storeId != null and storeId != ''"> and t.store_id = #{storeId} </if>
+		</where>
+		order by
+		t.create_time desc
+	</select>
+	<!-- 查询代发货订单 -->
+	<select id="findeliverBydeliveryOrderId" resultType="java.util.Map">
+	select
+		t1.goods_name AS goodsName,
+		t1.goods_price AS goodsPrice,
+		t.goods_num AS
+		goodsNum,
+		(CASE t.order_status
+		WHEN 'XD' THEN
+		'已支付需挂售的'
+		WHEN 'JD' THEN
+		'已支付待发货'
+		WHEN 'FH' THEN
+		'已发货'
+		WHEN 'SH' THEN
+		'已签收'
+		WHEN 'ST' THEN
+		'申请投诉'
+		WHEN 'TZ' THEN
+		'投诉处理完成店铺被封'
+		WHEN 'TW' THEN
+		'投诉订单已发货'
+		WHEN 'TH'
+		THEN
+		'已挂售'
+		ELSE
+		'其他'
+		END ) as status,
+		t.delivery_order_id as
+		orderNo,
+		t1.goods_id as goodsId,
+		t.user_mark as userMark,
+		t.receiving_address as receivingAddress,
+		t.receiving_name as receivingName,
+		t.received_phone as receivedPhone,
+		t.courier_name
+		as courierName,
+		t.courier_no as courierNo,
+		t1.goods_name_en as
+		goodsNameEn,
+		t.order_sj_pay as orderSjPay,
+		t1.goods_desc as goodsImg,
+		DATE_FORMAT(t.create_time,'%Y-%c-%d %H:%i:%s')AS createTime,
+		DATE_FORMAT(t.pay_time,'%Y-%c-%d %H:%i:%s')AS payTime,
+		DATE_FORMAT(t.diliver_time,'%Y-%c-%d %H:%i:%s')AS diliverTime,
+		DATE_FORMAT(t.sing_time,'%Y-%c-%d %H:%i:%s')AS singTime
+		from
+		t_spot_order t left join t_spot_goods t1
+		on
+		t.goods_id=t1.goods_id
+		<where>
+			<if test="userId != null and userId != ''"> and t.order_user = #{userId} </if>
+			<if test="storeId != null and storeId != ''"> and t.store_id = #{storeId} </if>
+			<if test="deliveryOrderId!= null and deliveryOrderId!= ''"> and t.order_no = #{deliveryOrderId} </if>
+		</where>
+		and t.order_status='JD'
+		order by
+		t.create_time desc
+	</select>
+	<!-- 统计该用户在该店铺购买商品数量 -->
+      <select id="countGoodsNumByUserId" resultType="int">
+        select count(*) from  t_spot_order t where t.store_id = #{storeId} and t.goods_id=#{goodsId} and t.order_user=#{userId}
+      </select>
+      <!--统计该用户在该店铺消费总金额-->
+        <select id="sumGoodsPriceByUserId" resultType="java.math.BigDecimal">
+        select ifnull(sum(goods_price),0.00) from  t_spot_order t where t.store_id = #{storeId} and t.goods_id=#{goodsId} and t.order_user=#{userId}
+      </select>
+	<!--减少库存 -->
+	<update id="reduceDeliverOrder">
+		update t_spot_goods set
+		goods_stock=goods_stock-#{num},goods_sales=goods_sales+#{num}
+		where
+		(goods_stock-#{num}) &gt;=0 and goods_id = #{goodsId}
+	</update>
+	<insert id="saveDeliverOrder"
+		parameterType="com.renegade.domain.SpotOrder" useGeneratedKeys="true"
+		keyProperty="deliveryOrderId">
+		insert into t_spot_order
+		(
+		`order_no`,
+		`goods_name`,
+		`goods_price`,
+		`goods_num`,
+		`goods_id`,
+		`goods_img`,
+		`order_user`,
+		`pay_time`,
+		`order_status`,
+		`order_yu_pay`,
+		`order_sj_pay`,
+		`receiving_address`,
+		`receiving_name`,
+		`received_phone`,
+		`user_mark`,
+		`store_id`,
+		`goods_state`
+		)
+		values
+		(
+		#{orderNo},
+		#{goodsName},
+		#{goodsPrice},
+		#{goodsNum},
+		#{goodsId},
+		#{goodsImg},
+		#{orderUser},
+		#{payTime},
+		#{orderStatus},
+		#{orderYuPay},
+		#{orderSjPay},
+		#{receivingAddress},
+		#{receivingName},
+		#{receivedPhone},
+		#{userMark},
+		#{storeId},
+		#{goodsState}
+		)
+	</insert>
+	<!-- 查询待发货订单 -->
+	<select id="findWaitOrderById" parameterType="int" resultType="int">
+	   select count(*) from t_spot_order where store_id=#{userId} and order_status='JD'
+	</select>
+</mapper>

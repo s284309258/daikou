@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renegade.dao.M9UserMapper">
+	<insert id="register" parameterType="java.util.Map">
+		insert into
+		m9_user(telphone,login_pwd,pay_pwd,user_pid,share_rqcode,parent_chain,algebra,nick_name)
+		values(#{map.telphone},#{map.login_pwd},#{map.pay_pwd},#{map.user_pid},#{map.share_rqcode},#{map.parent_chain},#{map.algebra},#{map.nickName})
+	</insert>
+
+
+	<sql id="UserOrderListSql">
+		select t.*,tt.nick_name,tt.telphone,tt.sex,tt.email from m9_order
+		t,m9_user tt where t.user_id=tt.id
+		<if test="map.id!=null and map.id!=''">
+			and t.id=#{map.id}
+		</if>
+		<if test="map.order_id!=null and map.order_id!=''">
+			and t.order_id like concat('%',#{map.order_id},'%')
+		</if>
+		<if test="map.quantity!=null and map.quantity!=''">
+			and t.quantity=#{map.quantity}
+		</if>
+		<if test="map.currency!=null and map.currency!=''">
+			and t.currency=#{map.currency}
+		</if>
+		<if test="map.state!=null and map.state!=''">
+			and t.state in(#{map.state})
+		</if>
+		<if test="map.eos_address!=null and map.eos_address!=''">
+			and t.eos_address=#{map.eos_address}
+		</if>
+		<if test="map.user_id!=null and map.user_id!=''">
+			and t.user_id=#{map.user_id}
+		</if>
+		<if test="map.buyer!=null and map.buyer!=''">
+			and t.buyer=#{map.buyer}
+		</if>
+		<if test="map.nick_name!=null and map.nick_name!=''">
+			and tt.nick_name=#{map.nick_name}
+		</if>
+		<if test="map.telphone!=null and map.telphone!=''">
+			and tt.telphone=#{map.telphone}
+		</if>
+		<if test="map.sex!=null and map.sex!=''">
+			and tt.sex=#{map.sex}
+		</if>
+		<if test="map.email!=null and map.email!=''">
+			and tt.email=#{map.email}
+		</if>
+
+		<!-- 开始时间检索 -->
+		<if test="map.beginTime != null and map.beginTime != ''">
+			AND t.cre_date &gt;=
+			date_format(#{map.beginTime},'%Y%m%d')
+		</if>
+		<!-- 结束时间检索 -->
+		<if test="map.endTime != null and map.endTime != ''">
+			AND t.cre_date &lt;= date_format(#{map.endTime},'%Y%m%d')
+		</if>
+	</sql>
+
+	<sql id="UserListSql">
+		select * from m9_user where 1=1
+		<if test="map.id!=null and map.id!=''">
+			and id=#{map.id}
+		</if>
+		<if test="map.nick_name!=null and map.nick_name!=''">
+			and nick_name=#{map.nick_name}
+		</if>
+		<if test="map.telphone!=null and map.telphone!=''">
+			and telphone=#{map.telphone}
+		</if>
+		<if test="map.eos_address!=null and map.eos_address!=''">
+			and eos_address=#{map.eos_address}
+		</if>
+		<if test="map.email!=null and map.email!=''">
+			and email=#{map.email}
+		</if>
+		<if test="map.sex!=null and map.sex!=''">
+			and sex=#{map.sex}
+		</if>
+		<if test="map.pay_pwd!=null and map.pay_pwd!=''">
+			and pay_pwd=#{map.pay_pwd}
+		</if>
+		<if test="map.login_pwd!=null and map.login_pwd!=''">
+			and login_pwd=#{map.login_pwd}
+		</if>
+		<if test="map.user_pid!=null and map.user_pid!=''">
+			and user_pid=#{map.user_pid}
+		</if>
+		<if test="map.user_state!=null and map.user_state!=''">
+			and user_state=#{map.user_state}
+		</if>
+		<if test="map.beginTime != null and map.beginTime != ''">
+			AND cre_date &gt;= date_format(#{map.beginTime},'%Y%m%d')
+		</if>
+		<if test="map.endTime != null and map.endTime != ''" >
+			AND cre_date &lt;= date_format(#{map.endTime},'%Y%m%d')
+		</if>
+	</sql>
+	<!-- 查询买单列表 -->
+	<select id="getUserOrderList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		<include refid="UserOrderListSql"></include>
+	</select>
+
+	<!-- 查询买单列表实体类的方式存储 -->
+	<select id="getUserOrderListObj" parameterType="java.util.Map"
+		resultType="com.renegade.domain.M9UserAndOrderDo">
+		<include refid="UserOrderListSql"></include>
+	</select>
+
+	<!--查询M9会员列表 -->
+	<select id="selectUserList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		<include refid="UserListSql"></include>
+	</select>
+
+	<!--查询M9会员列表实体类的方式存储 -->
+	<select id="selectUserListObj" parameterType="java.util.Map"
+		resultType="com.renegade.domain.M9UserDO">
+		<include refid="UserListSql"></include>
+	</select>
+
+	<!--更新M9订单信息 -->
+	<update id="updateOrder" parameterType="java.util.Map">
+		update m9_order
+		<trim prefix="set" suffixOverrides=",">
+			<if test="map.eos_qrcode!=null and map.eos_qrcode!=''">
+				eos_qrcode=#{map.eos_qrcode},
+			</if>
+			<if test="map.currency!=null and map.currency!=''">
+				currency=#{map.currency},
+			</if>
+			<if test="map.quantity!=null and map.quantity!=''">
+				quantity=#{map.quantity},
+			</if>
+			<if test="map.eos_address!=null and map.eos_address!=''">
+				eos_address=#{map.eos_address},
+			</if>
+			<if test="map.state!=null and map.state!=''">
+				state=#{map.state},
+			</if>
+			<if test="map.buyer!=null and map.buyer!=''">
+				buyer=#{map.buyer},
+			</if>
+			<if test="map.remark!=null and map.remark!=''">
+				remark=#{map.remark},
+			</if>
+			<if test="map.upd_date!=null and map.upd_date!=''">
+				upd_date=${map.upd_date},
+			</if>
+		</trim>
+		where id=${map.id}
+	</update>
+
+	<!--更新M9用户信息 -->
+	<update id="updateUser" parameterType="java.util.Map">
+		update m9_user
+		<trim prefix="set" suffixOverrides=",">
+			<if test="map.nick_name!=null and map.nick_name!=''">
+				nick_name=#{map.nick_name},
+			</if>
+			<if test="map.telphone!=null and map.telphone!=''">
+				telphone=#{map.telphone},
+			</if>
+			<if test="map.eos_address!=null and map.eos_address!=''">
+				eos_address=#{map.eos_address},
+			</if>
+			<if test="map.email!=null and map.email!=''">
+				email=#{map.email},
+			</if>
+			<if test="map.sex!=null and map.sex!=''">
+				sex=#{map.sex},
+			</if>
+			<if test="map.real_name!=null and map.real_name!=''">
+				real_name=#{map.real_name},
+			</if>
+            <if test="map.user_state!=null and map.user_state!=''">
+                user_state=#{map.user_state},
+            </if>
+			<if test="map.light4_red!=null and map.light4_red!=''">
+				light4_red=${map.light4_red},
+			</if>
+			<if test="map.light4_blue!=null and map.light4_blue!=''">
+				light4_blue=${map.light4_blue},
+			</if>
+			<if test="map.light4_green!=null and map.light4_green!=''">
+				light4_green=${map.light4_green},
+			</if>
+			<if test="map.light40_red!=null and map.light40_red!=''">
+				light40_red=${map.light40_red},
+			</if>
+			<if test="map.light40_blue!=null and map.light40_blue!=''">
+				light40_blue=${map.light40_blue},
+			</if>
+			<if test="map.light40_green!=null and map.light40_green!=''">
+				light40_green=${map.light40_green},
+			</if>
+			<if test="map.user_pid!=null and map.user_pid!=''">
+				user_pid=#{map.user_pid},
+			</if>
+			<if test="map.user_lineup_coin!=null and map.user_lineup_coin!=''">
+				user_lineup_coin=${map.user_lineup_coin},
+			</if>
+			<if test="map.user_lineup_coin_free!=null and map.user_lineup_coin_free!=''">
+				user_lineup_coin_free=${map.user_lineup_coin_free},
+			</if>
+			<if test="map.login_pwd!=null and map.login_pwd!=''">
+				login_pwd=#{map.login_pwd},
+			</if>
+			<if test="map.pay_pwd!=null and map.pay_pwd!=''">
+				pay_pwd=#{map.pay_pwd},
+			</if>
+			<if test="map.order_id!=null and map.order_id!=''">
+				order_id=#{map.order_id},
+			</if>
+			<if test="map.order_type!=null and map.order_type!=''">
+				order_type=#{map.order_type},
+			</if>
+			<if test="map.user_poto!=null and map.user_poto!=''">
+				user_poto=#{map.user_poto},
+			</if>
+			<if test="map.upd_date!=null and map.upd_date!=''">
+				upd_date=${map.upd_date},
+			</if>
+			<if test="map.source_id!=null and map.source_id!=''">
+				source_id=${map.source_id},
+			</if>
+			<if test="map.warn_count_saletota!=null and map.warn_count_saletota!=''">
+				warn_count_saletota=${map.warn_count_saletota},
+			</if>
+			<if test="map.warn_count_confirm!=null and map.warn_count_confirm!=''">
+				warn_count_confirm=${map.warn_count_confirm},
+			</if>
+			<if test="map.user_limit!=null and map.user_limit!=''">
+				user_limit=${map.user_limit},
+			</if>
+			<if test="map.user_active!=null and map.user_active!=''">
+				user_active=${map.user_active},
+			</if>
+			<if test="map.eos_address_label!=null and map.eos_address_label!=''">
+				eos_address_label=#{map.eos_address_label},
+			</if>
+		</trim>
+		where id=${map.id}
+	</update>
+
+	<!--插入充值排单币记录表 -->
+	<insert id="insert_change_log" parameterType="java.util.Map">
+		insert into
+		w_change_log(change_no,change_time,change_num,change_userid,change_addres,type,change_picture)
+		values(#{map.change_no},now(),#{map.change_num},#{map.change_userid},#{map.change_addres},'3',#{map.change_picture})
+	</insert>
+
+
+	<!--充值排单币明细 -->
+	<select id="select_flowing_record" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		select * from t_front_flowing_record_usdt t where
+		t.user_id=#{map.user_id} and t.type in(1,2,3,4,5,6,7,36)
+		and t.flowing_id &gt; #{map.lastId} order by t.create_time desc limit 0,10
+	</select>
+
+	<!--拨灯明细-->
+    <select id="select_flowing_record_light" parameterType="java.util.Map" resultType="java.util.Map">
+        select * from t_front_flowing_record_usdt t where t.user_id=${map.user_id} and t.source_id=#{map.quantity}
+        and t.type in(6661,6662,6663,6664,6665,6666)
+        and t.flowing_id &gt; #{map.lastId} order by t.create_time desc limit 0,10
+    </select>
+
+	<!--签到记录查询-->
+	<select id="select_sign_record" parameterType="java.util.Map"  resultType="java.util.Map">
+		select * from t_sign_record where user_id=#{map.user_id}
+		<if test="map.sign_date!=null and map.sign_date!=''">
+			and sign_date=#{map.sign_date}
+		</if>
+		<if test="map.prize!=null and map.prize!=''">
+			and prize=#{map.prize}
+		</if>
+		<if test="map.lastId!=null and map.lastId!=''">
+			and id &gt; #{map.lastId} order by sign_date desc limit 0,10
+		</if>
+	</select>
+
+
+	<!-- 增加排单币资产 -->
+	<update id="updateAddCoin">
+	 update   m9_user set user_lineup_coin = user_lineup_coin + #{balacne},order_type = #{benefitType}, order_id = #{telphone}, source_id = #{sourceId},upd_date = now()
+	 where id = #{userId}
+	</update>
+<!--  派单币减少资产-->
+	<update id="updateReduceCoin">
+	 update   m9_user set user_lineup_coin = user_lineup_coin - #{balacne},order_type = #{benefitType}, order_id = #{tansferAcount}, source_id = #{sourceId},upd_date = now()
+	 where id = #{userId} and (user_lineup_coin - #{balacne}) &gt;= 0
+	</update>
+</mapper> 

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.ApplyRecordDao">
+
+	<select id="get" resultType="com.renegade.domain.ApplyRecordDO">
+		select `id`,`user_id`,`apply_money`,`apply_money_ut`,`idcard`,`idcard_picture1`,`idcard_picture2`,`status`,`refuse_reason`,`create_time` from t_apply_record where id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.ApplyRecordDO">
+		select `id`,`user_id`,`apply_money`,`apply_money_ut`,`idcard`,`idcard_picture1`,`idcard_picture2`,`status`,`refuse_reason`,`create_time` from t_apply_record
+        <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="applyMoney != null and applyMoney != ''"> and apply_money = #{applyMoney} </if>
+		  		  <if test="applyMoneyUt != null and applyMoneyUt != ''"> and apply_money_ut = #{applyMoneyUt} </if>
+		  		  <if test="idcard != null and idcard != ''"> and idcard = #{idcard} </if>
+		  		  <if test="idcardPicture1 != null and idcardPicture1 != ''"> and idcard_picture1 = #{idcardPicture1} </if>
+		  		  <if test="idcardPicture2 != null and idcardPicture2 != ''"> and idcard_picture2 = #{idcardPicture2} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		  <if test="refuseReason != null and refuseReason != ''"> and refuse_reason = #{refuseReason} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_apply_record
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="applyMoney != null and applyMoney != ''"> and apply_money = #{applyMoney} </if>
+		  		  <if test="applyMoneyUt != null and applyMoneyUt != ''"> and apply_money_ut = #{applyMoneyUt} </if>
+		  		  <if test="idcard != null and idcard != ''"> and idcard = #{idcard} </if>
+		  		  <if test="idcardPicture1 != null and idcardPicture1 != ''"> and idcard_picture1 = #{idcardPicture1} </if>
+		  		  <if test="idcardPicture2 != null and idcardPicture2 != ''"> and idcard_picture2 = #{idcardPicture2} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		  <if test="refuseReason != null and refuseReason != ''"> and refuse_reason = #{refuseReason} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.ApplyRecordDO">
+		insert into t_apply_record
+		(
+			`user_id`, 
+			`apply_money`, 
+			`apply_money_ut`, 
+			`idcard`, 
+			`idcard_picture1`, 
+			`idcard_picture2`,
+			`store_name`,
+			`store_major`,
+			create_time
+		)
+		values
+		(
+			#{userId}, 
+			#{applyMoney}, 
+			#{applyMoneyUt}, 
+			#{idcard}, 
+			#{idcardPicture1}, 
+			#{idcardPicture2},
+			#{storeName},
+			#{storeMajor},
+			now()
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.ApplyRecordDO">
+		update t_apply_record 
+		<set>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="applyMoney != null">`apply_money` = #{applyMoney}, </if>
+			<if test="applyMoneyUt != null">`apply_money_ut` = #{applyMoneyUt}, </if>
+			<if test="idcard != null">`idcard` = #{idcard}, </if>
+			<if test="idcardPicture1 != null">`idcard_picture1` = #{idcardPicture1}, </if>
+			<if test="idcardPicture2 != null">`idcard_picture2` = #{idcardPicture2}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="refuseReason != null">`refuse_reason` = #{refuseReason}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from t_apply_record where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_apply_record where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+  <!-- 根据用户查询店铺信息 -->
+  <select id="getObjectById" parameterType="int" resultType="com.renegade.domain.ApplyRecordDO">
+  		select `store_name`,`check_time` from t_apply_record where user_id = #{value} and status=1
+  </select>
+</mapper>

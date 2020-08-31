@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/reset.css" />
+		<title>机构管理</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+		</style>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="/img/w-back.png"/></i>
+			<h1>机构管理</h1>
+		</header>
+		<main class="main">
+<!--			<div class="agent-seach">-->
+<!--				<span>-->
+<!--					<img src="/img/seach.png" />-->
+<!--					<input type="search" placeholder="搜索机构"/>-->
+<!--				</span>-->
+<!--				<span>查询</span>-->
+<!--			</div>-->
+			<div class="seach-list-warp">
+				<ul class="seach-list" th:each="rd: ${record}">
+<!--					<li>-->
+					<!--<a th:href="@{'/yilian/api/companies/'}+${rd.id}">-->
+<!--						<a href="">-->
+<!--							<span class="seach-name" th:text="${rd.org_name}">金城机构</span>-->
+<!--							<span class="seach-name" th:text="${rd.user_tel}">金城机构</span>-->
+<!--							<img src="/img/next.png" class="next"/>-->
+<!--						</a>-->
+<!--					</li>-->
+
+					<li class="audit-warp">
+						<dl>
+							<dt>
+								<span>机构名称：</span>
+								<span class="color-blue" th:text="${rd.org_name}">金城机构</span>
+							</dt>
+							<dt>
+								<span>姓名：</span>
+								<span th:text="${rd.real_name}">亚亚</span>
+							</dt>
+							<dt>
+								<span>手机号：</span>
+								<span th:text="${rd.user_tel}">13542124512</span>
+							</dt>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>

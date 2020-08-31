@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			.v-copy{color: #666666 !important;font-size: .8rem;position: relative;line-height: 20px;}
+			.chek{color: #4D80F0 !important;display: block !important;text-align: right;font-size: 0.9rem !important;}
+			.chek i{font-size: 1.3rem;vertical-align: middle;}
+			.addresss input{border: none;background: none;outline: none;}
+			.addresss input::-webkit-input-placeholder{color: #999999;}
+			.icon-fuzhi{position: absolute;display: block;bottom: 10px;right: 5%;color: #4D80F0;font-size: 0.9rem;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>收币地址</h1>
+			
+		</div>
+		
+		<div class="addresss">
+			<label>
+				<span>姓 &nbsp;&nbsp;&nbsp;&nbsp;名</span>
+				<p class="blue" th:text="${user['real_name']}?${user['real_name']}">肖骁</p>
+			</label>
+			<label>
+				<span>联系电话</span>
+				<p th:text="${user['telphone']}?${user['telphone']}"></p>
+			</label>
+		</div>
+		<div class="addresss">
+			<label>
+				<span>地址标签</span>
+				<input type="text" id="eos_address_label" readonly th:value="${user['eos_address_label']}?${user['eos_address_label']}" placeholder="请输入地址标签" />
+			</label>
+			<label>
+				<span>收币地址</span>
+				<p style="width: 35% !important;overflow-x: scroll;" class="v-copy" id="vi_code" th:if="${user['eos_address']!=null}" th:text="${user.eos_address}"></p><i class="iconfont icon-fuzhi copyBtn" data-clipboard-target="#vi_code" onclick="copy()">复制地址</i>
+			</label>
+			<label style="justify-content: space-between;">
+				<span>收币二维码</span>
+				<p class="chek"><i class="iconfont icon-chakan"></i>查看二维码</p>
+			</label>
+		</div>
+		<p class="line"></p>
+		<div class="addre"><a href="/m9/user/add_address">修改收币地址</a></div>
+		<div class="mask" style="display: none;">
+			<div class="check_qr">
+				<div id="qrcode">
+				
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script>
+				$(function () { 
+  $('.chek').click(function (event) { 
+    //取消事件冒泡 
+    event.stopPropagation(); 
+    //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。 
+  $('.mask').fadeToggle('slow'); 
+      return false;
+  }); 
+  
+    $('.mask').click(function(event){
+        var _con = $('.check_qr');  // 设置目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){ 
+           $('.mask').fadeToggle('slow');     //淡出消失
+        }
+   });
+});
+			jQuery(function(){
+
+			jQuery('#qrcode').qrcode({
+				width: 180,
+				height: 180,
+				text: $("#vi_code").html()
+				});
+		});
+		function copy(){
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			clipboard.on('error', function(e) {
+            console.log(e);
+        });
+	}
+		</script>
+	</body>
+</html>

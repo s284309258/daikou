@@ -1,0 +1,751 @@
+2020-07-29 14:42:23 -Starting ShouBaApplication on PC-201905161910 with PID 14420 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-07-29 14:42:23 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-07-29 14:42:23 -The following profiles are active: dev
+2020-07-29 14:42:24 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 14:42:24 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 14:42:24 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 14:42:24 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 14:42:24 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 14:42:24 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 14:42:24 -Finished Spring Data repository scanning in 78ms. Found 0 repository interfaces.
+2020-07-29 14:42:24 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 14:42:24 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 14:42:24 -Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2020-07-29 14:42:25 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$355d412] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 14:42:25 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dd30fb42] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 14:42:25 -Tomcat initialized with port(s): 8686 (http)
+2020-07-29 14:42:25 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-07-29 14:42:25 -Starting service [Tomcat]
+2020-07-29 14:42:25 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-07-29 14:42:25 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-07-29 14:42:25 -Initializing Spring embedded WebApplicationContext
+2020-07-29 14:42:25 -Root WebApplicationContext: initialization completed in 2095 ms
+2020-07-29 14:42:25 -xss filter init~~~~~~~~~~~~
+2020-07-29 14:42:26 -Renegade-四叶草-Hikari - Starting...
+2020-07-29 14:42:26 -Renegade-四叶草-Hikari - Start completed.
+2020-07-29 14:42:26 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-29 14:42:26 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-07-29 14:42:26 -HHH000206: hibernate.properties not found
+2020-07-29 14:42:26 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-29 14:42:26 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-07-29 14:42:26 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-29 14:42:27 -Redisson 3.9.1
+2020-07-29 14:42:27 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 14:42:27 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 14:42:28 -Using default implementation for ThreadExecutor
+2020-07-29 14:42:28 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-07-29 14:42:28 -Quartz Scheduler v.2.3.0 created.
+2020-07-29 14:42:28 -RAMJobStore initialized.
+2020-07-29 14:42:28 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-07-29 14:42:28 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-07-29 14:42:28 -Quartz scheduler version: 2.3.0
+2020-07-29 14:42:28 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4768b95c
+2020-07-29 14:42:28 -Initializing ExecutorService
+2020-07-29 14:42:28 -Initializing ExecutorService 'asyncExecutor'
+2020-07-29 14:42:29 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-29 14:42:29 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-29 14:42:29 -Initializing ExecutorService 'taskScheduler'
+2020-07-29 14:42:29 -Starting Quartz Scheduler now
+2020-07-29 14:42:29 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-07-29 14:42:29 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-07-29 14:42:30 -Starting ProtocolHandler ["http-nio-8686"]
+2020-07-29 14:42:30 -Using a shared selector for servlet write/read
+2020-07-29 14:42:30 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-07-29 14:42:30 -Started ShouBaApplication in 6.987 seconds (JVM running for 8.22)
+2020-07-29 14:44:02 -A cookie header was received [1594017985,1594035870,1594887285] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-29 14:44:02 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-29 14:44:02 -Initializing Servlet 'dispatcherServlet'
+2020-07-29 14:44:02 -Completed initialization in 11 ms
+2020-07-29 14:44:02 -==>请求参数 : [{}]
+2020-07-29 14:44:02 -==>请求地址 : http://localhost:8686/
+2020-07-29 14:44:02 -==>请求头: null格式: GET
+2020-07-29 14:44:02 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-07-29 14:44:02 -耗时 : 2
+2020-07-29 14:44:02 -<==返回值 : redirect:/login
+2020-07-29 14:44:02 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@6bf451c1]
+2020-07-29 14:44:02 -==>请求地址 : http://localhost:8686/login
+2020-07-29 14:44:02 -==>请求头: null格式: GET
+2020-07-29 14:44:02 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-07-29 14:44:02 -耗时 : 6
+2020-07-29 14:44:02 -<==返回值 : /login
+2020-07-29 14:44:06 -==>请求参数 : []
+2020-07-29 14:44:06 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 14:44:06 -==>请求头: null格式: GET
+2020-07-29 14:44:06 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 14:44:06 -耗时 : 6
+2020-07-29 14:44:06 -<==返回值 : /forgetPwd
+2020-07-29 14:44:13 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7eef419d, org.apache.catalina.connector.ResponseFacade@4d610152, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 14:44:13 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 14:44:13 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 14:44:13 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 14:44:13 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 14:44:14 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====null==========你们说呢：java.lang.NullPointerException
+2020-07-29 14:44:16 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6ce22fc6, org.apache.catalina.connector.ResponseFacade@4d610152, {}]
+2020-07-29 14:44:16 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 14:44:16 -==>请求头: null格式: GET
+2020-07-29 14:44:16 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 14:44:16 -耗时 : 0
+2020-07-29 14:44:16 -<==返回值 : /login
+2020-07-29 14:45:08 -==>请求参数 : []
+2020-07-29 14:45:08 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 14:45:08 -==>请求头: null格式: GET
+2020-07-29 14:45:08 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 14:45:08 -耗时 : 1
+2020-07-29 14:45:08 -<==返回值 : /forgetPwd
+2020-07-29 14:45:25 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@78a95b57, org.apache.catalina.connector.ResponseFacade@4d610152, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 14:45:25 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 14:45:25 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 14:45:25 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 14:45:25 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 14:45:25 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====null==========你们说呢：java.lang.NullPointerException
+2020-07-29 14:45:28 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@19344b67, org.apache.catalina.connector.ResponseFacade@4d610152, {}]
+2020-07-29 14:45:28 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 14:45:28 -==>请求头: null格式: GET
+2020-07-29 14:45:28 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 14:45:28 -耗时 : 0
+2020-07-29 14:45:28 -<==返回值 : /login
+2020-07-29 15:12:26 -Starting ShouBaApplication on PC-201905161910 with PID 15084 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-07-29 15:12:26 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-07-29 15:12:26 -The following profiles are active: dev
+2020-07-29 15:12:27 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:12:27 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:12:27 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:12:27 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:12:27 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 15:12:27 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 15:12:27 -Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2020-07-29 15:12:27 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 15:12:27 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 15:12:27 -Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
+2020-07-29 15:12:28 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$fa5b2bab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 15:12:28 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d43652db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 15:12:28 -Tomcat initialized with port(s): 8686 (http)
+2020-07-29 15:12:28 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-07-29 15:12:28 -Starting service [Tomcat]
+2020-07-29 15:12:28 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-07-29 15:12:28 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-07-29 15:12:28 -Initializing Spring embedded WebApplicationContext
+2020-07-29 15:12:28 -Root WebApplicationContext: initialization completed in 2120 ms
+2020-07-29 15:12:29 -xss filter init~~~~~~~~~~~~
+2020-07-29 15:12:29 -Renegade-四叶草-Hikari - Starting...
+2020-07-29 15:12:29 -Renegade-四叶草-Hikari - Start completed.
+2020-07-29 15:12:29 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-29 15:12:29 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-07-29 15:12:29 -HHH000206: hibernate.properties not found
+2020-07-29 15:12:29 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-29 15:12:30 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-07-29 15:12:30 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-29 15:12:30 -Redisson 3.9.1
+2020-07-29 15:12:31 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 15:12:31 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 15:12:32 -Using default implementation for ThreadExecutor
+2020-07-29 15:12:32 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-07-29 15:12:32 -Quartz Scheduler v.2.3.0 created.
+2020-07-29 15:12:32 -RAMJobStore initialized.
+2020-07-29 15:12:32 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-07-29 15:12:32 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-07-29 15:12:32 -Quartz scheduler version: 2.3.0
+2020-07-29 15:12:32 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@498503cb
+2020-07-29 15:12:32 -Initializing ExecutorService
+2020-07-29 15:12:32 -Initializing ExecutorService 'asyncExecutor'
+2020-07-29 15:12:32 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-29 15:12:32 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-29 15:12:33 -Initializing ExecutorService 'taskScheduler'
+2020-07-29 15:12:33 -Starting Quartz Scheduler now
+2020-07-29 15:12:33 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-07-29 15:12:33 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-07-29 15:12:33 -Starting ProtocolHandler ["http-nio-8686"]
+2020-07-29 15:12:33 -Using a shared selector for servlet write/read
+2020-07-29 15:12:33 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-07-29 15:12:33 -Started ShouBaApplication in 7.697 seconds (JVM running for 9.072)
+2020-07-29 15:12:42 -A cookie header was received [1594017985,1594035870,1594887285; JSESSIONID=E8217C382177F925DD40ABEA8D500001] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-29 15:12:42 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-29 15:12:42 -Initializing Servlet 'dispatcherServlet'
+2020-07-29 15:12:42 -Completed initialization in 12 ms
+2020-07-29 15:12:43 -==>请求参数 : [{}]
+2020-07-29 15:12:43 -==>请求地址 : http://localhost:8686/
+2020-07-29 15:12:43 -==>请求头: null格式: GET
+2020-07-29 15:12:43 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-07-29 15:12:43 -耗时 : 2
+2020-07-29 15:12:43 -<==返回值 : redirect:/login
+2020-07-29 15:12:43 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@2e03a734]
+2020-07-29 15:12:43 -==>请求地址 : http://localhost:8686/login
+2020-07-29 15:12:43 -==>请求头: null格式: GET
+2020-07-29 15:12:43 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-07-29 15:12:43 -耗时 : 11
+2020-07-29 15:12:43 -<==返回值 : /login
+2020-07-29 15:12:52 -==>请求参数 : []
+2020-07-29 15:12:52 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:12:52 -==>请求头: null格式: GET
+2020-07-29 15:12:52 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:12:52 -耗时 : 6
+2020-07-29 15:12:52 -<==返回值 : /forgetPwd
+2020-07-29 15:13:01 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@55dc85d9, org.apache.catalina.connector.ResponseFacade@2a434946, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 15:13:01 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 15:13:01 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:13:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 15:13:01 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 15:17:35 -Renegade-四叶草-Hikari - Thread starvation or clock leap detected (housekeeper delta=4m35s846ms496µs842ns).
+2020-07-29 15:17:35 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====null==========你们说呢：java.lang.NullPointerException
+2020-07-29 15:17:37 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6a2ef414, org.apache.catalina.connector.ResponseFacade@2a434946, {}]
+2020-07-29 15:17:37 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:17:37 -==>请求头: null格式: GET
+2020-07-29 15:17:37 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:17:37 -耗时 : 1
+2020-07-29 15:17:37 -<==返回值 : /login
+2020-07-29 15:18:31 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-07-29 15:18:31 -Shutting down ExecutorService 'taskScheduler'
+2020-07-29 15:18:31 -Shutting down ExecutorService 'asyncExecutor'
+2020-07-29 15:18:31 -Shutting down Quartz Scheduler
+2020-07-29 15:18:31 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2020-07-29 15:18:31 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-07-29 15:18:31 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0x1d5c5a07, L:/127.0.0.1:58115 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xcebac152, L:/127.0.0.1:58117 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xb3c1db09, L:/127.0.0.1:58122 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xc640fb46, L:/127.0.0.1:58118 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xdf951173, L:/127.0.0.1:58120 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0x0a2c6cb9, L:/127.0.0.1:58121 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xd45167b2, L:/127.0.0.1:58119 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xd2d47c3a, L:/127.0.0.1:58123 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Exception occured. Channel: [id: 0xdfbb5932, L:/127.0.0.1:58124 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:18:31 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-07-29 15:18:31 -Renegade-四叶草-Hikari - Shutdown initiated...
+2020-07-29 15:18:31 -Renegade-四叶草-Hikari - Shutdown completed.
+2020-07-29 15:23:28 -Starting ShouBaApplication on PC-201905161910 with PID 18836 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-07-29 15:23:28 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-07-29 15:23:28 -The following profiles are active: dev
+2020-07-29 15:23:29 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:23:29 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:23:29 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:23:29 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-07-29 15:23:29 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 15:23:29 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 15:23:29 -Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2020-07-29 15:23:29 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-29 15:23:29 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-07-29 15:23:29 -Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2020-07-29 15:23:29 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$a224cfa3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 15:23:29 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7bfff6d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-29 15:23:30 -Tomcat initialized with port(s): 8686 (http)
+2020-07-29 15:23:30 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-07-29 15:23:30 -Starting service [Tomcat]
+2020-07-29 15:23:30 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-07-29 15:23:30 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-07-29 15:23:30 -Initializing Spring embedded WebApplicationContext
+2020-07-29 15:23:30 -Root WebApplicationContext: initialization completed in 2067 ms
+2020-07-29 15:23:30 -xss filter init~~~~~~~~~~~~
+2020-07-29 15:23:30 -Renegade-四叶草-Hikari - Starting...
+2020-07-29 15:23:30 -Renegade-四叶草-Hikari - Start completed.
+2020-07-29 15:23:30 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-29 15:23:31 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-07-29 15:23:31 -HHH000206: hibernate.properties not found
+2020-07-29 15:23:31 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-07-29 15:23:31 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-07-29 15:23:31 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-29 15:23:31 -Redisson 3.9.1
+2020-07-29 15:23:32 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 15:23:32 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-07-29 15:23:33 -Using default implementation for ThreadExecutor
+2020-07-29 15:23:33 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-07-29 15:23:33 -Quartz Scheduler v.2.3.0 created.
+2020-07-29 15:23:33 -RAMJobStore initialized.
+2020-07-29 15:23:33 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-07-29 15:23:33 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-07-29 15:23:33 -Quartz scheduler version: 2.3.0
+2020-07-29 15:23:33 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@5d32f5db
+2020-07-29 15:23:33 -Initializing ExecutorService
+2020-07-29 15:23:33 -Initializing ExecutorService 'asyncExecutor'
+2020-07-29 15:23:33 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-29 15:23:34 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-29 15:23:34 -Initializing ExecutorService 'taskScheduler'
+2020-07-29 15:23:34 -Starting Quartz Scheduler now
+2020-07-29 15:23:34 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-07-29 15:23:34 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-07-29 15:23:34 -Starting ProtocolHandler ["http-nio-8686"]
+2020-07-29 15:23:34 -Using a shared selector for servlet write/read
+2020-07-29 15:23:34 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-07-29 15:23:34 -Started ShouBaApplication in 7.186 seconds (JVM running for 8.381)
+2020-07-29 15:23:48 -A cookie header was received [1594017985,1594035870,1594887285; JSESSIONID=E304E8B3E54B41F7C8096F237CEF3E58] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-07-29 15:23:48 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-29 15:23:48 -Initializing Servlet 'dispatcherServlet'
+2020-07-29 15:23:48 -Completed initialization in 13 ms
+2020-07-29 15:23:48 -==>请求参数 : [{}]
+2020-07-29 15:23:48 -==>请求地址 : http://localhost:8686/
+2020-07-29 15:23:48 -==>请求头: null格式: GET
+2020-07-29 15:23:48 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-07-29 15:23:48 -耗时 : 1
+2020-07-29 15:23:48 -<==返回值 : redirect:/login
+2020-07-29 15:23:48 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@63b6b3a7]
+2020-07-29 15:23:48 -==>请求地址 : http://localhost:8686/login
+2020-07-29 15:23:48 -==>请求头: null格式: GET
+2020-07-29 15:23:48 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-07-29 15:23:48 -耗时 : 10
+2020-07-29 15:23:48 -<==返回值 : /login
+2020-07-29 15:23:50 -==>请求参数 : []
+2020-07-29 15:23:50 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:23:50 -==>请求头: null格式: GET
+2020-07-29 15:23:50 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:23:50 -耗时 : 7
+2020-07-29 15:23:50 -<==返回值 : /forgetPwd
+2020-07-29 15:24:50 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@97dade3, org.apache.catalina.connector.ResponseFacade@57df3237, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 15:24:50 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 15:24:50 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:24:50 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 15:24:50 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 15:24:50 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2020-07-29 15:24:50 -==> Parameters: forgetPwd(String), 1(String), 18124242084(String), 467224(String), 2020-07-29 15:24:50(String), 2020-07-29 15:24:50(String)
+2020-07-29 15:24:50 -<==    Updates: 1
+2020-07-29 15:24:50 -耗时 : 487
+2020-07-29 15:24:50 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@611d1bca
+2020-07-29 15:24:52 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7715ed7c, org.apache.catalina.connector.ResponseFacade@57df3237, {}]
+2020-07-29 15:24:52 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:24:52 -==>请求头: null格式: GET
+2020-07-29 15:24:52 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:24:52 -耗时 : 1
+2020-07-29 15:24:52 -<==返回值 : /login
+2020-07-29 15:25:15 -==>请求参数 : []
+2020-07-29 15:25:15 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:25:15 -==>请求头: null格式: GET
+2020-07-29 15:25:15 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:25:15 -耗时 : 0
+2020-07-29 15:25:15 -<==返回值 : /forgetPwd
+2020-07-29 15:25:34 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@5162503d, org.apache.catalina.connector.ResponseFacade@57df3237, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 15:25:34 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 15:25:34 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:25:34 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 15:25:34 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 15:25:34 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2020-07-29 15:25:34 -==> Parameters: forgetPwd(String), 1(String), 18124242084(String), 702773(String), 2020-07-29 15:25:34(String), 2020-07-29 15:25:34(String)
+2020-07-29 15:25:34 -<==    Updates: 1
+2020-07-29 15:25:34 -耗时 : 257
+2020-07-29 15:25:34 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@504695f8
+2020-07-29 15:25:36 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7f479171, org.apache.catalina.connector.ResponseFacade@57df3237, {}]
+2020-07-29 15:25:36 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:25:36 -==>请求头: null格式: GET
+2020-07-29 15:25:36 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:25:36 -耗时 : 1
+2020-07-29 15:25:36 -<==返回值 : /login
+2020-07-29 15:26:33 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@26f7506, org.apache.catalina.connector.ResponseFacade@57df3237, {}]
+2020-07-29 15:26:33 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:26:33 -==>请求头: null格式: GET
+2020-07-29 15:26:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:26:33 -耗时 : 1
+2020-07-29 15:26:33 -<==返回值 : /login
+2020-07-29 15:26:33 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@18d3fa53, org.apache.catalina.connector.ResponseFacade@3d163045, {}]
+2020-07-29 15:26:33 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:26:33 -==>请求头: null格式: GET
+2020-07-29 15:26:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:26:33 -耗时 : 0
+2020-07-29 15:26:33 -<==返回值 : /login
+2020-07-29 15:27:44 -==>请求参数 : []
+2020-07-29 15:27:44 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:27:44 -==>请求头: null格式: GET
+2020-07-29 15:27:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:27:44 -耗时 : 1
+2020-07-29 15:27:44 -<==返回值 : /forgetPwd
+2020-07-29 15:27:56 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@e54f643, org.apache.catalina.connector.ResponseFacade@769219c1, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 15:27:56 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 15:27:56 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:27:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 15:27:57 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 15:27:57 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2020-07-29 15:27:57 -==> Parameters: forgetPwd(String), 1(String), 18124242084(String), 137042(String), 2020-07-29 15:27:57(String), 2020-07-29 15:27:57(String)
+2020-07-29 15:27:57 -<==    Updates: 1
+2020-07-29 15:27:57 -耗时 : 223
+2020-07-29 15:27:57 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7604d1f4
+2020-07-29 15:28:40 -==>请求参数 : [yewuyuan, 123456, 18124242084, 137042]
+2020-07-29 15:28:40 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:28:40 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:28:40 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:28:40 -==>  Preparing: select code from t_verify_record where bus_type='forgetPwd' and account=? and create_time>DATE_ADD(now(),interval -1 HOUR) 
+2020-07-29 15:28:40 -==> Parameters: 18124242084(String)
+2020-07-29 15:28:40 -<==      Total: 3
+2020-07-29 15:28:40 -==>  Preparing: update yl_staff_info set login_pwd=? where login_name=? and user_tel=? 
+2020-07-29 15:28:40 -==> Parameters: 123456(String), yewuyuan(String), 18124242084(String)
+2020-07-29 15:28:40 -<==    Updates: 1
+2020-07-29 15:28:40 -耗时 : 29
+2020-07-29 15:28:40 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@6c24b234
+2020-07-29 15:29:17 -==>请求参数 : []
+2020-07-29 15:29:17 -==>请求地址 : http://localhost:8686/yilian/api/forgetPwd
+2020-07-29 15:29:17 -==>请求头: null格式: GET
+2020-07-29 15:29:17 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.forgetPwd
+2020-07-29 15:29:17 -耗时 : 0
+2020-07-29 15:29:17 -<==返回值 : /forgetPwd
+2020-07-29 15:29:38 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4877c673, org.apache.catalina.connector.ResponseFacade@769219c1, {user_tel=18124242084, code_type=forgetPwd}]
+2020-07-29 15:29:38 -==>请求地址 : http://localhost:8686/yilian/api/sendCode
+2020-07-29 15:29:38 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:29:38 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCode
+2020-07-29 15:29:38 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2020-07-29 15:29:38 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time ) values ( ?, ?, ?, ?, ?, ? ) 
+2020-07-29 15:29:38 -==> Parameters: forgetPwd(String), 1(String), 18124242084(String), 780500(String), 2020-07-29 15:29:38(String), 2020-07-29 15:29:38(String)
+2020-07-29 15:29:38 -<==    Updates: 1
+2020-07-29 15:29:38 -耗时 : 238
+2020-07-29 15:29:38 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@1e4f584d
+2020-07-29 15:31:18 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@548b59eb, org.apache.catalina.connector.ResponseFacade@769219c1, {login_pwd=123456, login_name=yewuyuan, timeStamp=1596007878000, sign=CC95C1DB4F9B7B81E6AD59CE8AF8880F}]
+2020-07-29 15:31:18 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-07-29 15:31:18 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-07-29 15:31:18 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-07-29 15:31:18 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-07-29 15:31:18 -==> Parameters: yewuyuan(String), 123456(String)
+2020-07-29 15:31:18 -<==      Total: 1
+2020-07-29 15:31:18 -耗时 : 5
+2020-07-29 15:31:18 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7b0d5844
+2020-07-29 15:31:20 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@49bd08ec, org.apache.catalina.connector.ResponseFacade@769219c1, {}]
+2020-07-29 15:31:20 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-07-29 15:31:20 -==>请求头: null格式: GET
+2020-07-29 15:31:20 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-07-29 15:31:20 -耗时 : 1
+2020-07-29 15:31:20 -<==返回值 : /staff/index
+2020-07-29 15:32:41 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-07-29 15:32:41 -Shutting down ExecutorService 'taskScheduler'
+2020-07-29 15:32:41 -Shutting down ExecutorService 'asyncExecutor'
+2020-07-29 15:32:41 -Shutting down Quartz Scheduler
+2020-07-29 15:32:41 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2020-07-29 15:32:41 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-07-29 15:32:41 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0xf5d429b6, L:/127.0.0.1:58837 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x4abfc850, L:/127.0.0.1:58835 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x59fbe711, L:/127.0.0.1:58840 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x88e5a846, L:/127.0.0.1:58834 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x472c9cf7, L:/127.0.0.1:58839 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0xfd1b72d6, L:/127.0.0.1:58842 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x008e0b4a, L:/127.0.0.1:58841 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x4f5af81e, L:/127.0.0.1:58833 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Exception occured. Channel: [id: 0x840b3ed3, L:/127.0.0.1:58838 - R:127.0.0.1/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:648)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:583)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:500)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-07-29 15:32:41 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-07-29 15:32:41 -Renegade-四叶草-Hikari - Shutdown initiated...
+2020-07-29 15:32:41 -Renegade-四叶草-Hikari - Shutdown completed.

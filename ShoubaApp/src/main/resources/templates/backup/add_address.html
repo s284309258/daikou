@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/gVerify.js" ></script>
+        <script type="text/javascript" src="/static/backup/js/core.js" ></script>
+        <script type="text/javascript" src="/static/backup/js/md5.js" ></script>
+        <script type="text/javascript" src="/static/backup/js/jsencrypt.js" ></script>
+        <script type="text/javascript" src="/static/backup/js/public.js" ></script>
+		<style>
+			.getcode2{display: block;width: 35%;border-left: 1px solid #577AEF;position: absolute;right: 10px;text-align: center;}
+			.getcode2 em{font-style: normal;}
+			.get_code{text-overflow: ellipsis;overflow: hidden;color: #577AEF;font-weight: normal;}
+			.get_code1{display: none;}
+			.v_container{position: absolute;right: 10px;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>添加收币地址</h1>
+			
+		</div>
+		<div class="addform">
+			<div class="lable">
+			<label>
+				<span>联系姓名</span>
+				<input type="text" id="real_name" th:value="${user['real_name']}?${user['real_name']}"/>
+			</label>
+			<label>
+				<span>手机号码</span>
+				<input type="text" id="telphone" th:value="${user['telphone']}?${user['telphone']}"/>
+			</label>
+<!--			<label>-->
+<!--				<span>图形验证</span>-->
+<!--				<input type="text" placeholder="请输入验证码" id="ver"/>-->
+<!--				<div id="v_container"></div>-->
+<!--			</label>-->
+			<div class="lable">
+			<label>
+				<span>验证号码</span>
+				<input type="text" id="code" placeholder="请输入验证码"/>
+				<p class="getcode2">
+						<strong class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码(60)</strong>
+						<strong class="get_code get_code1">(<em id="J_second" >60</em>)s<em>后重发</em></strong>
+				</p>
+			</label>
+			
+			</div>
+			<p class="line"></p>
+			</div>
+			<div class="lable">
+				<label>
+				<span>地址标签</span>
+				<input type="text" id="eos_address_label" placeholder="请输入地址标签" class="addretitle"/>
+			</label>
+			<label>
+				<span>收币地址</span>
+				<input type="text" id="eos_address" placeholder="请输入收币地址"/>
+			</label>
+			<label>
+				<span>交易密码</span>
+				<input type="password" id="pay_pwd" placeholder="交易密码"/>
+			</label>
+
+			</div>
+
+		</div>
+		<p class="line"></p>
+		<div class="addre"><a href="#" id="btn">确认</a></div>
+		<script>
+
+		document.getElementById("btn").onclick = function(){
+		// var res = verifyCode.validate(document.getElementById("ver").value);
+		var code = $("#code").val();
+		// if(res){
+            var param = {
+                'real_name': $("#real_name").val(),
+                'telphone': $("#telphone").val(),
+                'eos_address': $("#eos_address").val(),
+				'eos_address_label':$("#eos_address_label").val(),
+                'pay_pwd': CryptoJS.MD5($("#pay_pwd").val()).toString().toUpperCase(),
+				'code':code
+            }
+            $.ajax({
+                type:'post',
+                url:'/m9/user/updateAddress',
+                dataType : "json",
+                cache : false,
+                data:{
+                    real_name: $("#real_name").val(),
+                    telphone: $("#telphone").val(),
+                    eos_address: $("#eos_address").val(),
+					eos_address_label:$("#eos_address_label").val(),
+                    pay_pwd: CryptoJS.MD5($("#pay_pwd").val()).toString().toUpperCase(),
+					code:code,
+                    sign:md5Method(param)
+                },
+                success : function(result) {
+                    if(result.success==true){
+                        layer.msg(result.msg, {
+                            icon: 1,//提示的样式
+                            time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+                            end:function(){
+								window.location.href = "/m9/user/index";
+                            }
+                        });
+                    }else{
+                        layer.msg(result.msg, {
+                            icon: 2,//提示的样式
+                            time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+                            end:function(){
+
+                            }
+                        });
+                    }
+                },
+                error : function(result){
+                }
+            });
+// 		layer.msg("验证正确", {
+// 				  icon: 1,//提示的样式
+// 				  time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+// 					end:function(){
+// //					window.location.href = "";
+// 					}
+// 			});
+		}
+// 		else{
+// 		layer.msg("验证码错误", {
+// 		  icon: 2,//提示的样式
+// 		  time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+// 			end:function(){
+// //			window.location.href = "";
+// 			}
+// 	});
+// 		}
+// 		}
+			var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+
+		var	phone = $("#telphone").val();
+		$.ajax({
+			type : "POST",
+			url : '/m9/user/sendCode',
+			dataType : "json",
+			data : {
+				"phone":phone
+			},
+			success : function(data) {
+				if(data.success==true){
+					layer.msg(data.msg,{icon:6,time : 1000});
+				} else {
+					layer.msg(data.msg,{icon:5,time : 1000});
+				}
+			}
+		})
+	}else{
+		$('#telphone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#telphone').val();
+	var pattern = /^((1[0-9])+\d{9})$/;
+	isPhone = 1;
+	if(phone == '') {
+		layer.msg("请输入手机号", {icon: 2,time: 2000,});
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		layer.msg("请输入正确的手机号码", {icon: 2,time: 2000,});
+		isPhone = 0;
+		return;
+	}
+}
+//倒计时
+function resetCode(){
+	$('#J_getCode').hide();
+    $('#J_second').html('60');
+	$('.get_code1').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('.get_code1').hide();
+		}
+	},1000);
+};	
+		</script>
+	</body>
+</html>

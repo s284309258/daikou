@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.FrontFlowingRecordFreewdbDao">
+
+	<select id="get" resultType="com.renegade.domain.FrontFlowingRecordFreewdbDO">
+		select `flowing_id`,`flowing_no`,`assets_befrom`,`assets_after`,`assets_change`,`order_no`,`type`,`create_time`,`user_id` from t_front_flowing_record_vfs where flowing_id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.FrontFlowingRecordFreewdbDO">
+		select `flowing_id`,`flowing_no`,`assets_befrom`,`assets_after`,`assets_change`,`order_no`,`type`,`create_time`,`user_id` from t_front_flowing_record_vfs
+        <where>  
+		  		  <if test="flowingId != null and flowingId != ''"> and flowing_id = #{flowingId} </if>
+		  		  <if test="flowingNo != null and flowingNo != ''"> and flowing_no = #{flowingNo} </if>
+		  		  <if test="assetsBefrom != null and assetsBefrom != ''"> and assets_befrom = #{assetsBefrom} </if>
+		  		  <if test="assetsAfter != null and assetsAfter != ''"> and assets_after = #{assetsAfter} </if>
+		  		  <if test="assetsChange != null and assetsChange != ''"> and assets_change = #{assetsChange} </if>
+		  		  <if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		 <if test="startTime !=null and startTime != '' and endTime !=null and endTime !=''">
+				and	create_time between #{startTime} and #{endTime}
+			</if> 
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by flowing_id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_front_flowing_record_vfs
+		 <where>  
+		  		  <if test="flowingId != null and flowingId != ''"> and flowing_id = #{flowingId} </if>
+		  		  <if test="flowingNo != null and flowingNo != ''"> and flowing_no = #{flowingNo} </if>
+		  		  <if test="assetsBefrom != null and assetsBefrom != ''"> and assets_befrom = #{assetsBefrom} </if>
+		  		  <if test="assetsAfter != null and assetsAfter != ''"> and assets_after = #{assetsAfter} </if>
+		  		  <if test="assetsChange != null and assetsChange != ''"> and assets_change = #{assetsChange} </if>
+		  		  <if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.FrontFlowingRecordFreewdbDO" useGeneratedKeys="true" keyProperty="flowingId">
+		insert into t_front_flowing_record_vfs
+		(
+			`flowing_no`, 
+			`assets_befrom`, 
+			`assets_after`, 
+			`assets_change`, 
+			`order_no`, 
+			`type`, 
+			`create_time`, 
+			`user_id`
+		)
+		values
+		(
+			#{flowingNo}, 
+			#{assetsBefrom}, 
+			#{assetsAfter}, 
+			#{assetsChange}, 
+			#{orderNo}, 
+			#{type}, 
+			#{createTime}, 
+			#{userId}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.FrontFlowingRecordFreewdbDO">
+		update t_front_flowing_record_vfs 
+		<set>
+			<if test="flowingNo != null">`flowing_no` = #{flowingNo}, </if>
+			<if test="assetsBefrom != null">`assets_befrom` = #{assetsBefrom}, </if>
+			<if test="assetsAfter != null">`assets_after` = #{assetsAfter}, </if>
+			<if test="assetsChange != null">`assets_change` = #{assetsChange}, </if>
+			<if test="orderNo != null">`order_no` = #{orderNo}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="userId != null">`user_id` = #{userId}</if>
+		</set>
+		where flowing_id = #{flowingId}
+	</update>
+	
+	<delete id="remove">
+		delete from t_front_flowing_record_vfs where flowing_id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_front_flowing_record_vfs where flowing_id in 
+		<foreach item="flowingId" collection="array" open="(" separator="," close=")">
+			#{flowingId}
+		</foreach>
+	</delete>
+     <!-- 计算直推有效用户的VFS收益 -->
+ <select id="getUtProfit" parameterType="java.util.HashMap" resultType="java.math.BigDecimal">
+    select IFNULL(sum(assets_change),0.0000) from t_front_flowing_record_vfs_profit  u where u.user_id in(
+ select t.user_id from t_front_user t where FIND_IN_SET(#{userId},parent_chain) and t.algebra-#{daishu}&lt;=#{num} and is_active=1) and (TO_DAYS(NOW( )) - TO_DAYS(u.create_time)) &lt;= 1 
+ </select>
+ <!-- 计算用户的usdt收益 根据类型计算 -->
+ <select id="getUtProfitTeamVfs" parameterType="int" resultType="java.math.BigDecimal">
+  select IFNULL(sum(assets_change),0.0000) from t_front_flowing_record_vfs_profit u where u.user_id=#{userId} and (TO_DAYS(NOW( )) - TO_DAYS(u.create_time)) &lt;= 1
+ </select>
+ <!-- 计算所有人的收益 -->
+ <select id="getUtAllProfit"  resultType="java.math.BigDecimal">
+  select IFNULL(sum(assets_change),0.0000) from t_front_flowing_record_vfs_profit u where (TO_DAYS(NOW( )) - TO_DAYS(u.create_time)) &lt;= 1
+ </select>
+</mapper>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.FrontFeedbackDao">
+	<select id="get" resultType="com.renegade.domain.FrontFeedbackDO">
+		select `id`,`coontent`,`photo_1`,`photo_2`,`photo_3`,`user_id`,`user_tel`,`type` from t_front_feedback where id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.FrontFeedbackDO">
+		select `id`,`coontent`,`photo_1`,`photo_2`,`photo_3`,`user_id`,`user_tel`,`type` from t_front_feedback
+        <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="coontent != null and coontent != ''"> and coontent = #{coontent} </if>
+		  		  <if test="photo1 != null and photo1 != ''"> and photo_1 = #{photo1} </if>
+		  		  <if test="photo2 != null and photo2 != ''"> and photo_2 = #{photo2} </if>
+		  		  <if test="photo3 != null and photo3 != ''"> and photo_3 = #{photo3} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="userTel != null and userTel != ''"> and user_tel = #{userTel} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_front_feedback
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="coontent != null and coontent != ''"> and coontent = #{coontent} </if>
+		  		  <if test="photo1 != null and photo1 != ''"> and photo_1 = #{photo1} </if>
+		  		  <if test="photo2 != null and photo2 != ''"> and photo_2 = #{photo2} </if>
+		  		  <if test="photo3 != null and photo3 != ''"> and photo_3 = #{photo3} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="userTel != null and userTel != ''"> and user_tel = #{userTel} </if>
+		  		  <if test="type != null and type != ''"> and type = #{type} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.FrontFeedbackDO" keyProperty="id" useGeneratedKeys="true">
+		insert into t_front_feedback
+		(
+			`coontent`, 
+			`photo_1`, 
+			`photo_2`, 
+			`photo_3`, 
+			`user_id`, 
+			`user_tel`, 
+			`type`
+		)
+		values
+		(
+			#{coontent}, 
+			#{photo1}, 
+			#{photo2}, 
+			#{photo3}, 
+			#{userId}, 
+			#{userTel}, 
+			#{type}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.FrontFeedbackDO">
+		update t_front_feedback 
+		<set>
+			<if test="coontent != null">`coontent` = #{coontent}, </if>
+			<if test="photo1 != null">`photo_1` = #{photo1}, </if>
+			<if test="photo2 != null">`photo_2` = #{photo2}, </if>
+			<if test="photo3 != null">`photo_3` = #{photo3}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="userTel != null">`user_tel` = #{userTel}, </if>
+			<if test="type != null">`type` = #{type}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from t_front_feedback where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_front_feedback where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

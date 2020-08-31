@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<title>公司信息录入</title>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>公司信息录入</h1>
+		</header>
+		<div class="informmation-form">
+			<div id="form1">
+				<label>
+					<span>公司名称</span>
+					<input type="text" placeholder="请输入公司名称" id="org_name"/>
+				</label>
+				<label>
+					<span>公司地址</span>
+					<input type="text" placeholder="请输入公司详细地址" id="org_address"/>
+				</label>
+			</div>
+			<div id="form2">
+				<label>
+					<span>姓名</span>
+					<input type="text" placeholder="请输入公司负责人姓名" id="real_name"/>
+				</label>
+				<label>
+					<span>电话</span>
+					<input type="text" placeholder="请输入联系电话" id="user_tel"/>
+				</label>
+			</div>
+			<div id="form2">
+				<label>
+					<span>账户户名</span>
+					<input type="text" placeholder="请输入银行账户户名" id="acc_name"/>
+				</label>
+				<label>
+					<span>银行账户</span>
+					<input type="text" placeholder="请输入银行账户" id="acc_no"/>
+				</label>
+				<label>
+					<span>开户省份</span>
+					<input type="text" placeholder="请输入开户省份(广东)" id="acc_province"/>
+				</label>
+				<label>
+					<span>开户城市</span>
+					<input type="text" placeholder="请输入开户城市(深圳)" id="acc_city"/>
+				</label>
+			</div>
+			<div id="form2">
+				<label>
+					<span>登陆用户名</span>
+					<input type="text" placeholder="请输入登陆用户名" id="login_name"/>
+				</label>
+				<label>
+					<span>登陆密码</span>
+					<input type="password" placeholder="请输入登陆密码" id="login_pwd"/>
+				</label>
+			</div>
+
+<!--			<div class="upimg-warp">-->
+<!--				<p>营业执照照片</p>-->
+<!--				<div class="upimgs">-->
+<!--					<div class="idcard-index">-->
+<!--						<input type="file" id="card_poto1" name="card_poto1" accept="image/*" capture="camera" class="upload-one">-->
+<!--						<span class="show-warp"><p>营业执照照片</p><img id="pictures" class="img_wrap" src=""></span>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+			<div class="complete">
+				<button>完成</button>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			
+			$('.complete').click(function(){
+				var org_name = $('#org_name').val();
+				var org_address = $('#org_address').val();
+				var real_name = $('#real_name').val();
+				var user_tel = $('#user_tel').val();
+				var login_name = $('#login_name').val();
+				var login_pwd = $('#login_pwd').val();
+
+				var acc_name = $('#acc_name').val();
+				var acc_no = $('#acc_no').val();
+				var acc_province = $('#acc_province').val();
+				var acc_city = $('#acc_city').val();
+
+
+				if(!isKong(org_name,$("#org_name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(org_address,$("#org_address").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(real_name,$("#real_name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(user_tel,$("#user_tel").attr("placeholder"))){
+					return false;
+				}
+				if(!telcheck(user_tel)){
+					return false;
+					
+				}
+
+
+
+				if(!isKong(acc_name,$("#acc_name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(acc_no,$("#acc_no").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(acc_province,$("#acc_province").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(acc_city,$("#acc_city").attr("placeholder"))){
+					return false;
+				}
+
+
+
+
+				if(!isKong(login_name,$("#login_name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(login_pwd,$("#login_pwd").attr("placeholder"))){
+					return false;
+				}
+
+				// if(card_poto1==null || card_poto1==''){
+				// 	layer.msg('请上传营业执照');
+				// 	return false;
+				// }
+				
+				
+				$.ajax({
+					url:'/yilian/api/openCompanySubmit',
+					type:'post',
+					data:{
+						org_name:org_name,
+						real_name:real_name,
+						user_tel:user_tel,
+						login_name:login_name,
+						login_pwd:login_pwd,
+						org_address:org_address,
+						acc_name:acc_name,
+						acc_no:acc_no,
+						acc_province:acc_province,
+						acc_city:acc_city
+					},
+					success:function(result){
+						if(result.errorCode=="00000"){
+							layer.msg(result.message,{
+								end:function(){
+									window.location.href = "/yilian/api/index";
+								}
+							});
+						}else{
+							layer.msg(result.message);
+						}
+
+					},
+					error:function(result){
+						layer.msg(result.message);
+					}
+				});
+				
+			});
+		</script>
+	</body>
+</html>

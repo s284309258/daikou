@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<title>客户资料记录</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+				
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+				<h1>客户资料记录</h1>
+			</header>
+			<div class="main">
+				<div class="agent-seach">
+					<span>
+						<img src="../../img/seach.png" />
+						<input type="search" placeholder="姓名" v-model="keywords"/>
+					</span>
+					<span >查询</span>
+				</div>
+				<div class="seach-list-warp">
+					<div class="details-warp">
+						<div class="details-item" >
+						
+							<ul class="item-txt"  v-for="item in seach(keywords)" :key="item.id" >
+								
+								<li>
+									<span>姓名：</span>
+									<span>{{item.real_name}}</span>
+								</li>
+								<li>
+									<span>手机号：</span>
+									<span>{{item.user_tel}}</span>
+								</li>
+								<li>
+									<span>金额：</span>
+									<span>￥{{item.amount}}</span>
+								</li>
+								<li>
+									<span>身份证号码：</span>
+									<span>{{item.user_card}}X</span>
+								</li>
+								<!-- <li>
+									<span>开户行：</span>
+									<span>工商银行</span>
+								</li> -->
+								<li>
+									<span>银行卡号：</span>
+									<span>{{item.bank_account}}</span>
+								</li>
+								<li>
+									<span>开户时间：</span>
+									<span>{{formartDate(item.create_time)}}</span>
+								</li>
+								<li>
+									<span>归属公司：</span>
+									<span>{{item.org_agent_name}}</span>-<span>{{item.org_name}}</span>
+								</li>
+								<li>
+									<span>代扣协议：</span>
+									<a :href="goProto(item.id)">已签订<img src="../../img/next.png" class="next"/></a>
+									<!-- <span class="blod"></span> -->
+								</li>
+								<li>
+									<span>证件信息：</span>
+									<a :href="goHref(item.id)"><img src="../../img/next.png" class="next"/></a>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+	</head>
+	<body>
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/vue.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			var vmm = new Vue({
+				el:'.main',
+				data:{
+					keywords:'',
+					datalist:[],
+					
+				},
+				mounted(){
+					this.getdata()
+					},
+				methods:{
+					getdata(){
+						var that = this;
+						jQuery.ajax({
+							type:'post',
+							datatype:'json',
+							url:'/yilian/api/withholdUserInfo',
+							
+							success:function(res){
+								//debugger
+								console.log(res)
+								if(res.errorCode == 00000){
+									that.datalist= res.data
+								}
+							},
+							error:function(res){
+								console.log(res)
+								layer.msg(res)
+							}	
+							
+						})
+					},
+					seach(keywords){
+						return this.datalist.filter(item => {
+							console.log(keywords);
+							if (item.real_name.indexOf(keywords) != -1) {
+								console.log(keywords);
+								return item
+							} //filter方法来循环数组返回的是一个符合条件的新数组
+						})
+						},
+						formartDate(param) {
+						 let date = new Date(param);
+						 Y = date.getFullYear() + '-';
+						 M = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) + '-' : date.getMonth() + 1 + '-';
+						 D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + ' ';
+						 h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+						 m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ':' : date.getMinutes() + ':';
+						 s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+						 return Y + M + D + h + m + s;
+						},
+					goHref:function(val){
+						return '/yilian/api/withholdUserDetail/'+val
+					},
+					goProto:function(val){
+						return '/yilian/api/sign/'+val
+					}
+				}
+				
+				
+			}) 
+		</script>
+	</body>
+</html>
+

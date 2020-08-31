@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/reset.css" />
+		<title>业务员成员</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+		</style>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="/img/w-back.png"/></i>
+			<h1><span th:text="${real_name}">yi一</span> (<span th:text="${record.size()}"></span>)</h1>
+		</header>
+		<main class="main">
+			<div class="agent-seach">
+			</div>
+			<div class="seach-list-warp">
+				<ul class="seach-list" th:each="rd :${record}">
+					<li>
+						<a th:href="@{'/yilian/api/withholdUserDetail/'+${rd.id}}">
+							<span class="seach-name" th:text="${rd.real_name}"><i>陈一</i></span>
+							<span class="flexs" th:text="${rd.user_tel}">16170820490
+							<img src="/img/next.png" class="next"/>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="/css/reset.css" rel="stylesheet" />
+		<link href="/css/login.css" rel="stylesheet" />
+		<!-- jQuery -->
+		<script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="/js/vue.js"></script>
+		<script src="/js/axios.js"></script>
+		<script src="/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/js/core.js" ></script>
+		<script type="text/javascript" src="/js/jsencrypt.js" ></script>
+		<script type="text/javascript" src="/js/md5.js" ></script>
+		<script type="text/javascript" src="/js/public.js" ></script>
+	<!-- 	<script type="text/javascript" src="/js/rember.js" ></script> -->
+		<title>登录</title>
+	</head>
+	<body>
+		<div class="login-warp ">
+			<div class="login-logo ">
+				<img src="/img/logo-.png" class="logo"/>
+				<img class="logo-title"  src="/img/title.png"/>
+				<!-- <h3 class="logo-title">收吧</h3> -->
+			</div>
+			<div class="form fadeInTop">
+				<label class="form-user lable">
+					<img src="/img/user.png" />
+					<input type="text" id="login_name" name="user" class="user" placeholder="请输入账号"/>
+				</label>
+				<label class="form-pwd lable">
+					<img src="/img/password.png" />
+					<input type="password" id="login_pwd" name="pwd" class="pwd" placeholder="请输入密码"/>
+				</label>
+				<div class="checkbox">
+					<input type="checkbox" id="rember"  onclick="remember(this)"/>
+					<label for="rember" class="rember-txt mark0" >记住密码</label>
+				</div>
+				<div class="login-btn">
+					<button class="sub" onclick="requestAjax()" id="myForm">登录</button>
+				</div>
+				<a href="/yilian/api/forgetPwd" class="forget">忘记密码？</a>
+			</div>
+		</div>
+		<!-- layer.js -->
+		<script src="/js/layer/layer.js"></script>
+		<!-- js -->
+		<!-- cookie -->
+		<script src="/js/jquery.cookie.js"></script>
+		<script type="text/javascript">
+			function remember(obj) {
+				if($(obj).attr("checked")) { //不记住密码
+					$(".rember-txt").removeClass("mark");
+					$(".rember-txt").addClass("mark0");
+					$(obj).attr("checked", false)
+					console.log('不记住密码')
+				} else { //记住密码
+				$(".rember-txt").removeClass("mark0");
+					$(".rember-txt").addClass("mark");
+					$(obj).attr("checked", true);
+					console.log('记住密码')
+				}
+				console.log($(obj).attr("checked"))
+			
+			}
+			if ($.cookie("remberpwd")) {
+					$("#rember").attr("checked", true);
+					 $(".rember-txt").addClass("mark");
+					$(".user").val($.cookie("phone"));
+					$(".pwd").val($.cookie("passWord"));
+				}else{
+					console.log(1)
+					$("#rember").attr("checked", false);
+					$(".user").val("");
+					$(".pwd").val("");
+					$(".rember-txt").removeClass("mark");
+				}
+		</script>
+	<script type="text/javascript">
+		function requestAjax(){
+			
+			var login_name=$("#login_name").val();
+			var login_pwd=$("#login_pwd").val();
+			// if(!validateEmpty(login_name, "请输入用户名")){
+			// 	return false;
+			// }
+			// if(!validateEmpty(login_pwd, "请输入密码")){
+			// 	return false;
+			// }
+			if (login_name == "") {
+				layer.msg("请输入账号");
+				return;
+			}
+			if (login_pwd == "") {
+				layer.msg("请输入密码");
+				return;
+			}
+			if($("#rember").attr("checked")) {
+					$.cookie("remberpwd", true, {
+						expires: 7
+					}); // 存储一个带7天期限的 cookie
+					$.cookie("phone", login_name, {
+						expires: 7
+					}); // 存储一个带7天期限的 cookie
+					$.cookie("passWord", login_pwd, {
+						expires: 7
+					}); // 存储一个带7天期限的 cookie
+				} else {
+					
+					$.cookie("remberpwd", false, {
+						expires: -1
+					}); // 删除 cookie
+					$.cookie("phone", "", {
+						expires: -1
+					});
+					$.cookie("passWord", "", {
+						expires: -1
+					});
+				}
+			var timeStamp = (new Date()).getTime();
+			var param = {
+				'login_pwd': CryptoJS.MD5(CryptoJS.MD5(document.getElementById("login_pwd").value).toString()).toString(),
+				// 'login_pwd': document.getElementById("login_pwd").value,
+				'login_name': document.getElementById("login_name").value,
+				'timeStamp':timeStamp,
+
+			};
+			$.ajax({
+				type:'post',
+				url:'/yilian/api/login',
+				cache : false,
+				dataType : "json",
+				data:{
+					login_pwd:CryptoJS.MD5(CryptoJS.MD5(document.getElementById("login_pwd").value).toString()).toString(),
+					login_name:document.getElementById("login_name").value,
+					timeStamp: timeStamp,
+					sign:md5Method(param)
+				},
+				success : function(result) {
+					if(result.errorCode=="00000"){
+						layer.msg(result.message, {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+								window.location.href = "/yilian/api/index";
+							}
+						});
+					}else{
+						layer.msg(result.message, {
+							icon:2,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+
+							}
+						});
+					}
+				},
+				error : function(result){
+				}
+			});
+		}
+	</script>
+	</body>
+</html>

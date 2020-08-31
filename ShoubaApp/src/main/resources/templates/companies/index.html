@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/index.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<style>
+			header{background: url(../../img/index-bg.png) no-repeat !important;background-size: 100% 100% !important;}
+			body{background: url(../../img/for_-bg.png) no-repeat;background-position: bottom;background-size: contain;}
+		</style>
+		<title>首页</title>
+	</head>
+	<body>
+		<header>
+			<h1>首页</h1>
+		</header>
+		<main class="main">
+			<div class="index-warp">
+				<img src="../../img/logo-.png" />
+				<h2 th:text="${real_name}">湖南大幅有限公司</h2>
+			</div>
+			<ul class="index-ilst">
+				
+				<li>
+					<a href="/yilian/api/openStaff">
+						<span>
+							<img src="../../img/ziliao.png" class="icon-list"/>
+							业务员开户
+						</span>
+						<span>
+							<!-- <i>1</i> -->
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/withholdAudit">
+						<span>
+							<img src="../../img/dksh.png" class="icon-list"/>
+							扣款审核
+						</span>
+						<span>
+							<i th:text="${auditNum}">1</i>
+						<img src="../../img/next.png" class="next"/>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/staffRecord">
+						<span>
+							<img src="../../img/ywy.png" class="icon-list"/>
+							业务员管理
+						</span>
+						<img src="../../img/next.png" class="next"/>
+					</a>
+				</li>
+				<li>
+					<a href="/yilian/api/deductRecordComp">
+						<span class="">
+							<img src="../../img/mingxi.png" class="icon-list"/>
+							扣款记录
+						</span>
+						<img src="../../img/next.png" class="next"/>
+					</a>
+				</li>
+			</ul>
+		<button class="sign-out" onclick="logout()">退出登录</button>
+		</main>
+
+		<script type="text/javascript">
+			function logout() {
+				window.location.href = "/yilian/api/logout";
+			}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+	<link rel="stylesheet" href="../../css/style.css" />
+	<link rel="stylesheet" href="../../css/reset.css" />
+	<link rel="stylesheet" href="../../css/layui.css" />
+	<link rel="stylesheet" href="../../css/loading.css" />
+	<title>上传证件照</title>
+</head>
+<body>
+<header >
+	<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+	<h1>上传证件照</h1>
+	<!-- <button>确定</button> -->
+</header>
+<main class="mian">
+	<form method="post" id="form2" enctype="multipart/form-data" name="form" action="/yilian/api/openUser" onsubmit="return checkUpload()">
+		<input type="hidden" name="real_name" th:value="${data.real_name}">
+		<input type="hidden" name="user_card" th:value="${data.user_card}">
+		<input type="hidden" name="user_tel" th:value="${data.user_tel}">
+		<input type="hidden" name="bank_account" th:value="${data.bank_account}">
+		<input type="hidden" name="bank_name" th:value="${data.bank_name}">
+		<input type="hidden" name="amount" th:value="${data.amount}">
+		<input type="hidden" name="stage" th:value="${data.stage}">
+		<input type="hidden" name="stage_amount" th:value="${data.stage_amount}">
+		<div class="upload-txt">
+			上传证件照<span>请确保照片的清晰度</span>
+		</div>
+		<div class="upimgs">
+			<div class="idcard-index">
+				<input type="file" id="card_poto1" name="card_poto1" accept="image/*" capture="camera" class="upload-one">
+				<span class="show-warp"><p>上传身份证正面照</p><img id="pictures" class="img_wrap" src=""></span>
+			</div>
+			<div class="idcard-index">
+				<input type="file" id="card_poto2" name="card_poto2" accept="image/*" capture="camera" class="upload-one">
+				<span class="show-warp"><p>上传身份证反面照</p><img id="pictures1" class="img_wraps three" src=""></span>
+			</div>
+			<div class="idcard-index">
+				<input type="file" id="acc_poto1" name="acc_poto1" accept="image/*" capture="camera" class="upload-one">
+				<span class="show-warp"><p>上传银行卡正面照</p><img id="pictures2" class="img_wraps four" src=""></span>
+			</div>
+			<div class="idcard-index">
+				<input type="file" id="acc_poto2" name="acc_poto2" accept="image/*" capture="camera" class="upload-one">
+				<span class="show-warp"><p>上传银行卡反面照</p><img id="pictures3" class="img_wraps five" src=""></span>
+			</div>
+			<div class="idcard-index">
+				<input type="file" id="person_poto" name="person_poto" accept="image/*" capture="camera" class="upload-one ">
+				<span class="show-warp"><p>上传手持身份证及银行卡</p><img id="pictures4" class="img_wraps two" src=""></span>
+			</div>
+		</div>
+		<div class="Sign">
+			<p>签订代扣协议</p>
+			<div class="Sign-txt" >
+				<!-- <a href="javascript:sign();"> -->
+				<p>点击去签订《委托代扣协议》</p>
+				<!--
+                    </a> -->
+			</div>
+		</div>
+		<!--			<div class="login-btn">-->
+		<!--				<button class="sub" type="submit">提交</button>-->
+		<!--			</div>-->
+	</form>
+</main>
+
+<!-- 加载中遮罩层 -->
+<div class="mask" style="display: none;">
+	<div id="loading3">
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+		<div class="demo3"></div>
+	</div>
+	<p style="color: white;margin-top: .5rem;">图片上传中</p>
+</div>
+<script src="../../js/jquery-3.5.1.js"></script>
+<script src="../../js/upload.js"></script>
+<script src="../../js/layer/layer.js"></script>
+<script src="../../js/jquery-form.js"></script>
+
+<script type="text/javascript">
+
+	function checkUpload(){
+		var upload = $('#card_poto1').val();
+		var upload1 = $('#card_poto2').val();
+		var upload2 = $('#acc_poto1').val();
+		var upload3 = $('#acc_poto2').val();
+		var upload4 = $('#person_poto').val();
+		if(upload == ''&& upload1 == '' &&upload2 == ''&& upload3 == ''&& upload4 == '') {
+			layer.msg('请上传完整证件信息');
+			return false;
+		}
+		return false;
+	}
+
+	$('.Sign-txt').click(function(){
+		var upload = $('#card_poto1').val();
+		var upload1 = $('#card_poto2').val();
+		var upload2 = $('#acc_poto1').val();
+		var upload3 = $('#acc_poto2').val();
+		var upload4 = $('#person_poto').val();
+		if(upload == ''||upload1 == '' ||upload2 == ''|| upload3 == ''|| upload4 == '') {
+			layer.msg('请上传完整证件信息');
+			return false;
+		}else{
+			$('.mask').show();
+		}
+
+		setTimeout(function(){
+			sign();
+		},3000);
+	});
+	function sign(){
+		// checkUpload();
+		// var loading = layer.msg('图片上传中......', {icon: 16, shade: 0.3, time:3000});
+		document.forms[0].submit();
+	}
+
+
+	$(function(){
+		/** 验证文件是否导入成功  */
+		$("#form2").ajaxForm(function(data){
+			$('.mask').hide();
+		});
+	});
+</script>
+</body>
+</html>

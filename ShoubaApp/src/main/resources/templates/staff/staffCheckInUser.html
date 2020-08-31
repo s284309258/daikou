@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<link rel="stylesheet" href="../../css/layui.css" />
+			<script src="../../js/jquery-3.5.1.js"></script>
+			<!-- <script src="../../js/jquery-1.11.3.min.js"></script> -->
+			<script src="../../js/layer/layer.js"></script>
+			<!-- <script src="../../js/gVerify.js"></script> -->
+			<style>
+				#verifyCanvas{width: 100%;background: white !important;}
+				.company-name{}
+				.fenqi{display: flex;width: 92%;margin: .5rem auto;padding-bottom: 20px;}
+				.fenqi span{display: block;width: 30%;}
+				.fenqi p{display:block;width: 35%;}
+				.fenqi p input{width: 10vw;text-align: center;font-size: .9rem;font-weight: bold;border-bottom: 1px solid #E6E6E6;}
+			</style>
+			<title>资料录入</title>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>资料录入</h1>
+		</header>
+		<main class="main">
+			<form name="form" type="post" action="/yilian/api/uploadPhoto">
+			<div class="company-name">
+				<label class="border-bottom">
+					<span>姓名：</span>
+					<input type="text" th:name="real_name" placeholder="持卡人姓名" id="real_name"/>
+				</label>
+				<label class="border-bottom">
+					<span>身份证号：</span>
+					<input type="text" th:name="user_card" placeholder="请输入身份证号" id="user_card"/>
+				</label>
+				<label class="">
+					<span>手机号:</span>
+					<input type="text" th:name="user_tel" placeholder="请填写银行预留手机号" id="user_tel" />
+				</label>
+				
+			</div>
+			
+			<div class="company-name">
+				<label class="border-bottom">
+					<span>卡号：</span>
+					<input type="number" th:name="bank_account" placeholder="请输入银行卡号（仅支持储蓄卡）" id="bank_account"/>
+				</label>
+				<label class="border-bottom ">
+					<span>开户行</span>
+					<input type="text" th:name="bank_name" placeholder="请输入开户行" id="bank_name" />
+				</label>
+<!--				<label class="code-warp2 border-bottom">-->
+<!--					<span>短信验证:</span>-->
+<!--					<input type="number" th:name="verCode" placeholder="验证码" maxlength="6" id="verCode" style="width: 40% !important;"/>-->
+<!--					<input type="button" name="" id="verCodeBtn" value="获取验证码" style="width: 30% !important;" />-->
+<!--				</label>-->
+				<label class="border-bottom ">
+					<span>金额</span>
+					<input type="text" th:name="amount" id="amount" placeholder="请输入金额"/>
+				</label>
+				<div class="fenqi">
+					<span>金额(分期)</span>
+					<p>分<input type="number" th:name="stage" id="stage" /> 期</p><p>每期<input type="number" th:name="stage_amount" id="stage_amount"/>元</p>
+				</div>
+			</div>
+			<div class="account-btn">
+				<button type="button" class="next-btn" id="next-btn">下一步</button>
+			</div>
+			</form>
+		</main>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			// function getcode(){
+			//        //获取验证码
+			//        var colock = '';
+			//        var num = 60;
+			//        // $("#verCodeBtn").on("click", function(){
+			//            $("#verCodeBtn").attr("disabled","true");
+			//            console.log("222");
+			//            $("#verCodeBtn").val(num+"秒后获取");
+			//            colock = setInterval(doLoop, 1000);//一秒一次
+			//        // })
+			//
+			//        function doLoop(){
+			//            num--;
+			//            if(num > 0) {
+			//                $("#verCodeBtn").val(num+"秒后获取");
+			//            }else {
+			//                clearInterval(colock);//
+			//                $("#verCodeBtn").removeAttr("disabled");
+			//                $("#verCodeBtn").val("获取验证码");
+			//                num = 30;
+			//            }
+			//        }
+			// }
+			// var t= 0;
+			// $("#verCodeBtn").click(function () {
+			// 	t=t+1;
+			// 	var phone = document.getElementById('user_tel').value;
+			// 	if(!isKong(phone,$('#user_tel').attr('placeholder'))){
+			// 		return false
+			// 	}
+			// 	if(!(/^1(3|4|5|6|7|8|9|6)\d{9}$/.test(phone))){
+			// 		layer.msg("手机号码不正确",{
+			// 			icon: 2,//提示的样式
+			// 			time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+			// 		});
+			// 		return false;
+			// 	}else{
+			// 		$.ajax({
+			// 			url:'/yilian/api/sendCode',
+			// 			type:'post',
+			// 			data:{
+			// 				user_tel:$('#user_tel').val(),
+			// 				code_type:'checkInUser'
+			// 			},
+			// 			success : function(result) {
+			// 				layer.msg(result.message, {
+			// 					icon: 1,//提示的样式
+			// 					time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+			// 				});
+			// 			}
+			// 		});
+			// 		getcode()
+			//
+			//
+			// 	}
+			// });
+
+
+			$('.next-btn').click(function(){
+				var real_name = $('#real_name').val();
+				var user_card = $('#user_card').val();
+				var bank_name = $('#bank_name').val();
+				var user_tel = $('#user_tel').val();
+				// var verCode = $('#verCode').val();
+				var bank_account = $('#bank_account').val();
+				var amount = $('#amount').val();
+				var stage = $('#stage').val();
+				var stage_amount = $('#stage_amount').val();
+				// window.location.href='/yilian/api/uploadPhoto?real_name='+real_name+
+				// 		'&user_card='+user_card+'&user_tel='+user_tel+'&bank_account='+bank_account+'&amount='+amount+'&stage='+stage+
+				// 		'&stage_amount='+stage_amount+'&bank_name='+bank_name;
+
+
+				if(!isKong(real_name,$('#real_name').attr('placeholder'))){
+					return false
+				}
+				if(!isKong(user_card,$('#user_card').attr('placeholder'))){
+					return false
+				}
+				if(!Idcard(user_card)){
+					return false
+				}
+				if(!isKong(user_tel,$('#phone').attr('placeholder'))){
+					return false
+				}
+				// if(!telcheck(user_tel)){
+				// 	return false
+				// }
+				if(!isKong(bank_account,$('#Card_number').attr('placeholder'))){
+					return false
+				}
+				if(!regTest(bank_account)){
+					return false
+				}
+
+				if(!isKong(bank_name,$('#bank_name').attr('placeholder'))){
+					return false
+				}
+
+				// if(!isKong(verCode,$('#verCode').attr('placeholder'))){
+				// 	return false
+				// }
+				if(!isKong(amount,$('#amount').attr('placeholder'))){
+					return false
+				}
+				if(!moneyreg(amount)){
+					return false
+				}
+
+				if(stage!="" && stage!=null){
+					if(stage_amount==null || stage_amount==""){
+						layer.msg("分期金额不能为空", {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						});
+						return false;
+					}
+				}
+
+				if(stage_amount!="" && stage_amount!=null){
+					if(stage==null && stage==""){
+						layer.msg("分期期数不能为空", {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						});
+						return false;
+					}
+					if(amount!=stage_amount){
+						//debugger
+						layer.msg("分期金额必须与金额一致", {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						});
+						return false;
+					}
+				}
+
+				var formElement = document.forms[0];
+				formElement.submit();
+
+				// $.ajax({
+				// 	url:'/yilian/api/checkSmsCode',
+				// 	type:'post',
+				// 	data:{
+				// 		user_tel:$('#user_tel').val(),
+				// 		verCode:$('#verCode').val()
+				// 	},
+				// 	success : function(result) {
+				// 		if(result.errorCode!="00000"){
+				// 			layer.msg(result.message, {
+				// 				icon: 2,//提示的样式
+				// 				time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+				// 			});
+				// 			return false;
+				// 		}else{
+				// 			var formElement = document.forms[0];
+				// 			formElement.submit();
+				// 		}
+				// 	}
+				// });
+			});
+
+			// function checkNext(){
+			// 	var tag=false;
+			// 	$.ajax({
+			// 		url:'/yilian/api/checkSmsCode',
+			// 		type:'post',
+			// 		data:{
+			// 			user_tel:$('#user_tel').val(),
+			// 			verCode:$('#verCode').val()
+			// 		},
+			// 		success : function(result) {
+			// 			if(result.errorCode!="00000"){
+			// 				tag=false;
+			// 				layer.msg(result.message, {
+			// 					icon: 1,//提示的样式
+			// 					time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+			// 				});
+			// 				return false;
+			// 			}
+			// 			return true;
+			// 		}
+			// 	});
+			// 	return false;
+			// }
+		</script>
+	</body>
+</html>

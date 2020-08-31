@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="/static/backup/css/css.css" />
+	<link rel="stylesheet" href="/static/backup/css/font.css" />
+	<style>
+		.icon-chakan{font-size: 20px !important;color: #4D80F0 !important;}
+		time{font-size: .95rem;color: #333333;}
+		.numb{display: block;width: 50%;overflow: scroll;}
+	</style>
+</head>
+<body>
+<input type="hidden" id="oid" th:value="${order['id']}">
+<div class="head">
+	<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>求购单</h1>
+</div>
+<div class="admission">
+
+	<dl>
+		<dt><span>订 单 号 码：</span><i th:text="${order['order_id']}" class="numb"></i></dt>
+		<dt><span>当 前 状 态：</span><i>挂单中</i></dt>
+	</dl>
+	<dl>
+		<dt><span>挂 单 数 量：</span><i th:text="${order['quantity']}"></i></dt>
+		<dt><span>求 购 币 种：</span><i>EOS</i></dt>
+	</dl>
+	<dl>
+		<dt><span>交 易 单 价：</span><i th:text="${order['quantity_price']}"></i></dt>
+		<dt><span>交 易 总 额：</span><i th:text="${order['quantity_total']}"></i></dt>
+	</dl>
+	<!--			<dl class="dlcopy">-->
+	<!--				<dt><span>交 易 地 址：</span></dt>-->
+	<!--				<dt class="click"><p id="vi_code1"  th:text="${order['eos_address']}"></p><i class="iconfont icon-fuzhi copyBtn" data-clipboard-target="#vi_code1" onclick="copy()">复制地址</i></dt>-->
+	<!--			</dl>-->
+	<!--			<dl>-->
+	<!--				<dt><span>交易二维码：</span><p class="qr click"><i class="iconfont icon-chakan"></i><em >查看二维码</em></p></dt></dt>-->
+	<!--			</dl>-->
+	<dl class="dlcopy">
+		<dt><span>发 布 时 间：</span></dt>
+		<dt><time th:text="${order['cre_date']}"></time><span class="Cancel_order" onclick="transfer_undo()">撤单</span></dt>
+	</dl>
+</div>
+
+<div class="mask" style="display: none;">
+	<div class="check_qr">
+		<div id="qrcode">
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+<script>
+	jQuery(function(){
+
+		jQuery('#qrcode').qrcode({
+			width: 180,
+			height: 180,
+			text: $("#vi_code1").html()
+		});
+	});
+	$(function () {
+		$('.qr').click(function (event) {
+			//取消事件冒泡
+			event.stopPropagation();
+			//按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。
+			$('.mask').fadeToggle('slow');
+			return false;
+		});
+
+		$('.mask').click(function(event){
+			var _con = $('.check_qr');  // 设置目标区域
+			if(!_con.is(event.target) && _con.has(event.target).length === 0){
+				$('.mask').fadeToggle('slow');     //淡出消失
+			}
+		});
+	})
+
+</script>
+<script>
+
+</script>
+<!---->
+<script>
+
+	function copy(){
+		var clipboard=new Clipboard(".copyBtn");
+		clipboard.on("success",function(e){
+			layer.msg("复制成功",{ icon: 1,time: 2000});
+		});
+		clipboard.on('error', function(e) {
+			console.log(e);
+		});
+	}
+
+	function transfer_undo(){
+		$.ajax({
+			type : "POST",
+			url : '/m9/order/transfer_undo',
+			dataType : "json",
+			data : {
+				id:$("#oid").val()
+			},
+			success : function(data) {
+				if(data.success==true){
+					layer.msg(data.msg, {
+						icon: 6,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+							window.location.href = "/m9/user/index";
+						}
+					});
+				} else {
+					layer.msg(data.msg,{icon:5,time : 1000});
+				}
+			}
+		})
+	}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<title>资料记录</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+				
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+				<h1>资料记录</h1>
+			</header>
+			<main class="main">
+				<form name="form" method="get" action="/yilian/api/openRecord">
+				<div class="agent-seach">
+					<span>
+						<img src="../../img/seach.png" />
+						<input type="search" th:name="real_name" placeholder="姓名" />
+					</span>
+					<span onclick="openRecordQuery()">查询</span>
+				</div>
+				<div class="seach-list-warp">
+					<div class="details-warp">
+						<div class="details-item">
+							<ul class="item-txt" th:each="user: ${record}">
+								<li>
+									<span>姓名：</span>
+									<span th:text="${user.real_name}">陈一</span>
+								</li>
+								
+								<li>
+									<span>手机号：</span>
+									<span th:text="${user.user_tel}">13542124512</span>
+								</li>
+								<li>
+									<span>身份证号码：</span>
+									<span th:text="${user.user_card}">54227819631118675X</span>
+								</li>
+								<li>
+									<span>录入时间：</span>
+									<span th:text="${user.create_time}">2018/09/05 15:34:07</span>
+								</li>
+								<li>
+									<span>证件照：</span>
+									<a th:href="@{'/yilian/api/userDetail/'+${user.id}}"><img src="../../img/next.png" class="next"/></a>
+								</li>
+								<li>
+									<span>状态：</span>
+									<span class="blod color-blue" th:switch="${user.state}">
+										<p th:case="2">待审核</p>
+										<p th:case="1">审核通过</p>
+										<p th:case="0">审核拒绝</p>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				</form>
+			</main>
+
+		<script type="text/javascript">
+			function openRecordQuery(){
+				document.forms[0].submit();
+			}
+		</script>
+		</body>
+</html>
+

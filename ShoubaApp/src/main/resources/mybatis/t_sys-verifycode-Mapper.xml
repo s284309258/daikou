@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renegade.dao.VerifyRecordMapper">
+
+	<!-- 拿到某个系统某个业务类型某个账号类型某个用户某个账号的验证发送记录 -->
+	<select id="getInfolast" resultType="java.util.HashMap" parameterType="java.util.HashMap" >
+		SELECT * FROM t_verify_record
+		<where>
+			<if test='map.id !=null and map.id !=""'>
+				id = #{map.id}
+			</if>
+			<if test='map.user_id !=null and map.user_id !=""'>
+				and user_id = #{map.user_id}
+			</if>
+			<if test='map.user_name !=null and map.user_name !=""'>
+				and user_name like '%${map.user_name}%'
+			</if>
+			<if test='map.system_type !=null and map.system_type !=""'>
+				and system_type = #{map.system_type}
+			</if>
+			<if test='map.bus_type !=null and map.bus_type !=""'>
+				and bus_type = #{map.bus_type}
+			</if>
+			<if test='map.acc_type !=null and map.acc_type !=""'>
+				and acc_type = #{map.acc_type}
+			</if>
+			<if test='map.account !=null and map.account !=""'>
+				and account = #{map.account}
+			</if>
+			<if test='map.status !=null and map.status !=""'>
+				and status = #{map.status}
+			</if>
+			<if test='map.time !=null and map.time !=""'>
+				and time like '%${map.address}%'
+			</if>
+		</where>
+		order by send_time desc
+		limit 0,1
+	</select>
+	
+	
+	<!-- 将验证码标记为已被验证 -->
+	<update id="update" parameterType="java.util.HashMap">
+		update t_verify_record 
+		<set>
+			<if test="map.id != null">`id` = #{map.id},</if>
+			<if test="map.user_id != null">`user_id` = #{map.user_id},</if>
+			<if test="map.user_name != null">`user_name` = #{map.user_name},</if>
+			<if test="map.system_type != null">`system_type` = #{map.system_type},</if>
+			<if test="map.bus_type != null">`bus_type` = #{map.bus_type},</if>
+			<if test="map.acc_type != null">`acc_type` = #{map.acc_type},</if>
+			<if test="map.account != null">`account` = #{map.account},</if>
+			<if test="map.code != null">`code` = #{map.code},</if>
+			<if test="map.status != null">`status` = #{map.status},</if>
+			<if test="map.create_time != null">`create_time` = #{map.create_time},</if>
+			<if test="map.send_time != null">`send_time` = #{map.send_time},</if>
+			<if test="map.invalid_time != null">`invalid_time` = #{map.invalid_time},</if>
+			<if test="map.verify_time != null">`verify_time` = #{map.verify_time}</if>
+		</set>
+		where id = #{map.id}
+	</update>
+	
+	
+	<!-- 拿到一个小时的发送数量 -->
+	<select id="getPeriodCount" resultType="int">
+		SELECT count(*) FROM t_verify_record
+		<where>
+			<if test='map.user_id !=null and map.user_id !=""'>
+				and user_id = #{map.user_id}
+			</if>
+			<if test='map.system_type !=null'>
+				and system_type = #{map.system_type}
+			</if>
+			<if test='map.bus_type !=null'>
+				and bus_type = #{map.bus_type}
+			</if>
+			<if test='map.acc_type !=null'>
+				and acc_type = #{map.acc_type}
+			</if>
+			<if test='map.account !=null and map.account !=""'>
+				and account = #{map.account}
+			</if>
+			<if test='map.status !=null'>
+				and status = #{map.status}
+			</if>
+			<if test='map.nowTime !=null and map.hour!=null'>
+				and send_time>#{map.nowTime} -INTERVAL #{map.hour} HOUR
+			</if>
+		</where>
+	</select>
+	
+	
+	<!-- 短信验证码发送 -->
+	<insert id="addVerifyRecord" parameterType="java.util.HashMap" >
+		insert into t_verify_record
+	    <trim prefix="(" suffix=")" suffixOverrides="," >
+	      <if test="map.id != null and map.id != '' " >id,</if>
+	      <if test="map.user_id != null and map.user_id != '' " >user_id,</if>
+	      <if test="map.user_name != null and map.user_name != '' " >user_name,</if>
+	      <if test="map.system_type != null and map.system_type != '' " >system_type,</if>
+	      <if test="map.bus_type != null and map.bus_type != '' " >bus_type,</if>
+	      <if test="map.acc_type != null and map.acc_type != '' " >acc_type,</if>
+	      <if test="map.account != null and map.account != '' " >account,</if>
+	      <if test="map.code != null and map.code != '' " >code,</if>
+	      <if test="map.status != null and map.status != '' " >status,</if>
+	      <if test="map.create_time != null  " >create_time,</if>
+	      <if test="map.send_time != null " >send_time,</if>
+	      <if test="map.invalid_time != null " >invalid_time,</if>
+	      <if test="map.verify_time != null  " >verify_time,</if>
+	    </trim>
+	    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="map.id != null and map.id != '' " >#{map.id},</if>
+	      <if test="map.user_id != null and map.user_id != '' " >#{map.user_id},</if>
+	      <if test="map.user_name != null and map.user_name != '' " >#{map.user_name},</if>
+	      <if test="map.system_type != null and map.system_type != '' " >#{map.system_type},</if>
+	      <if test="map.bus_type != null and map.bus_type != '' " >#{map.bus_type},</if>
+	      <if test="map.acc_type != null and map.acc_type != '' " >#{map.acc_type},</if>
+	      <if test="map.account != null and map.account != '' " >#{map.account},</if>
+	      <if test="map.code != null and map.code != '' " >#{map.code},</if>
+	      <if test="map.status != null and map.status != '' " >#{map.status},</if>
+	      <if test="map.create_time != null " >#{map.create_time},</if>
+	      <if test="map.send_time != null " >#{map.send_time},</if>
+	      <if test="map.invalid_time != null " >#{map.invalid_time},</if>
+	      <if test="map.verify_time != null " >#{map.verify_time},</if>
+	    </trim>
+	</insert>
+	
+</mapper>

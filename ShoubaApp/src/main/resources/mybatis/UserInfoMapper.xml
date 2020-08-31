@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.yilian.UserInfoMapper">
+
+	<!-- 根据id查询用户账户信息 -->
+	<select id="getUserInfoById" parameterType="java.lang.String" resultType="java.util.Map" >
+		SELECT * FROM t_user_info where id = #{user_id}
+	</select>
+	
+	<!-- 根据user_tel查询账户信息 -->
+	<select id="getUserInfoByUserAccount" parameterType="java.lang.String" resultType="java.util.Map" >
+		SELECT
+			id,
+			manager_id,
+			user_tel,
+			real_name,
+			id_card,
+			card_photo,
+			real_name,
+			auth_status,
+			money,
+			settle_money,
+			deduct_money,
+			login_password,
+			pay_password,
+			head_photo,
+			referer_id,
+			status,
+			algebra,
+			parent_chain,
+			cre_date,
+			cre_time
+		FROM
+			t_user_info
+		 where user_tel=#{sys_user_account}
+	</select>
+	
+	<!-- 更新用户登录信息 -->
+	<update id="updateUserLoginInfo" parameterType="java.util.Map" >
+		update t_user_info set 
+			device_type=#{map.device_type},device_no=#{map.device_no},version_no=#{map.version_no},device_token=#{map.device_token},
+			last_login_ip=#{map.last_login_ip},last_login_date=#{map.last_login_date},last_login_time=#{map.last_login_time}
+		where id=#{map.sys_user_id}
+	</update>
+	
+	
+	<!-- 更新所有父级的伞下人数 -->
+	<update id="updateParentUnderNum" parameterType="java.util.Map" >
+		UPDATE t_user_info
+			SET under_num=under_num+1, up_date=#{map.cre_date}, up_time=#{map.cre_time}
+		WHERE find_in_set(id,#{map.parent_chain})
+	</update>
+	
+	<!-- 更新父级直推人数 -->
+	<update id="updateUserReferNum" parameterType="java.util.Map">
+		update t_user_info set referer_num=referer_num+1, up_date=#{map.cre_date}, up_time=#{map.cre_time}
+		where id=#{map.referer_id}
+	</update>
+	
+	<!-- 用户注册 -->
+	<insert id="saveUserInfo" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="map.id">
+		insert into t_user_info (
+	      	user_tel,login_password,pay_password,head_photo,referer_id,manager_id,algebra,parent_chain,device_type,device_no,version_no,cre_date,cre_time)
+		values (
+			#{map.sys_user_account},#{map.login_password},#{map.pay_password},#{map.head_photo},#{map.referer_id},#{map.manager_id},
+			#{map.algebra},#{map.parent_chain},#{map.device_type},#{map.device_no},#{map.version_no},#{map.cre_date},#{map.cre_time})
+	</insert>
+	
+	<!-- 更新用户登录密码 -->
+	<update id="updateUserLoginPass" parameterType="java.util.Map" >
+		update t_user_info set login_password=#{map.login_password}
+			where id=#{map.sys_user_id}
+	</update>
+	
+	<!-- 更新用户交易密码 -->
+	<update id="updateUserPayPass" parameterType="java.util.Map" >
+		update t_user_info set pay_password=#{map.pay_password}
+			where id=#{map.sys_user_id}
+	</update>
+	
+	<!-- 通过用户ID查询用户基础信息放入缓存 -->
+	<select id="getUserInfoCacheById" parameterType="java.lang.String" resultType="java.util.Map">
+		SELECT
+			id,
+			manager_id,
+			user_tel,
+			real_name,
+			id_card,
+			status,
+			auth_status,
+			login_password,
+			pay_password,
+			referer_id,
+			algebra,
+			parent_chain,
+			cre_date,
+			cre_time
+		FROM
+			t_user_info
+		 where id = #{user_id}
+	</select>
+	
+	<!-- 更新用户资料（头像） -->
+	<update id="updateUserInfo" parameterType="java.util.Map" >
+		update t_user_info
+		<set>
+			<if test="map.head_photo != null and map.head_photo != '' " >
+	      		head_photo = #{map.head_photo},
+	      	</if>
+	      	up_date = #{map.up_date}, up_time = #{map.up_time}
+		</set>
+		where id=#{map.sys_user_id}
+	</update>
+	
+	<!-- 查询冻结用户信息 -->
+	<select id="getUserFreezeCacheById" parameterType="java.lang.String" resultType="java.util.Map">
+		select * from t_user_frozen where user_id = #{user_id}
+	</select>
+	
+	<!-- 查询用户实名认证状态信息 -->
+	<select id="getUserAuthStatus" parameterType="java.lang.String" resultType="java.util.Map">
+		select 
+			auth_status,id_card, card_photo, real_name, auth_remark,label
+			from t_user_info
+	 	where id = #{user_id}
+	</select>
+	
+	<!-- 更新用户实名认证状态信息 -->
+	<update id="updateUserAuthStatus" parameterType="java.util.Map" >
+		update t_user_info 
+			set auth_status=#{map.new_auth_status}, id_card=#{map.id_card}, card_photo=#{map.card_photo}, real_name=#{map.real_name}
+		where id=#{map.sys_user_id} and auth_status in ${map.old_auth_status}
+	</update>
+	
+	<!-- 查询用户代理信息 -->
+	<select id="getUserAgentInfo" parameterType="java.lang.String" resultType="java.util.Map">
+		SELECT
+			t1.user_id AS manager_id,
+			t1.auth_isaudit,
+			t1.card_isaudit
+		FROM
+			t_user_info t
+		LEFT JOIN sys_user t1 ON t.manager_id = t1.user_id
+		WHERE
+			t.id = #{user_id}
+			AND t1.del_flag='0'
+			AND t1.status='0'
+	</select>
+	
+	<!-- 查询用户实时钱包信息 -->
+	<select id="getUserPurseById" parameterType="java.lang.String" resultType="java.util.Map">
+		SELECT
+			money,
+			settle_money,
+			deduct_money,
+			today_benefit,
+			total_benefit,
+			settle_single_feet_money,
+			single_rate_feet_money
+		FROM
+			t_user_info
+		WHERE
+			id = #{user_id}
+	</select>
+	
+	<!-- 更新用户信息（账户余额、等待扣除金额、实际扣除金额）=======》用户申请提现  and money-#{map.cash_money}>=today_benefit-->
+	<update id="updateUserByApplyCash" parameterType="java.util.Map" >
+		update t_user_info 
+			set money=money-#{map.cash_money}, deduct_money=deduct_money-#{map.deduct_money},
+				real_deduct_money=real_deduct_money+#{map.deduct_money},
+				op_type=#{map.op_type}, op_order_id=#{map.order_id},
+				up_date=#{map.cre_date}, up_time=#{map.cre_time}
+			where id=#{map.sys_user_id} and money-#{map.cash_money}>=0
+			and deduct_money-#{map.deduct_money}>=0
+			and real_deduct_money+#{map.deduct_money}>=0
+	</update>
+	
+	
+	<!-- 根据用户id查询代理信息 -->
+	<select id="getAgentUserById" parameterType="java.lang.String" resultType="java.util.Map">
+		SELECT
+			user_id AS manager_id,
+			auth_isaudit,
+			card_isaudit,
+			app_id
+		FROM
+			sys_user
+		WHERE
+			user_id = #{user_id}
+			AND del_flag='0'
+			AND status='0'
+	</select>
+	
+	
+	<!-- 根据用户登录名称查询代理信息 -->
+	<select id="getAgentUserByLoginName" parameterType="java.lang.String" resultType="java.util.Map">
+		SELECT
+			user_id AS manager_id,
+			auth_isaudit,
+			card_isaudit,
+			app_id
+		FROM
+			sys_user
+		WHERE
+			login_name = #{login_name}
+			AND del_flag='0'
+			AND status='0'
+	</select>
+	
+	
+	<!-- 修改用户手机号 -->
+	<update id="updateUserTel" parameterType="java.util.Map" >
+		update t_user_info 
+			set user_tel=#{map.sys_user_account}
+		where id=#{map.sys_user_id}
+	</update>
+	
+</mapper>

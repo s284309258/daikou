@@ -1,0 +1,933 @@
+2020-08-13 09:36:28 -Starting ShouBaApplication on PC-201905161910 with PID 15796 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-13 09:36:28 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-13 09:36:28 -The following profiles are active: dev
+2020-08-13 09:36:29 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 09:36:29 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 09:36:29 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 09:36:29 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 09:36:29 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 09:36:29 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 09:36:29 -Finished Spring Data repository scanning in 48ms. Found 0 repository interfaces.
+2020-08-13 09:36:29 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 09:36:29 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 09:36:29 -Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-08-13 09:36:29 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$d980d8ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 09:36:30 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b35bfffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 09:36:30 -Tomcat initialized with port(s): 8686 (http)
+2020-08-13 09:36:30 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-13 09:36:30 -Starting service [Tomcat]
+2020-08-13 09:36:30 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-13 09:36:30 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-13 09:36:30 -Initializing Spring embedded WebApplicationContext
+2020-08-13 09:36:30 -Root WebApplicationContext: initialization completed in 2595 ms
+2020-08-13 09:36:30 -xss filter init~~~~~~~~~~~~
+2020-08-13 09:36:31 -Renegade-四叶草-Hikari - Starting...
+2020-08-13 09:36:31 -Renegade-四叶草-Hikari - Start completed.
+2020-08-13 09:36:31 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-13 09:36:31 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-13 09:36:31 -HHH000206: hibernate.properties not found
+2020-08-13 09:36:31 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-13 09:36:32 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-13 09:36:32 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-13 09:36:32 -Redisson 3.9.1
+2020-08-13 09:36:33 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 09:36:33 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 09:36:34 -Using default implementation for ThreadExecutor
+2020-08-13 09:36:34 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-13 09:36:34 -Quartz Scheduler v.2.3.0 created.
+2020-08-13 09:36:34 -RAMJobStore initialized.
+2020-08-13 09:36:34 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-13 09:36:34 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-13 09:36:34 -Quartz scheduler version: 2.3.0
+2020-08-13 09:36:34 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@e886caf
+2020-08-13 09:36:34 -Initializing ExecutorService
+2020-08-13 09:36:34 -Initializing ExecutorService 'asyncExecutor'
+2020-08-13 09:36:34 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-13 09:36:35 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-13 09:36:35 -Initializing ExecutorService 'taskScheduler'
+2020-08-13 09:36:35 -Starting Quartz Scheduler now
+2020-08-13 09:36:35 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-13 09:36:35 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-13 09:36:35 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-13 09:36:35 -Using a shared selector for servlet write/read
+2020-08-13 09:36:35 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-13 09:36:35 -Started ShouBaApplication in 8.529 seconds (JVM running for 10.126)
+2020-08-13 09:39:09 -A cookie header was received [1594017985,1594035870,1594887285] that contained an invalid cookie. That cookie will be ignored.Note: further occurrences of this error will be logged at DEBUG level.
+2020-08-13 09:39:09 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-13 09:39:09 -Initializing Servlet 'dispatcherServlet'
+2020-08-13 09:39:09 -Completed initialization in 14 ms
+2020-08-13 09:39:09 -==>请求参数 : [{}]
+2020-08-13 09:39:09 -==>请求地址 : http://localhost:8686/
+2020-08-13 09:39:09 -==>请求头: null格式: GET
+2020-08-13 09:39:09 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-13 09:39:09 -耗时 : 1
+2020-08-13 09:39:09 -<==返回值 : redirect:/login
+2020-08-13 09:39:09 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@18271468]
+2020-08-13 09:39:09 -==>请求地址 : http://localhost:8686/login
+2020-08-13 09:39:09 -==>请求头: null格式: GET
+2020-08-13 09:39:09 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 09:39:09 -耗时 : 8
+2020-08-13 09:39:09 -<==返回值 : /login
+2020-08-13 09:59:30 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@73434ab3, {login_pwd=123456, login_name=yewuyuan, timeStamp=1597283970592, sign=7E93B7966965229A7BA33920A9851225}]
+2020-08-13 09:59:30 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 09:59:30 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 09:59:30 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 09:59:30 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 09:59:30 -==> Parameters: yewuyuan(String), 123456(String)
+2020-08-13 09:59:30 -<==      Total: 1
+2020-08-13 09:59:30 -耗时 : 46
+2020-08-13 09:59:30 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@a7af88b
+2020-08-13 09:59:32 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@fd870a8, org.apache.catalina.connector.ResponseFacade@73434ab3, {}]
+2020-08-13 09:59:32 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 09:59:32 -==>请求头: null格式: GET
+2020-08-13 09:59:32 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 09:59:32 -耗时 : 0
+2020-08-13 09:59:32 -<==返回值 : /staff/index
+2020-08-13 10:07:46 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@73434ab3, {}, null]
+2020-08-13 10:07:46 -==>请求地址 : http://localhost:8686/yilian/api/withholdUser
+2020-08-13 10:07:46 -==>请求头: null格式: GET
+2020-08-13 10:07:46 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdUser
+2020-08-13 10:07:46 -==>  Preparing: select * from yl_user_info where staff_no=? 
+2020-08-13 10:07:46 -==> Parameters: 12(Long)
+2020-08-13 10:07:46 -<==      Total: 26
+2020-08-13 10:07:46 -耗时 : 32
+2020-08-13 10:07:46 -<==返回值 : /staff/withhold
+2020-08-13 10:11:52 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@73434ab3]
+2020-08-13 10:11:52 -==>请求地址 : http://localhost:8686/yilian/api/logout
+2020-08-13 10:11:52 -==>请求头: null格式: GET
+2020-08-13 10:11:52 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 10:11:52 -耗时 : 1
+2020-08-13 10:11:52 -<==返回值 : null
+2020-08-13 10:11:52 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@26955638]
+2020-08-13 10:11:52 -==>请求地址 : http://localhost:8686/login
+2020-08-13 10:11:52 -==>请求头: null格式: GET
+2020-08-13 10:11:52 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 10:11:52 -耗时 : 0
+2020-08-13 10:11:52 -<==返回值 : /login
+2020-08-13 10:11:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@73434ab3, {login_pwd=123456, login_name=fyh, timeStamp=1597284719094, sign=A9755EEA298203467F07A3D75D40ACD7}]
+2020-08-13 10:11:59 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 10:11:59 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:11:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 10:11:59 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 10:11:59 -==> Parameters: fyh(String), 123456(String)
+2020-08-13 10:11:59 -<==      Total: 1
+2020-08-13 10:11:59 -耗时 : 5
+2020-08-13 10:11:59 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7cf26c43
+2020-08-13 10:12:01 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@456d258, org.apache.catalina.connector.ResponseFacade@73434ab3, {}]
+2020-08-13 10:12:01 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 10:12:01 -==>请求头: null格式: GET
+2020-08-13 10:12:01 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 10:12:01 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 10:12:01 -==> Parameters: 
+2020-08-13 10:12:01 -<==      Total: 8
+2020-08-13 10:12:01 -耗时 : 6
+2020-08-13 10:12:01 -<==返回值 : /fyhadmin/index
+2020-08-13 10:12:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:12:03 -==>请求地址 : http://localhost:8686/yilian/api/withholdAudit2
+2020-08-13 10:12:03 -==>请求头: null格式: GET
+2020-08-13 10:12:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdAudit2
+2020-08-13 10:12:03 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 10:12:03 -==> Parameters: 
+2020-08-13 10:12:03 -<==      Total: 8
+2020-08-13 10:12:03 -耗时 : 3
+2020-08-13 10:12:03 -<==返回值 : /fyhadmin/withholdAudit
+2020-08-13 10:12:32 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@1d799b95]
+2020-08-13 10:12:32 -==>请求地址 : http://localhost:8686/yilian/api/logout
+2020-08-13 10:12:32 -==>请求头: null格式: GET
+2020-08-13 10:12:32 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 10:12:32 -耗时 : 0
+2020-08-13 10:12:32 -<==返回值 : null
+2020-08-13 10:12:32 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@63d1311f]
+2020-08-13 10:12:32 -==>请求地址 : http://localhost:8686/login
+2020-08-13 10:12:32 -==>请求头: null格式: GET
+2020-08-13 10:12:32 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 10:12:32 -耗时 : 0
+2020-08-13 10:12:32 -<==返回值 : /login
+2020-08-13 10:12:38 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {login_pwd=123456, login_name=yewuyuan, timeStamp=1597284758934, sign=289D77FEE78689205504C3627F5FC346}]
+2020-08-13 10:12:38 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 10:12:38 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:12:38 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 10:12:38 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 10:12:38 -==> Parameters: yewuyuan(String), 123456(String)
+2020-08-13 10:12:38 -<==      Total: 1
+2020-08-13 10:12:38 -耗时 : 3
+2020-08-13 10:12:38 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@61addbc
+2020-08-13 10:12:41 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@66a8f71, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:12:41 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 10:12:41 -==>请求头: null格式: GET
+2020-08-13 10:12:41 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 10:12:41 -耗时 : 1
+2020-08-13 10:12:41 -<==返回值 : /staff/index
+2020-08-13 10:12:44 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}, null]
+2020-08-13 10:12:44 -==>请求地址 : http://localhost:8686/yilian/api/withholdUser
+2020-08-13 10:12:44 -==>请求头: null格式: GET
+2020-08-13 10:12:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdUser
+2020-08-13 10:12:44 -==>  Preparing: select * from yl_user_info where staff_no=? 
+2020-08-13 10:12:44 -==> Parameters: 12(Long)
+2020-08-13 10:12:44 -<==      Total: 26
+2020-08-13 10:12:44 -耗时 : 5
+2020-08-13 10:12:44 -<==返回值 : /staff/withhold
+2020-08-13 10:15:14 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, 40]
+2020-08-13 10:15:14 -==>请求地址 : http://localhost:8686/yilian/api/sendCodeWithHold/40
+2020-08-13 10:15:14 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:15:14 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.sendCodeWithHold
+2020-08-13 10:15:14 -==>  Preparing: select * from yl_user_info where id=? 
+2020-08-13 10:15:14 -==> Parameters: 40(String)
+2020-08-13 10:15:14 -<==      Total: 1
+2020-08-13 10:15:16 -==>  Preparing: update yl_user_info set sms_flag=?,sms_id=?,merch_order_id=? where id=? 
+2020-08-13 10:15:16 -==> Parameters: 1(String), 9438c7adcdbc4438874cc7a2cb503de0(String), FYHDKMERONO20200813101514907(String), 40(String)
+2020-08-13 10:15:16 -<==    Updates: 1
+2020-08-13 10:15:16 -耗时 : 1778
+2020-08-13 10:15:16 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@707c584c
+2020-08-13 10:15:22 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, 40, 000000]
+2020-08-13 10:15:22 -==>请求地址 : http://localhost:8686/yilian/api/withhold/40
+2020-08-13 10:15:22 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:15:22 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withhold
+2020-08-13 10:15:22 -==>  Preparing: select * from yl_user_info where id=? 
+2020-08-13 10:15:22 -==> Parameters: 40(String)
+2020-08-13 10:15:22 -<==      Total: 1
+2020-08-13 10:15:22 -==>  Preparing: insert into yl_user_order(real_name,user_tel,user_card,verfiy_code,bank_account,bank_name,amount,merch_order_id, staff_no,staff_name,staff_tel,org_no,org_name,org_agent,org_agent_name,sms_flag,sms_id,user_id,create_time) values(?,?,?,?,?,?,?,?, ?,?,?,?,?,?,?, ?,?,?,?) 
+2020-08-13 10:15:22 -==> Parameters: 张三(String), 13552535506(String), 341126197709218366(String), 000000(String), 6216261000000000018(String), 工商银行(String), 555(BigDecimal), FYHDKMERONO20200813101514907(String), 12(Integer), 贷款业务员(String), 18124242084(String), 110(Integer), 贷款合作公司(String), 0(Integer), null, 1(String), 9438c7adcdbc4438874cc7a2cb503de0(String), 40(Integer), 2020-08-13 10:15:16.0(Timestamp)
+2020-08-13 10:15:22 -<==    Updates: 1
+2020-08-13 10:15:22 -耗时 : 10
+2020-08-13 10:15:22 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@6b8c2317
+2020-08-13 10:15:25 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@67684cf8, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:25 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 10:15:25 -==>请求头: null格式: GET
+2020-08-13 10:15:25 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 10:15:25 -耗时 : 1
+2020-08-13 10:15:25 -<==返回值 : /staff/index
+2020-08-13 10:15:27 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@1d799b95]
+2020-08-13 10:15:27 -==>请求地址 : http://localhost:8686/yilian/api/logout
+2020-08-13 10:15:27 -==>请求头: null格式: GET
+2020-08-13 10:15:27 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 10:15:27 -耗时 : 0
+2020-08-13 10:15:27 -<==返回值 : null
+2020-08-13 10:15:27 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@544b68d8]
+2020-08-13 10:15:27 -==>请求地址 : http://localhost:8686/login
+2020-08-13 10:15:27 -==>请求头: null格式: GET
+2020-08-13 10:15:27 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 10:15:27 -耗时 : 1
+2020-08-13 10:15:27 -<==返回值 : /login
+2020-08-13 10:15:32 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {login_pwd=123456, login_name=hezuogongsi, timeStamp=1597284932262, sign=25C355A80863BDC32DDE16CA92DF88E0}]
+2020-08-13 10:15:32 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 10:15:32 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:15:32 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 10:15:32 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 10:15:32 -==> Parameters: hezuogongsi(String), 123456(String)
+2020-08-13 10:15:32 -<==      Total: 1
+2020-08-13 10:15:32 -耗时 : 3
+2020-08-13 10:15:32 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7492322
+2020-08-13 10:15:34 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@677ec34, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:34 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 10:15:34 -==>请求头: null格式: GET
+2020-08-13 10:15:34 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 10:15:34 -==>  Preparing: select * from yl_user_order where approve1=2 and org_no=? 
+2020-08-13 10:15:34 -==> Parameters: 110(Long)
+2020-08-13 10:15:34 -<==      Total: 2
+2020-08-13 10:15:34 -耗时 : 5
+2020-08-13 10:15:34 -<==返回值 : /companies/index
+2020-08-13 10:15:41 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:41 -==>请求地址 : http://localhost:8686/yilian/api/withholdAudit
+2020-08-13 10:15:41 -==>请求头: null格式: GET
+2020-08-13 10:15:41 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdAudit
+2020-08-13 10:15:41 -==>  Preparing: select * from yl_user_order where approve1=2 and org_no=? 
+2020-08-13 10:15:41 -==> Parameters: 110(Long)
+2020-08-13 10:15:41 -<==      Total: 2
+2020-08-13 10:15:41 -耗时 : 2
+2020-08-13 10:15:41 -<==返回值 : /companies/withholdAudit
+2020-08-13 10:15:45 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, 34]
+2020-08-13 10:15:45 -==>请求地址 : http://localhost:8686/yilian/api/agreeDeductOne/34
+2020-08-13 10:15:45 -==>请求头: null格式: POST
+2020-08-13 10:15:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.agreeDeductOne
+2020-08-13 10:15:45 -==>  Preparing: update yl_user_order set approve1=1 where id=? 
+2020-08-13 10:15:45 -==> Parameters: 34(String)
+2020-08-13 10:15:45 -<==    Updates: 1
+2020-08-13 10:15:45 -耗时 : 6
+2020-08-13 10:15:45 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@38df0b05
+2020-08-13 10:15:48 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:48 -==>请求地址 : http://localhost:8686/yilian/api/withholdAudit
+2020-08-13 10:15:48 -==>请求头: null格式: GET
+2020-08-13 10:15:48 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdAudit
+2020-08-13 10:15:48 -==>  Preparing: select * from yl_user_order where approve1=2 and org_no=? 
+2020-08-13 10:15:48 -==> Parameters: 110(Long)
+2020-08-13 10:15:48 -<==      Total: 1
+2020-08-13 10:15:48 -耗时 : 6
+2020-08-13 10:15:48 -<==返回值 : /companies/withholdAudit
+2020-08-13 10:15:50 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@1d799b95]
+2020-08-13 10:15:50 -==>请求地址 : http://localhost:8686/yilian/api/logout
+2020-08-13 10:15:50 -==>请求头: null格式: GET
+2020-08-13 10:15:50 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 10:15:50 -耗时 : 0
+2020-08-13 10:15:50 -<==返回值 : null
+2020-08-13 10:15:50 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@16fadf71]
+2020-08-13 10:15:50 -==>请求地址 : http://localhost:8686/login
+2020-08-13 10:15:50 -==>请求头: null格式: GET
+2020-08-13 10:15:50 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 10:15:50 -耗时 : 0
+2020-08-13 10:15:50 -<==返回值 : /login
+2020-08-13 10:15:55 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {login_pwd=123456, login_name=fyh, timeStamp=1597284955246, sign=DEFA2FA656AC6F5FD3BFF1D23557AA94}]
+2020-08-13 10:15:55 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 10:15:55 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 10:15:55 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 10:15:55 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 10:15:55 -==> Parameters: fyh(String), 123456(String)
+2020-08-13 10:15:55 -<==      Total: 1
+2020-08-13 10:15:55 -耗时 : 4
+2020-08-13 10:15:55 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@45c33886
+2020-08-13 10:15:57 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@433a3199, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:57 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 10:15:57 -==>请求头: null格式: GET
+2020-08-13 10:15:57 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 10:15:57 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 10:15:57 -==> Parameters: 
+2020-08-13 10:15:57 -<==      Total: 9
+2020-08-13 10:15:57 -耗时 : 5
+2020-08-13 10:15:57 -<==返回值 : /fyhadmin/index
+2020-08-13 10:15:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:15:59 -==>请求地址 : http://localhost:8686/yilian/api/withholdAudit2
+2020-08-13 10:15:59 -==>请求头: null格式: GET
+2020-08-13 10:15:59 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdAudit2
+2020-08-13 10:15:59 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 10:15:59 -==> Parameters: 
+2020-08-13 10:15:59 -<==      Total: 9
+2020-08-13 10:15:59 -耗时 : 4
+2020-08-13 10:15:59 -<==返回值 : /fyhadmin/withholdAudit
+2020-08-13 10:18:26 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, 34]
+2020-08-13 10:18:26 -==>请求地址 : http://localhost:8686/yilian/api/agreeDeductTwo/34
+2020-08-13 10:18:26 -==>请求头: null格式: POST
+2020-08-13 10:18:26 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.agreeDeductTwo
+2020-08-13 10:18:26 -==>  Preparing: select * from yl_user_order where id=? 
+2020-08-13 10:18:26 -==> Parameters: 34(String)
+2020-08-13 10:18:26 -<==      Total: 1
+2020-08-13 10:18:31 -==>  Preparing: update yl_user_order set paytime=?,status=?,settledate=? where id=? 
+2020-08-13 10:18:31 -==> Parameters: 20200813101822(String), 02(String), 20200813(String), 34(String)
+2020-08-13 10:18:31 -<==    Updates: 1
+2020-08-13 10:18:31 -==>  Preparing: update yl_user_order set approve2=1 where id=? 
+2020-08-13 10:18:31 -==> Parameters: 34(String)
+2020-08-13 10:18:31 -<==    Updates: 1
+2020-08-13 10:18:31 -耗时 : 4277
+2020-08-13 10:18:31 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@32f37763
+2020-08-13 10:18:34 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4b8045c9, org.apache.catalina.connector.ResponseFacade@1d799b95, {}]
+2020-08-13 10:18:34 -==>请求地址 : http://localhost:8686/yilian/api/withholdAudit2
+2020-08-13 10:18:34 -==>请求头: null格式: GET
+2020-08-13 10:18:34 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdAudit2
+2020-08-13 10:18:34 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 10:18:34 -==> Parameters: 
+2020-08-13 10:18:34 -<==      Total: 8
+2020-08-13 10:18:34 -耗时 : 5
+2020-08-13 10:18:34 -<==返回值 : /fyhadmin/withholdAudit
+2020-08-13 10:32:01 -Starting ShouBaApplication on PC-201905161910 with PID 16896 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-13 10:32:02 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-13 10:32:02 -The following profiles are active: dev
+2020-08-13 10:32:02 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 10:32:02 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 10:32:02 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 10:32:02 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 10:32:02 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 10:32:02 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 10:32:03 -Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2020-08-13 10:32:03 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 10:32:03 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 10:32:03 -Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2020-08-13 10:32:03 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$471a1ef3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 10:32:03 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$20f54623] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 10:32:03 -Tomcat initialized with port(s): 8686 (http)
+2020-08-13 10:32:03 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-13 10:32:03 -Starting service [Tomcat]
+2020-08-13 10:32:03 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-13 10:32:03 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-13 10:32:03 -Initializing Spring embedded WebApplicationContext
+2020-08-13 10:32:03 -Root WebApplicationContext: initialization completed in 1894 ms
+2020-08-13 10:32:04 -xss filter init~~~~~~~~~~~~
+2020-08-13 10:32:04 -Renegade-四叶草-Hikari - Starting...
+2020-08-13 10:32:04 -Renegade-四叶草-Hikari - Start completed.
+2020-08-13 10:32:04 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-13 10:32:04 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-13 10:32:04 -HHH000206: hibernate.properties not found
+2020-08-13 10:32:04 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-13 10:32:04 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-13 10:32:05 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-13 10:32:05 -Redisson 3.9.1
+2020-08-13 10:32:05 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 10:32:05 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 10:32:06 -Using default implementation for ThreadExecutor
+2020-08-13 10:32:06 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-13 10:32:06 -Quartz Scheduler v.2.3.0 created.
+2020-08-13 10:32:06 -RAMJobStore initialized.
+2020-08-13 10:32:06 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-13 10:32:06 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-13 10:32:06 -Quartz scheduler version: 2.3.0
+2020-08-13 10:32:06 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@26c59348
+2020-08-13 10:32:06 -Initializing ExecutorService
+2020-08-13 10:32:06 -Initializing ExecutorService 'asyncExecutor'
+2020-08-13 10:32:07 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-13 10:32:07 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-13 10:32:07 -Initializing ExecutorService 'taskScheduler'
+2020-08-13 10:32:07 -Starting Quartz Scheduler now
+2020-08-13 10:32:07 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-13 10:32:07 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-13 10:32:07 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-13 10:32:07 -Using a shared selector for servlet write/read
+2020-08-13 10:32:07 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-13 10:32:07 -Started ShouBaApplication in 6.392 seconds (JVM running for 7.344)
+2020-08-13 14:51:31 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-13 14:51:31 -Initializing Servlet 'dispatcherServlet'
+2020-08-13 14:51:31 -Completed initialization in 20 ms
+2020-08-13 14:51:31 -==>请求参数 : [{}]
+2020-08-13 14:51:31 -==>请求地址 : http://localhost:8686/
+2020-08-13 14:51:31 -==>请求头: null格式: GET
+2020-08-13 14:51:31 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-13 14:51:31 -耗时 : 2
+2020-08-13 14:51:31 -<==返回值 : redirect:/login
+2020-08-13 14:51:31 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5973bee5]
+2020-08-13 14:51:31 -==>请求地址 : http://localhost:8686/login
+2020-08-13 14:51:31 -==>请求头: null格式: GET
+2020-08-13 14:51:31 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 14:51:31 -耗时 : 7
+2020-08-13 14:51:31 -<==返回值 : /login
+2020-08-13 14:51:40 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@daa332c, {login_pwd=123456, login_name=fyh, timeStamp=1597301500288, sign=2FD201D64B412C89F9F3D4C41D30247F}]
+2020-08-13 14:51:40 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 14:51:40 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 14:51:40 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 14:51:40 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 14:51:40 -==> Parameters: fyh(String), 123456(String)
+2020-08-13 14:51:40 -<==      Total: 1
+2020-08-13 14:51:40 -耗时 : 45
+2020-08-13 14:51:40 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@737414e8
+2020-08-13 14:51:42 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@23dddb6a, org.apache.catalina.connector.ResponseFacade@daa332c, {}]
+2020-08-13 14:51:42 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 14:51:42 -==>请求头: null格式: GET
+2020-08-13 14:51:42 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 14:51:42 -==>  Preparing: select * from yl_user_order where approve1=1 and approve2=2 
+2020-08-13 14:51:42 -==> Parameters: 
+2020-08-13 14:51:42 -<==      Total: 8
+2020-08-13 14:51:42 -耗时 : 14
+2020-08-13 14:51:42 -<==返回值 : /fyhadmin/index
+2020-08-13 14:51:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@f5dc194, org.apache.catalina.connector.ResponseFacade@daa332c, {}]
+2020-08-13 14:51:45 -==>请求地址 : http://localhost:8686/yilian/api/deductList
+2020-08-13 14:51:45 -==>请求头: null格式: GET
+2020-08-13 14:51:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductList
+2020-08-13 14:51:45 -耗时 : 0
+2020-08-13 14:51:45 -<==返回值 : /fyhadmin/deductList
+2020-08-13 14:51:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6aace58c, org.apache.catalina.connector.ResponseFacade@daa332c, null]
+2020-08-13 14:51:45 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 14:51:45 -==>请求头: null格式: POST
+2020-08-13 14:51:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 14:51:45 -==>  Preparing: select * from yl_user_order where 1=1 order by apply_datetime desc 
+2020-08-13 14:51:45 -==> Parameters: 
+2020-08-13 14:51:45 -<==      Total: 16
+2020-08-13 14:51:45 -耗时 : 19
+2020-08-13 14:51:45 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@2b053aa2
+2020-08-13 14:53:11 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4c1c2e90, org.apache.catalina.connector.ResponseFacade@daa332c, {}]
+2020-08-13 14:53:11 -==>请求地址 : http://localhost:8686/yilian/api/deductList
+2020-08-13 14:53:11 -==>请求头: null格式: GET
+2020-08-13 14:53:11 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductList
+2020-08-13 14:53:11 -耗时 : 1
+2020-08-13 14:53:11 -<==返回值 : /fyhadmin/deductList
+2020-08-13 14:53:11 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@53947bdb, org.apache.catalina.connector.ResponseFacade@536a69a9, null]
+2020-08-13 14:53:11 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 14:53:11 -==>请求头: null格式: POST
+2020-08-13 14:53:11 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 14:53:11 -==>  Preparing: select * from yl_user_order where 1=1 order by apply_datetime desc 
+2020-08-13 14:53:11 -==> Parameters: 
+2020-08-13 14:53:11 -<==      Total: 16
+2020-08-13 14:53:11 -耗时 : 5
+2020-08-13 14:53:11 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@5833a240
+2020-08-13 14:58:52 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@536a69a9]
+2020-08-13 14:58:52 -==>请求地址 : http://localhost:8686/yilian/api/logout
+2020-08-13 14:58:52 -==>请求头: null格式: GET
+2020-08-13 14:58:52 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 14:58:52 -耗时 : 0
+2020-08-13 14:58:52 -<==返回值 : null
+2020-08-13 14:58:52 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5ac4854b]
+2020-08-13 14:58:52 -==>请求地址 : http://localhost:8686/login
+2020-08-13 14:58:52 -==>请求头: null格式: GET
+2020-08-13 14:58:52 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 14:58:52 -耗时 : 1
+2020-08-13 14:58:52 -<==返回值 : /login
+2020-08-13 14:59:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@536a69a9, {login_pwd=123456, login_name=hezuogongsi, timeStamp=1597301943983, sign=7CEC5C96DF023972B9C33F7D1BA8536F}]
+2020-08-13 14:59:03 -==>请求地址 : http://localhost:8686/yilian/api/login
+2020-08-13 14:59:03 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 14:59:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 14:59:03 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 14:59:03 -==> Parameters: hezuogongsi(String), 123456(String)
+2020-08-13 14:59:03 -<==      Total: 1
+2020-08-13 14:59:03 -耗时 : 5
+2020-08-13 14:59:03 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@1c9c0c0d
+2020-08-13 14:59:06 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2ba29978, org.apache.catalina.connector.ResponseFacade@536a69a9, {}]
+2020-08-13 14:59:06 -==>请求地址 : http://localhost:8686/yilian/api/index
+2020-08-13 14:59:06 -==>请求头: null格式: GET
+2020-08-13 14:59:06 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 14:59:06 -==>  Preparing: select * from yl_user_order where approve1=2 and org_no=? 
+2020-08-13 14:59:06 -==> Parameters: 110(Long)
+2020-08-13 14:59:06 -<==      Total: 1
+2020-08-13 14:59:06 -耗时 : 6
+2020-08-13 14:59:06 -<==返回值 : /companies/index
+2020-08-13 14:59:09 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@536a69a9, {}, null]
+2020-08-13 14:59:09 -==>请求地址 : http://localhost:8686/yilian/api/deductRecordComp
+2020-08-13 14:59:09 -==>请求头: null格式: GET
+2020-08-13 14:59:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecordComp
+2020-08-13 14:59:09 -耗时 : 1
+2020-08-13 14:59:09 -<==返回值 : /companies/deductRecord
+2020-08-13 14:59:09 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@20203e10, org.apache.catalina.connector.ResponseFacade@536a69a9, null]
+2020-08-13 14:59:09 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 14:59:09 -==>请求头: null格式: POST
+2020-08-13 14:59:09 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 14:59:09 -==>  Preparing: select * from yl_user_order where org_no=? order by apply_datetime desc 
+2020-08-13 14:59:09 -==> Parameters: 110(Long)
+2020-08-13 14:59:09 -<==      Total: 11
+2020-08-13 14:59:09 -耗时 : 4
+2020-08-13 14:59:09 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@23a98b65
+2020-08-13 15:00:15 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@536a69a9, {}, null]
+2020-08-13 15:00:15 -==>请求地址 : http://localhost:8686/yilian/api/deductRecordComp
+2020-08-13 15:00:15 -==>请求头: null格式: GET
+2020-08-13 15:00:15 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecordComp
+2020-08-13 15:00:15 -耗时 : 0
+2020-08-13 15:00:15 -<==返回值 : /companies/deductRecord
+2020-08-13 15:00:15 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2004c4f5, org.apache.catalina.connector.ResponseFacade@daa332c, null]
+2020-08-13 15:00:15 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 15:00:15 -==>请求头: null格式: POST
+2020-08-13 15:00:15 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:00:15 -==>  Preparing: select * from yl_user_order where org_no=? order by apply_datetime desc 
+2020-08-13 15:00:15 -==> Parameters: 110(Long)
+2020-08-13 15:00:15 -<==      Total: 11
+2020-08-13 15:00:15 -耗时 : 4
+2020-08-13 15:00:15 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@2d705a6
+2020-08-13 15:00:58 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@daa332c, {}, null]
+2020-08-13 15:00:58 -==>请求地址 : http://localhost:8686/yilian/api/deductRecordComp
+2020-08-13 15:00:58 -==>请求头: null格式: GET
+2020-08-13 15:00:58 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecordComp
+2020-08-13 15:00:58 -耗时 : 0
+2020-08-13 15:00:58 -<==返回值 : /companies/deductRecord
+2020-08-13 15:00:58 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@34870c11, org.apache.catalina.connector.ResponseFacade@4925b96a, null]
+2020-08-13 15:00:58 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 15:00:58 -==>请求头: null格式: POST
+2020-08-13 15:00:58 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:00:58 -==>  Preparing: select * from yl_user_order where org_no=? order by apply_datetime desc 
+2020-08-13 15:00:58 -==> Parameters: 110(Long)
+2020-08-13 15:00:58 -<==      Total: 11
+2020-08-13 15:00:58 -耗时 : 3
+2020-08-13 15:00:58 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@f18dd69
+2020-08-13 15:01:03 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@453a46aa, org.apache.catalina.connector.ResponseFacade@4925b96a, {}, null]
+2020-08-13 15:01:03 -==>请求地址 : http://localhost:8686/yilian/api/deductRecordComp
+2020-08-13 15:01:03 -==>请求头: null格式: GET
+2020-08-13 15:01:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecordComp
+2020-08-13 15:01:03 -耗时 : 0
+2020-08-13 15:01:03 -<==返回值 : /companies/deductRecord
+2020-08-13 15:01:03 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@39600a0b, org.apache.catalina.connector.ResponseFacade@4925b96a, null]
+2020-08-13 15:01:03 -==>请求地址 : http://localhost:8686/yilian/api/deductOrder
+2020-08-13 15:01:03 -==>请求头: null格式: POST
+2020-08-13 15:01:03 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:01:03 -==>  Preparing: select * from yl_user_order where org_no=? order by apply_datetime desc 
+2020-08-13 15:01:03 -==> Parameters: 110(Long)
+2020-08-13 15:01:03 -<==      Total: 11
+2020-08-13 15:01:03 -耗时 : 3
+2020-08-13 15:01:03 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@1e362156
+2020-08-13 15:08:07 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@64bb54ac, org.apache.catalina.connector.ResponseFacade@4925b96a, null]
+2020-08-13 15:08:07 -==>请求地址 : http://192.168.1.169:8686/yilian/api/deductOrder
+2020-08-13 15:08:07 -==>请求头: null格式: POST
+2020-08-13 15:08:07 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:08:07 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====null==========你们说呢：java.lang.NullPointerException
+2020-08-13 15:08:23 -==>请求参数 : [{}]
+2020-08-13 15:08:23 -==>请求地址 : http://192.168.1.169:8686/
+2020-08-13 15:08:23 -==>请求头: null格式: GET
+2020-08-13 15:08:23 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2020-08-13 15:08:23 -耗时 : 0
+2020-08-13 15:08:23 -<==返回值 : redirect:/login
+2020-08-13 15:08:23 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5e11b69b]
+2020-08-13 15:08:23 -==>请求地址 : http://192.168.1.169:8686/login
+2020-08-13 15:08:23 -==>请求头: null格式: GET
+2020-08-13 15:08:23 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 15:08:23 -耗时 : 1
+2020-08-13 15:08:23 -<==返回值 : /login
+2020-08-13 15:08:26 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@7b458e36]
+2020-08-13 15:08:26 -==>请求地址 : http://192.168.1.169:8686/login
+2020-08-13 15:08:26 -==>请求头: null格式: GET
+2020-08-13 15:08:26 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 15:08:26 -耗时 : 0
+2020-08-13 15:08:26 -<==返回值 : /login
+2020-08-13 15:08:31 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@18af378, {login_pwd=123456, login_name=yewuyuan, timeStamp=1597302507870, sign=C1CDE7FC43835C25576900D3FF115800}]
+2020-08-13 15:08:31 -==>请求地址 : http://192.168.1.169:8686/yilian/api/login
+2020-08-13 15:08:31 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 15:08:31 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 15:08:31 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 15:08:31 -==> Parameters: yewuyuan(String), 123456(String)
+2020-08-13 15:08:31 -<==      Total: 1
+2020-08-13 15:08:31 -耗时 : 3
+2020-08-13 15:08:31 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@6f825b41
+2020-08-13 15:08:33 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@63dd885b, org.apache.catalina.connector.ResponseFacade@18af378, {}]
+2020-08-13 15:08:33 -==>请求地址 : http://192.168.1.169:8686/yilian/api/index
+2020-08-13 15:08:33 -==>请求头: null格式: GET
+2020-08-13 15:08:33 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 15:08:33 -耗时 : 0
+2020-08-13 15:08:33 -<==返回值 : /staff/index
+2020-08-13 15:08:35 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@49088428, {}, null]
+2020-08-13 15:08:35 -==>请求地址 : http://192.168.1.169:8686/yilian/api/deductRecord
+2020-08-13 15:08:35 -==>请求头: null格式: GET
+2020-08-13 15:08:35 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecord
+2020-08-13 15:08:35 -==>  Preparing: select * from yl_user_order where staff_no=? order by apply_datetime desc 
+2020-08-13 15:08:35 -==> Parameters: 12(Long)
+2020-08-13 15:08:35 -<==      Total: 11
+2020-08-13 15:08:35 -耗时 : 4
+2020-08-13 15:08:35 -<==返回值 : /staff/deductRecord
+2020-08-13 15:08:35 -[THYMELEAF][http-nio-8686-exec-10] Exception processing template "/staff/deductRecord": An error happened during template parsing (template: "class path resource [templates//staff/deductRecord.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//staff/deductRecord.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.renegade.filter.XssFilter.doFilter(XssFilter.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "rd.status" (template: "/staff/deductRecord" - line 53, col 14)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 55 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "rd.status" (template: "/staff/deductRecord" - line 53, col 14)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.EqualsExpression.executeEquals(EqualsExpression.java:73)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:95)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardCaseTagProcessor.isVisible(StandardCaseTagProcessor.java:106)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:293)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 57 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'status' cannot be found on object of type 'java.util.HashMap' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 88 common frames omitted
+2020-08-13 15:08:35 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//staff/deductRecord.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'status' cannot be found on object of type 'java.util.HashMap' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:111)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.EqualsExpression.executeEquals(EqualsExpression.java:73)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:95)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardCaseTagProcessor.isVisible(StandardCaseTagProcessor.java:106)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:293)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.renegade.filter.XssFilter.doFilter(XssFilter.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-08-13 15:08:39 -==>请求参数 : []
+2020-08-13 15:08:39 -==>请求地址 : http://192.168.1.169:8686/yilian/api/staffCheckInUser
+2020-08-13 15:08:39 -==>请求头: null格式: GET
+2020-08-13 15:08:39 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.staffCheckInUser
+2020-08-13 15:08:39 -耗时 : 0
+2020-08-13 15:08:39 -<==返回值 : /staff/staffCheckInUser
+2020-08-13 15:08:41 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@4925b96a, {}, null]
+2020-08-13 15:08:41 -==>请求地址 : http://192.168.1.169:8686/yilian/api/openRecord
+2020-08-13 15:08:41 -==>请求头: null格式: GET
+2020-08-13 15:08:41 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.openUserRecord
+2020-08-13 15:08:41 -==>  Preparing: select * from yl_user_info where staff_no=? 
+2020-08-13 15:08:41 -==> Parameters: 12(Long)
+2020-08-13 15:08:41 -<==      Total: 26
+2020-08-13 15:08:41 -耗时 : 8
+2020-08-13 15:08:41 -<==返回值 : /staff/openRecord
+2020-08-13 15:08:44 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@4925b96a, {}, null]
+2020-08-13 15:08:44 -==>请求地址 : http://192.168.1.169:8686/yilian/api/withholdUser
+2020-08-13 15:08:44 -==>请求头: null格式: GET
+2020-08-13 15:08:44 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.withholdUser
+2020-08-13 15:08:44 -==>  Preparing: select * from yl_user_info where staff_no=? 
+2020-08-13 15:08:44 -==> Parameters: 12(Long)
+2020-08-13 15:08:44 -<==      Total: 26
+2020-08-13 15:08:44 -耗时 : 6
+2020-08-13 15:08:44 -<==返回值 : /staff/withhold
+2020-08-13 15:08:48 -==>请求参数 : [org.apache.catalina.connector.ResponseFacade@4925b96a]
+2020-08-13 15:08:48 -==>请求地址 : http://192.168.1.169:8686/yilian/api/logout
+2020-08-13 15:08:48 -==>请求头: null格式: GET
+2020-08-13 15:08:48 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.logout
+2020-08-13 15:08:48 -耗时 : 0
+2020-08-13 15:08:48 -<==返回值 : null
+2020-08-13 15:08:48 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@3c3c114a]
+2020-08-13 15:08:48 -==>请求地址 : http://192.168.1.169:8686/login
+2020-08-13 15:08:48 -==>请求头: null格式: GET
+2020-08-13 15:08:48 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2020-08-13 15:08:48 -耗时 : 0
+2020-08-13 15:08:48 -<==返回值 : /login
+2020-08-13 15:08:53 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@4925b96a, {login_pwd=123456, login_name=hezuogongsi, timeStamp=1597302529919, sign=CA0677669F978049283AED05535F254E}]
+2020-08-13 15:08:53 -==>请求地址 : http://192.168.1.169:8686/yilian/api/login
+2020-08-13 15:08:53 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2020-08-13 15:08:53 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.login
+2020-08-13 15:08:53 -==>  Preparing: select * from yl_staff_info where login_name=? and login_pwd=? 
+2020-08-13 15:08:53 -==> Parameters: hezuogongsi(String), 123456(String)
+2020-08-13 15:08:53 -<==      Total: 1
+2020-08-13 15:08:53 -耗时 : 2
+2020-08-13 15:08:53 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@7f0f5348
+2020-08-13 15:08:55 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7acff1c8, org.apache.catalina.connector.ResponseFacade@4925b96a, {}]
+2020-08-13 15:08:55 -==>请求地址 : http://192.168.1.169:8686/yilian/api/index
+2020-08-13 15:08:55 -==>请求头: null格式: GET
+2020-08-13 15:08:55 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.index
+2020-08-13 15:08:55 -==>  Preparing: select * from yl_user_order where approve1=2 and org_no=? 
+2020-08-13 15:08:55 -==> Parameters: 110(Long)
+2020-08-13 15:08:55 -<==      Total: 1
+2020-08-13 15:08:55 -耗时 : 5
+2020-08-13 15:08:55 -<==返回值 : /companies/index
+2020-08-13 15:08:56 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@4fc9cc28, org.apache.catalina.connector.ResponseFacade@4925b96a, {}, null]
+2020-08-13 15:08:56 -==>请求地址 : http://192.168.1.169:8686/yilian/api/deductRecordComp
+2020-08-13 15:08:56 -==>请求头: null格式: GET
+2020-08-13 15:08:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductRecordComp
+2020-08-13 15:08:56 -耗时 : 0
+2020-08-13 15:08:56 -<==返回值 : /companies/deductRecord
+2020-08-13 15:08:56 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4e1f2a0e, org.apache.catalina.connector.ResponseFacade@4925b96a, null]
+2020-08-13 15:08:56 -==>请求地址 : http://192.168.1.169:8686/yilian/api/deductOrder
+2020-08-13 15:08:56 -==>请求头: null格式: POST
+2020-08-13 15:08:56 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:08:56 -==>  Preparing: select * from yl_user_order where org_no=? order by apply_datetime desc 
+2020-08-13 15:08:56 -==> Parameters: 110(Long)
+2020-08-13 15:08:56 -<==      Total: 11
+2020-08-13 15:08:56 -耗时 : 2
+2020-08-13 15:08:56 -<==返回值 : com.renegade.domain.yilian.dto.ResultModel@58b3ef6c
+2020-08-13 15:09:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4bb462d0, org.apache.catalina.connector.ResponseFacade@4925b96a, null]
+2020-08-13 15:09:45 -==>请求地址 : http://192.168.1.169:8686/yilian/api/deductOrder
+2020-08-13 15:09:45 -==>请求头: null格式: POST
+2020-08-13 15:09:45 -==>请求加载类方法 : com.renegade.controller.yilian.YilianController.deductOrder
+2020-08-13 15:09:45 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====null==========你们说呢：java.lang.NullPointerException
+2020-08-13 15:14:40 -Starting ShouBaApplication on PC-201905161910 with PID 17252 (D:\project\ShoubaApp\target\classes started by Administrator in D:\project\ShoubaApp)
+2020-08-13 15:14:40 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2020-08-13 15:14:40 -The following profiles are active: dev
+2020-08-13 15:14:41 -Skipping MapperFactoryBean with name 'userInfoMapper' and 'com.renegade.dao.yilian.UserInfoMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 15:14:41 -Skipping MapperFactoryBean with name 'userMapper' and 'com.renegade.dao.yilian.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 15:14:41 -Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.renegade.dao.yilian.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 15:14:41 -Skipping MapperFactoryBean with name 'yilianMapper' and 'com.renegade.dao.yilian.YilianMapper' mapperInterface. Bean already defined with the same name!
+2020-08-13 15:14:41 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 15:14:41 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 15:14:41 -Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2020-08-13 15:14:41 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-13 15:14:41 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-08-13 15:14:41 -Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+2020-08-13 15:14:42 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$634b77b8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 15:14:42 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3d269ee8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-13 15:14:42 -Tomcat initialized with port(s): 8686 (http)
+2020-08-13 15:14:42 -Initializing ProtocolHandler ["http-nio-8686"]
+2020-08-13 15:14:42 -Starting service [Tomcat]
+2020-08-13 15:14:42 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2020-08-13 15:14:42 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Geth;D:\360Downloads\web3j-3.6.0\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Redis\;D:\360Downloads\apache-maven-3.6.1\apache-maven-3.6.1\bin;"C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;";;C:\Program Files\python;C:\Program Files\python\Scripts;;D:\BtSoft\panel\script;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;D:\360Downloads\web3j-3.6.0\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_181;;.]
+2020-08-13 15:14:43 -Initializing Spring embedded WebApplicationContext
+2020-08-13 15:14:43 -Root WebApplicationContext: initialization completed in 2357 ms
+2020-08-13 15:14:43 -xss filter init~~~~~~~~~~~~
+2020-08-13 15:14:43 -Renegade-四叶草-Hikari - Starting...
+2020-08-13 15:14:43 -Renegade-四叶草-Hikari - Start completed.
+2020-08-13 15:14:43 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-08-13 15:14:43 -HHH000412: Hibernate Core {5.3.7.Final}
+2020-08-13 15:14:43 -HHH000206: hibernate.properties not found
+2020-08-13 15:14:43 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-08-13 15:14:43 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-08-13 15:14:44 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-13 15:14:44 -Redisson 3.9.1
+2020-08-13 15:14:44 -9 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 15:14:44 -1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-08-13 15:14:45 -Using default implementation for ThreadExecutor
+2020-08-13 15:14:45 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-08-13 15:14:45 -Quartz Scheduler v.2.3.0 created.
+2020-08-13 15:14:45 -RAMJobStore initialized.
+2020-08-13 15:14:45 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-08-13 15:14:45 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-08-13 15:14:45 -Quartz scheduler version: 2.3.0
+2020-08-13 15:14:45 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@76ffc17c
+2020-08-13 15:14:45 -Initializing ExecutorService
+2020-08-13 15:14:45 -Initializing ExecutorService 'asyncExecutor'
+2020-08-13 15:14:46 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-13 15:14:46 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-08-13 15:14:46 -Initializing ExecutorService 'taskScheduler'
+2020-08-13 15:14:46 -Starting Quartz Scheduler now
+2020-08-13 15:14:46 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-08-13 15:14:46 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2020-08-13 15:14:46 -Starting ProtocolHandler ["http-nio-8686"]
+2020-08-13 15:14:46 -Using a shared selector for servlet write/read
+2020-08-13 15:14:46 -Tomcat started on port(s): 8686 (http) with context path ''
+2020-08-13 15:14:46 -Started ShouBaApplication in 6.967 seconds (JVM running for 7.927)

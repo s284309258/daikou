@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<title>业务员</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+			.seach-name{width: 100%;display: -wap-marquee;}
+			.fl{width: 100%;display: flex;justify-content: space-between;align-items: center;}
+		</style>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>业务员</h1>
+		</header>
+		<div class="main">
+			<div class="agent-seach">
+				<span>
+					<img src="../../img/seach.png" />
+					<input type="search" placeholder="搜索业务员" v-model="keywords"/>
+				</span>
+				<span>查询</span>
+			</div>
+			<div class="seach-list-warp">
+				<ul class="seach-list" >
+					<li v-for="item in seach(keywords)" :key="item.id">
+						<a :href="getGoodsHref(item.id)">
+							<span class="seach-name" v-if="item.role==='staff'">
+								<p class="fl"><span>业务员：<i>{{item.real_name}}</i></span><img src="../../img/next.png" class="next"/></p>
+								<p>手机号码：{{item.user_tel}}</p>
+								<p>身份证号：{{item.user_card}}</p>
+							</span>
+							<span class="flexs">
+
+							</span>
+						</a>
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/vue.js"></script>
+		<script type="text/javascript">
+			var vmm = new Vue({
+				el:'.main',
+				data:{
+					keywords:'',
+					Salelist:[],
+				},
+				mounted(){
+					this.getSale()
+				},
+				methods:{
+					getSale(){
+						var that = this
+						jQuery.ajax({
+							type:'post',
+							url:'/yilian/api/staffInfo',
+							success:function(res){
+								console.log(res);
+								if(res.errorCode == 00000){
+									that.Salelist= res.data
+								}
+							},
+							error:function(res){
+								console.log(res)
+								layer.msg(res)
+							}	
+							
+						})
+					},
+					seach(keywords) {
+						return this.Salelist.filter(item => {
+							console.log(keywords);
+							if (item.real_name.indexOf(keywords) != -1) {
+								console.log(keywords);
+								return item
+							} //filter方法来循环数组返回的是一个符合条件的新数组
+						})
+				},
+				getGoodsHref:function(val){
+					    return '/yilian/api/staffTeam/'+val
+					},
+			},
+			})
+		</script>
+	</body>
+</html>

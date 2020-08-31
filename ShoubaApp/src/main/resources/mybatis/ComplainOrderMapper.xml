@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.ComplainOrderDao">
+
+	<select id="get" resultType="com.renegade.domain.ComplainOrderDO">
+		select `id`,`complain_user`,`complain_content`,`complain_order`,`user_id`,`create_time`,`complain_status` from t_complain_order where id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.ComplainOrderDO">
+		select `id`,`complain_user`,`complain_content`,`complain_order`,`user_id`,`create_time`,`complain_status` from t_complain_order
+        <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="complainUser != null and complainUser != ''"> and complain_user = #{complainUser} </if>
+		  		  <if test="complainContent != null and complainContent != ''"> and complain_content = #{complainContent} </if>
+		  		  <if test="complainOrder != null and complainOrder != ''"> and complain_order = #{complainOrder} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="complainStatus != null and complainStatus != ''"> and complain_status = #{complainStatus} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_complain_order
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="complainUser != null and complainUser != ''"> and complain_user = #{complainUser} </if>
+		  		  <if test="complainContent != null and complainContent != ''"> and complain_content = #{complainContent} </if>
+		  		  <if test="complainOrder != null and complainOrder != ''"> and complain_order = #{complainOrder} </if>
+		  		  <if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="complainStatus != null and complainStatus != ''"> and complain_status = #{complainStatus} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.ComplainOrderDO" useGeneratedKeys="true" keyProperty="id">
+		insert into t_complain_order
+		(
+			`complain_user`, 
+			`complain_content`, 
+			`complain_order`, 
+			`user_id`, 
+			`create_time`
+		)
+		values
+		(
+			#{complainUser}, 
+			#{complainContent}, 
+			#{complainOrder}, 
+			#{userId}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.ComplainOrderDO">
+		update t_complain_order 
+		<set>
+			<if test="complainUser != null">`complain_user` = #{complainUser}, </if>
+			<if test="complainContent != null">`complain_content` = #{complainContent}, </if>
+			<if test="complainOrder != null">`complain_order` = #{complainOrder}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="complainStatus != null">`complain_status` = #{complainStatus}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from t_complain_order where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_complain_order where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

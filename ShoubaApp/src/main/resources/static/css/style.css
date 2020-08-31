@@ -1,0 +1,215 @@
+body{background: #F8F8F8 !important;}
+header{width: 100%;position: relative;background: #0077FF;}
+header i{position: absolute;left: 15px;top: 35%;display: block;}
+header i img{width: 1.2rem;}
+header button{position: absolute;right: 15px;top: 1.3rem;background: none;outline: none;color: white;}
+header h1{text-align: center;font-size: 1.2rem;padding: 7% 0px 3%;font-weight: 500;color: white;}
+.main{width: 100%;}
+/* .index-warp{width: 100%;background: url(../img/index-bg.png) no-repeat ;background-size: 100% 100%;display: flex;justify-content: center;align-items: center;padding: 12vw 0px;flex-direction: column;}
+ */
+/**/
+.mask-img {  display: none;   position: fixed; top: 0; left: 0;  width: 100%;   height: 100%;   z-index: 10;   background: rgba(0,0,0,.6);}
+				.picture{  display: none; width: 100vw;height: 50vw;  position: fixed;   top: 50%; left:50%;  transform: translate(-50%,-50%);  text-align:center; background: #666;  z-index: 20;}
+				.picture .left{
+				  position: absolute; 
+				  left: 10px; 
+				  top:25vw; 
+				  width: 20px; 
+				  height: 20px; 
+				}
+				.picture .right{
+				  position: absolute; 
+				  right: 10px; 
+				  top: 25vw; 
+				  width: 20px; 
+				  height: 20px; 
+				}
+				.picture .img{width: 80vw;}
+				.box{display: flex; justify-content: space-around; align-items: center; width: 100vw;height: 50vw; }
+			
+/* 代理 */
+.agent-seach{width: 92%;display: flex;align-items: center;justify-content: space-between;margin: .6rem auto;}
+.agent-seach span{display: block;font-size: 1rem;}
+.agent-seach span:first-child{background: white;width: 84%;border-radius: 20px;padding: 5px 0px }
+.agent-seach span img{width: 20px;height: 20px;margin-left: 20px;}
+.agent-seach span input{outline: none;background: none;appearance: none;-webkit-appearance: none;}
+.agent-seach span input::-webkit-input-placeholder{font-size: 1rem;color: #777777;}
+.seach-list-warp{width: 92%;background: white;margin: .5rem auto 0px;height: 77vh;overflow-y: scroll;border-radius: 6px 6px 0px 0px;}
+.seach-list{display: flex;flex-direction: column;width: 100%;}
+.seach-list li{display: block;width: 90%;border-bottom: 1px solid #E6E6E6;margin: 0 auto;padding: .6rem 0px;}
+.seach-list li .more-deductions{display: flex;flex-direction: column;}
+.seach-list li .more-deductions p{display: flex;justify-content: space-between;width: 100%;line-height: 2rem;font-size: .95rem;}
+.seach-list li a{display: flex;justify-content: space-between;align-items: auto;}
+.seach-list li a span{display: block;}
+.seach-list li a span p{color: #000000;line-height: 2rem;}
+.seach-list li a .seach-name{font-size: 1rem;}
+.next{width: 1rem;height: 1rem;vertical-align: middle;}
+/*忘记密码*/
+.pwd-form{width: 92%;margin: .8rem auto;background: white;}
+.pwd-form ul{display: block;width: 100%;padding: .8rem }
+.pwd-form ul li{border-bottom: 1px solid #E6E6E6;}
+.pwd-form ul li label{display: flex;width: 100%;align-items: center;margin: .6rem 0px;}
+.vcode{justify-content: space-between;}
+.vcode #verCode{width: 40% !important;}
+.vcode #verCodeBtn{width: 30% !important;}
+.pwd-form ul li label span{font-size: 1rem;color: #000000;width: 30%;}
+.pwd-form ul li label input{display: block;width: 70%;outline: none;color: #000000;font-size: .95rem;}
+.btn-pwd{width: 100%;}
+.btn-pwd button{margin: 1.5rem auto;display: block;width:80%;background: #0077FF;color: white;padding: .5rem 0px;border-radius: 20px;font-size: 1rem;}
+/* 扣款明细 */
+.item-txt{display: flex;flex-direction: column;padding-left: 10px;padding-right: 10px;}
+.color-blue{color: #0077FF !important;}
+.color-errno{color: #FF0000 !important;}
+.item-txt li{display: flex;justify-content: space-between;padding-top: 5px;}
+.item-txt li:last-child{padding-bottom: 20px;border-bottom: 1px solid #E6E6E6;}
+.item-txt li span{word-wrap: break-word;font-size: .95rem;}
+.item-txt li span:first-child{width: 40%;}
+.item-txt li span:last-child{width: 60%;text-align: right;}
+/* 公司扣款详情 */
+.month-amount{background: #E6E6E6;width: 92%;margin: 10px auto 0px;display: flex;justify-content: space-between;padding: 10px 15px;}
+.demo-input{outline: none;background: none;color: #000000;-webkit-appearance: none;}
+.demo-input::-webkit-input-placeholder{color: #000000;}
+.triangle{top: 4px;position: absolute ;right: 0px;width: 0px;height: 0px; content: " "; border-right: 8px solid transparent; border-top: 8px solid #000; border-left: 8px solid transparent;border-bottom: 8px solid transparent;}
+.month{font-weight: bold;position: relative;display: flex;justify-content: space-between;display: block;width: 28vw;}
+.deduction-list{width: 92%;margin: 0 auto;display: flex;flex-direction: column;}
+.deduction-list span{width: 33.33%;text-align: center;font-size: .95rem !important;}
+.deduction-list dt{margin-top: 10px;}
+.deduction-list dt:last-child{border-bottom: 1px solid #E6E6E6;padding-bottom: 10px;}
+.color-black{color: #000000;}
+.between{display:flex;width: 100%;justify-content: space-between;}
+.around{display: flex;justify-content: space-around;color: #777777;}
+/* 代扣个人信息 */
+.item-details{display: flex;flex-direction: column;padding-left: 10px;padding-right: 10px;}
+.item-details li {display: flex;justify-content: space-between;padding-top: 8px;}
+.item-details li:last-child{padding-bottom: 20px;}
+.item-details li span{word-wrap: break-word;font-size: .95rem;color: #000000;}
+.item-details li span:first-child{width: 40%;}
+.item-details li span:last-child{width: 60%;text-align: right;}
+.certificates-img{width: 100%;margin: 0 auto;}
+.certificates-img ul{width: 96%;display: flex;flex-wrap: wrap;justify-content: space-around;margin: 0 auto;}
+.certificates-img ul li{width: 40vw;margin-top: 1rem;height: 30vw;}
+.certificates-img ul li img{width: 100%;height: 100%;}
+.flexs{display: flex!important;align-items: center !important;}
+/* 资料录入 */
+.company-name{width: 92%;margin: 1rem auto;background: white;}
+.company-name label{display: flex;align-items: center;padding: .6rem 0px;width: 90%;margin:  0 auto;position: relative;}
+.company-name label span{display: block;width: 30%;font-size: .9rem;color: #000000;}
+.company-name label input{display: block;width: 70%;}
+.company-name label input::-webkit-input-placeholder{color: #A1A1A3;}
+.code-warp{display: flex;justify-content: space-between;}
+.code-warp input{width: 30% !important;}
+.code-warp2{display: flex;justify-content: space-between;}
+.code-warp2 input{width: 30% !important;}
+.img-code{width: 35%;}
+.select-p{display: block;width: 92% !important;margin: 0 auto;color: #777777;font-size: 1rem;}
+.border-bottom{border-bottom: 1px solid #E6E6E6;}
+.bank-link{position: absolute;top: .5rem; right:0px;}
+.account-btn{width:80% ;margin: 0 auto;text-align: center;}
+#v_container{width: 35%;}
+#verCodeBtn{background: #0077FF;color: white !important;width:auto !important;padding: 3px 0px;border-radius: 20px;width: 35% ;}
+.account-btn button{display: block;width: 100%;color: white;background: #0077FF;height: 40px;border-radius: 20px;font-weight: bold;outline: none;}
+/*开户行**/
+.bank-list{width: 100%;margin: 1rem auto;display: flex;flex-direction: column;}
+.bank-list li{padding: 0px 15px 10px;border-bottom: 1px solid #E6E6E6;}
+.bank-list label {margin-right: 15px;  line-height: 32px;background: white;position: relative;}
+.bank-list input { background: white !important;-webkit-appearance: none;-moz-appearance: none;appearance: none; border-radius: 50%; width: 16px;  height: 16px;border: 2px solid #707070; transition: 0.2s all linear; outline: none;margin-right: 5px; position: relative;  top: 4px;}				
+.bank-list input:checked { border: 6px solid #0077FF;  /* background: deeppink; */}
+/*上传证件照*/
+.upload-txt{width: 92%;margin: 1rem auto;color: #000000;font-size: 1rem;}
+.upload-txt span{font-size: .9rem;color: #A1A1A3;margin-left: .8rem;}
+.upimgs{display: flex;flex-wrap: wrap;width: 92%;margin: .8rem auto 0px;justify-content:space-between;}
+.idcard-index{width:48%;position: relative;margin-bottom: 1rem;display: flex;justify-content: center;align-items: center;}
+.upload-one{width: 40vw;height: 40vw;appearance: none;-webkit-appearance: none;background: none;opacity: 0;}
+.show-warp{position: absolute;top: 0;left: 5%;width: 40vw;height: 40vw;z-index: -1;background: url(../img/upload.png) no-repeat;background-size: 100% 100%;display: block;}
+.img_wrap{width: 40vw;height: 40vw;z-index: 2;position: absolute;top: 0;left: 0;}
+.img_wraps{width: 40vw;height: 40vw;z-index: 2;position: absolute;top: 0;left: 0;}
+.show-warp p{margin-top: 25vw;text-align: center;color: #A1A1A3;font-size: .9rem;width: 35vw;margin: 25vw auto 0px;}
+.Sign{width: 92%;margin: 0 auto;margin-bottom: 3vw;}
+.Sign p{font-size: 1rem;color: #000000;}
+.Sign-txt{width: 100%;background: white;margin: .5rem auto;height: 22vw;display: flex;justify-content: center;align-items: center;}
+.Sign-txt a{display: block;}
+.Sign-txt a p{color: #A1A1A3;font-size: 1rem;}
+.login-btn{bottom: 0px;width: 100%;padding: 10px 0px 20px;}
+.login-btn .sub{width: 90%;display: block;text-align: center;padding: 10px 0px;color: white;font-size: 1rem;background: none ;outline: none;border: none;text-align: center;background: #0077FF;border-radius: 20px;margin: 0 auto;}
+/*代扣协议*/
+.sign{width: 92%;margin: .8rem auto;}
+.sign .Sign-title{text-align: center;font-size: 1.1rem;font-weight: normal;width: 100%;display: block;padding: 10px 0px;}
+.Sign-title-content{font-size: .9rem;text-indent: 2rem;line-height: 1.8rem;}
+.btn-box{margin: 10px 0px;}
+
+/*开户记录*/
+.details-warp{padding-bottom: 20vw;}
+.item-txt{padding-top: 5vw;}
+.item-txt span{font-size: .9rem !important;color: #000000;}
+.blod{font-weight: bold;}
+/*开户详情*/
+.details-txt{font-size: 1rem;padding-left: 20px;padding-top: 10px;font-weight: normal;}
+.account_imgs{display: flex;justify-content: space-between;flex-wrap: wrap;width: 92%;margin: 0 auto;height: 80vh;overflow-y: scroll;}
+.account_imgs li{display: block;width: 40vw;margin-top: 1rem;height: 30vw;}
+.account_imgs li img{width:100%;height: 100%;}
+
+/*代扣审核*/
+.main-list{width: 92%;background: white;height: 86vh;overflow-y: scroll;margin: .8rem auto 0px;padding: 15px 0px;}
+.main-list ul{display: block;width: 90%;margin: 0 auto;}
+.main-list ul .audit-warp{display: block;width: 100%;margin-bottom: 15px;}
+.main-list ul .audit-warp dl{display: block;width: 100%;}
+.main-list ul .audit-warp dl dt{display: flex;width: 100%;justify-content: space-between;margin-bottom: .5rem;}
+.main-list ul .audit-warp dl dt span{font-size: .95rem;color: #000000;}
+.flex-right{justify-content: flex-end !important;margin-top: 15px !important;}
+.main-list ul .audit-warp dl dt button{outline: none;appearance: none;-webkit-appearance: none;color: white;-moz-appearance: none;background: #0077FF;width: 26vw;padding: 3px 0px;border-radius: 20px;font-size: .95rem;}
+
+/*机构信息录入*/
+.informmation-form{width: 92%;margin: 1rem auto;}
+.informmation-form #form1{background: white;display: flex;flex-direction: column;width: 100%;margin-top: 10px;}
+.informmation-form #form1 label{display: block;padding: .5rem 0px;width: 90% ;margin: 0 auto;}
+.informmation-form #form1 label:first-child{border-bottom: 1px solid #E6E6E6;}
+.informmation-form #form1 label span{font-size: 1rem;margin-right: 1rem;}
+.informmation-form #form1 label input{outline: none;-webkit-appearance: none;font-size: 1rem;}
+.informmation-form #form1 label input::-webkit-input-placeholder{color: #777777;}
+.informmation-form #form2{background: white;display: flex;flex-direction: column;width: 100%;margin-top: 10px;}
+.informmation-form #form2 label{display: block;padding: .5rem 0px;width: 90% ;margin: 0 auto;}
+.informmation-form #form2 label:first-child{border-bottom: 1px solid #E6E6E6;}
+.informmation-form #form2 label span{font-size: 1rem;margin-right: 3rem;}
+.informmation-form #form2 label input{outline: none;-webkit-appearance: none;font-size: 1rem;}
+.informmation-form #form2 label input::-webkit-input-placeholder{color: #777777;}
+.complete{width: 100%;margin-top: 3rem;display: flex;justify-content: center;}
+.complete button{outline: none;width: 80%;line-height: 2.8rem;background: #0077FF;color: white;letter-spacing: 1px;border-radius: 2rem;}
+
+/*公司信息详情*/
+.company-details{width: 94%;background: white;margin: 1rem auto 0px;}
+.company-details ul{display: block;width: 92%;margin: 0 auto;padding: 15px 0px;}
+.company-details ul li{display: flex;justify-content: space-between;padding: 5px;align-items: center;}
+.company-details ul li span:first-child{width: 40%;}
+.company-details ul li span:last-child{width: 70%;text-align: right;}
+.company-details ul li span{font-size: .95rem;}
+
+/*代扣审核*/
+.information-list{width: 92%;background: white;margin: 1rem auto 0px;height: 90vh;overflow-y: scroll;}
+.information-list ul{display: block;width: 90%;margin: 10px auto ;}
+.information-list ul li{display: flex;justify-content: space-between;align-items: center;padding-bottom: .6rem;}
+.information-list ul li span{display: block;font-size: .95rem;}
+.information-list ul li input{display: block;text-align: right;outline: none;border: none;font-size: .95rem;}
+.information-list ul li input::-webkit-input-placeholder{color: #777777;}
+.information-list ul li a{display: block;font-size: .95rem;}
+.withhold-btn{display: block;text-align: right;}
+.withhold-btn button{outline: none;background: none;border-radius: 20px;border: 1px solid #707070;width: 6rem;padding: 2px 0px;color: #777777;}
+.withhold-btn2{display: block;text-align: right;border-top: 1px solid #E6E6E6;padding-top: 1rem;}
+.withhold-btn2 button{outline: none;background: #0077FF;color: white;border-radius: 20px;width: 6rem;padding: 2px 0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

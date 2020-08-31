@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.ResonancePoolDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.ResonancePoolDO">
+		select
+		`id`,`create_time`,`resonance_status`,`resonance_total`,`resonance_remaining_total`
+		from t_resonance_pool where id = #{value} and resonance_status=0
+	</select>
+	<update id="updateStatus">
+	  update t_resonance_pool set resonance_status=1 where id=#{id} and resonance_status=0  and  resonance_remaining_total=0
+	</update>
+	<select id="getNewRecord"
+		resultType="com.renegade.domain.ResonancePoolDO">
+		select 
+		`id`,`resonance_status`,`resonance_total`,`resonance_remaining_total`,
+		 create_time from t_resonance_pool
+		where 
+		<!-- create_time&lt;=NOW() and  -->
+		resonance_status=1    
+		 order by create_time desc 
+	</select>
+	<update id="updateRemaingNum">
+		update t_resonance_pool set
+		resonance_remaining_total=resonance_remaining_total-#{balacne} where
+		id = #{id} and resonance_status=0 and
+		(resonance_remaining_total-#{balacne}) &gt;=0
+	</update>
+	<select id="getMoneyCount" resultType="java.util.HashMap">
+	    SELECT COUNT(1)AS count, IFNULL(SUM(resonance_total-resonance_remaining_total),0)
+	AS total  FROM  t_resonance_pool 
+	</select>
+	<select id="list"
+		resultType="com.renegade.domain.ResonancePoolDO">
+		select
+		`id`,`create_time`,`resonance_status`,`resonance_total`,`resonance_remaining_total`
+		from t_resonance_pool
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="resonanceStatus != null and resonanceStatus != ''"> and resonance_status = #{resonanceStatus} </if>
+			<if test="resonanceTotal != null and resonanceTotal != ''"> and resonance_total = #{resonanceTotal} </if>
+			<if
+				test="resonanceRemainingTotal != null and resonanceRemainingTotal != ''"> and resonance_remaining_total = #{resonanceRemainingTotal}
+			</if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_resonance_pool
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="resonanceStatus != null and resonanceStatus != ''"> and resonance_status = #{resonanceStatus} </if>
+			<if test="resonanceTotal != null and resonanceTotal != ''"> and resonance_total = #{resonanceTotal} </if>
+			<if
+				test="resonanceRemainingTotal != null and resonanceRemainingTotal != ''"> and resonance_remaining_total = #{resonanceRemainingTotal}
+			</if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.ResonancePoolDO" keyProperty="id"
+		useGeneratedKeys="true">
+		insert into t_resonance_pool
+		(
+		`resonance_total`,
+		`resonance_remaining_total`
+		)
+<!-- 		values
+		(
+		#{resonanceTotal},
+		#{resonanceRemainingTotal}
+		) -->
+		select #{resonanceTotal},#{resonanceRemainingTotal} FROM DUAL
+		WHERE NOT EXISTS (SELECT 1 FROM t_resonance_pool WHERE resonance_status=0)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.ResonancePoolDO">
+		update t_resonance_pool
+		<set>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="resonanceStatus != null">`resonance_status` = #{resonanceStatus}, </if>
+			<if test="resonanceTotal != null">`resonance_total` = #{resonanceTotal}, </if>
+			<if test="resonanceRemainingTotal != null">`resonance_remaining_total` = #{resonanceRemainingTotal}
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from t_resonance_pool where id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_resonance_pool where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

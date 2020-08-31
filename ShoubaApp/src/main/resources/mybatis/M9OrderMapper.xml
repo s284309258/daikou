@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.renegade.dao.M9OrderMapper">
+
+	<sql id="UserOrderListSql">
+		select t.*,truncate(quantity*quantity_price,4) as quantity_total,tt.nick_name,tt.telphone,tt.sex,tt.email from m9_order t,m9_user tt where t.user_id=tt.id
+		<if test="map.id!=null and map.id!=''">
+			and t.id=#{map.id}
+		</if>
+		<if test="map.order_id!=null and map.order_id!=''">
+			and t.order_id like concat('%',#{map.order_id},'%')
+		</if>
+		<if test="map.quantity!=null and map.quantity!=''">
+			and t.quantity=#{map.quantity}
+		</if>
+		<if test="map.currency!=null and map.currency!=''">
+			and t.currency=#{map.currency}
+		</if>
+		<if test="map.state!=null and map.state!=''">
+			and t.state in (${map.state})
+		</if>
+		<if test="map.eos_address!=null and map.eos_address!=''">
+			and t.eos_address=#{map.eos_address}
+		</if>
+		<if test="map.user_id!=null and map.user_id!=''">
+			and t.user_id=#{map.user_id}
+		</if>
+		<if test="map.buyer!=null and map.buyer!=''">
+			and t.buyer=#{map.buyer}
+		</if>
+		<if test="map.nick_name!=null and map.nick_name!=''">
+			and tt.nick_name=#{map.nick_name}
+		</if>
+		<if test="map.telphone!=null and map.telphone!=''">
+			and tt.telphone=#{map.telphone}
+		</if>
+		<if test="map.sex!=null and map.sex!=''">
+			and tt.sex=#{map.sex}
+		</if>
+		<if test="map.email!=null and map.email!=''">
+			and tt.email=#{map.email}
+		</if>
+
+		<!-- 开始时间检索 -->
+		<if test="map.beginTime != null and map.beginTime != ''">
+			AND t.cre_date &gt;= date_format(#{map.beginTime},'%Y%m%d')
+		</if>
+		<!-- 结束时间检索 -->
+		<if test="map.endTime != null and map.endTime != ''">
+			AND t.cre_date &lt;= date_format(#{map.endTime},'%Y%m%d')
+		</if>
+		order by t.cre_date desc
+	</sql>
+	<!-- 查询买单列表  -->
+	<select id="getUserOrderList" parameterType="java.util.Map" resultType="java.util.Map">
+		<include refid="UserOrderListSql"></include>
+	</select>
+
+	<sql id="selectOrderSql">
+		select * from m9_order where 1=1
+		<if test="map.id!=null and map.id!=''">
+			and id = #{map.id}
+		</if>
+		<if test="map.order_id!=null and map.order_id!=''">
+			and order_id = #{map.order_id}
+		</if>
+		<if test="map.quantity!=null and map.quantity!=''">
+			and quantity = #{map.quantity}
+		</if>
+		<if test="map.currency!=null and map.currency!=''">
+			and currency = #{map.currency}
+		</if>
+		<if test="map.state!=null and map.state!=''">
+			and state = #{map.state}
+		</if>
+		<if test="map.eos_address!=null and map.eos_address!=''">
+			and eos_address = #{map.eos_address}
+		</if>
+		<if test="map.user_id!=null and map.user_id!=''">
+			and user_id = #{map.user_id}
+		</if>
+		<if test="map.remark!=null and map.remark!=''">
+			and remark = #{map.remark}
+		</if>
+		<if test="map.buyer!=null and map.buyer!=''">
+			and buyer = #{map.buyer}
+		</if>
+		<if test="map.quantity_price!=null and map.quantity_price!=''">
+			and quantity_price = #{map.quantity_price}
+		</if>
+		<if test="map.pay_type!=null and map.pay_type!=''">
+			and pay_type = #{map.pay_type}
+		</if>
+		<if test="map.pay_timeout!=null and map.pay_timeout!=''">
+			and pay_timeout = #{map.pay_timeout}
+		</if>
+	</sql>
+
+	<select id="selectOrderAll" parameterType="java.util.Map" resultType="java.util.Map">
+		select t.*,tt.user_poto,tt.nick_name from m9_order t,m9_user tt where t.user_id=tt.id
+		<if test="map.id!=null and map.id!=''">
+			and t.id = #{map.id}
+		</if>
+		<if test="map.order_id!=null and map.order_id!=''">
+			and t.order_id = #{map.order_id}
+		</if>
+		<if test="map.quantity!=null and map.quantity!=''">
+			and t.quantity = #{map.quantity}
+		</if>
+		<if test="map.currency!=null and map.currency!=''">
+			and t.currency = #{map.currency}
+		</if>
+		<if test="map.state!=null and map.state!=''">
+			and t.state = #{map.state}
+		</if>
+		<if test="map.eos_address!=null and map.eos_address!=''">
+			and t.eos_address = #{map.eos_address}
+		</if>
+		<if test="map.user_id!=null and map.user_id!=''">
+			and t.user_id != #{map.user_id}
+		</if>
+		<if test="map.remark!=null and map.remark!=''">
+			and t.remark = #{map.remark}
+		</if>
+		<if test="map.buyer!=null and map.buyer!=''">
+			and t.buyer = #{map.buyer}
+		</if>
+		<if test="map.quantity_price!=null and map.quantity_price!=''">
+			and t.quantity_price = #{map.quantity_price}
+		</if>
+		<if test="map.pay_type!=null and map.pay_type!=''">
+			and t.pay_type = #{map.pay_type}
+		</if>
+		<if test="map.pay_timeout!=null and map.pay_timeout!=''">
+			and t.pay_timeout = #{map.pay_timeout}
+		</if>
+			and t.id &gt; #{map.lastId} order by cre_date asc limit 0,10
+	</select>
+
+	<select id="selectOrder" parameterType="java.util.Map" resultType="java.util.Map">
+		<include refid="selectOrderSql"></include>
+	</select>
+
+	<insert id="insertOrder" parameterType="java.util.Map">
+		insert into m9_order(order_id,quantity,state,eos_address,user_id,use_lineup_coin,use_lineup_coin_free,eos_address_label,remark)
+		values(#{map.order_id},#{map.quantity},#{map.state},#{map.eos_address},#{map.user_id},#{map.use_lineup_coin,jdbcType=DOUBLE},#{map.use_lineup_coin_free,jdbcType=DOUBLE},#{map.eos_address_label},#{map.remark})
+	</insert>
+
+	<!-- 查询买单列表实体类的方式存储 -->
+	<select id="getUserOrderListObj" parameterType="java.util.Map" resultType="com.renegade.domain.M9UserAndOrderDo">
+		<include refid="UserOrderListSql"></include>
+	</select>
+
+	<!--更新M9订单信息-->
+	<update id="updateOrder" parameterType="java.util.Map">
+		update m9_order
+		<trim prefix="set" suffixOverrides=",">
+			<if test="map.eos_qrcode!=null and map.eos_qrcode!=''">
+				eos_qrcode=#{map.eos_qrcode},
+			</if>
+			<if test="map.currency!=null and map.currency!=''">
+				currency=#{map.currency},
+			</if>
+			<if test="map.quantity!=null and map.quantity!=''">
+				quantity=#{map.quantity},
+			</if>
+			<if test="map.eos_address!=null and map.eos_address!=''">
+				eos_address=#{map.eos_address},
+			</if>
+			<if test="map.eos_address_label!=null and map.eos_address_label!=''">
+				eos_address_label=#{map.eos_address_label},
+			</if>
+			<if test="map.state!=null and map.state!=''">
+				state=#{map.state},
+			</if>
+			<if test="map.buyer!=null and map.buyer!=''">
+				buyer=#{map.buyer},
+			</if>
+			<if test="map.remark!=null and map.remark!=''">
+				remark=#{map.remark},
+			</if>
+			<if test="map.eos_poto!=null and map.eos_poto!=''">
+				eos_poto=#{map.eos_poto},
+			</if>
+			<if test="map.pay_date!=null and map.pay_date!=''">
+				pay_date=${map.pay_date},
+			</if>
+			<if test="map.confirm_date!=null and map.confirm_date!=''">
+				confirm_date=${map.confirm_date},
+			</if>
+			upd_date=now()
+
+		</trim>
+		where id=${map.id}
+		<if test="map.state1!=null and map.state1!=''">
+			and state in (${map.state1})
+		</if>
+	</update>
+
+
+
+</mapper> 

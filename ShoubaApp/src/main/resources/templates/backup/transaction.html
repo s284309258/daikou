@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="/static/backup/css/css.css" />
+	<link rel="stylesheet" href="/static/backup/css/font.css" />
+<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="/static/backup/js/core.js" ></script>
+	<script type="text/javascript" src="/static/backup/js/md5.js" ></script>
+	<script type="text/javascript" src="/static/backup/js/jsencrypt.js" ></script>
+	<script type="text/javascript" src="/static/backup/js/public.js" ></script>
+	
+<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+
+	
+	<style>
+		.icon-chakan{font-size: 20px !important;color: #4D80F0 !important;}
+		time{font-size: .95rem;color: #333333;}
+		#someline{width: 100vw;height: 30vh;}
+		.getcode2{position: absolute;right: 0px;background: #E5E5E5;bottom: 35%;text-align: center;width: 40% !important;}
+		.getcode2 em{font-style: normal;}
+		.get_code{text-overflow: ellipsis;overflow: hidden;color: #577AEF;font-weight: normal;}
+		.get_code1{display: none;}
+		.i{display: block;	width: 50%;overflow-x: scroll;}
+		/**加载效果旋转**/
+		@-webkit-keyframes rotate {0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
+		@keyframes rotate {0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
+		
+		.photo{width: 90%; margin:0 auto;display: flex;justify-content: flex-start;align-items: center;border-bottom: 1px solid #E5E5E5;padding: 3% 0px;}
+		.photo i,.photo span{display: block;}
+		.photo span{font-size: 1rem;color: #333333;}
+		.photo i{width: 8vw;height: 8vw;border-radius: 50%;margin-right: 2%;}
+		.photo i img{width: 8vw;height: 8vw;vertical-align: middle;border-radius: 50%;}
+		.loadmore {display:block;line-height: 50px;text-align:center;color:#ccc;font-size:14px;position: relative;margin:0px 0px 50px;}
+		.loadmore span{height:20px;width:20px;border-radius:100%;display:inline-block;margin:10px;border:2px solid #f60;border-bottom-color: transparent;vertical-align: middle;-webkit-animation: rotate 1.1s infinite linear;animation: rotate 1.1s infinite linear;}
+		.loadover{position:relative;margin:0px 0px 50px;padding:50px 0;height:20px;line-height:20px;color:#909090;text-align: center;}
+		.loadover span{position:relative;display:inline-block;padding:0 6px;height:20px;background:#F2F2F2;z-index:2}
+		.loadover:after {content:'';position: absolute;left: 0;top:50%;width: 100%;height:1px;background:#DCDCDC;z-index:1;display:block;}
+		.affairlist{padding-bottom: 12%;position: relative;}
+		
+	</style>
+</head>
+<body>
+<div class="head">
+	<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>交易大厅</h1>
+</div>
+<!--<div class="charts">
+	<p style="position: absolute;top: 5%;"></p>
+	<div id="someline"></div>
+</div>-->
+<div style="" class="affairlist" id="demo">
+	<ul class="prolist" id="result">
+
+	</ul>
+
+</div>
+<div class="fabu">
+	<input type="hidden" id="oid">
+    <input type="hidden" id="zone" th:value="${zone}">
+	<a href="javascript:;" id="buy1">发布求购单</a>
+</div>
+<!--<div class="mask" style="display: none;">
+	<div class="check_qr">
+		<div id="qrcode">
+
+		</div>
+	</div>
+</div>-->
+<div class="mask2" style="display: none;">
+	<div id="salebox">
+		<div id="sale">
+			<h2>申请卖出</h2>
+			<label>
+				<span>验 证 码:</span>
+				<p><input type="hidden" id="phone" value="13326536523"/>
+					<input type="text" id="code"/></p>
+				<span class="getcode2">
+						<strong class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码</strong>
+						<strong class="get_code get_code1"><em id="J_second" >60</em>s<em>后重发</em></strong>
+					</span>
+			</label>
+			<label>
+				<span>交易密码:</span><input type="password" id="pay_pwd" />
+			</label>
+			<input type="button" onclick="saleOk()" value="确认申请" />
+		</div>
+		<div class="climg"><img src="/static/backup/img/close.png" class="closeimg"/></div>
+	</div>
+</div>
+<div class="mask3" style="display: none;">
+	<div id="salebox">
+		<div id="sale">
+			<h2>申请买入</h2>
+			<label>
+				<span>EOS数量:</span>
+				<p><input type="text" th:value="${zone}" readonly="readonly" />EOS</p>
+			</label>
+			<label>
+				<span>排 单 币:</span>
+				<input type="text" th:value="${lineup_count}" readonly="readonly"/>
+			</label>
+			<label>
+				<span>交易密码:</span><p><input type="password" id="pay_pwd_buy" placeholder="请输入交易密码" style="width: 80% !important;"/></p>
+			</label>
+			<input type="button" onclick="buyOk()" value="确认申请" />
+		</div>
+		<div class="climg"><img src="/static/backup/img/close.png" class="closeimg"/></div>
+	</div>
+</div>
+
+<script>
+	<!-- 实现滚动条滚动start -->
+	var pageSize =0; // 当前每页条数
+	var lastId=0;
+	var winH = $(window).height();//页面可视区域高度
+	var p=0, t=0; // 顶部和底部的距离
+	$(function(){
+		getData();//初始获取数据，加载数据事件
+		//鼠标滚动事件
+		$(window).scroll(function() {
+			var pageH = $(document).height(); //当前文档总高度
+			var scrollT = $(window).scrollTop();  //滚动条top的值
+			var bottomH = (pageH - winH - scrollT) / winH;  // 当前所滚动位置到底部距离
+			p = $(this).scrollTop(); //顶部距离
+				if (bottomH <= 0) {
+					if (pageSize == 10) {
+						getData();
+					}else{ //没有数据
+						$(".loadover span").eq(0).html('到底了～');
+					}
+				}
+			setTimeout(function(){t = p;},5000);//延时2秒
+		});
+
+	})
+	function getData() {
+		var html = '';
+		$.ajax({
+			type: "post",
+			url: '/m9/order/selectOrderAll',
+			//当前页由于是按照id倒序排列的，那么最后一个id就是下拉分页的最开始的一个ID
+			data:{
+				lastId:lastId,
+				quantity:$("#zone").val(),
+				cache: 'false',
+				async:false,
+				state:'1'
+			},
+			success: function (result) {
+				if(result.success){
+					console.log("list",result.data.length);
+					var lists = result?result.data:null;
+					if (lists!=null) {
+						pageSize =lists.length;
+						$.each(lists, function(index, val) {
+							html += '<li>' +
+							'<div class="photo"><i><img src="'+val.user_poto+'"/></i><span>'+val.nick_name+'</span></div>'+
+									'<div class="admission">' +
+									'<dl>' +
+									'<dt><span>订 单 号 码：</span><i class="i">'+val.order_id+'</i></dt>' +
+									'<dt><span>当 前 状 态：</span><i>求购中</i></dt>' +
+									'</dl>' +
+									'<dl>' +
+									'<dt><span>挂 单 数 量：</span><i>'+val.quantity+'</i></dt>' +
+									'<dt><span>求 购 币 种：</span><i>'+val.currency+'</i></dt>' +
+									'</dl>' +
+									// '<dl class="dlcopy">' +
+									// '<dt><span>交 易 地 址：</span></dt>' +
+									// '<dt><p id="vi_code" th:id="${val.id}">'+val.eos_address+'</p><i class="iconfont icon-fuzhi copyBtn" data-clipboard-target="#vi_code" onclick="copy(th:value="${val.id}")">复制地址</i></dt>' +
+									// '</dl>' +
+									// '<dl>' +
+									// '<dt><span>交易二维码：</span><p class="qr"><i class="iconfont icon-chakan"></i><em >查看二维码</em></p></dt></dt>' +
+									// '</dl>' +
+									'<dl class="dlcopy">' +
+									'<dt><span>发 布 时 间：</span></dt>' +
+									'<dt><time>'+val.cre_date+'</time><span class="Cancel_order" onclick="saleToTa('+val.id+')">卖给TA</span></dt>' +
+									'</dl>' +
+									'</div>' +
+									'<p class="line"></p>'+
+									'</li>'
+							if (index == 9) {
+								lastId=val.id;
+							}
+						});
+						$("#result").append(html);
+					}
+				}
+			}
+		});
+	}
+	<!--end-->
+	function copy(val){
+		var clipboard=new Clipboard(".iconfont");
+		clipboard.on("success",function(e){
+			layer.msg("复制成功",{ icon: 1,time: 2000});
+		});
+		clipboard.on('error', function(e) {
+			console.log(e);
+		});
+
+	}
+</script>
+<script>
+	/*获取验证码*/
+	var isPhone = 1;
+	function getCode(e){
+		checkPhone(); //验证手机号码
+		if(isPhone){
+			$.ajax({
+				type : "POST",
+				url : '/m9/user/sendCode',
+				dataType : "json",
+				data : {
+					"busType":'transfer'
+				},
+				success : function(data) {
+					if(data.success==true){
+						layer.msg(data.msg,{icon:6,time : 1000});
+					} else {
+						layer.msg(data.msg,{icon:5,time : 1000});
+					}
+				}
+			})
+			resetCode(); //倒计时
+		}else{
+			$('#phone').focus();
+		}
+
+	}
+	//验证手机号码
+	function checkPhone(){
+		var phone = $('#phone').val();
+		var pattern = /^((1[0-9])+\d{9})$/;
+		isPhone = 1;
+		if(phone == '') {
+			layer.msg("请输入手机号", {icon: 2,time: 2000,});
+			isPhone = 0;
+			return;
+		}
+		if(!pattern.test(phone)){
+			layer.msg("请输入正确的手机号码", {icon: 2,time: 2000,});
+			isPhone = 0;
+			return;
+		}
+	}
+	//倒计时
+	function resetCode(){
+		$('#J_getCode').hide();
+		$('#J_second').html('60');
+		$('.get_code1').show();
+		var second = 60;
+		var timer = null;
+		timer = setInterval(function(){
+			second -= 1;
+			if(second >0 ){
+				$('#J_second').html(second);
+			}else{
+				clearInterval(timer);
+				$('#J_getCode').show();
+				$('.get_code1').hide();
+			}
+		},1000);
+	};
+</script>
+
+
+<script>
+	jQuery(function(){
+
+		jQuery('#qrcode').qrcode({
+			width: 180,
+			height: 180,
+			text: $("#vi_code").html()
+		});
+	});
+	var clipboard=new Clipboard(".copyBtn");
+
+	clipboard.on("success",function(e){
+		layer.msg("复制成功",{ icon: 1,time: 2000});
+	});
+	$(function () {
+		$('.qr').click(function (event) {
+			//取消事件冒泡
+			event.stopPropagation();
+			//按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。
+			$('.mask').fadeToggle('slow');
+			return false;
+		});
+
+		$('.mask').click(function(event){
+			var _con = $('.check_qr');  // 设置目标区域
+			if(!_con.is(event.target) && _con.has(event.target).length === 0){
+				$('.mask').fadeToggle('slow');     //淡出消失
+			}
+		});
+	});
+	$('#buy1').click(function(){
+		$('.mask3').show();
+	})
+	// $('#sale1').click(function(){
+	// 	$('.mask2').show();
+	// })
+	$('.closeimg').click(function(){
+		$('.mask3').hide();
+	})
+	$('.closeimg').click(function(){
+		$('.mask2').hide();
+	})
+</script>
+<script>
+	function saleToTa(oid){
+		$("#oid").val(oid);
+		$('.mask2').show();
+	}
+
+	// function buyForTA(){
+	// 	$('.mask3').show();
+	// }
+	
+	function buyOk() {
+		var quantity = $("#zone").val();
+		var param = {
+			'pay_pwd': CryptoJS.MD5(document.getElementById("pay_pwd_buy").value).toString().toUpperCase(),
+			'quantity':quantity
+		}
+		$.ajax({
+			type:'post',
+			url:'/m9/order/transfer_buy',
+			dataType : "json",
+			cache : false,
+			data:{
+				pay_pwd: CryptoJS.MD5(document.getElementById("pay_pwd_buy").value).toString().toUpperCase(),
+				quantity:quantity,
+				sign:md5Method(param)
+			},
+			success : function(result) {
+				if(result.success==true){
+					layer.msg(result.msg, {
+						icon: 1,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+							window.location.href = "/m9/user/index";
+						}
+					});
+				}else{
+					layer.msg(result.msg, {
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+
+						}
+					});
+				}
+			},
+			error : function(result){
+			}
+		});
+	}
+
+	function saleOk(){
+
+		var oid = $("#oid").val();
+		var code = $("#code").val();
+		var quantity = $("#zone").val();
+		var param = {
+			'pay_pwd': CryptoJS.MD5(document.getElementById("pay_pwd").value).toString().toUpperCase(),
+			'id':oid,
+			'code':code,
+            'bus_type':'transfer',
+			'quantity':quantity
+		}
+
+		$.ajax({
+			type:'post',
+			url:'/m9/order/transfer',
+			dataType : "json",
+			cache : false,
+			data:{
+				pay_pwd: CryptoJS.MD5(document.getElementById("pay_pwd").value).toString().toUpperCase(),
+				id:oid,
+				code:code,
+                bus_type:'transfer',
+				quantity:quantity,
+				sign:md5Method(param)
+			},
+			success : function(result) {
+				if(result.success==true){
+					layer.msg(result.msg, {
+						icon: 1,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+							window.location.href = "/m9/user/index";
+						}
+					});
+				}else{
+					layer.msg(result.msg, {
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+
+						}
+					});
+				}
+			},
+			error : function(result){
+			}
+		});
+	}
+</script>
+</body>
+</html>

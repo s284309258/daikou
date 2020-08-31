@@ -1,0 +1,36 @@
+server:
+  session-timeout: 31536000
+#    tomcat:
+#        max-threads: 1000
+#        min-spare-threads: 30
+  port: 8686
+#    uri-encoding: utf-8
+#security:
+#  basic:
+#    enabled: false
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles: 
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 1000000000000
+      max-request-size: 1000000000000
+  devtools:
+    restart:
+      enabled: false
+  cache:
+    type: redis
+    #ehcache:
+      #config: classpath:config/ehcache.xml
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mybatis/**/*.xml
+  typeAliasesPackage: com.renegade.**.domain
+#[弃用]cacheType: ehcache

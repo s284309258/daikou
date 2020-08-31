@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vsApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vsApp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ShoubaApp-1.0.0.war">
+      <element id="artifact" artifact-name="vsApp:war exploded" />
+    </root>
+  </artifact>
+</component>

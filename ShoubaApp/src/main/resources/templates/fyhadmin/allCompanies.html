@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<title>公司管理</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+		</style>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>公司管理</h1>
+		</header>
+		<main class="main">
+			<form name="form" method="get" action="/yilian/api/allCompanies">
+			<div class="agent-seach">
+				<span>
+					<img src="../../img/seach.png" />
+					<input type="search" th:name="real_name" placeholder="搜索公司/机构" />
+				</span>
+				<span onclick="recordQuery()">查询</span>
+			</div>
+			<div class="seach-list-warp">
+				<ul class="seach-list" th:each="rd :${record}">
+					<li>
+						<a th:href="@{'/yilian/api/staffQuery/'+${rd.org_no}+'/'+${rd.id}}">
+							<span class="seach-name" th:text="${rd.org_name}">湖南大幅有限公司</span>
+							<img src="../../img/next.png" class="next"/>
+						</a>
+						<div class="more-deductions">
+							<p class="deductions-name">
+								负责人：<span th:text="${rd.real_name}">林森</span><span th:text="${rd.user_tel}">13545124512</span>
+							</p>
+						</div>
+						<div class="more-deductions">
+							<p class="deductions-name">
+								所属代理：<span th:text="${rd['org_agent_name']}?${rd['org_agent_name']}">林森</span>
+							</p>
+						</div>
+						<div class="more-deductions">
+							<p class="deductions-name">
+								<p class="deductions-address" th:text="${rd['org_address']}?${rd['org_address']}">湖南省湘潭市岳塘区芙蓉大道88号</p>
+							</p>
+						</div>
+						<div>
+							<p class="deductions-name">
+							<div class="img">
+								<img th:src="${rd['photo']}?${rd['photo']}" />
+							</div>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			</form>
+		</main>
+
+	<script type="text/javascript">
+			function recordQuery(){
+				document.forms[0].submit();
+			}
+	</script>
+	</body>
+</html>

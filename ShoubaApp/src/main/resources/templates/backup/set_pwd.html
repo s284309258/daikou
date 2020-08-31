@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../../static/backup/css/css.css" />
+		<link rel="stylesheet" href="../../static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/gVerify.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/core.js" ></script>
+        <script type="text/javascript" src="/static/backup/js/jsencrypt.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/md5.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/public.js" ></script>
+		<style>
+			.getcode2{display: block;width: 35%;position: absolute;right: 0px;text-align: center;}
+			.getcode2 em{font-style: normal;}
+			.get_code{text-overflow: ellipsis;overflow: hidden;color: #577AEF;font-weight: normal;}
+			.get_code1{display: none;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>修改交易密码</h1>
+		</div>
+		<div class="edit_user">
+			<div class="form0">
+				<!-- <form> -->
+						<label><span >新密码</span>
+						<input name="pwd" type="password" class="pwd" id="login_pwd"  placeholder="请输入新密码"/>
+						</label>
+				
+						<label><span >确认密码</span>
+						<input name="re_pwd" type="password" class="re_pwd" id="login_pwd1"  placeholder="请确认新密码"/>
+						<input type="hidden"  class="PwdNotMach" value="两次密码不一致"/>
+						</label>
+					
+						<label>
+							<span >验证码</span>
+							<input type="hidden"  id="phone" value="15362236521"/>
+						<input type="number" class="code" id="code" placeholder="请输入短信验证码"   oninput="this.value=this.value.length>8?this.value.substr(0,8):this.value;"/>
+						<p class="getcode2">
+						<strong class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码</strong>
+						<strong class="get_code get_code1">(<em id="J_second" >60</em>)s<em>后重发</em></strong>
+						</p>
+						</label>
+					
+					
+					<div class="submit ok" onclick="save_pwd()">确认修改</div>
+			<!-- </form> -->
+			</div></div>
+		<script type="text/javascript" src="../../static/backup/js/jquery-1.11.3.min.js" ></script>
+<!--		<script type="text/javascript" src="js/check.js" ></script>-->
+		<script type="text/javascript" src="../../static/backup/layer/layer.js" ></script>
+			<script>
+
+				function save_pwd() {
+					var param = {
+						'login_pwd': CryptoJS.MD5(document.getElementById("login_pwd").value).toString().toUpperCase(),
+						'login_pwd1':CryptoJS.MD5(document.getElementById("login_pwd1").value).toString().toUpperCase(),
+						'code':document.getElementById("code").value,
+						'busType':'updatePayPwd'
+					}
+					$.ajax({
+						type:'post',
+						url:'/m9/user/updatePayPwd',
+						dataType : "json",
+						cache : false,
+						data:{
+							login_pwd: CryptoJS.MD5(document.getElementById("login_pwd").value).toString().toUpperCase(),
+							login_pwd1:CryptoJS.MD5(document.getElementById("login_pwd1").value).toString().toUpperCase(),
+							code:document.getElementById("code").value,
+							busType:'updatePayPwd',
+							sign:md5Method(param)
+						},
+						success : function(result) {
+							if(result.success==true){
+								layer.msg(result.msg, {
+									icon: 1,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+									end:function(){
+										window.location.href = "/m9/user/index";
+									}
+								});
+							}else{
+								layer.msg(result.msg, {
+									icon: 2,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+									end:function(){
+
+									}
+								});
+							}
+						},
+						error : function(result){
+						}
+					});
+				}
+			
+		var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+
+		var that = this;
+		var	phone = $(".tel").val();
+		$.ajax({
+			type : "POST",
+			url : '/m9/user/sendCode',
+			dataType : "json",
+			data : {
+				"telphone":phone,
+				"busType":"updatePayPwd"
+			},
+			success : function(data) {
+				if(data.success==true){
+					layer.msg(data.msg,{icon:6,time : 1000});
+				} else {
+					layer.msg(data.msg,{icon:5,time : 1000});
+				}
+			}
+		})
+	}else{
+		$('#phone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#phone').val();
+	var pattern = /^((1[0-9])+\d{9})$/;
+	isPhone = 1;
+	if(phone == '') {
+		layer.msg("请输入手机号", {icon: 2,time: 2000,});
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		layer.msg("请输入正确的手机号码", {icon: 2,time: 2000,});
+		isPhone = 0;
+		return;
+	}
+}
+	function resetCode(){
+	$('#J_getCode').hide();
+    $('#J_second').html('60');
+	$('.get_code1').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('.get_code1').hide();
+		}
+	},1000);
+};
+	
+		</script>
+	</body>
+</html>

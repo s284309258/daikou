@@ -1,0 +1,2132 @@
+2019-11-27 17:43:53 -Starting M9Application on PC-201905161910 with PID 520828 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 17:43:53 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 17:43:53 -The following profiles are active: dev
+2019-11-27 17:43:55 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 17:43:55 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 17:43:55 -Finished Spring Data repository scanning in 63ms. Found 0 repository interfaces.
+2019-11-27 17:43:55 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 17:43:55 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 17:43:55 -Finished Spring Data repository scanning in 42ms. Found 0 repository interfaces.
+2019-11-27 17:43:56 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$b50eff20] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 17:43:56 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8eea2650] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 17:43:56 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 17:43:56 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 17:43:56 -Starting service [Tomcat]
+2019-11-27 17:43:56 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 17:43:56 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 17:43:56 -Initializing Spring embedded WebApplicationContext
+2019-11-27 17:43:56 -Root WebApplicationContext: initialization completed in 3133 ms
+2019-11-27 17:43:57 -xss filter init~~~~~~~~~~~~
+2019-11-27 17:43:57 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 17:43:57 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 17:43:57 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 17:43:57 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 17:43:57 -HHH000206: hibernate.properties not found
+2019-11-27 17:43:58 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 17:43:58 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 17:43:58 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 17:43:59 -Redisson 3.9.1
+2019-11-27 17:44:00 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 17:44:00 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 17:44:01 -Using default implementation for ThreadExecutor
+2019-11-27 17:44:02 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 17:44:02 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 17:44:02 -RAMJobStore initialized.
+2019-11-27 17:44:02 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 17:44:02 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 17:44:02 -Quartz scheduler version: 2.3.0
+2019-11-27 17:44:02 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@638341b0
+2019-11-27 17:44:02 -Initializing ExecutorService
+2019-11-27 17:44:02 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 17:44:02 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 17:44:02 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 17:44:03 -Adding welcome page template: index
+2019-11-27 17:44:03 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 17:44:03 -Starting Quartz Scheduler now
+2019-11-27 17:44:03 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 17:44:03 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 17:44:03 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 17:44:03 -Using a shared selector for servlet write/read
+2019-11-27 17:44:03 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 17:44:03 -Started M9Application in 11.522 seconds (JVM running for 13.049)
+2019-11-27 17:45:12 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 17:45:12 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 17:45:12 -Completed initialization in 16 ms
+2019-11-27 17:45:13 -==>请求参数 : [{}]
+2019-11-27 17:45:13 -==>请求地址 : http://localhost:8008/
+2019-11-27 17:45:13 -==>请求头: null格式: GET
+2019-11-27 17:45:13 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 17:45:13 -耗时 : 2
+2019-11-27 17:45:13 -<==返回值 : redirect:/login
+2019-11-27 17:45:13 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@786e1866]
+2019-11-27 17:45:13 -==>请求地址 : http://localhost:8008/login
+2019-11-27 17:45:13 -==>请求头: null格式: GET
+2019-11-27 17:45:13 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 17:45:13 -耗时 : 10
+2019-11-27 17:45:13 -<==返回值 : /login
+2019-11-27 17:45:28 -========时间=======>>>>1574847928099
+2019-11-27 17:45:28 -========时间=======>>>>28
+2019-11-27 17:45:28 -Starting without optional epoll library
+2019-11-27 17:45:28 -Starting without optional kqueue library
+2019-11-27 17:45:28 -Queue length0
+2019-11-27 17:45:28 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@1daa844d, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18111111111, timeStamp=1574847928071, sign=E0069387C7EA937BEB9775C04FA47A25}]
+2019-11-27 17:45:28 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 17:45:28 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 17:45:28 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 17:45:28 -md5  实例化成功
+2019-11-27 17:45:28 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 17:45:28 -==> Parameters: 18111111111(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 17:45:28 -<==      Total: 1
+2019-11-27 17:45:28 -耗时 : 100
+2019-11-27 17:45:28 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=63, token=null, code=null]
+2019-11-27 17:45:30 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@3fbea9a2, {}]
+2019-11-27 17:45:30 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 17:45:30 -==>请求头: null格式: GET
+2019-11-27 17:45:30 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 17:45:30 -==>  Preparing: select * from t_sign_record where user_id=? sign_date=? 
+2019-11-27 17:45:30 -==> Parameters: 63(String), 2019-11-27(String)
+2019-11-27 17:45:30 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+### The error may exist in file [D:\M9\m9_yy_qh\M9-App\target\classes\mybatis\M9UserMapper.xml]
+### The error may involve com.renegade.dao.M9UserMapper.select_sign_record-Inline
+### The error occurred while setting parameters
+### SQL: select * from t_sign_record where user_id=?        sign_date=?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3==========你们说呢：org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+### The error may exist in file [D:\M9\m9_yy_qh\M9-App\target\classes\mybatis\M9UserMapper.xml]
+### The error may involve com.renegade.dao.M9UserMapper.select_sign_record-Inline
+### The error occurred while setting parameters
+### SQL: select * from t_sign_record where user_id=?        sign_date=?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+2019-11-27 17:45:45 -========时间=======>>>>1574847945010
+2019-11-27 17:45:45 -========时间=======>>>>11
+2019-11-27 17:45:45 -Queue length1
+2019-11-27 17:45:45 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 17:45:51 -========时间=======>>>>1574847951130
+2019-11-27 17:45:51 -========时间=======>>>>4
+2019-11-27 17:45:51 -Queue length1
+2019-11-27 17:45:51 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 17:46:01 -========时间=======>>>>1574847961632
+2019-11-27 17:46:01 -========时间=======>>>>7
+2019-11-27 17:46:01 -Queue length1
+2019-11-27 17:46:01 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@1daa844d, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574847961625, sign=956663755882B431F845AEDABCB23763}]
+2019-11-27 17:46:01 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 17:46:01 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 17:46:01 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 17:46:01 -md5  实例化成功
+2019-11-27 17:46:01 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 17:46:01 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 17:46:01 -<==      Total: 1
+2019-11-27 17:46:01 -耗时 : 16
+2019-11-27 17:46:01 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 17:46:03 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@3c5d41, {}]
+2019-11-27 17:46:03 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 17:46:03 -==>请求头: null格式: GET
+2019-11-27 17:46:03 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 17:46:03 -==>  Preparing: select * from t_sign_record where user_id=? sign_date=? 
+2019-11-27 17:46:03 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 17:46:03 -唉！还是习惯打出中文虚浮，哦豁，四叶草又得调试了！=====
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+### The error may exist in file [D:\M9\m9_yy_qh\M9-App\target\classes\mybatis\M9UserMapper.xml]
+### The error may involve com.renegade.dao.M9UserMapper.select_sign_record-Inline
+### The error occurred while setting parameters
+### SQL: select * from t_sign_record where user_id=?        sign_date=?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3==========你们说呢：org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+### The error may exist in file [D:\M9\m9_yy_qh\M9-App\target\classes\mybatis\M9UserMapper.xml]
+### The error may involve com.renegade.dao.M9UserMapper.select_sign_record-Inline
+### The error occurred while setting parameters
+### SQL: select * from t_sign_record where user_id=?        sign_date=?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sign_date='2019-11-27'' at line 3
+2019-11-27 17:47:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 17:47:16 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 17:47:16 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 17:47:16 -Shutting down Quartz Scheduler
+2019-11-27 17:47:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 17:47:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 17:47:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 17:47:16 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 17:47:16 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 17:47:16 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 17:47:46 -Starting M9Application on PC-201905161910 with PID 521912 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 17:47:46 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 17:47:46 -The following profiles are active: dev
+2019-11-27 17:47:48 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 17:47:48 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 17:47:48 -Finished Spring Data repository scanning in 60ms. Found 0 repository interfaces.
+2019-11-27 17:47:48 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 17:47:48 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 17:47:48 -Finished Spring Data repository scanning in 38ms. Found 0 repository interfaces.
+2019-11-27 17:47:48 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$2f37f85b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 17:47:49 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9131f8b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 17:47:49 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 17:47:49 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 17:47:49 -Starting service [Tomcat]
+2019-11-27 17:47:49 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 17:47:49 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 17:47:49 -Initializing Spring embedded WebApplicationContext
+2019-11-27 17:47:49 -Root WebApplicationContext: initialization completed in 3069 ms
+2019-11-27 17:47:49 -xss filter init~~~~~~~~~~~~
+2019-11-27 17:47:50 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 17:47:50 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 17:47:50 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 17:47:50 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 17:47:50 -HHH000206: hibernate.properties not found
+2019-11-27 17:47:51 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 17:47:51 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 17:47:51 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 17:47:51 -Redisson 3.9.1
+2019-11-27 17:47:52 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 17:47:52 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 17:47:53 -Using default implementation for ThreadExecutor
+2019-11-27 17:47:53 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 17:47:53 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 17:47:53 -RAMJobStore initialized.
+2019-11-27 17:47:53 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 17:47:53 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 17:47:53 -Quartz scheduler version: 2.3.0
+2019-11-27 17:47:53 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4c12f54a
+2019-11-27 17:47:53 -Initializing ExecutorService
+2019-11-27 17:47:53 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 17:47:54 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 17:47:54 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 17:47:54 -Adding welcome page template: index
+2019-11-27 17:47:54 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 17:47:54 -Starting Quartz Scheduler now
+2019-11-27 17:47:54 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 17:47:54 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 17:47:54 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 17:47:54 -Using a shared selector for servlet write/read
+2019-11-27 17:47:54 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 17:47:54 -Started M9Application in 9.148 seconds (JVM running for 10.479)
+2019-11-27 17:48:21 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 17:48:21 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 17:48:21 -Completed initialization in 13 ms
+2019-11-27 17:48:21 -========时间=======>>>>1574848101363
+2019-11-27 17:48:21 -========时间=======>>>>180
+2019-11-27 17:48:21 -Starting without optional epoll library
+2019-11-27 17:48:21 -Starting without optional kqueue library
+2019-11-27 17:48:21 -Queue length1
+2019-11-27 17:48:21 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@7bcdda6d, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574848101183, sign=2A1F1A41BAA41A0F06C83F5F5F322E4F}]
+2019-11-27 17:48:21 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 17:48:21 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 17:48:21 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 17:48:21 -md5  实例化成功
+2019-11-27 17:48:21 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 17:48:21 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 17:48:21 -<==      Total: 1
+2019-11-27 17:48:21 -耗时 : 109
+2019-11-27 17:48:21 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 17:48:24 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7dc96f91, {}]
+2019-11-27 17:48:24 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 17:48:24 -==>请求头: null格式: GET
+2019-11-27 17:48:24 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 17:48:24 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 17:48:24 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 17:48:24 -<==      Total: 0
+2019-11-27 17:48:24 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 17:48:24 -==> Parameters: 70(String)
+2019-11-27 17:48:24 -<==      Total: 1
+2019-11-27 17:48:24 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 17:48:24 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@70cd7e37, return{}
+2019-11-27 17:48:24 -耗时 : 91
+2019-11-27 17:48:24 -<==返回值 : /index
+2019-11-27 17:48:24 -==>请求参数 : []
+2019-11-27 17:48:24 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 17:48:24 -==>请求头: null格式: GET
+2019-11-27 17:48:24 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 17:48:24 -耗时 : 3
+2019-11-27 17:48:24 -<==返回值 : /nav
+2019-11-27 17:48:40 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7c46c15f, {}]
+2019-11-27 17:48:40 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 17:48:40 -==>请求头: null格式: GET
+2019-11-27 17:48:40 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 17:48:40 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 17:48:40 -==> Parameters: 70(String)
+2019-11-27 17:48:40 -<==      Total: 1
+2019-11-27 17:48:40 -耗时 : 24
+2019-11-27 17:48:40 -<==返回值 : /self
+2019-11-27 17:48:41 -==>请求参数 : []
+2019-11-27 17:48:41 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 17:48:41 -==>请求头: null格式: GET
+2019-11-27 17:48:41 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 17:48:41 -耗时 : 0
+2019-11-27 17:48:41 -<==返回值 : /nav
+2019-11-27 17:48:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@b962b81, {}]
+2019-11-27 17:48:45 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 17:48:45 -==>请求头: null格式: GET
+2019-11-27 17:48:45 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 17:48:45 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 17:48:45 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 17:48:45 -<==      Total: 0
+2019-11-27 17:48:45 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 17:48:45 -==> Parameters: 70(String)
+2019-11-27 17:48:45 -<==      Total: 1
+2019-11-27 17:48:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 17:48:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@1b19707c, return{}
+2019-11-27 17:48:45 -耗时 : 43
+2019-11-27 17:48:45 -<==返回值 : /index
+2019-11-27 17:48:46 -==>请求参数 : []
+2019-11-27 17:48:46 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 17:48:46 -==>请求头: null格式: GET
+2019-11-27 17:48:46 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 17:48:46 -耗时 : 1
+2019-11-27 17:48:46 -<==返回值 : /nav
+2019-11-27 17:49:32 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@aed77a8, {}]
+2019-11-27 17:49:32 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 17:49:32 -==>请求头: null格式: GET
+2019-11-27 17:49:32 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 17:49:32 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 17:49:32 -==> Parameters: 70(String)
+2019-11-27 17:49:32 -<==      Total: 1
+2019-11-27 17:49:32 -耗时 : 22
+2019-11-27 17:49:32 -<==返回值 : /self
+2019-11-27 17:49:33 -==>请求参数 : []
+2019-11-27 17:49:33 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 17:49:33 -==>请求头: null格式: GET
+2019-11-27 17:49:33 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 17:49:33 -耗时 : 1
+2019-11-27 17:49:33 -<==返回值 : /nav
+2019-11-27 17:49:36 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@3f7b6656, {}]
+2019-11-27 17:49:36 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 17:49:36 -==>请求头: null格式: GET
+2019-11-27 17:49:36 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 17:49:36 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 17:49:36 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 17:49:36 -<==      Total: 0
+2019-11-27 17:49:36 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 17:49:36 -==> Parameters: 70(String)
+2019-11-27 17:49:36 -<==      Total: 1
+2019-11-27 17:49:36 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 17:49:36 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@76159de4, return{}
+2019-11-27 17:49:36 -耗时 : 44
+2019-11-27 17:49:36 -<==返回值 : /index
+2019-11-27 17:49:36 -==>请求参数 : []
+2019-11-27 17:49:36 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 17:49:36 -==>请求头: null格式: GET
+2019-11-27 17:49:36 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 17:49:36 -耗时 : 0
+2019-11-27 17:49:36 -<==返回值 : /nav
+2019-11-27 17:53:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 17:53:18 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 17:53:18 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 17:53:18 -Shutting down Quartz Scheduler
+2019-11-27 17:53:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 17:53:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 17:53:18 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 17:53:18 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 17:53:18 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 17:53:18 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 18:09:34 -Starting M9Application on PC-201905161910 with PID 527068 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 18:09:34 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 18:09:34 -The following profiles are active: dev
+2019-11-27 18:09:35 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:09:35 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:09:35 -Finished Spring Data repository scanning in 60ms. Found 0 repository interfaces.
+2019-11-27 18:09:35 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:09:35 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:09:35 -Finished Spring Data repository scanning in 36ms. Found 0 repository interfaces.
+2019-11-27 18:09:36 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$c4bc8db0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:09:36 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9e97b4e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:09:37 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 18:09:37 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:09:37 -Starting service [Tomcat]
+2019-11-27 18:09:37 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 18:09:37 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 18:09:37 -Initializing Spring embedded WebApplicationContext
+2019-11-27 18:09:37 -Root WebApplicationContext: initialization completed in 3188 ms
+2019-11-27 18:09:37 -xss filter init~~~~~~~~~~~~
+2019-11-27 18:09:38 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 18:09:38 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 18:09:38 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 18:09:38 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 18:09:38 -HHH000206: hibernate.properties not found
+2019-11-27 18:09:38 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 18:09:39 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 18:09:39 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 18:09:39 -Redisson 3.9.1
+2019-11-27 18:09:40 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:09:40 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:09:41 -Using default implementation for ThreadExecutor
+2019-11-27 18:09:41 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 18:09:41 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 18:09:41 -RAMJobStore initialized.
+2019-11-27 18:09:41 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 18:09:41 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 18:09:41 -Quartz scheduler version: 2.3.0
+2019-11-27 18:09:41 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@18adc20a
+2019-11-27 18:09:41 -Initializing ExecutorService
+2019-11-27 18:09:41 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 18:09:42 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 18:09:42 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 18:09:42 -Adding welcome page template: index
+2019-11-27 18:09:43 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 18:09:43 -Starting Quartz Scheduler now
+2019-11-27 18:09:43 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 18:09:43 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 18:09:43 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:09:43 -Using a shared selector for servlet write/read
+2019-11-27 18:09:43 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 18:09:43 -Started M9Application in 10.041 seconds (JVM running for 11.848)
+2019-11-27 18:10:19 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 18:10:19 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 18:10:19 -Completed initialization in 18 ms
+2019-11-27 18:10:19 -==>请求参数 : [{}]
+2019-11-27 18:10:19 -==>请求地址 : http://localhost:8008/
+2019-11-27 18:10:19 -==>请求头: null格式: GET
+2019-11-27 18:10:19 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 18:10:19 -耗时 : 4
+2019-11-27 18:10:19 -<==返回值 : redirect:/login
+2019-11-27 18:10:19 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5e63e73b]
+2019-11-27 18:10:19 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:10:19 -==>请求头: null格式: GET
+2019-11-27 18:10:19 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:10:19 -耗时 : 11
+2019-11-27 18:10:19 -<==返回值 : /login
+2019-11-27 18:10:30 -========时间=======>>>>1574849430416
+2019-11-27 18:10:30 -========时间=======>>>>16
+2019-11-27 18:10:30 -Starting without optional epoll library
+2019-11-27 18:10:30 -Starting without optional kqueue library
+2019-11-27 18:10:30 -Queue length1
+2019-11-27 18:10:30 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@106943f9, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574849430400, sign=C2B74B8E0CE49FA8068B1759D5B8A714}]
+2019-11-27 18:10:30 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:10:30 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:10:30 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:10:30 -md5  实例化成功
+2019-11-27 18:10:30 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:10:30 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:10:30 -<==      Total: 1
+2019-11-27 18:10:30 -耗时 : 107
+2019-11-27 18:10:30 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:10:32 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7e56af4e, {}]
+2019-11-27 18:10:32 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:10:32 -==>请求头: null格式: GET
+2019-11-27 18:10:32 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:10:32 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:10:32 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:10:32 -<==      Total: 0
+2019-11-27 18:10:32 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:10:32 -==> Parameters: 70(String)
+2019-11-27 18:10:33 -<==      Total: 1
+2019-11-27 18:10:33 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:10:33 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@116a5bca, return{}
+2019-11-27 18:10:33 -耗时 : 87
+2019-11-27 18:10:33 -<==返回值 : /index
+2019-11-27 18:10:33 -==>请求参数 : []
+2019-11-27 18:10:33 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:10:33 -==>请求头: null格式: GET
+2019-11-27 18:10:33 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:10:33 -耗时 : 0
+2019-11-27 18:10:33 -<==返回值 : /nav
+2019-11-27 18:10:38 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1e10a572, {}]
+2019-11-27 18:10:38 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:10:38 -==>请求头: null格式: GET
+2019-11-27 18:10:38 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:10:38 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:10:38 -==> Parameters: 70(String)
+2019-11-27 18:10:38 -<==      Total: 1
+2019-11-27 18:10:38 -耗时 : 24
+2019-11-27 18:10:38 -<==返回值 : /self
+2019-11-27 18:10:38 -==>请求参数 : []
+2019-11-27 18:10:38 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:10:38 -==>请求头: null格式: GET
+2019-11-27 18:10:38 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:10:38 -耗时 : 0
+2019-11-27 18:10:38 -<==返回值 : /nav
+2019-11-27 18:10:40 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@68b30ce2, {}]
+2019-11-27 18:10:40 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:10:40 -==>请求头: null格式: GET
+2019-11-27 18:10:40 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:10:40 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:10:40 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:10:40 -<==      Total: 0
+2019-11-27 18:10:40 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:10:40 -==> Parameters: 70(String)
+2019-11-27 18:10:40 -<==      Total: 1
+2019-11-27 18:10:40 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:10:40 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@6baa938b, return{}
+2019-11-27 18:10:40 -耗时 : 48
+2019-11-27 18:10:40 -<==返回值 : /index
+2019-11-27 18:10:41 -==>请求参数 : []
+2019-11-27 18:10:41 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:10:41 -==>请求头: null格式: GET
+2019-11-27 18:10:41 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:10:41 -耗时 : 0
+2019-11-27 18:10:41 -<==返回值 : /nav
+2019-11-27 18:10:43 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6a746923]
+2019-11-27 18:10:43 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:10:43 -==>请求头: null格式: POST
+2019-11-27 18:10:43 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:10:43 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:10:43 -==>  Preparing: select `id`,`param_code`,`param_name`,`param_value`,`craete_time`,`update_time`,`autor_user` from t_sys_param where param_code=? 
+2019-11-27 18:10:43 -==> Parameters: sign_prize_lineup_coin(String)
+2019-11-27 18:10:43 -<==      Total: 1
+2019-11-27 18:10:43 -after ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) proceed,save result to cache,redisKey:t_sys_param_sign_prize_lineup_coin,save content:com.renegade.domain.ParamDO@3c9601a9
+2019-11-27 18:10:43 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:10:43 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:10:43 -<==      Total: 0
+2019-11-27 18:10:43 -==>  Preparing: insert into t_sign_record(sign_date,prize,user_id) values(CURRENT_DATE,?,?) 
+2019-11-27 18:10:43 -==> Parameters: 0.1(String), 70(String)
+2019-11-27 18:10:43 -<==    Updates: 1
+2019-11-27 18:10:43 -==>  Preparing: update m9_user set user_lineup_coin_free=user_lineup_coin_free+0.1 where id=70 
+2019-11-27 18:10:43 -==> Parameters: 
+2019-11-27 18:10:43 -<==    Updates: 1
+2019-11-27 18:10:43 -耗时 : 92
+2019-11-27 18:10:43 -<==返回值 : AjaxJson [msg=签到成功, success=true, data=null, token=null, code=null]
+2019-11-27 18:17:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2bbade9b, {}]
+2019-11-27 18:17:45 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:17:45 -==>请求头: null格式: GET
+2019-11-27 18:17:45 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:17:45 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:17:45 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:17:45 -<==      Total: 1
+2019-11-27 18:17:45 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:17:45 -==> Parameters: 70(String)
+2019-11-27 18:17:45 -<==      Total: 1
+2019-11-27 18:17:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:17:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@2d1622c8, return{}
+2019-11-27 18:17:45 -耗时 : 51
+2019-11-27 18:17:45 -<==返回值 : /index
+2019-11-27 18:17:46 -==>请求参数 : []
+2019-11-27 18:17:46 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:17:46 -==>请求头: null格式: GET
+2019-11-27 18:17:46 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:17:46 -耗时 : 1
+2019-11-27 18:17:46 -<==返回值 : /nav
+2019-11-27 18:17:56 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1943fe6a]
+2019-11-27 18:17:56 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:17:56 -==>请求头: null格式: POST
+2019-11-27 18:17:56 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:17:56 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:17:56 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@78a72994, return{}
+2019-11-27 18:17:56 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:17:56 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:17:56 -<==      Total: 1
+2019-11-27 18:17:56 -耗时 : 32
+2019-11-27 18:17:56 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 18:19:46 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@51febebd]
+2019-11-27 18:19:46 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:19:46 -==>请求头: null格式: POST
+2019-11-27 18:19:46 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:19:46 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:19:46 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@3f7b6656, return{}
+2019-11-27 18:19:46 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:19:46 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:19:46 -<==      Total: 0
+2019-11-27 18:19:46 -==>  Preparing: insert into t_sign_record(sign_date,prize,user_id) values(CURRENT_DATE,?,?) 
+2019-11-27 18:19:46 -==> Parameters: 0.1(String), 70(String)
+2019-11-27 18:19:46 -<==    Updates: 1
+2019-11-27 18:19:46 -==>  Preparing: update m9_user set user_lineup_coin_free=user_lineup_coin_free+0.1 where id=70 
+2019-11-27 18:19:46 -==> Parameters: 
+2019-11-27 18:19:46 -<==    Updates: 1
+2019-11-27 18:19:46 -耗时 : 67
+2019-11-27 18:19:46 -<==返回值 : AjaxJson [msg=0.1, success=true, data=null, token=null, code=null]
+2019-11-27 18:19:57 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@70695de4]
+2019-11-27 18:19:57 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:19:57 -==>请求头: null格式: POST
+2019-11-27 18:19:57 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:19:57 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:19:57 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@4a0a3492, return{}
+2019-11-27 18:19:57 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:19:57 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:19:57 -<==      Total: 1
+2019-11-27 18:19:57 -耗时 : 32
+2019-11-27 18:19:57 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 18:21:40 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4e592030, {}]
+2019-11-27 18:21:40 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:21:40 -==>请求头: null格式: GET
+2019-11-27 18:21:40 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:21:40 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:21:40 -==> Parameters: 70(String)
+2019-11-27 18:21:40 -<==      Total: 1
+2019-11-27 18:21:40 -耗时 : 24
+2019-11-27 18:21:40 -<==返回值 : /self
+2019-11-27 18:21:40 -==>请求参数 : []
+2019-11-27 18:21:40 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:21:40 -==>请求头: null格式: GET
+2019-11-27 18:21:40 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:21:40 -耗时 : 0
+2019-11-27 18:21:40 -<==返回值 : /nav
+2019-11-27 18:21:43 -==>  Preparing: select * from m9_user where id = ? 
+2019-11-27 18:21:43 -==> Parameters: 70(String)
+2019-11-27 18:21:43 -<==      Total: 1
+2019-11-27 18:21:43 -==>请求参数 : []
+2019-11-27 18:21:43 -==>请求地址 : http://localhost:8008/405
+2019-11-27 18:21:43 -==>请求头: null格式: GET
+2019-11-27 18:21:43 -==>请求加载类方法 : com.renegade.controller.LoginController.error
+2019-11-27 18:21:43 -耗时 : 1
+2019-11-27 18:21:43 -<==返回值 : /error/405
+2019-11-27 18:21:45 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@4d41aabc]
+2019-11-27 18:21:45 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:21:45 -==>请求头: null格式: GET
+2019-11-27 18:21:45 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:21:45 -耗时 : 0
+2019-11-27 18:21:45 -<==返回值 : /login
+2019-11-27 18:22:01 -========时间=======>>>>1574850121898
+2019-11-27 18:22:01 -========时间=======>>>>10
+2019-11-27 18:22:01 -Queue length1
+2019-11-27 18:22:01 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@106943f9, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=13133333333, timeStamp=1574850121888, sign=356E3F7984F03383E450B66AA4A92FFA}]
+2019-11-27 18:22:01 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:22:01 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:22:01 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:22:01 -md5  实例化成功
+2019-11-27 18:22:01 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:22:01 -==> Parameters: 13133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:22:01 -<==      Total: 0
+2019-11-27 18:22:01 -耗时 : 23
+2019-11-27 18:22:01 -<==返回值 : AjaxJson [msg=用户名或密码错误, success=false, data=null, token=null, code=null]
+2019-11-27 18:22:09 -========时间=======>>>>1574850129474
+2019-11-27 18:22:09 -========时间=======>>>>3
+2019-11-27 18:22:09 -Queue length1
+2019-11-27 18:22:09 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 18:22:22 -========时间=======>>>>1574850142028
+2019-11-27 18:22:22 -========时间=======>>>>6
+2019-11-27 18:22:22 -Queue length1
+2019-11-27 18:22:22 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 18:22:26 -========时间=======>>>>1574850146972
+2019-11-27 18:22:26 -========时间=======>>>>7
+2019-11-27 18:22:26 -Queue length1
+2019-11-27 18:22:26 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 18:22:34 -========时间=======>>>>1574850154965
+2019-11-27 18:22:34 -========时间=======>>>>7
+2019-11-27 18:22:34 -Queue length1
+2019-11-27 18:22:34 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@106943f9, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=13133333333, timeStamp=1574850154958, sign=C98438BF192F1BF198ED51B4426DA859}]
+2019-11-27 18:22:34 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:22:34 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:22:34 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:22:34 -md5  实例化成功
+2019-11-27 18:22:34 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:22:34 -==> Parameters: 13133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:22:35 -<==      Total: 0
+2019-11-27 18:22:35 -耗时 : 20
+2019-11-27 18:22:35 -<==返回值 : AjaxJson [msg=用户名或密码错误, success=false, data=null, token=null, code=null]
+2019-11-27 18:22:51 -========时间=======>>>>1574850171701
+2019-11-27 18:22:51 -========时间=======>>>>5
+2019-11-27 18:22:51 -Queue length1
+2019-11-27 18:22:51 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 18:23:02 -========时间=======>>>>1574850182746
+2019-11-27 18:23:02 -========时间=======>>>>3
+2019-11-27 18:23:02 -Queue length1
+2019-11-27 18:23:02 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 18:23:17 -========时间=======>>>>1574850197179
+2019-11-27 18:23:17 -========时间=======>>>>2
+2019-11-27 18:23:17 -Queue length1
+2019-11-27 18:23:17 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@106943f9, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574850197177, sign=8A1F65C1AF6D6A31044E7D8977E65DE7}]
+2019-11-27 18:23:17 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:23:17 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:23:17 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:23:17 -md5  实例化成功
+2019-11-27 18:23:17 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:23:17 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:23:17 -<==      Total: 1
+2019-11-27 18:23:17 -耗时 : 22
+2019-11-27 18:23:17 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:23:19 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@20d284ae, {}]
+2019-11-27 18:23:19 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:23:19 -==>请求头: null格式: GET
+2019-11-27 18:23:19 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:23:19 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:23:19 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:23:19 -<==      Total: 1
+2019-11-27 18:23:19 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:23:19 -==> Parameters: 70(String)
+2019-11-27 18:23:19 -<==      Total: 1
+2019-11-27 18:23:19 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:23:19 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@66d74c5c, return{}
+2019-11-27 18:23:19 -耗时 : 50
+2019-11-27 18:23:19 -<==返回值 : /index
+2019-11-27 18:23:20 -==>请求参数 : []
+2019-11-27 18:23:20 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:23:20 -==>请求头: null格式: GET
+2019-11-27 18:23:20 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:23:20 -耗时 : 0
+2019-11-27 18:23:20 -<==返回值 : /nav
+2019-11-27 18:23:26 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@43cb8fc8]
+2019-11-27 18:23:26 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:23:26 -==>请求头: null格式: POST
+2019-11-27 18:23:26 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:23:26 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:23:26 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@4c1bfc03, return{}
+2019-11-27 18:23:26 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:23:26 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:23:26 -<==      Total: 1
+2019-11-27 18:23:26 -耗时 : 34
+2019-11-27 18:23:26 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 18:23:37 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7898c45c, {}]
+2019-11-27 18:23:37 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:23:37 -==>请求头: null格式: GET
+2019-11-27 18:23:37 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:23:37 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:23:37 -==> Parameters: 70(String)
+2019-11-27 18:23:37 -<==      Total: 1
+2019-11-27 18:23:37 -耗时 : 22
+2019-11-27 18:23:37 -<==返回值 : /self
+2019-11-27 18:23:37 -==>请求参数 : []
+2019-11-27 18:23:37 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:23:37 -==>请求头: null格式: GET
+2019-11-27 18:23:37 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:23:37 -耗时 : 0
+2019-11-27 18:23:37 -<==返回值 : /nav
+2019-11-27 18:23:40 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4e99253d, {}]
+2019-11-27 18:23:40 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:23:40 -==>请求头: null格式: GET
+2019-11-27 18:23:40 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:23:40 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:23:40 -==> Parameters: 70(String)
+2019-11-27 18:23:40 -<==      Total: 1
+2019-11-27 18:23:40 -耗时 : 22
+2019-11-27 18:23:40 -<==返回值 : /set_my
+2019-11-27 18:23:55 -==>  Preparing: select * from m9_user where id = ? 
+2019-11-27 18:23:55 -==> Parameters: 70(String)
+2019-11-27 18:23:55 -<==      Total: 1
+2019-11-27 18:23:55 -==>请求参数 : []
+2019-11-27 18:23:55 -==>请求地址 : http://localhost:8008/405
+2019-11-27 18:23:55 -==>请求头: null格式: GET
+2019-11-27 18:23:55 -==>请求加载类方法 : com.renegade.controller.LoginController.error
+2019-11-27 18:23:55 -耗时 : 0
+2019-11-27 18:23:55 -<==返回值 : /error/405
+2019-11-27 18:24:43 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@16ae041a]
+2019-11-27 18:24:43 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:24:43 -==>请求头: null格式: GET
+2019-11-27 18:24:43 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:24:43 -耗时 : 0
+2019-11-27 18:24:43 -<==返回值 : /login
+2019-11-27 18:24:54 -========时间=======>>>>1574850294816
+2019-11-27 18:24:54 -========时间=======>>>>7
+2019-11-27 18:24:54 -Queue length1
+2019-11-27 18:24:54 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@106943f9, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574850294809, sign=31C65FB94618F2CAA391A5B2F30A75E1}]
+2019-11-27 18:24:54 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:24:54 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:24:54 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:24:54 -md5  实例化成功
+2019-11-27 18:24:54 -Renegade-四叶草-Hikari - Failed to validate connection com.mysql.jdbc.JDBC4Connection@78fec6ef (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-11-27 18:24:54 -Renegade-四叶草-Hikari - Failed to validate connection com.mysql.jdbc.JDBC4Connection@e871b8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-11-27 18:24:54 -Renegade-四叶草-Hikari - Failed to validate connection com.mysql.jdbc.JDBC4Connection@eaf06f4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-11-27 18:24:54 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:24:54 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:24:54 -<==      Total: 1
+2019-11-27 18:24:54 -耗时 : 116
+2019-11-27 18:24:54 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:24:57 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@266c1628, {}]
+2019-11-27 18:24:57 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:24:57 -==>请求头: null格式: GET
+2019-11-27 18:24:57 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:24:57 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:24:57 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:24:57 -<==      Total: 1
+2019-11-27 18:24:57 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:24:57 -==> Parameters: 70(String)
+2019-11-27 18:24:57 -<==      Total: 1
+2019-11-27 18:24:57 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:24:57 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@61847873, return{}
+2019-11-27 18:24:57 -耗时 : 44
+2019-11-27 18:24:57 -<==返回值 : /index
+2019-11-27 18:24:57 -==>请求参数 : []
+2019-11-27 18:24:57 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:24:57 -==>请求头: null格式: GET
+2019-11-27 18:24:57 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:24:57 -耗时 : 0
+2019-11-27 18:24:57 -<==返回值 : /nav
+2019-11-27 18:25:03 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6d3a16a2, {}]
+2019-11-27 18:25:03 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:25:03 -==>请求头: null格式: GET
+2019-11-27 18:25:03 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:25:03 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:25:03 -==> Parameters: 70(String)
+2019-11-27 18:25:03 -<==      Total: 1
+2019-11-27 18:25:03 -耗时 : 18
+2019-11-27 18:25:03 -<==返回值 : /self
+2019-11-27 18:25:03 -==>请求参数 : []
+2019-11-27 18:25:03 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:25:03 -==>请求头: null格式: GET
+2019-11-27 18:25:03 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:25:03 -耗时 : 0
+2019-11-27 18:25:03 -<==返回值 : /nav
+2019-11-27 18:25:05 -==>  Preparing: select * from m9_user where id = ? 
+2019-11-27 18:25:05 -==> Parameters: 70(String)
+2019-11-27 18:25:05 -<==      Total: 1
+2019-11-27 18:25:05 -==>请求参数 : []
+2019-11-27 18:25:05 -==>请求地址 : http://localhost:8008/405
+2019-11-27 18:25:05 -==>请求头: null格式: GET
+2019-11-27 18:25:05 -==>请求加载类方法 : com.renegade.controller.LoginController.error
+2019-11-27 18:25:05 -耗时 : 1
+2019-11-27 18:25:05 -<==返回值 : /error/405
+2019-11-27 18:25:35 -==>  Preparing: select * from m9_user where id = ? 
+2019-11-27 18:25:35 -==> Parameters: 70(String)
+2019-11-27 18:25:35 -<==      Total: 1
+2019-11-27 18:25:35 -==>请求参数 : []
+2019-11-27 18:25:35 -==>请求地址 : http://localhost:8008/405
+2019-11-27 18:25:35 -==>请求头: null格式: GET
+2019-11-27 18:25:35 -==>请求加载类方法 : com.renegade.controller.LoginController.error
+2019-11-27 18:25:35 -耗时 : 0
+2019-11-27 18:25:35 -<==返回值 : /error/405
+2019-11-27 18:28:08 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 18:28:08 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 18:28:08 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 18:28:08 -Shutting down Quartz Scheduler
+2019-11-27 18:28:08 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 18:28:08 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 18:28:08 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 18:28:08 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 18:28:08 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 18:28:08 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 18:28:21 -Starting M9Application on PC-201905161910 with PID 527184 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 18:28:21 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 18:28:21 -The following profiles are active: dev
+2019-11-27 18:28:22 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:28:22 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:28:23 -Finished Spring Data repository scanning in 65ms. Found 0 repository interfaces.
+2019-11-27 18:28:23 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:28:23 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:28:23 -Finished Spring Data repository scanning in 41ms. Found 0 repository interfaces.
+2019-11-27 18:28:23 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$96d5cf04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:28:23 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$70b0f634] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:28:24 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 18:28:24 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:28:24 -Starting service [Tomcat]
+2019-11-27 18:28:24 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 18:28:24 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 18:28:24 -Initializing Spring embedded WebApplicationContext
+2019-11-27 18:28:24 -Root WebApplicationContext: initialization completed in 3094 ms
+2019-11-27 18:28:25 -xss filter init~~~~~~~~~~~~
+2019-11-27 18:28:25 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 18:28:25 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 18:28:25 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 18:28:25 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 18:28:25 -HHH000206: hibernate.properties not found
+2019-11-27 18:28:26 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 18:28:26 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 18:28:26 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 18:28:26 -Redisson 3.9.1
+2019-11-27 18:28:27 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:28:27 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:28:28 -Using default implementation for ThreadExecutor
+2019-11-27 18:28:28 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 18:28:28 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 18:28:28 -RAMJobStore initialized.
+2019-11-27 18:28:28 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 18:28:28 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 18:28:28 -Quartz scheduler version: 2.3.0
+2019-11-27 18:28:28 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@a84b6de
+2019-11-27 18:28:28 -Initializing ExecutorService
+2019-11-27 18:28:28 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 18:28:29 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 18:28:29 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 18:28:29 -Adding welcome page template: index
+2019-11-27 18:28:30 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 18:28:30 -Starting Quartz Scheduler now
+2019-11-27 18:28:30 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 18:28:30 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 18:28:30 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:28:30 -Using a shared selector for servlet write/read
+2019-11-27 18:28:30 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 18:28:30 -Started M9Application in 9.633 seconds (JVM running for 11.193)
+2019-11-27 18:28:41 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 18:28:41 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 18:28:41 -Completed initialization in 17 ms
+2019-11-27 18:28:41 -==>请求参数 : [{}]
+2019-11-27 18:28:41 -==>请求地址 : http://localhost:8008/
+2019-11-27 18:28:41 -==>请求头: null格式: GET
+2019-11-27 18:28:41 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 18:28:41 -耗时 : 4
+2019-11-27 18:28:41 -<==返回值 : redirect:/login
+2019-11-27 18:28:41 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@5083df84]
+2019-11-27 18:28:41 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:28:41 -==>请求头: null格式: GET
+2019-11-27 18:28:41 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:28:41 -耗时 : 11
+2019-11-27 18:28:41 -<==返回值 : /login
+2019-11-27 18:28:51 -========时间=======>>>>1574850531907
+2019-11-27 18:28:51 -========时间=======>>>>18
+2019-11-27 18:28:52 -Starting without optional epoll library
+2019-11-27 18:28:52 -Starting without optional kqueue library
+2019-11-27 18:28:52 -Queue length1
+2019-11-27 18:28:52 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@a0f0deb, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574850531889, sign=D13A24A615916B50E4CE2197114F596E}]
+2019-11-27 18:28:52 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:28:52 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:28:52 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:28:52 -md5  实例化成功
+2019-11-27 18:28:52 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:28:52 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:28:52 -<==      Total: 1
+2019-11-27 18:28:52 -耗时 : 99
+2019-11-27 18:28:52 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:28:54 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7b341b84, {}]
+2019-11-27 18:28:54 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:28:54 -==>请求头: null格式: GET
+2019-11-27 18:28:54 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:28:54 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:28:54 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:28:54 -<==      Total: 1
+2019-11-27 18:28:54 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:28:54 -==> Parameters: 70(String)
+2019-11-27 18:28:54 -<==      Total: 1
+2019-11-27 18:28:54 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:28:54 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@38595850, return{}
+2019-11-27 18:28:54 -耗时 : 71
+2019-11-27 18:28:54 -<==返回值 : /index
+2019-11-27 18:28:55 -==>请求参数 : []
+2019-11-27 18:28:55 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:28:55 -==>请求头: null格式: GET
+2019-11-27 18:28:55 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:28:55 -耗时 : 0
+2019-11-27 18:28:55 -<==返回值 : /nav
+2019-11-27 18:28:56 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@705bb11b, {}]
+2019-11-27 18:28:56 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:28:56 -==>请求头: null格式: GET
+2019-11-27 18:28:56 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:28:56 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:28:56 -==> Parameters: 70(String)
+2019-11-27 18:28:56 -<==      Total: 1
+2019-11-27 18:28:56 -耗时 : 14
+2019-11-27 18:28:56 -<==返回值 : /self
+2019-11-27 18:28:57 -==>请求参数 : []
+2019-11-27 18:28:57 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:28:57 -==>请求头: null格式: GET
+2019-11-27 18:28:57 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:28:57 -耗时 : 0
+2019-11-27 18:28:57 -<==返回值 : /nav
+2019-11-27 18:28:58 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@3d409c2c, {}]
+2019-11-27 18:28:58 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:28:58 -==>请求头: null格式: GET
+2019-11-27 18:28:58 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:28:58 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:28:58 -==> Parameters: 70(String)
+2019-11-27 18:28:58 -<==      Total: 1
+2019-11-27 18:28:58 -耗时 : 13
+2019-11-27 18:28:58 -<==返回值 : /set_my
+2019-11-27 18:30:16 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@36aa0081, {}]
+2019-11-27 18:30:16 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:30:16 -==>请求头: null格式: GET
+2019-11-27 18:30:16 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:30:16 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:30:16 -==> Parameters: 70(String)
+2019-11-27 18:30:16 -<==      Total: 1
+2019-11-27 18:30:16 -耗时 : 14
+2019-11-27 18:30:16 -<==返回值 : /set_my
+2019-11-27 18:30:18 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@33704536, {}]
+2019-11-27 18:30:18 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:30:18 -==>请求头: null格式: GET
+2019-11-27 18:30:18 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:30:18 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:30:18 -==> Parameters: 70(String)
+2019-11-27 18:30:18 -<==      Total: 1
+2019-11-27 18:30:18 -耗时 : 14
+2019-11-27 18:30:18 -<==返回值 : /set_my
+2019-11-27 18:30:18 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@58694b9b, {}]
+2019-11-27 18:30:18 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:30:18 -==>请求头: null格式: GET
+2019-11-27 18:30:18 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:30:18 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:30:18 -==> Parameters: 70(String)
+2019-11-27 18:30:18 -<==      Total: 1
+2019-11-27 18:30:18 -耗时 : 10
+2019-11-27 18:30:18 -<==返回值 : /set_my
+2019-11-27 18:30:27 -==>请求参数 : [{}]
+2019-11-27 18:30:27 -==>请求地址 : http://localhost:8008/
+2019-11-27 18:30:27 -==>请求头: null格式: GET
+2019-11-27 18:30:27 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 18:30:27 -耗时 : 0
+2019-11-27 18:30:27 -<==返回值 : redirect:/login
+2019-11-27 18:30:27 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@47b43e6f]
+2019-11-27 18:30:27 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:30:27 -==>请求头: null格式: GET
+2019-11-27 18:30:27 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:30:27 -耗时 : 0
+2019-11-27 18:30:27 -<==返回值 : /login
+2019-11-27 18:30:59 -========时间=======>>>>1574850659641
+2019-11-27 18:30:59 -========时间=======>>>>9
+2019-11-27 18:30:59 -Queue length1
+2019-11-27 18:30:59 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@a0f0deb, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574850659632, sign=E2C59933517489051632DCD99EC4A26B}]
+2019-11-27 18:30:59 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:30:59 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:30:59 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:30:59 -md5  实例化成功
+2019-11-27 18:30:59 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:30:59 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:30:59 -<==      Total: 1
+2019-11-27 18:30:59 -耗时 : 14
+2019-11-27 18:30:59 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:31:01 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@e64c13f, {}]
+2019-11-27 18:31:01 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:31:01 -==>请求头: null格式: GET
+2019-11-27 18:31:01 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:31:01 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:31:01 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:31:01 -<==      Total: 1
+2019-11-27 18:31:01 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:01 -==> Parameters: 70(String)
+2019-11-27 18:31:01 -<==      Total: 1
+2019-11-27 18:31:01 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:31:01 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@54d6d115, return{}
+2019-11-27 18:31:01 -耗时 : 40
+2019-11-27 18:31:01 -<==返回值 : /index
+2019-11-27 18:31:02 -==>请求参数 : []
+2019-11-27 18:31:02 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:31:02 -==>请求头: null格式: GET
+2019-11-27 18:31:02 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:31:02 -耗时 : 0
+2019-11-27 18:31:02 -<==返回值 : /nav
+2019-11-27 18:31:03 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@640eca16, {}]
+2019-11-27 18:31:03 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:31:03 -==>请求头: null格式: GET
+2019-11-27 18:31:03 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:31:03 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:03 -==> Parameters: 70(String)
+2019-11-27 18:31:03 -<==      Total: 1
+2019-11-27 18:31:03 -耗时 : 14
+2019-11-27 18:31:03 -<==返回值 : /self
+2019-11-27 18:31:04 -==>请求参数 : []
+2019-11-27 18:31:04 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:31:04 -==>请求头: null格式: GET
+2019-11-27 18:31:04 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:31:04 -耗时 : 0
+2019-11-27 18:31:04 -<==返回值 : /nav
+2019-11-27 18:31:10 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7d5f03a6, {}]
+2019-11-27 18:31:10 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:31:10 -==>请求头: null格式: GET
+2019-11-27 18:31:10 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:31:10 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:10 -==> Parameters: 70(String)
+2019-11-27 18:31:10 -<==      Total: 1
+2019-11-27 18:31:10 -耗时 : 13
+2019-11-27 18:31:10 -<==返回值 : /set_my
+2019-11-27 18:31:44 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@78c32218, {}]
+2019-11-27 18:31:44 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:31:44 -==>请求头: null格式: GET
+2019-11-27 18:31:44 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:31:44 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:44 -==> Parameters: 70(String)
+2019-11-27 18:31:44 -<==      Total: 1
+2019-11-27 18:31:44 -耗时 : 14
+2019-11-27 18:31:44 -<==返回值 : /self
+2019-11-27 18:31:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2c9b82a1, {}]
+2019-11-27 18:31:45 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:31:45 -==>请求头: null格式: GET
+2019-11-27 18:31:45 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:31:45 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:45 -==> Parameters: 70(String)
+2019-11-27 18:31:45 -<==      Total: 1
+2019-11-27 18:31:45 -耗时 : 15
+2019-11-27 18:31:45 -<==返回值 : /self
+2019-11-27 18:31:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6e600ccf, {}]
+2019-11-27 18:31:45 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:31:45 -==>请求头: null格式: GET
+2019-11-27 18:31:45 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:31:45 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:45 -==> Parameters: 70(String)
+2019-11-27 18:31:45 -<==      Total: 1
+2019-11-27 18:31:45 -耗时 : 12
+2019-11-27 18:31:45 -<==返回值 : /self
+2019-11-27 18:31:45 -==>请求参数 : []
+2019-11-27 18:31:45 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:31:45 -==>请求头: null格式: GET
+2019-11-27 18:31:45 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:31:45 -耗时 : 0
+2019-11-27 18:31:45 -<==返回值 : /nav
+2019-11-27 18:31:47 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1f92cf0d, {}]
+2019-11-27 18:31:47 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:31:47 -==>请求头: null格式: GET
+2019-11-27 18:31:47 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:31:47 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:47 -==> Parameters: 70(String)
+2019-11-27 18:31:47 -<==      Total: 1
+2019-11-27 18:31:47 -耗时 : 15
+2019-11-27 18:31:47 -<==返回值 : /set_my
+2019-11-27 18:31:49 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4c5e7ff2, {}]
+2019-11-27 18:31:49 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:31:49 -==>请求头: null格式: GET
+2019-11-27 18:31:49 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:31:49 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:31:49 -==> Parameters: 70(String)
+2019-11-27 18:31:49 -<==      Total: 1
+2019-11-27 18:31:49 -耗时 : 13
+2019-11-27 18:31:49 -<==返回值 : /set_my
+2019-11-27 18:39:50 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 18:39:50 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 18:39:50 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 18:39:50 -Shutting down Quartz Scheduler
+2019-11-27 18:39:50 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 18:39:50 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 18:39:50 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 18:39:50 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 18:39:50 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 18:39:50 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 18:47:57 -Starting M9Application on PC-201905161910 with PID 535124 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 18:47:57 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 18:47:57 -The following profiles are active: dev
+2019-11-27 18:47:59 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:47:59 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:47:59 -Finished Spring Data repository scanning in 62ms. Found 0 repository interfaces.
+2019-11-27 18:47:59 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 18:47:59 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 18:47:59 -Finished Spring Data repository scanning in 35ms. Found 0 repository interfaces.
+2019-11-27 18:47:59 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$c604b11d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:47:59 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9fdfd84d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 18:48:00 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 18:48:00 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:48:00 -Starting service [Tomcat]
+2019-11-27 18:48:00 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 18:48:00 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 18:48:00 -Initializing Spring embedded WebApplicationContext
+2019-11-27 18:48:00 -Root WebApplicationContext: initialization completed in 3097 ms
+2019-11-27 18:48:00 -xss filter init~~~~~~~~~~~~
+2019-11-27 18:48:01 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 18:48:01 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 18:48:01 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 18:48:01 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 18:48:01 -HHH000206: hibernate.properties not found
+2019-11-27 18:48:01 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 18:48:02 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 18:48:02 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 18:48:02 -Redisson 3.9.1
+2019-11-27 18:48:03 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:48:03 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 18:48:04 -Using default implementation for ThreadExecutor
+2019-11-27 18:48:04 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 18:48:04 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 18:48:04 -RAMJobStore initialized.
+2019-11-27 18:48:04 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 18:48:04 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 18:48:04 -Quartz scheduler version: 2.3.0
+2019-11-27 18:48:04 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2119b989
+2019-11-27 18:48:04 -Initializing ExecutorService
+2019-11-27 18:48:04 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 18:48:05 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 18:48:05 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 18:48:05 -Adding welcome page template: index
+2019-11-27 18:48:05 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 18:48:05 -Starting Quartz Scheduler now
+2019-11-27 18:48:05 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 18:48:05 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 18:48:05 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 18:48:05 -Using a shared selector for servlet write/read
+2019-11-27 18:48:05 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 18:48:05 -Started M9Application in 9.449 seconds (JVM running for 11.303)
+2019-11-27 18:48:19 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 18:48:19 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 18:48:19 -Completed initialization in 14 ms
+2019-11-27 18:48:19 -==>请求参数 : [{}]
+2019-11-27 18:48:19 -==>请求地址 : http://localhost:8008/
+2019-11-27 18:48:19 -==>请求头: null格式: GET
+2019-11-27 18:48:19 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 18:48:19 -耗时 : 1
+2019-11-27 18:48:19 -<==返回值 : redirect:/login
+2019-11-27 18:48:19 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@2a56e3a]
+2019-11-27 18:48:19 -==>请求地址 : http://localhost:8008/login
+2019-11-27 18:48:19 -==>请求头: null格式: GET
+2019-11-27 18:48:19 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 18:48:19 -耗时 : 10
+2019-11-27 18:48:19 -<==返回值 : /login
+2019-11-27 18:48:28 -========时间=======>>>>1574851708122
+2019-11-27 18:48:28 -========时间=======>>>>16
+2019-11-27 18:48:28 -Starting without optional epoll library
+2019-11-27 18:48:28 -Starting without optional kqueue library
+2019-11-27 18:48:28 -Queue length1
+2019-11-27 18:48:28 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@6a668f44, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574851708106, sign=8CA30EA255688A6D11637A87576DF950}]
+2019-11-27 18:48:28 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 18:48:28 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:48:28 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 18:48:28 -md5  实例化成功
+2019-11-27 18:48:28 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 18:48:28 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 18:48:28 -<==      Total: 1
+2019-11-27 18:48:28 -耗时 : 99
+2019-11-27 18:48:28 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 18:48:30 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@62f11a42, {}]
+2019-11-27 18:48:30 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 18:48:30 -==>请求头: null格式: GET
+2019-11-27 18:48:30 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 18:48:30 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:48:30 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:48:30 -<==      Total: 1
+2019-11-27 18:48:30 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:48:30 -==> Parameters: 70(String)
+2019-11-27 18:48:30 -<==      Total: 1
+2019-11-27 18:48:30 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 18:48:30 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@88a3d32, return{}
+2019-11-27 18:48:30 -耗时 : 90
+2019-11-27 18:48:30 -<==返回值 : /index
+2019-11-27 18:48:31 -==>请求参数 : []
+2019-11-27 18:48:31 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:48:31 -==>请求头: null格式: GET
+2019-11-27 18:48:31 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:48:31 -耗时 : 0
+2019-11-27 18:48:31 -<==返回值 : /nav
+2019-11-27 18:48:38 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@60670254]
+2019-11-27 18:48:38 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 18:48:38 -==>请求头: null格式: POST
+2019-11-27 18:48:38 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 18:48:38 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 18:48:38 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@1d040689, return{}
+2019-11-27 18:48:38 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:48:38 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:48:38 -<==      Total: 1
+2019-11-27 18:48:38 -耗时 : 35
+2019-11-27 18:48:38 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 18:49:37 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4236cc57, {}]
+2019-11-27 18:49:37 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 18:49:37 -==>请求头: null格式: GET
+2019-11-27 18:49:37 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 18:49:37 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:49:37 -==> Parameters: 70(String)
+2019-11-27 18:49:37 -<==      Total: 1
+2019-11-27 18:49:37 -耗时 : 21
+2019-11-27 18:49:37 -<==返回值 : /self
+2019-11-27 18:49:38 -==>请求参数 : []
+2019-11-27 18:49:38 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 18:49:38 -==>请求头: null格式: GET
+2019-11-27 18:49:38 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 18:49:38 -耗时 : 0
+2019-11-27 18:49:38 -<==返回值 : /nav
+2019-11-27 18:49:46 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@66aa1c1b, {}]
+2019-11-27 18:49:46 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 18:49:46 -==>请求头: null格式: GET
+2019-11-27 18:49:46 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 18:49:46 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:49:46 -==> Parameters: 70(String)
+2019-11-27 18:49:46 -<==      Total: 1
+2019-11-27 18:49:46 -耗时 : 21
+2019-11-27 18:49:46 -<==返回值 : /set_my
+2019-11-27 18:50:09 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@46f06918, {}]
+2019-11-27 18:50:09 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 18:50:09 -==>请求头: null格式: GET
+2019-11-27 18:50:09 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 18:50:09 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:50:09 -==> Parameters: 70(String)
+2019-11-27 18:50:09 -<==      Total: 1
+2019-11-27 18:50:09 -耗时 : 21
+2019-11-27 18:50:09 -<==返回值 : /sign_recode
+2019-11-27 18:50:10 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4f6053d7]
+2019-11-27 18:50:10 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 18:50:10 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:50:10 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 18:50:19 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:50:19 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:50:19 -<==      Total: 1
+2019-11-27 18:50:31 -耗时 : 20888
+2019-11-27 18:50:31 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 18:51:21 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@56741491, {}]
+2019-11-27 18:51:21 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 18:51:21 -==>请求头: null格式: GET
+2019-11-27 18:51:21 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 18:51:21 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:51:21 -==> Parameters: 70(String)
+2019-11-27 18:51:21 -<==      Total: 1
+2019-11-27 18:51:21 -耗时 : 29
+2019-11-27 18:51:21 -<==返回值 : /sign_recode
+2019-11-27 18:51:22 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@63a89684]
+2019-11-27 18:51:22 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 18:51:22 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:51:22 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 18:51:27 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:51:27 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:51:27 -<==      Total: 1
+2019-11-27 18:51:27 -耗时 : 4908
+2019-11-27 18:51:27 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 18:51:31 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@97a6cc, {}]
+2019-11-27 18:51:31 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 18:51:31 -==>请求头: null格式: GET
+2019-11-27 18:51:31 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 18:51:31 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:51:31 -==> Parameters: 70(String)
+2019-11-27 18:51:31 -<==      Total: 1
+2019-11-27 18:51:31 -耗时 : 23
+2019-11-27 18:51:31 -<==返回值 : /sign_recode
+2019-11-27 18:51:31 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@67677a]
+2019-11-27 18:51:31 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 18:51:31 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:51:31 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 18:51:31 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:51:31 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:51:31 -<==      Total: 1
+2019-11-27 18:51:31 -耗时 : 20
+2019-11-27 18:51:31 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 18:52:36 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@321f7bce, {}]
+2019-11-27 18:52:36 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 18:52:36 -==>请求头: null格式: GET
+2019-11-27 18:52:36 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 18:52:36 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:52:36 -==> Parameters: 70(String)
+2019-11-27 18:52:36 -<==      Total: 1
+2019-11-27 18:52:36 -耗时 : 25
+2019-11-27 18:52:36 -<==返回值 : /sign_recode
+2019-11-27 18:52:37 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@44859e4b]
+2019-11-27 18:52:37 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 18:52:37 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:52:37 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 18:52:37 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:52:37 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:52:37 -<==      Total: 1
+2019-11-27 18:52:37 -耗时 : 15
+2019-11-27 18:52:37 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 18:53:02 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@d77a70f, {}]
+2019-11-27 18:53:02 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 18:53:02 -==>请求头: null格式: GET
+2019-11-27 18:53:02 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 18:53:02 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 18:53:02 -==> Parameters: 70(String)
+2019-11-27 18:53:02 -<==      Total: 1
+2019-11-27 18:53:02 -耗时 : 20
+2019-11-27 18:53:02 -<==返回值 : /sign_recode
+2019-11-27 18:53:02 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@3b2aaccb]
+2019-11-27 18:53:02 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 18:53:02 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 18:53:02 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 18:53:02 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 18:53:02 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 18:53:02 -<==      Total: 1
+2019-11-27 18:53:02 -耗时 : 18
+2019-11-27 18:53:02 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 19:03:05 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:03:05 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 19:03:05 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 19:03:05 -Shutting down Quartz Scheduler
+2019-11-27 19:03:05 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 19:03:05 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:03:05 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 19:03:05 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:03:05 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 19:03:05 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 19:03:29 -Starting M9Application on PC-201905161910 with PID 539172 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 19:03:29 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 19:03:29 -The following profiles are active: dev
+2019-11-27 19:03:32 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:03:32 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:03:32 -Finished Spring Data repository scanning in 145ms. Found 0 repository interfaces.
+2019-11-27 19:03:32 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:03:32 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:03:32 -Finished Spring Data repository scanning in 67ms. Found 0 repository interfaces.
+2019-11-27 19:03:33 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$7f576751] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:03:33 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$59328e81] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:03:34 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 19:03:34 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:03:34 -Starting service [Tomcat]
+2019-11-27 19:03:34 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 19:03:34 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 19:03:35 -Initializing Spring embedded WebApplicationContext
+2019-11-27 19:03:35 -Root WebApplicationContext: initialization completed in 5310 ms
+2019-11-27 19:03:35 -xss filter init~~~~~~~~~~~~
+2019-11-27 19:03:35 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 19:03:36 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 19:03:36 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 19:03:36 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 19:03:36 -HHH000206: hibernate.properties not found
+2019-11-27 19:03:36 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 19:03:37 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 19:03:37 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:03:38 -Redisson 3.9.1
+2019-11-27 19:03:39 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:03:39 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:03:40 -Using default implementation for ThreadExecutor
+2019-11-27 19:03:40 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 19:03:40 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 19:03:40 -RAMJobStore initialized.
+2019-11-27 19:03:40 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 19:03:40 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 19:03:40 -Quartz scheduler version: 2.3.0
+2019-11-27 19:03:40 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@45964b9e
+2019-11-27 19:03:40 -Initializing ExecutorService
+2019-11-27 19:03:40 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 19:03:40 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 19:03:41 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 19:03:41 -Adding welcome page template: index
+2019-11-27 19:03:41 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 19:03:41 -Starting Quartz Scheduler now
+2019-11-27 19:03:41 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 19:03:41 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 19:03:41 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:03:41 -Using a shared selector for servlet write/read
+2019-11-27 19:03:41 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 19:03:41 -Started M9Application in 13.428 seconds (JVM running for 15.441)
+2019-11-27 19:03:51 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 19:03:51 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 19:03:51 -Completed initialization in 19 ms
+2019-11-27 19:03:51 -==>请求参数 : [{}]
+2019-11-27 19:03:51 -==>请求地址 : http://localhost:8008/
+2019-11-27 19:03:51 -==>请求头: null格式: GET
+2019-11-27 19:03:51 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 19:03:51 -耗时 : 3
+2019-11-27 19:03:51 -<==返回值 : redirect:/login
+2019-11-27 19:03:52 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@7887e639]
+2019-11-27 19:03:52 -==>请求地址 : http://localhost:8008/login
+2019-11-27 19:03:52 -==>请求头: null格式: GET
+2019-11-27 19:03:52 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 19:03:52 -耗时 : 9
+2019-11-27 19:03:52 -<==返回值 : /login
+2019-11-27 19:04:07 -========时间=======>>>>1574852647795
+2019-11-27 19:04:07 -========时间=======>>>>17
+2019-11-27 19:04:08 -Starting without optional epoll library
+2019-11-27 19:04:08 -Starting without optional kqueue library
+2019-11-27 19:04:08 -Queue length1
+2019-11-27 19:04:08 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@13fcd843, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18133333333, timeStamp=1574852647778, sign=8BE3FC4FD7116C2AC24FE49056F18F91}]
+2019-11-27 19:04:08 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 19:04:08 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:04:08 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 19:04:08 -md5  实例化成功
+2019-11-27 19:04:08 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 19:04:08 -==> Parameters: 18133333333(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 19:04:08 -<==      Total: 1
+2019-11-27 19:04:08 -耗时 : 103
+2019-11-27 19:04:08 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=70, token=null, code=null]
+2019-11-27 19:04:10 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@5ad09a51, {}]
+2019-11-27 19:04:10 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:04:10 -==>请求头: null格式: GET
+2019-11-27 19:04:10 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:04:10 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:04:10 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 19:04:10 -<==      Total: 1
+2019-11-27 19:04:10 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:04:10 -==> Parameters: 70(String)
+2019-11-27 19:04:10 -<==      Total: 1
+2019-11-27 19:04:10 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:04:10 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@645c0ac7, return{}
+2019-11-27 19:04:10 -耗时 : 71
+2019-11-27 19:04:10 -<==返回值 : /index
+2019-11-27 19:04:11 -==>请求参数 : []
+2019-11-27 19:04:11 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:04:11 -==>请求头: null格式: GET
+2019-11-27 19:04:11 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:04:11 -耗时 : 1
+2019-11-27 19:04:11 -<==返回值 : /nav
+2019-11-27 19:04:19 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@66934395, {}]
+2019-11-27 19:04:19 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 19:04:19 -==>请求头: null格式: GET
+2019-11-27 19:04:19 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 19:04:19 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:04:19 -==> Parameters: 70(String)
+2019-11-27 19:04:19 -<==      Total: 1
+2019-11-27 19:04:19 -耗时 : 14
+2019-11-27 19:04:19 -<==返回值 : /self
+2019-11-27 19:04:19 -==>请求参数 : []
+2019-11-27 19:04:19 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:04:19 -==>请求头: null格式: GET
+2019-11-27 19:04:19 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:04:19 -耗时 : 0
+2019-11-27 19:04:19 -<==返回值 : /nav
+2019-11-27 19:04:22 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@7dfa30e2, {}]
+2019-11-27 19:04:22 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 19:04:22 -==>请求头: null格式: GET
+2019-11-27 19:04:22 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 19:04:22 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:04:22 -==> Parameters: 70(String)
+2019-11-27 19:04:22 -<==      Total: 1
+2019-11-27 19:04:22 -耗时 : 12
+2019-11-27 19:04:22 -<==返回值 : /set_my
+2019-11-27 19:04:27 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@55298ea1, {}]
+2019-11-27 19:04:27 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 19:04:27 -==>请求头: null格式: GET
+2019-11-27 19:04:27 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 19:04:27 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:04:27 -==> Parameters: 70(String)
+2019-11-27 19:04:27 -<==      Total: 1
+2019-11-27 19:04:27 -耗时 : 14
+2019-11-27 19:04:27 -<==返回值 : /sign_recode
+2019-11-27 19:04:28 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@72b47ba1]
+2019-11-27 19:04:28 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 19:04:28 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:04:28 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 19:04:28 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? and id > ? order by sign_date desc limit 0,10 
+2019-11-27 19:04:28 -==> Parameters: 70(String), 2019-11-27(String), 0(String)
+2019-11-27 19:04:28 -<==      Total: 1
+2019-11-27 19:04:28 -耗时 : 12
+2019-11-27 19:04:28 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=70, sign_date=2019-11-27 00:00:00.0, id=2, prize=0.1}], token=null, code=null]
+2019-11-27 19:05:02 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6b8acc91, {}]
+2019-11-27 19:05:02 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:05:02 -==>请求头: null格式: GET
+2019-11-27 19:05:02 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:05:02 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:05:02 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 19:05:02 -<==      Total: 1
+2019-11-27 19:05:02 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:05:02 -==> Parameters: 70(String)
+2019-11-27 19:05:02 -<==      Total: 1
+2019-11-27 19:05:02 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:05:02 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@5eb971ea, return{}
+2019-11-27 19:05:02 -耗时 : 35
+2019-11-27 19:05:02 -<==返回值 : /index
+2019-11-27 19:05:02 -==>请求参数 : []
+2019-11-27 19:05:02 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:05:02 -==>请求头: null格式: GET
+2019-11-27 19:05:02 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:05:02 -耗时 : 0
+2019-11-27 19:05:02 -<==返回值 : /nav
+2019-11-27 19:05:03 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@63c85194]
+2019-11-27 19:05:03 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 19:05:03 -==>请求头: null格式: POST
+2019-11-27 19:05:03 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 19:05:03 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:05:03 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@48a598d1, return{}
+2019-11-27 19:05:03 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:05:03 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 19:05:03 -<==      Total: 1
+2019-11-27 19:05:03 -耗时 : 24
+2019-11-27 19:05:03 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 19:05:06 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1c72c05]
+2019-11-27 19:05:06 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 19:05:06 -==>请求头: null格式: POST
+2019-11-27 19:05:06 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 19:05:06 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:05:06 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@59776b65, return{}
+2019-11-27 19:05:06 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:05:06 -==> Parameters: 70(String), 2019-11-27(String)
+2019-11-27 19:05:06 -<==      Total: 1
+2019-11-27 19:05:06 -耗时 : 23
+2019-11-27 19:05:06 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 19:12:34 -==>请求参数 : [{}]
+2019-11-27 19:12:34 -==>请求地址 : http://localhost:8008/
+2019-11-27 19:12:34 -==>请求头: null格式: GET
+2019-11-27 19:12:34 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 19:12:34 -耗时 : 0
+2019-11-27 19:12:34 -<==返回值 : redirect:/login
+2019-11-27 19:12:34 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@7956a933]
+2019-11-27 19:12:34 -==>请求地址 : http://localhost:8008/login
+2019-11-27 19:12:34 -==>请求头: null格式: GET
+2019-11-27 19:12:34 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 19:12:34 -耗时 : 1
+2019-11-27 19:12:34 -<==返回值 : /login
+2019-11-27 19:12:43 -========时间=======>>>>1574853163465
+2019-11-27 19:12:43 -========时间=======>>>>7
+2019-11-27 19:12:43 -Queue length1
+2019-11-27 19:12:43 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@13fcd843, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18122222222, timeStamp=1574853163458, sign=98F33439D7F3A9311810D287AF98EBCD}]
+2019-11-27 19:12:43 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 19:12:43 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:12:43 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 19:12:43 -md5  实例化成功
+2019-11-27 19:12:43 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 19:12:43 -==> Parameters: 18122222222(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 19:12:43 -<==      Total: 1
+2019-11-27 19:12:43 -耗时 : 13
+2019-11-27 19:12:43 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=64, token=null, code=null]
+2019-11-27 19:12:45 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@66c30bec, {}]
+2019-11-27 19:12:45 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:12:45 -==>请求头: null格式: GET
+2019-11-27 19:12:45 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:12:45 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:12:45 -==> Parameters: 64(String), 2019-11-27(String)
+2019-11-27 19:12:45 -<==      Total: 0
+2019-11-27 19:12:45 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:12:45 -==> Parameters: 64(String)
+2019-11-27 19:12:45 -<==      Total: 1
+2019-11-27 19:12:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:12:45 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@29fe48ce, return{}
+2019-11-27 19:12:45 -耗时 : 33
+2019-11-27 19:12:45 -<==返回值 : /index
+2019-11-27 19:12:46 -==>请求参数 : []
+2019-11-27 19:12:46 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:12:46 -==>请求头: null格式: GET
+2019-11-27 19:12:46 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:12:46 -耗时 : 1
+2019-11-27 19:12:46 -<==返回值 : /nav
+2019-11-27 19:12:48 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@2a59a4fa, {}]
+2019-11-27 19:12:48 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 19:12:48 -==>请求头: null格式: GET
+2019-11-27 19:12:48 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 19:12:48 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:12:48 -==> Parameters: 64(String)
+2019-11-27 19:12:48 -<==      Total: 1
+2019-11-27 19:12:48 -耗时 : 14
+2019-11-27 19:12:48 -<==返回值 : /self
+2019-11-27 19:12:48 -==>请求参数 : []
+2019-11-27 19:12:48 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:12:48 -==>请求头: null格式: GET
+2019-11-27 19:12:48 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:12:48 -耗时 : 0
+2019-11-27 19:12:48 -<==返回值 : /nav
+2019-11-27 19:18:35 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:18:35 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 19:18:35 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 19:18:35 -Shutting down Quartz Scheduler
+2019-11-27 19:18:35 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 19:18:35 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:18:35 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 19:18:35 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:18:35 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 19:18:35 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 19:21:48 -Starting M9Application on PC-201905161910 with PID 542500 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 19:21:48 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 19:21:48 -The following profiles are active: dev
+2019-11-27 19:21:50 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:21:50 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:21:50 -Finished Spring Data repository scanning in 57ms. Found 0 repository interfaces.
+2019-11-27 19:21:50 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:21:50 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:21:50 -Finished Spring Data repository scanning in 38ms. Found 0 repository interfaces.
+2019-11-27 19:21:50 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$1ae79147] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:21:51 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f4c2b877] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:21:51 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 19:21:51 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:21:51 -Starting service [Tomcat]
+2019-11-27 19:21:51 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 19:21:51 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 19:21:51 -Initializing Spring embedded WebApplicationContext
+2019-11-27 19:21:51 -Root WebApplicationContext: initialization completed in 3287 ms
+2019-11-27 19:21:51 -xss filter init~~~~~~~~~~~~
+2019-11-27 19:21:52 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 19:21:52 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 19:21:52 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 19:21:52 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 19:21:52 -HHH000206: hibernate.properties not found
+2019-11-27 19:21:52 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 19:21:53 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 19:21:53 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:21:53 -Redisson 3.9.1
+2019-11-27 19:21:54 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:21:54 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:21:55 -Using default implementation for ThreadExecutor
+2019-11-27 19:21:55 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 19:21:55 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 19:21:55 -RAMJobStore initialized.
+2019-11-27 19:21:55 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 19:21:55 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 19:21:55 -Quartz scheduler version: 2.3.0
+2019-11-27 19:21:55 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@18bf1bad
+2019-11-27 19:21:55 -Initializing ExecutorService
+2019-11-27 19:21:55 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 19:21:55 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 19:21:55 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 19:21:55 -Adding welcome page template: index
+2019-11-27 19:21:56 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 19:21:56 -Starting Quartz Scheduler now
+2019-11-27 19:21:56 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 19:21:56 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 19:21:56 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:21:56 -Using a shared selector for servlet write/read
+2019-11-27 19:21:56 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 19:21:56 -Started M9Application in 9.093 seconds (JVM running for 10.604)
+2019-11-27 19:22:24 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 19:22:24 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 19:22:24 -Completed initialization in 14 ms
+2019-11-27 19:22:24 -==>请求参数 : [{}]
+2019-11-27 19:22:24 -==>请求地址 : http://localhost:8008/
+2019-11-27 19:22:24 -==>请求头: null格式: GET
+2019-11-27 19:22:24 -==>请求加载类方法 : com.renegade.controller.LoginController.welcome
+2019-11-27 19:22:24 -耗时 : 2
+2019-11-27 19:22:24 -<==返回值 : redirect:/login
+2019-11-27 19:22:24 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@73c1b2c6]
+2019-11-27 19:22:24 -==>请求地址 : http://localhost:8008/login
+2019-11-27 19:22:24 -==>请求头: null格式: GET
+2019-11-27 19:22:24 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 19:22:24 -耗时 : 9
+2019-11-27 19:22:24 -<==返回值 : /login
+2019-11-27 19:22:36 -==>请求参数 : [null, {}]
+2019-11-27 19:22:36 -==>请求地址 : http://localhost:8008/register
+2019-11-27 19:22:36 -==>请求头: null格式: GET
+2019-11-27 19:22:36 -==>请求加载类方法 : com.renegade.controller.LoginController.register
+2019-11-27 19:22:36 -耗时 : 1
+2019-11-27 19:22:36 -<==返回值 : /register
+2019-11-27 19:22:49 -==>请求参数 : [18144444444, com.renegade.filter.XssHttpServletRequestWrapper@2bfb8cf3]
+2019-11-27 19:22:49 -==>请求地址 : http://localhost:8008/sendCode/getCode
+2019-11-27 19:22:49 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:22:49 -==>请求加载类方法 : com.renegade.controller.FrontCodeController.regiestSendCode
+2019-11-27 19:22:49 -==>  Preparing: select * from m9_user where telphone = ? 
+2019-11-27 19:22:49 -==> Parameters: 18144444444(String)
+2019-11-27 19:22:49 -<==      Total: 0
+2019-11-27 19:22:49 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendHourLimit
+2019-11-27 19:22:49 -Starting without optional epoll library
+2019-11-27 19:22:49 -Starting without optional kqueue library
+2019-11-27 19:22:49 -==>  Preparing: select `id`,`param_code`,`param_name`,`param_value`,`craete_time`,`update_time`,`autor_user` from t_sys_param where param_code=? 
+2019-11-27 19:22:49 -==> Parameters: verifySendHourLimit(String)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -after ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) proceed,save result to cache,redisKey:t_sys_param_verifySendHourLimit,save content:com.renegade.domain.ParamDO@6c2f2a78
+2019-11-27 19:22:49 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendDayLimit
+2019-11-27 19:22:49 -==>  Preparing: select `id`,`param_code`,`param_name`,`param_value`,`craete_time`,`update_time`,`autor_user` from t_sys_param where param_code=? 
+2019-11-27 19:22:49 -==> Parameters: verifySendDayLimit(String)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -after ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) proceed,save result to cache,redisKey:t_sys_param_verifySendDayLimit,save content:com.renegade.domain.ParamDO@45033cce
+2019-11-27 19:22:49 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendDuration
+2019-11-27 19:22:49 -==>  Preparing: select `id`,`param_code`,`param_name`,`param_value`,`craete_time`,`update_time`,`autor_user` from t_sys_param where param_code=? 
+2019-11-27 19:22:49 -==> Parameters: verifySendDuration(String)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -after ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) proceed,save result to cache,redisKey:t_sys_param_verifySendDuration,save content:com.renegade.domain.ParamDO@5d25870b
+2019-11-27 19:22:49 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifyInvalidDuration
+2019-11-27 19:22:49 -==>  Preparing: select `id`,`param_code`,`param_name`,`param_value`,`craete_time`,`update_time`,`autor_user` from t_sys_param where param_code=? 
+2019-11-27 19:22:49 -==> Parameters: verifyInvalidDuration(String)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -after ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) proceed,save result to cache,redisKey:t_sys_param_verifyInvalidDuration,save content:com.renegade.domain.ParamDO@5368fba7
+2019-11-27 19:22:49 -==>  Preparing: SELECT * FROM t_verify_record WHERE bus_type = ? and acc_type = ? and account = ? order by send_time desc limit 0,1 
+2019-11-27 19:22:49 -==> Parameters: regiest(String), 1(String), 18144444444(String)
+2019-11-27 19:22:49 -<==      Total: 0
+2019-11-27 19:22:49 -==>  Preparing: SELECT count(*) FROM t_verify_record WHERE account = ? and send_time>? -INTERVAL ? HOUR 
+2019-11-27 19:22:49 -==> Parameters: 18144444444(String), 2019-11-27 19:22:49(String), 1(Integer)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -==>  Preparing: SELECT count(*) FROM t_verify_record WHERE account = ? and send_time>? -INTERVAL ? HOUR 
+2019-11-27 19:22:49 -==> Parameters: 18144444444(String), 2019-11-27 19:22:49(String), 24(Integer)
+2019-11-27 19:22:49 -<==      Total: 1
+2019-11-27 19:22:49 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2019-11-27 19:22:49 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time, invalid_time ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-11-27 19:22:49 -==> Parameters: regiest(String), 1(String), 18144444444(String), 170338(String), 2019-11-27 19:22:49(String), 2019-11-27 19:22:49(String), 2019-11-27 19:27:49(String)
+2019-11-27 19:22:49 -<==    Updates: 1
+2019-11-27 19:22:49 -耗时 : 711
+2019-11-27 19:22:49 -<==返回值 : AjaxJson [msg=验证码发送, success=true, data=null, token=null, code=null]
+2019-11-27 19:23:27 -========时间=======>>>>1574853807380
+2019-11-27 19:23:27 -========时间=======>>>>18
+2019-11-27 19:23:27 -==>请求参数 : [{login_pwd=96E79218965EB72C92A549DD5A330112, login_pwd1=96E79218965EB72C92A549DD5A330112, pay_pwd=96E79218965EB72C92A549DD5A330112, pay_pwd1=96E79218965EB72C92A549DD5A330112, telphone=18144444444, user_pid=12678251, code=170338, nickName=4444, timeStamp=1574853807362, sign=3198B85CB7C0399144873409B7175112}]
+2019-11-27 19:23:27 -==>请求地址 : http://localhost:8008/m9/user/register
+2019-11-27 19:23:27 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:23:27 -==>请求加载类方法 : com.renegade.controller.M9UserController.register
+2019-11-27 19:23:27 -==>  Preparing: SELECT * FROM t_verify_record WHERE bus_type = ? and acc_type = ? and account = ? order by send_time desc limit 0,1 
+2019-11-27 19:23:27 -==> Parameters: regiest(String), 1(String), 18144444444(String)
+2019-11-27 19:23:27 -<==      Total: 1
+2019-11-27 19:23:27 -==>  Preparing: update t_verify_record SET `id` = ?, `bus_type` = ?, `acc_type` = ?, `account` = ?, `code` = ?, `status` = ?, `create_time` = ?, `send_time` = ?, `invalid_time` = ?, `verify_time` = ? where id = ? 
+2019-11-27 19:23:27 -==> Parameters: 532(Long), regiest(String), 1(String), 18144444444(String), 170338(String), 1(String), 2019-11-27 19:22:49(String), 2019-11-27 19:22:49(String), 2019-11-27 19:27:49(String), 2019-11-27 19:23:27(String), 532(Long)
+2019-11-27 19:23:27 -<==    Updates: 1
+2019-11-27 19:23:27 -==>  Preparing: select * from m9_user where share_rqcode = ? 
+2019-11-27 19:23:27 -==> Parameters: 12678251(String)
+2019-11-27 19:23:27 -<==      Total: 1
+2019-11-27 19:23:27 -md5  实例化成功
+2019-11-27 19:23:27 -md5  实例化成功
+2019-11-27 19:23:27 -==>  Preparing: insert into m9_user(telphone,login_pwd,pay_pwd,user_pid,share_rqcode,parent_chain,algebra,nick_name) values(?,?,?,?,?,?,?,?) 
+2019-11-27 19:23:27 -==> Parameters: 18144444444(String), 6456c7fac445f3c1c3e7f4405159d80e(String), 6456c7fac445f3c1c3e7f4405159d80e(String), 63(Integer), 1Q2AH754(String), 0,1,23,54,62,63(String), 6(Integer), 4444(String)
+2019-11-27 19:23:27 -<==    Updates: 1
+2019-11-27 19:23:29 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:23:29 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@4c4430ad, return{}
+2019-11-27 19:23:38 -==>  Preparing: update m9_user set telphone=?, user_lineup_coin_free=user_lineup_coin_free+0.1 where id= 
+2019-11-27 19:23:38 -==> Parameters: 18144444444(String)
+2019-11-27 19:23:40 -耗时 : 13004
+2019-11-27 19:23:40 -<==返回值 : AjaxJson [msg=注册失败, success=false, data=null, token=null, code=null]
+2019-11-27 19:31:14 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:31:14 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 19:31:14 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 19:31:14 -Shutting down Quartz Scheduler
+2019-11-27 19:31:14 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 19:31:14 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:31:14 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 19:31:14 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:31:14 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 19:31:14 -Renegade-四叶草-Hikari - Shutdown completed.
+2019-11-27 19:34:23 -Starting M9Application on PC-201905161910 with PID 543616 (D:\M9\m9_yy_qh\M9-App\target\classes started by Administrator in D:\M9\m9_yy_qh\M9-App)
+2019-11-27 19:34:23 -Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-11-27 19:34:23 -The following profiles are active: dev
+2019-11-27 19:34:25 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:34:25 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:34:25 -Finished Spring Data repository scanning in 69ms. Found 0 repository interfaces.
+2019-11-27 19:34:25 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-27 19:34:25 -Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-27 19:34:25 -Finished Spring Data repository scanning in 37ms. Found 0 repository interfaces.
+2019-11-27 19:34:26 -Bean 'threadPoolExecutorConfig' of type [com.renegade.config.ThreadPoolExecutorConfig$$EnhancerBySpringCGLIB$$df3640a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:34:26 -Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b91167d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-27 19:34:26 -Tomcat initialized with port(s): 8008 (http)
+2019-11-27 19:34:26 -Initializing ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:34:26 -Starting service [Tomcat]
+2019-11-27 19:34:26 -Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-11-27 19:34:26 -The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\Program Files (x86)\NetSarang\Xftp 6\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Geth;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-11-27 19:34:26 -Initializing Spring embedded WebApplicationContext
+2019-11-27 19:34:26 -Root WebApplicationContext: initialization completed in 2658 ms
+2019-11-27 19:34:26 -xss filter init~~~~~~~~~~~~
+2019-11-27 19:34:27 -Renegade-四叶草-Hikari - Starting...
+2019-11-27 19:34:27 -Renegade-四叶草-Hikari - Start completed.
+2019-11-27 19:34:27 -HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-11-27 19:34:27 -HHH000412: Hibernate Core {5.3.7.Final}
+2019-11-27 19:34:27 -HHH000206: hibernate.properties not found
+2019-11-27 19:34:27 -HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-11-27 19:34:28 -HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-11-27 19:34:28 -Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:34:28 -Redisson 3.9.1
+2019-11-27 19:34:29 -9 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:34:29 -1 connections initialized for 120.25.164.176/120.25.164.176:10379
+2019-11-27 19:34:30 -Using default implementation for ThreadExecutor
+2019-11-27 19:34:30 -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2019-11-27 19:34:30 -Quartz Scheduler v.2.3.0 created.
+2019-11-27 19:34:30 -RAMJobStore initialized.
+2019-11-27 19:34:30 -Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2019-11-27 19:34:30 -Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2019-11-27 19:34:30 -Quartz scheduler version: 2.3.0
+2019-11-27 19:34:30 -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@62264d4f
+2019-11-27 19:34:30 -Initializing ExecutorService
+2019-11-27 19:34:30 -Initializing ExecutorService 'asyncExecutor'
+2019-11-27 19:34:31 -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-27 19:34:31 -[THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-11-27 19:34:31 -Adding welcome page template: index
+2019-11-27 19:34:31 -Initializing ExecutorService 'taskScheduler'
+2019-11-27 19:34:31 -Starting Quartz Scheduler now
+2019-11-27 19:34:31 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2019-11-27 19:34:31 -======>>>>>>>>>>>>>RedissionDSHOrder启动OK<<<<<<<<<<<<<<<<================
+2019-11-27 19:34:31 -Starting ProtocolHandler ["http-nio-8008"]
+2019-11-27 19:34:31 -Using a shared selector for servlet write/read
+2019-11-27 19:34:31 -Tomcat started on port(s): 8008 (http) with context path ''
+2019-11-27 19:34:31 -Started M9Application in 9.021 seconds (JVM running for 10.511)
+2019-11-27 19:34:44 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-27 19:34:44 -Initializing Servlet 'dispatcherServlet'
+2019-11-27 19:34:44 -Completed initialization in 15 ms
+2019-11-27 19:34:44 -==>请求参数 : [null, {}]
+2019-11-27 19:34:44 -==>请求地址 : http://localhost:8008/register
+2019-11-27 19:34:44 -==>请求头: null格式: GET
+2019-11-27 19:34:44 -==>请求加载类方法 : com.renegade.controller.LoginController.register
+2019-11-27 19:34:45 -耗时 : 6
+2019-11-27 19:34:45 -<==返回值 : /register
+2019-11-27 19:35:06 -==>请求参数 : [18144444444, com.renegade.filter.XssHttpServletRequestWrapper@78ee53d7]
+2019-11-27 19:35:06 -==>请求地址 : http://localhost:8008/sendCode/getCode
+2019-11-27 19:35:06 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:35:06 -==>请求加载类方法 : com.renegade.controller.FrontCodeController.regiestSendCode
+2019-11-27 19:35:06 -==>  Preparing: select * from m9_user where telphone = ? 
+2019-11-27 19:35:06 -==> Parameters: 18144444444(String)
+2019-11-27 19:35:06 -<==      Total: 1
+2019-11-27 19:35:06 -耗时 : 65
+2019-11-27 19:35:06 -<==返回值 : AjaxJson [msg=该邮箱/手机号已注册, success=false, data=null, token=null, code=null]
+2019-11-27 19:36:22 -==>请求参数 : [18155555555, com.renegade.filter.XssHttpServletRequestWrapper@41ac449d]
+2019-11-27 19:36:22 -==>请求地址 : http://localhost:8008/sendCode/getCode
+2019-11-27 19:36:22 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:36:22 -==>请求加载类方法 : com.renegade.controller.FrontCodeController.regiestSendCode
+2019-11-27 19:36:22 -==>  Preparing: select * from m9_user where telphone = ? 
+2019-11-27 19:36:22 -==> Parameters: 18155555555(String)
+2019-11-27 19:36:22 -<==      Total: 0
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendHourLimit
+2019-11-27 19:36:22 -Starting without optional epoll library
+2019-11-27 19:36:22 -Starting without optional kqueue library
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_verifySendHourLimit,has cacheKey:com.renegade.domain.ParamDO@56d00bce, return{}
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendDayLimit
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_verifySendDayLimit,has cacheKey:com.renegade.domain.ParamDO@283f6a1d, return{}
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifySendDuration
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_verifySendDuration,has cacheKey:com.renegade.domain.ParamDO@6975ed9a, return{}
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_verifyInvalidDuration
+2019-11-27 19:36:22 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_verifyInvalidDuration,has cacheKey:com.renegade.domain.ParamDO@30a85390, return{}
+2019-11-27 19:36:22 -==>  Preparing: SELECT * FROM t_verify_record WHERE bus_type = ? and acc_type = ? and account = ? order by send_time desc limit 0,1 
+2019-11-27 19:36:22 -==> Parameters: regiest(String), 1(String), 18155555555(String)
+2019-11-27 19:36:22 -<==      Total: 0
+2019-11-27 19:36:22 -==>  Preparing: SELECT count(*) FROM t_verify_record WHERE account = ? and send_time>? -INTERVAL ? HOUR 
+2019-11-27 19:36:22 -==> Parameters: 18155555555(String), 2019-11-27 19:36:22(String), 1(Integer)
+2019-11-27 19:36:22 -<==      Total: 1
+2019-11-27 19:36:22 -==>  Preparing: SELECT count(*) FROM t_verify_record WHERE account = ? and send_time>? -INTERVAL ? HOUR 
+2019-11-27 19:36:22 -==> Parameters: 18155555555(String), 2019-11-27 19:36:22(String), 24(Integer)
+2019-11-27 19:36:22 -<==      Total: 1
+2019-11-27 19:36:22 -Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+2019-11-27 19:36:22 -==>  Preparing: insert into t_verify_record ( bus_type, acc_type, account, code, create_time, send_time, invalid_time ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-11-27 19:36:22 -==> Parameters: regiest(String), 1(String), 18155555555(String), 447632(String), 2019-11-27 19:36:22(String), 2019-11-27 19:36:22(String), 2019-11-27 19:41:22(String)
+2019-11-27 19:36:22 -<==    Updates: 1
+2019-11-27 19:36:22 -耗时 : 611
+2019-11-27 19:36:22 -<==返回值 : AjaxJson [msg=验证码发送, success=true, data=null, token=null, code=null]
+2019-11-27 19:36:56 -========时间=======>>>>1574854616535
+2019-11-27 19:36:56 -========时间=======>>>>12
+2019-11-27 19:36:56 -==>请求参数 : [{login_pwd=96E79218965EB72C92A549DD5A330112, login_pwd1=96E79218965EB72C92A549DD5A330112, pay_pwd=96E79218965EB72C92A549DD5A330112, pay_pwd1=96E79218965EB72C92A549DD5A330112, telphone=18155555555, user_pid=12678251, code=447632, nickName=5555, timeStamp=1574854616523, sign=8B8EE4CD1D0F736BF63FD59B3AB05485}]
+2019-11-27 19:36:56 -==>请求地址 : http://localhost:8008/m9/user/register
+2019-11-27 19:36:56 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:36:56 -==>请求加载类方法 : com.renegade.controller.M9UserController.register
+2019-11-27 19:36:56 -==>  Preparing: SELECT * FROM t_verify_record WHERE bus_type = ? and acc_type = ? and account = ? order by send_time desc limit 0,1 
+2019-11-27 19:36:56 -==> Parameters: regiest(String), 1(String), 18155555555(String)
+2019-11-27 19:36:56 -<==      Total: 1
+2019-11-27 19:36:56 -==>  Preparing: update t_verify_record SET `id` = ?, `bus_type` = ?, `acc_type` = ?, `account` = ?, `code` = ?, `status` = ?, `create_time` = ?, `send_time` = ?, `invalid_time` = ?, `verify_time` = ? where id = ? 
+2019-11-27 19:36:56 -==> Parameters: 533(Long), regiest(String), 1(String), 18155555555(String), 447632(String), 1(String), 2019-11-27 19:36:22(String), 2019-11-27 19:36:22(String), 2019-11-27 19:41:22(String), 2019-11-27 19:36:56(String), 533(Long)
+2019-11-27 19:36:56 -<==    Updates: 1
+2019-11-27 19:36:56 -==>  Preparing: select * from m9_user where share_rqcode = ? 
+2019-11-27 19:36:56 -==> Parameters: 12678251(String)
+2019-11-27 19:36:56 -<==      Total: 1
+2019-11-27 19:36:56 -md5  实例化成功
+2019-11-27 19:36:56 -md5  实例化成功
+2019-11-27 19:36:56 -==>  Preparing: insert into m9_user(telphone,login_pwd,pay_pwd,user_pid,share_rqcode,parent_chain,algebra,nick_name) values(?,?,?,?,?,?,?,?) 
+2019-11-27 19:36:56 -==> Parameters: 18155555555(String), 6456c7fac445f3c1c3e7f4405159d80e(String), 6456c7fac445f3c1c3e7f4405159d80e(String), 63(Integer), 8143S4C9(String), 0,1,23,54,62,63(String), 6(Integer), 5555(String)
+2019-11-27 19:36:56 -<==    Updates: 1
+2019-11-27 19:37:01 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:37:01 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@2b58f108, return{}
+2019-11-27 19:37:03 -==>  Preparing: update m9_user set user_lineup_coin_free=user_lineup_coin_free+user_lineup_coin_free+0.1 where telphone=? 
+2019-11-27 19:37:03 -==> Parameters: 18155555555(String)
+2019-11-27 19:37:03 -<==    Updates: 1
+2019-11-27 19:37:14 -耗时 : 17742
+2019-11-27 19:37:14 -<==返回值 : AjaxJson [msg=注册成功, success=true, data=null, token=null, code=null]
+2019-11-27 19:37:16 -==>请求参数 : [null, com.renegade.filter.XssHttpServletRequestWrapper@6323bcab]
+2019-11-27 19:37:16 -==>请求地址 : http://localhost:8008/login
+2019-11-27 19:37:16 -==>请求头: null格式: GET
+2019-11-27 19:37:16 -==>请求加载类方法 : com.renegade.controller.LoginController.login
+2019-11-27 19:37:16 -耗时 : 7
+2019-11-27 19:37:16 -<==返回值 : /login
+2019-11-27 19:37:33 -========时间=======>>>>1574854653906
+2019-11-27 19:37:33 -========时间=======>>>>7
+2019-11-27 19:37:33 -Queue length1
+2019-11-27 19:37:33 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@5db613a, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18155555555, timeStamp=1574854653899, sign=13DC5A301FBC93BA3C79CDA50AC2F083}]
+2019-11-27 19:37:33 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 19:37:33 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:37:33 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 19:37:33 -md5  实例化成功
+2019-11-27 19:37:33 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 19:37:33 -==> Parameters: 18155555555(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 19:37:33 -<==      Total: 1
+2019-11-27 19:37:33 -耗时 : 16
+2019-11-27 19:37:33 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=77, token=null, code=null]
+2019-11-27 19:37:36 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@58019bbe, {}]
+2019-11-27 19:37:36 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:37:36 -==>请求头: null格式: GET
+2019-11-27 19:37:36 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:37:36 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:37:36 -==> Parameters: 77(String), 2019-11-27(String)
+2019-11-27 19:37:36 -<==      Total: 0
+2019-11-27 19:37:36 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:37:36 -==> Parameters: 77(String)
+2019-11-27 19:37:36 -<==      Total: 1
+2019-11-27 19:37:36 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:37:36 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@70a23dcc, return{}
+2019-11-27 19:37:36 -耗时 : 35
+2019-11-27 19:37:36 -<==返回值 : /index
+2019-11-27 19:37:36 -==>请求参数 : []
+2019-11-27 19:37:36 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:37:36 -==>请求头: null格式: GET
+2019-11-27 19:37:36 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:37:36 -耗时 : 1
+2019-11-27 19:37:36 -<==返回值 : /nav
+2019-11-27 19:37:38 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@5c8a376d, {}]
+2019-11-27 19:37:38 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 19:37:38 -==>请求头: null格式: GET
+2019-11-27 19:37:38 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 19:37:38 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:37:38 -==> Parameters: 77(String)
+2019-11-27 19:37:38 -<==      Total: 1
+2019-11-27 19:37:38 -耗时 : 14
+2019-11-27 19:37:38 -<==返回值 : /self
+2019-11-27 19:37:38 -==>请求参数 : []
+2019-11-27 19:37:38 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:37:38 -==>请求头: null格式: GET
+2019-11-27 19:37:38 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:37:38 -耗时 : 0
+2019-11-27 19:37:38 -<==返回值 : /nav
+2019-11-27 19:37:41 -==>  Preparing: select * from m9_user where id = ? 
+2019-11-27 19:37:41 -==> Parameters: 77(String)
+2019-11-27 19:37:41 -<==      Total: 1
+2019-11-27 19:37:41 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@5db613a]
+2019-11-27 19:37:41 -==>请求地址 : http://localhost:8008/logout
+2019-11-27 19:37:41 -==>请求头: null格式: GET
+2019-11-27 19:37:41 -==>请求加载类方法 : com.renegade.controller.LoginController.logout
+2019-11-27 19:37:41 -耗时 : 0
+2019-11-27 19:37:41 -<==返回值 : /login
+2019-11-27 19:37:50 -========时间=======>>>>1574854670956
+2019-11-27 19:37:50 -========时间=======>>>>9
+2019-11-27 19:37:50 -Queue length1
+2019-11-27 19:37:50 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 19:38:01 -========时间=======>>>>1574854681279
+2019-11-27 19:38:01 -========时间=======>>>>4
+2019-11-27 19:38:01 -Queue length1
+2019-11-27 19:38:01 -唉！还是习惯打出中文虚浮,自定义异常=====对不起，请不要频繁重复操作！==========你们说呢：com.renegade.exception.BDException: 对不起，请不要频繁重复操作！
+2019-11-27 19:38:14 -========时间=======>>>>1574854694461
+2019-11-27 19:38:14 -========时间=======>>>>4
+2019-11-27 19:38:14 -Queue length1
+2019-11-27 19:38:14 -==>请求参数 : [org.apache.catalina.session.StandardSessionFacade@5db613a, {login_pwd=96E79218965EB72C92A549DD5A330112, telphone=18155555555, timeStamp=1574854694457, sign=C17BA77AB6223ABABD20E205EBFF0528}]
+2019-11-27 19:38:14 -==>请求地址 : http://localhost:8008/m9/user/login
+2019-11-27 19:38:14 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:38:14 -==>请求加载类方法 : com.renegade.controller.M9UserController.login
+2019-11-27 19:38:14 -md5  实例化成功
+2019-11-27 19:38:14 -==>  Preparing: select * from m9_user where 1=1 and telphone=? and login_pwd=? 
+2019-11-27 19:38:14 -==> Parameters: 18155555555(String), 6456c7fac445f3c1c3e7f4405159d80e(String)
+2019-11-27 19:38:14 -<==      Total: 1
+2019-11-27 19:38:14 -耗时 : 13
+2019-11-27 19:38:14 -<==返回值 : AjaxJson [msg=登陆成功, success=true, data=77, token=null, code=null]
+2019-11-27 19:38:16 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@71e1ccaf, {}]
+2019-11-27 19:38:16 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:38:16 -==>请求头: null格式: GET
+2019-11-27 19:38:16 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:38:16 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:38:16 -==> Parameters: 77(String), 2019-11-27(String)
+2019-11-27 19:38:16 -<==      Total: 0
+2019-11-27 19:38:16 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:38:16 -==> Parameters: 77(String)
+2019-11-27 19:38:16 -<==      Total: 1
+2019-11-27 19:38:16 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:38:16 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@3dfbf23a, return{}
+2019-11-27 19:38:16 -耗时 : 33
+2019-11-27 19:38:16 -<==返回值 : /index
+2019-11-27 19:38:17 -==>请求参数 : []
+2019-11-27 19:38:17 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:38:17 -==>请求头: null格式: GET
+2019-11-27 19:38:17 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:38:17 -耗时 : 1
+2019-11-27 19:38:17 -<==返回值 : /nav
+2019-11-27 19:38:21 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@297a78e2]
+2019-11-27 19:38:21 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 19:38:21 -==>请求头: null格式: POST
+2019-11-27 19:38:21 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 19:38:21 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:38:21 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@6b2517f7, return{}
+2019-11-27 19:38:21 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:38:21 -==> Parameters: 77(String), 2019-11-27(String)
+2019-11-27 19:38:21 -<==      Total: 0
+2019-11-27 19:38:21 -==>  Preparing: insert into t_sign_record(sign_date,prize,user_id) values(CURRENT_DATE,?,?) 
+2019-11-27 19:38:21 -==> Parameters: 0.1(String), 77(String)
+2019-11-27 19:38:21 -<==    Updates: 1
+2019-11-27 19:38:21 -==>  Preparing: update m9_user set user_lineup_coin_free=user_lineup_coin_free+0.1 where id=77 
+2019-11-27 19:38:21 -==> Parameters: 
+2019-11-27 19:38:21 -<==    Updates: 1
+2019-11-27 19:38:21 -耗时 : 43
+2019-11-27 19:38:21 -<==返回值 : AjaxJson [msg=0.1, success=true, data=null, token=null, code=null]
+2019-11-27 19:38:25 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@457c551b, {}]
+2019-11-27 19:38:25 -==>请求地址 : http://localhost:8008/m9/user/self
+2019-11-27 19:38:25 -==>请求头: null格式: GET
+2019-11-27 19:38:25 -==>请求加载类方法 : com.renegade.controller.M9UserController.self
+2019-11-27 19:38:25 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:38:25 -==> Parameters: 77(String)
+2019-11-27 19:38:25 -<==      Total: 1
+2019-11-27 19:38:25 -耗时 : 13
+2019-11-27 19:38:25 -<==返回值 : /self
+2019-11-27 19:38:26 -==>请求参数 : []
+2019-11-27 19:38:26 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:38:26 -==>请求头: null格式: GET
+2019-11-27 19:38:26 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:38:26 -耗时 : 0
+2019-11-27 19:38:26 -<==返回值 : /nav
+2019-11-27 19:38:28 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@739308f, {}]
+2019-11-27 19:38:28 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 19:38:28 -==>请求头: null格式: GET
+2019-11-27 19:38:28 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 19:38:28 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:38:28 -==> Parameters: 77(String)
+2019-11-27 19:38:28 -<==      Total: 1
+2019-11-27 19:38:28 -耗时 : 15
+2019-11-27 19:38:28 -<==返回值 : /set_my
+2019-11-27 19:38:29 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4c004ea4, {}]
+2019-11-27 19:38:29 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 19:38:29 -==>请求头: null格式: GET
+2019-11-27 19:38:29 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 19:38:29 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:38:29 -==> Parameters: 77(String)
+2019-11-27 19:38:29 -<==      Total: 1
+2019-11-27 19:38:29 -耗时 : 12
+2019-11-27 19:38:29 -<==返回值 : /sign_recode
+2019-11-27 19:38:29 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4d3c4881]
+2019-11-27 19:38:29 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 19:38:29 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:38:29 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 19:38:29 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? and id > ? order by sign_date desc limit 0,10 
+2019-11-27 19:38:29 -==> Parameters: 77(String), 2019-11-27(String), 0(String)
+2019-11-27 19:38:29 -<==      Total: 1
+2019-11-27 19:38:29 -耗时 : 10
+2019-11-27 19:38:29 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=77, sign_date=2019-11-27 00:00:00.0, id=4, prize=0.1}], token=null, code=null]
+2019-11-27 19:42:58 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@1fd3b7bd, {}]
+2019-11-27 19:42:58 -==>请求地址 : http://localhost:8008/m9/user/set_my
+2019-11-27 19:42:58 -==>请求头: null格式: GET
+2019-11-27 19:42:58 -==>请求加载类方法 : com.renegade.controller.M9UserController.set_my
+2019-11-27 19:42:58 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:42:58 -==> Parameters: 77(String)
+2019-11-27 19:42:58 -<==      Total: 1
+2019-11-27 19:42:58 -耗时 : 14
+2019-11-27 19:42:58 -<==返回值 : /set_my
+2019-11-27 19:43:00 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@4e46f3c0, {}]
+2019-11-27 19:43:00 -==>请求地址 : http://localhost:8008/m9/user/sign_recode
+2019-11-27 19:43:00 -==>请求头: null格式: GET
+2019-11-27 19:43:00 -==>请求加载类方法 : com.renegade.controller.M9UserController.sign_recode
+2019-11-27 19:43:00 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:43:00 -==> Parameters: 77(String)
+2019-11-27 19:43:00 -<==      Total: 1
+2019-11-27 19:43:00 -耗时 : 13
+2019-11-27 19:43:00 -<==返回值 : /sign_recode
+2019-11-27 19:43:00 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6b0d904]
+2019-11-27 19:43:00 -==>请求地址 : http://localhost:8008/m9/user/select_sign_record
+2019-11-27 19:43:00 -==>请求头: application/x-www-form-urlencoded; charset=UTF-8格式: POST
+2019-11-27 19:43:00 -==>请求加载类方法 : com.renegade.controller.M9UserController.select_sign_record
+2019-11-27 19:43:00 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? and id > ? order by sign_date desc limit 0,10 
+2019-11-27 19:43:00 -==> Parameters: 77(String), 2019-11-27(String), 0(String)
+2019-11-27 19:43:00 -<==      Total: 1
+2019-11-27 19:43:00 -耗时 : 12
+2019-11-27 19:43:00 -<==返回值 : AjaxJson [msg=查询成功, success=true, data=[{user_id=77, sign_date=2019-11-27 00:00:00.0, id=4, prize=0.1}], token=null, code=null]
+2019-11-27 19:43:28 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@6a76155d, {}]
+2019-11-27 19:43:28 -==>请求地址 : http://localhost:8008/m9/user/index
+2019-11-27 19:43:28 -==>请求头: null格式: GET
+2019-11-27 19:43:28 -==>请求加载类方法 : com.renegade.controller.M9UserController.index
+2019-11-27 19:43:28 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:43:28 -==> Parameters: 77(String), 2019-11-27(String)
+2019-11-27 19:43:28 -<==      Total: 1
+2019-11-27 19:43:28 -==>  Preparing: select * from m9_user where 1=1 and id=? 
+2019-11-27 19:43:28 -==> Parameters: 77(String)
+2019-11-27 19:43:28 -<==      Total: 1
+2019-11-27 19:43:28 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_wx1
+2019-11-27 19:43:28 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_wx1,has cacheKey:com.renegade.domain.ParamDO@56d21545, return{}
+2019-11-27 19:43:28 -耗时 : 36
+2019-11-27 19:43:28 -<==返回值 : /index
+2019-11-27 19:43:28 -==>请求参数 : []
+2019-11-27 19:43:28 -==>请求地址 : http://localhost:8008/nav
+2019-11-27 19:43:28 -==>请求头: null格式: GET
+2019-11-27 19:43:28 -==>请求加载类方法 : com.renegade.controller.LoginController.nav
+2019-11-27 19:43:28 -耗时 : 0
+2019-11-27 19:43:28 -<==返回值 : /nav
+2019-11-27 19:44:08 -==>请求参数 : [com.renegade.filter.XssHttpServletRequestWrapper@533a75a1]
+2019-11-27 19:44:08 -==>请求地址 : http://localhost:8008/m9/user/insert_sign_record
+2019-11-27 19:44:08 -==>请求头: null格式: POST
+2019-11-27 19:44:08 -==>请求加载类方法 : com.renegade.controller.M9UserController.insert_sign_record
+2019-11-27 19:44:08 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache service,cacheKey:t_sys_param_sign_prize_lineup_coin
+2019-11-27 19:44:08 -ParamDO com.renegade.service.impl.ParamServiceImpl.findValue(String) enable cache servicet_sys_param_sign_prize_lineup_coin,has cacheKey:com.renegade.domain.ParamDO@53ef1db4, return{}
+2019-11-27 19:44:08 -==>  Preparing: select * from t_sign_record where user_id=? and sign_date=? 
+2019-11-27 19:44:08 -==> Parameters: 77(String), 2019-11-27(String)
+2019-11-27 19:44:08 -<==      Total: 1
+2019-11-27 19:44:08 -耗时 : 22
+2019-11-27 19:44:08 -<==返回值 : AjaxJson [msg=今日已签到, success=false, data=null, token=null, code=null]
+2019-11-27 19:44:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:44:16 -Shutting down ExecutorService 'taskScheduler'
+2019-11-27 19:44:16 -Shutting down ExecutorService 'asyncExecutor'
+2019-11-27 19:44:16 -Shutting down Quartz Scheduler
+2019-11-27 19:44:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2019-11-27 19:44:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2019-11-27 19:44:16 -Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2019-11-27 19:44:16 -Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-27 19:44:16 -Renegade-四叶草-Hikari - Shutdown initiated...
+2019-11-27 19:44:16 -Renegade-四叶草-Hikari - Shutdown completed.

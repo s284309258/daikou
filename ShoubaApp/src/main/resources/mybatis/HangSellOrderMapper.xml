@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.HangSellOrderDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.HangSellOrderDO">
+		select * from t_hang_sell_order where id = #{value}
+	</select>
+	<update id="updateStatus">
+		update t_hang_sell_order set hang_sell_status=1 where
+		hang_sell_status=0 and
+		id={id}
+	</update>
+	<select id="getOrderId" resultType="int">
+		select count(*) from t_hang_sell_order where buy_order_id = #{value}
+	</select>
+	<select id="getOrderIdLock" resultType="int">
+		select count(*) from t_hang_sell_order where buy_order_id = #{value}
+	</select>
+	<select id="getOrderIdLockDetail"
+		resultType="com.renegade.domain.HangSellOrderDO">
+		select * from t_hang_sell_order where buy_order_id = #{value} for update
+	</select>
+	<!-- 挂售返款SQl版本 -->
+	<update id="updateStatusRfoud">
+		update t_hang_sell_order t1 LEFT JOIN
+		t_wallet_manager t2 ON t1.hang_sell_user=t2.user_id
+		set
+		t1.hang_sell_status='1',vfs_balance=vfs_balance+t1.refoud_price,update_time=now(),source_id=#{userId},benefit_type=#{benefitType},order_no=t1.hang_sell_id,
+		buy_order_id=#{buyOrderId}
+		WHERE t1.hang_sell_status='0' AND t1.id IN (
+		SELECT rn.id FROM
+		(SELECT t3.id FROM t_hang_sell_order t3 WHERE
+		t3.hang_selll_goods_id=#{buyOrderId} AND t3.hang_sell_status='0' ORDER
+		BY
+		t3.create_time LIMIT #{num})AS rn)
+	</update>
+	<!-- 挂售返款代码版 -->
+	<update id="updateStatusRfoudCode">
+		update t_hang_sell_order t1 LEFT JOIN
+		t_wallet_manager t2 ON t1.hang_sell_user=t2.user_id
+		set
+		t1.hang_sell_status='1',vfs_balance=vfs_balance+#{vfsBalance},update_time=now(),source_id=#{userId},benefit_type=#{benefitType},order_no=t1.hang_sell_id,
+		buy_order_id=#{buyOrderId}
+		WHERE t1.hang_sell_status='0' AND
+		t1.id=#{id}
+	</update>
+	<select id="consignmentOrder" resultType="java.util.HashMap">
+		select t1.*,t2.goods_name,t2.goods_picture
+		from t_hang_sell_order t1 left join t_spot_goods t2 on
+		t1.hang_selll_goods_id=t2.goods_id
+		where hang_sell_user= #{hangSellUser}
+	</select>
+	<!--挂售订单情况 -->
+	<select id="listHangSellOrder" resultType="java.util.HashMap">
+		select
+		 t2.goods_name,t2.goods_price,t2.goods_user_id,if(t2.goods_user_id=0,'Vs官方旗舰店',t1.user_name)as user_name,t2.goods_desc
+		,DATE_FORMAT(t.create_time,'%Y-%c-%d %H:%i:%s')AS createTime,if(t.hang_sell_status=0,'委托中','已完成') as hang_sell_status,t.refoud_price
+		from t_hang_sell_order t left join t_spot_goods t2 on
+		t.hang_selll_goods_id=t2.goods_id
+		left join t_front_user t1 on t1.user_id=t2.goods_user_id
+		<where>
+			hang_sell_user = #{hangSellUser}
+			<if test="hangSellStatus != null and hangSellStatus != ''"> and hang_sell_status = #{hangSellStatus} </if>
+		</where>
+		order by  t.create_time desc 
+	</select>
+
+	<select id="list"
+		resultType="com.renegade.domain.HangSellOrderDO">
+		select * from t_hang_sell_order
+		<where>
+			<if test="hangSellId != null and hangSellId != ''"> and hang_sell_id = #{hangSellId} </if>
+			<if test="hangSellUser != null and hangSellUser != ''"> and hang_sell_user = #{hangSellUser} </if>
+			<if test="hangSelllGoodsId != null and hangSelllGoodsId != ''"> and hang_selll_goods_id = #{hangSelllGoodsId} </if>
+			<if test="hangSellStatus != null and hangSellStatus != ''"> and hang_sell_status = #{hangSellStatus} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by hang_sell_id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_hang_sell_order
+		<where>
+			<if test="hangSellId != null and hangSellId != ''"> and hang_sell_id = #{hangSellId} </if>
+			<if test="hangSellUser != null and hangSellUser != ''"> and hang_sell_user = #{hangSellUser} </if>
+			<if test="hangSelllGoodsId != null and hangSelllGoodsId != ''"> and hang_selll_goods_id = #{hangSelllGoodsId} </if>
+			<if test="hangSellStatus != null and hangSellStatus != ''"> and hang_sell_status = #{hangSellStatus} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.HangSellOrderDO" keyProperty="id"
+		useGeneratedKeys="true">
+		insert into t_hang_sell_order
+		(
+		`hang_sell_id`,
+		`hang_sell_user`,
+		`hang_selll_goods_id`,
+		`create_time`,
+		`refoud_price`
+		)
+		values
+		(
+		#{hangSellId},
+		#{hangSellUser},
+		#{hangSelllGoodsId},
+		#{createTime},
+		#{refoudPrice}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.HangSellOrderDO">
+		update t_hang_sell_order
+		<set>
+			<if test="hangSellUser != null">`hang_sell_user` = #{hangSellUser}, </if>
+			<if test="hangSelllGoodsId != null">`hang_selll_goods_id` = #{hangSelllGoodsId}, </if>
+			<if test="hangSellStatus != null">`hang_sell_status` = #{hangSellStatus}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where hang_sell_id = #{hangSellId}
+	</update>
+
+	<delete id="remove">
+		delete from t_hang_sell_order where hang_sell_id =
+		#{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_hang_sell_order where hang_sell_id in
+		<foreach item="hangSellId" collection="array" open="("
+			separator="," close=")">
+			#{hangSellId}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/vue.js"></script>
+		<style>
+			.layui-layer-content{text-align: center !important;font-size: 1rem !important;}
+			.layui-layer-title{display: none !important;}
+			.layui-layer-dialog{border-radius: 10px !important;}
+			.layui-layer-close1{display: none !important;}
+			.layui-layer-btn{display: flex !important;justify-content: space-between !important;border-top: 1px solid #E6E6E6 !important;}
+			.layui-layer-btn0{background: none !important;color: #0077FF !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.layui-layer-btn1{background: none !important;color: #777777 !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.audit-warp{border-bottom: 1px solid #E6E6E6;padding-bottom: 1rem;}
+		</style>
+		<title>扣款审核</title>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>扣款审核</h1>
+		</header>
+		<div class="main-list" id="main">
+			<!--   -->
+			<ul th:each="rd :${record}">
+				<li class="audit-warp">
+					<dl >
+						<dt>
+							<span>姓名：</span>
+							<span th:text="${rd.real_name}"></span>
+						</dt><dt>
+							<span >身份证号码：</span>
+							<span th:text="${rd.user_card}"></span>
+						</dt>
+						<dt>
+							<span>手机号：</span>
+							<span th:text="${rd.user_tel}"></span>
+						</dt>
+						<dt>
+							<span>开户行：</span>
+							<span th:text="${rd.bank_name}"></span>
+						</dt>
+						<dt>
+							<span>银行卡号：</span>
+							<span th:text="${rd.bank_account}"></span>
+						</dt>
+						<dt>
+							<span >金额：</span>
+							<span class="color-blue" th:text="${rd.amount}"></span>
+						</dt>
+						<dt>
+							<span>发起扣款时间：</span>
+							<span th:text="${rd.apply_datetime}"></span>
+						</dt>
+						<dt>
+							<span>归属公司：</span>
+							<span th:text="${rd['org_agent_name']}?${rd['org_agent_name']}"></span>
+							<span th:if="${rd['org_agent_name']!=null}">-</span>
+							<span th:text="${rd.org_name}"></span>
+						</dt><dt>
+							<span>扣款协议：</span>
+							<a th:href="@{'/yilian/api/sign/'+${rd.user_id}}"><img src="../../img/next.png" class="next"/></a>
+						</dt><dt>
+							<span>证件信息：</span>
+							<a th:href="@{'/yilian/api/withholdUserDetail/'+${rd.user_id}}"><img src="../../img/next.png" class="next"/></a>
+						</dt>
+						<dt>
+							<span>拒绝原因：</span>
+							<textarea rows="3" cols="20" th:id="@{'reason'+${rd.id}}" name="remark"></textarea>
+						</dt>
+						
+						<dt class="flex-right">
+							<button type="button" id="refuse" th:onclick="refuseDeductTwo([[${rd.id}]])">拒绝扣款</button>
+							<button type="button" id="agree" th:onclick="agreeDeductTwo([[${rd.id}]])">确认扣款</button>
+						</dt>
+					</dl>
+				</li>
+			<input type="hidden" id="orgNo" name="orgNo" value="110" />
+			<input type="hidden" id="fyhadmin" name="role" value="fyhadmin" />
+		
+			</ul>
+		</div>
+
+		<!-- js -->
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+
+
+			function refuseDeductTwo(order_id) {
+
+				var reason = $("#reason"+order_id).val();
+				if(reason==""){
+					return layer.msg("拒绝原因不能为空");
+				}
+				$.ajax({
+					url:'/yilian/api/refuseDeductTwo/'+order_id,
+					data:{
+					remark:	reason
+					},
+					type:'post',
+					success:function(result){
+						layer.msg(result.message,{
+							end:function(){
+								window.location.href = "/yilian/api/withholdAudit2";
+							}
+						});
+					},
+					error:function(result){
+						layer.msg(result.message);
+					}
+				});
+			}
+			
+			function agreeDeductTwo(order_id) {
+
+				layer.confirm('同意代扣', {
+					// offset: [200, 600],
+					btn: ['确定', '取消'] //按钮
+				}, function() {
+					$.ajax({
+						url:'/yilian/api/agreeDeductTwo/'+order_id,
+						type:'post',
+						success:function(result){
+							layer.msg(result.message,{
+								end:function(){
+									window.location.href = "/yilian/api/withholdAudit2";
+								}
+							});
+						},
+						error:function(result){
+							layer.msg(result.message);
+						}
+					});
+				}, function() {
+					layer.msg('代扣取消')
+				});
+			}
+			// var vmm=new Vue({
+			//     el: "#main",
+			//     data: {
+			//         audit: {},
+			//     },
+			//     mounted:function(){
+			//         this.showData();
+			//     },
+			//     methods:{
+			//         showData:function () {
+			// 			var that = this;
+			//             jQuery.ajax({
+			//                  type: 'post',
+			//                  url: "/yilian/api/withholdAudit",
+			// 				 data:{
+			// 					orgNo:'110',
+			// 					role:'fyhadmin',
+			// 				 },
+			// 				 datatype:"json",
+			// 				  success: function (res) {
+			// 					  if(res.errorCode == "00000"){
+			// 						 that.audit = res.data;
+			// 						  console.log(that.audit)
+			// 						  console.log(res.data.length)
+			// 					  }
+			// 					console.log(res);
+			// 				  },
+			//                })
+			//            },
+			// 		   click:function(){
+			// 			  layer.confirm('确认扣款', {
+			// 			  	// offset: [200, 600],
+			// 			  	btn: ['确定', '取消'] //按钮
+			// 			  }, function() {
+			//
+			// 			  	layer.msg('扣款成功')
+			// 			  }, function() {
+			// 			  	layer.msg('扣款取消')
+			// 			  });
+			// 		   }
+			// }
+			// })
+
+		</script>
+	</body>
+</html>

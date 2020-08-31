@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/layui.css" />
+		
+		<title>上传证件照</title>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>上传证件照</h1>
+			<!-- <button>确定</button> -->
+		</header>
+		<main class="mian">
+			<div class="upload-txt">
+				上传证件照<span>请确保照片的清晰度</span>
+			</div>
+			<div class="upimgs">
+				<div class="idcard-index">
+					<input type="file" id="upload" accept="image/*" capture="camera" class="upload-one">
+					<span class="show-warp"><p>上传身份证正面照</p><img id="pictures" class="img_wrap" src=""></span>
+				</div>
+				<div class="idcard-index">
+					<input type="file" id="upload1" accept="image/*" capture="camera" class="upload-one">
+					<span class="show-warp"><p>上传身份证反面照</p><img id="pictures1" class="img_wraps three" src=""></span>
+				</div>
+				<div class="idcard-index">
+					<input type="file" id="upload2" accept="image/*" capture="camera" class="upload-one">
+					<span class="show-warp"><p>上传银行卡正面照</p><img id="pictures2" class="img_wraps four" src=""></span>
+				</div>
+				<div class="idcard-index">
+					<input type="file" id="upload3" accept="image/*" capture="camera" class="upload-one">
+					<span class="show-warp"><p>上传银行卡反面照</p><img id="pictures3" class="img_wraps five" src=""></span>
+				</div>
+				<div class="idcard-index">
+					<input type="file" id="upload4" accept="image/*" capture="camera" class="upload-one ">
+					<span class="show-warp"><p>上传手持身份证及银行卡</p><img id="pictures4" class="img_wraps two" src=""></span>
+				</div>
+			</div>
+			<div class="Sign">
+				<p>签订代扣协议</p>
+				<div class="Sign-txt">
+					<a href="sign.html">
+						<p>点击去签订《委托代扣协议》</p>
+						
+						</a>
+				</div>
+			</div>
+			<div class="login-btn">
+				<button class="sub">提交</button>
+			</div>
+		</main>
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/upload.js"></script>
+	</body>
+</html>

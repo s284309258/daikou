@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.AiRobotContractDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.AiRobotContractDO">
+		select
+		`id`,`user_id`,`money`,`create_time`,`update_time`,`status`,`type`,`kind`,`robot_profit`
+		from t_ai_robot_contract where id = #{value}
+	</select>
+	<update id="updateProfit">
+		update  t_ai_robot_contract set
+		robot_profit=#{profit},profit_time=now(),
+		totol_profit=totol_profit+#{profit} where
+		status=0 and id=#{id}
+	</update>
+	<update id="updateAgin">
+		update  t_ai_robot_contract set create_time=now()
+		where status=0 and
+		 ((type=1 and
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days1}+3) ) or (type=2 and
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days2}+3) ) or (type=3 and
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days3}+3) ) or (type=4 and
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days4}+3) ) )
+	</update>
+	<!-- 未超过规定的期限 未取出的 -->
+	<select id="listTaskDetailNo"
+		resultType="com.renegade.domain.AiRobotContractDO">
+		SELECT * FROM t_ai_robot_contract WHERE status=0 AND
+		CASE
+		type
+		WHEN 1 THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&lt;=#{days1} 
+		WHEN 2
+		THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&lt;=#{days2}
+		WHEN 3 THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&lt;=#{days3}
+		ELSE
+		TO_DAYS(NOW())-TO_DAYS(create_time)&lt;=#{days4}
+		END
+	</select>
+	<!-- 超过规定的期限 未取出 -->
+	<select id="listTaskDetailSuper"
+		resultType="com.renegade.domain.AiRobotContractDO">
+		SELECT * FROM t_ai_robot_contract WHERE status=0 AND
+		CASE
+		type
+		WHEN 1 THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days1}+3)
+		WHEN 2 THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days2}+3)
+		WHEN 3
+		THEN
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days3}+3)
+		ELSE
+		TO_DAYS(NOW())-TO_DAYS(create_time)&gt;=(#{days4}+3)
+		END
+	</select>
+	<update id="uodateContractStatus">
+		update t_ai_robot_contract set status=1 where
+		status=0 and id=#{id} and
+		user_id = #{userId}
+	</update>
+	<!-- 升级高合约 -->
+	<update id="updateMoreContract" parameterType="com.renegade.domain.AiRobotContractDO">
+	  update  t_ai_robot_contract set type=#{type},robot_profit=#{robotProfit},create_time=now()
+	  where id=#{id} and user_id = #{userId} and type=#{oldType}  and  status=0 
+	</update>
+	<select id="sumMoney" resultType="java.math.BigDecimal">
+		select
+		ifnull(sum(robot_profit),0) sumMOney from t_ai_robot_contract where
+		 user_id = #{userId} and  TO_DAYS(NOW())=TO_DAYS(profit_time)
+	</select>
+	<select id="getMoneyAll" resultType="com.renegade.domain.AiRobotContractDO">
+         SELECT SUM(money) money,kind,user_id   FROM   t_ai_robot_contract     WHERE `status`=0 and  user_id = #{userId}      GROUP BY kind  ORDER BY kind 
+	</select>
+	<select id="list"
+		resultType="com.renegade.domain.AiRobotContractDO">
+		select
+		*
+		from t_ai_robot_contract
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="type != null and type != ''"> and type = #{type} </if>
+			<if test="kind != null and kind != ''"> and kind = #{kind} </if>
+			<if test="robotProfit != null and robotProfit != ''"> and robot_profit = #{robotProfit} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_ai_robot_contract
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="money != null and money != ''"> and money = #{money} </if>
+			<if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="status != null and status != ''"> and status = #{status} </if>
+			<if test="type != null and type != ''"> and type = #{type} </if>
+			<if test="kind != null and kind != ''"> and kind = #{kind} </if>
+			<if test="robotProfit != null and robotProfit != ''"> and robot_profit = #{robotProfit} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.AiRobotContractDO"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_ai_robot_contract
+		(
+		`user_id`,
+		`money`,
+		`type`,
+		`kind`,
+		`robot_profit`
+		)
+		values
+		(
+		#{userId},
+		#{money},
+		#{type},
+		#{kind},
+		#{robotProfit}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.AiRobotContractDO">
+		update t_ai_robot_contract
+		<set>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="money != null">`money` = #{money}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="type != null">`type` = #{type}, </if>
+			<if test="kind != null">`kind` = #{kind}, </if>
+			<if test="robotProfit != null">`robot_profit` = #{robotProfit}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from t_ai_robot_contract where id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_ai_robot_contract where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

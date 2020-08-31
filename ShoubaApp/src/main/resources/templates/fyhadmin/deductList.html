@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<script src="../../js/jquery-3.5.1.js"></script>
+			<script src="../../js/vue.js"></script>
+			<title>扣款记录</title>
+			<style>
+				header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+				[v-cloak]{display: none;}
+			</style>
+		</head>
+		<body>
+			<header >
+				<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+				<h1>扣款记录</h1>
+			</header>
+			<div class="main"  >
+				<div class="agent-seach">
+					<span>
+						<img src="../../img/seach.png" />
+						<input type="search" placeholder="搜索姓名/机构/公司" v-model="keywords"/>
+					</span>
+					<span>查询</span>
+				</div>
+				<div class="seach-list-warp">
+					<div class="details-warp">
+						<div class="details-item">
+							<ul class="item-txt" v-if="item.amount>1"  v-for="(item,index) in seach(keywords)" :key="index">
+								<li>
+									<span>姓名：</span>
+									<span>{{item.real_name}}</span>
+								</li>
+								<li>
+									<span>金额：</span>
+									<span class="color-blue">￥{{item.amount}}</span>
+								</li>
+								<li>
+									<span>手机号：</span>
+									<span>{{item.user_tel}}</span>
+								</li>
+								<li>
+									<span>身份证号码：</span>
+									<span>{{item.user_card}}</span>
+								</li>
+								<li>
+									<span>开户行：</span>
+									<span>{{item.bank_name}}</span>
+								</li>
+								<li>
+									<span>银行卡号：</span>
+									<span>{{item.bank_account}}</span>
+								</li>
+								<!-- <li>
+									<span>代扣凭证：</span>
+									<span>ad45ad1asdfasd1f5sdf45sd</span>
+								</li> -->
+								<li>
+									<span>扣款时间：</span>
+									<span>{{formartDate(item.apply_datetime)}}</span>
+								</li>
+								<li>
+									<span>所属公司：</span>
+									<span class="color-blue">{{item.org_name}}</span>
+								</li>
+								<li>
+									<span>所属机构：</span>
+									<span class="color-blue">{{item.org_agent_name}}</span>
+								</li>
+								<li>
+									<span>拒绝原因：</span>
+									<span class="color-blue">{{item.approve1_mark}}</span>
+								</li>
+								<li>
+									<span>状态：</span>
+									<span class="color-blue">{{item.status}}</span>
+								</li>
+								<!-- <li>
+									<span>备注：</span>
+									<span></span>
+								</li> -->
+							</ul>
+									
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<script type="text/javascript">
+				var vmm = new Vue({
+					el:'.main',
+					data:{
+						keywords:'',
+						datalist:[]
+						
+					},
+					created(){
+						this.getdata();
+						this.status()
+						},
+					methods:{
+						getdata(){
+							var that = this;
+							jQuery.ajax({
+								type:'post',
+								datatype:'json',
+								async:false,
+								url:'/yilian/api/deductOrder',
+								
+								success:function(res){
+									//debugger
+									console.log(res)
+									if(res.errorCode == 00000){
+										that.datalist= res.data
+										console.log(that.datalist)
+									}
+								},
+								error:function(res){
+									console.log(res)
+									layer.msg(res)
+								}	
+								
+							})
+							console.log(that.datalist)
+						},
+						seach(keywords){
+							return this.datalist.filter(item => {
+								// console.log(keywords);
+								if(item.org_agent_name!=null){
+								if (item.real_name.indexOf(keywords) != -1 || item.org_name.indexOf(keywords) != -1 || item.org_agent_name.indexOf(keywords) != -1) {
+									// console.log(keywords);
+									return item
+									} //filter方法来循环数组返回的是一个符合条件的新数组
+								}else{
+									if (item.real_name.indexOf(keywords) != -1 || item.org_name.indexOf(keywords) != -1) {
+										// console.log(keywords);
+										return item
+									} //filter方法来循环数组返回的是一个符合条件的新数组
+								}
+								})
+							},
+							formartDate(param) {
+							 let date = new Date(param);
+							 Y = date.getFullYear() + '-';
+							 M = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) + '-' : date.getMonth() + 1 + '-';
+							 D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + ' ';
+							 h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+							 m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ':' : date.getMinutes() + ':';
+							 s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+							 return Y + M + D + h + m + s;
+							 },
+						status(){
+							this.datalist.map(function (item) {
+						          if (item.status == '96') {
+						            item.status = '扣款成功,已结算'
+						          }  else if (item.status == '91') {
+						           item.status = '扣款失败,请重新发起扣款'
+						          } else if (item.status == '06') {
+									  item.status = '扣款中'
+								  } else if (item.status == '99') {
+									  item.status = '扣款成功,结算失败'
+								  } else if (item.status == '94') {
+									  item.status = '扣款成功,待结算'
+								  } else if (item.status == '90') {
+									  item.status = '审核拒绝'
+								  } else {
+						            return
+						          }
+						        })
+						
+						}
+					
+					},
+					
+					
+					
+				}) 
+			</script>
+	</body>
+</html>

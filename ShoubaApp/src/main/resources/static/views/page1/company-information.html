@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<title>公司信息录入</title>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>公司信息录入</h1>
+		</header>
+		<div class="informmation-form">
+			<div id="form1">
+				<label>
+					<span>公司名称</span>
+					<input type="text" placeholder="请输入公司名称" id="company-name"/>
+				</label>
+				<label>
+					<span>公司地址</span>
+					<input type="text" placeholder="请输入公司详细地址" id="company-address"/>
+				</label>
+			</div>
+			<div id="form2">
+				<label>
+					<span>姓名</span>
+					<input type="text" placeholder="请输入公司负责人姓名" id="name"/>
+				</label>
+				<label>
+					<span>电话</span>
+					<input type="text" placeholder="请输入联系电话" id="phone"/>
+				</label>
+			</div>
+			<div class="complete">
+				<button>完成</button>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			
+			$('.complete').click(function(){
+				var companyname = $('#company-name').val();
+				var companyaddress = $('#company-address').val();
+				var name = $('#name').val();
+				var phone = $('#phone').val();
+				if(!isKong(companyname,$("#company-name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(companyaddress,$("#company-address").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(name,$("#name").attr("placeholder"))){
+					return false;
+				}
+				if(!isKong(phone,$("#phone").attr("placeholder"))){
+					return false;
+				}
+				if(!telcheck(phone)){
+					return false;
+					
+				}
+				
+			})
+				
+			
+			
+			
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>我的推广码</title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			.se h1:first-child{text-align: center;color: #577AEF;font-size:2.2rem !important;}
+			.se h1:nth-child(2){text-align: center;color: #577AEF;font-size:2rem !important;letter-spacing: 2px;}
+			.codebox{margin: 5% 0px;}
+			.coppy{display: flex;flex-direction: column;justify-content: center;}
+			.coppy span{color: #333333;font-size: 1.3rem;}
+			.coppy p{font-size: 1.3rem;letter-spacing: 1px;padding: 6% 0px;}
+			.invite{position: relative;display: block;margin: 2% auto;text-align: center;text-decoration: none;color: #666666;font-size: .9rem;padding: 2% 0px;}
+			.invite::before{  position: absolute;content: '';height: 0;width: 0;overflow: hidden;  font-size: 0; line-height: 0; border-color: #4D80F0 transparent transparent transparent;  border-style: solid;  border-width: 8px; right:24%; -webkit-transform: rotate(-90deg);  top: 30%;transform: rotate(-90deg);}
+		
+		</style>
+	</head>
+	<body style="background: #EEEEEE;">
+		<div class="header">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>我的推广码</h1>
+		</div>
+		<div class="gen_cod">
+	
+			<section class="se">
+				<h1>YDF </h1>
+				<h1>欢迎您的加入</h1>
+				<div class="codebox">
+					<div id="qrcode">
+						
+					</div>
+					<div class="coppy"><span>我的邀请码</span><p id="vi_code">YUD58545</p></div>
+					<a href="javascript:;"  data-clipboard-target="#vi_code" onclick="copy()" class="copyBtn">复制邀请码</a>
+				</div>
+			</section>
+			<!--<a href="/Invitate" class="invite">已入场和未入场会员</a>-->
+			<!--<section>
+				<h1>邀请记录</h1>
+				<dl class="dl">
+				
+					<dt>
+							<span><strong id="underNum">0</strong>人</span>
+							<p>共邀请好友</p>
+					</dt>
+					
+					<dt>
+							<span><strong id="havaingNum">0</strong>人</span>
+							<p>已报单人数</p>
+					</dt>
+					
+				</dl>
+				
+			</section>-->
+		</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script>
+		
+		var address;
+		function inivation_init(){
+			var code;
+			var index = layer.load(1, {
+   	    		shade: [0.8, '#393D49'] //0.1透明度的白色背景
+   			});
+			$.ajax({
+				type : "POST",
+   				url : '/user/inivation/inivation_user_code',
+   				dataType : "json",
+   				data : {},
+   				async: false,
+   				success : function(data) {
+   					if(data.success==true){
+   						if(data.data=="loginOutTime"){
+   							layer.msg(data.msg, {
+   								icon:5,
+   								shade: [0.5, '#f5f5f5'],scrollbar: false,offset: '45%',
+   								time : 2000,
+   								end:function(){
+   									window.location.href="/login";
+   								}
+   							});
+   						}else {
+   							$("#underNum").html(data.data.num);
+   							$("#havaingNum").html(data.data.num1);
+   							$("#vi_code").html(data.data.share_rqcode);
+   							caode(data.data.url);
+   							layer.closeAll();
+						}
+   					} else {
+   						layer.closeAll();
+   						if(data.data=='Frozen'){
+   							layer.msg(data.msg, {icon:5,shade: [0.5, '#f5f5f5'],scrollbar: false,offset: '45%',time : 2000,
+   	    						end:function(){
+   	    							window.location.href="/login";
+   							}});
+   						} else {
+   							layer.msg(data.msg, {icon:5,shade: [0.5, '#f5f5f5'],scrollbar: false,offset: '45%',time : 2000,
+   	    						end:function(){
+   	    							layer.closeAll();
+   							}});
+   						}
+   					}
+   				}
+   				
+			})
+			
+		}	
+    	inivation_init();
+    	function caode(code){
+    		jQuery('#qrcode').qrcode({
+				render: "canvas", //也可以替换为table
+				width: 150,
+				height: 150,
+				text: code
+			});
+			
+			$('canvas').css({
+				'width': '100%',
+				"height": "100%"
+			});
+			//让二维码宽高一样大
+			$(".qrcode").height($(".qrcode").width())
+    	}
+		
+		</script>
+		<script>
+			function copy(){
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			clipboard.on('error', function(e) {
+            console.log(e);
+        });
+
+}
+		</script>
+	</body>
+</html>

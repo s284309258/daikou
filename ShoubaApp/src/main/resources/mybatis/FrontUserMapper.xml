@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.FrontUserDao">
+	<!-- 查询某个用户父级，多少代之间，存在相同的等级 -->
+	<select id="listSameLevel" parameterType="com.renegade.domain.FrontUserDO">
+		SELECT * FROM t_front_user WHERE FIND_IN_SET(user_id,#{parrentChain}) AND
+		(algebra BETWEEN #{smallValue} AND #{bigValue} ) AND 
+		user_level=#{userlevel}
+	</select>
+	
+		<select id="getTeamDetaulUser" resultType="java.util.HashMap">
+	 SELECT t.user_name,t.user_tel,t.user_id,t.user_regtimes,(SELECT COUNT(1) FROM t_front_user rn WHERE FIND_IN_SET(t.user_id,rn.parent_chain))AS under_num,
+		IF(t.user_pid=#{userId},"直推","间推") AS user_pid
+		FROM t_front_user t WHERE FIND_IN_SET(#{userId},parent_chain)
+	</select>
+	<!-- 增加特价票数量 -->
+	<update id="updateAddTickets">
+	     update t_front_user set user_ticket=user_ticket+#{num} where  user_id=#{userId}
+	</update>
+	<update id="updateReduceTickets">
+	     update t_front_user set user_ticket=user_ticket-#{num} where  user_id=#{userId} and (user_ticket-#{num})&gt;=0
+	</update>
+
+	<!--升级,必须交割完成以后才进行升级 -->
+	<update id="updateLevel">
+		update t_front_user set
+		user_level=#{newLevel},user_limit=1
+		where user_id=#{userId} and
+		user_level=#{oldLevel} and is_active=1 and user_limit=0
+	</update>
+	<!-- 查看伞下人数 -->
+	<select id="underNumAll" resultType="int">
+		SELECT COUNT(*) FROM
+		t_front_user WHERE FIND_IN_SET(#{userId},parent_chain) 
+	</select>
+	<!-- 伞下团队人数以及对应的级别的人数 -->
+	<select id="getUnderNUm" resultType="java.util.HashMap">
+		SELECT COUNT(*)
+		total,IFNULL(user_level,0)as userLevel,(SELECT COUNT(*) FROM
+		t_front_user WHERE FIND_IN_SET(#{userId},parent_chain) AND
+		is_active=1) as allTotal
+		FROM (SELECT * FROM t_front_user WHERE
+		FIND_IN_SET(#{userId},parent_chain)
+		)AS tn WHERE
+		user_level=#{userLevel} AND is_active=1 GROUP BY
+		user_level HAVING
+		total>=#{num}
+	</select>
+	<!--用户的ut消费流水 -->
+	<select id="getFlowerRecordUT" resultType="java.util.HashMap">
+		select DATE_FORMAT(l.create_time,'%Y-%m-%d %T') AS time,
+		(CASE l.type
+		WHEN 1 THEN
+		'退还加盟费'
+		WHEN 2 THEN
+		'UT转账转出'
+		WHEN 3 THEN
+		'UT转账转入'
+		WHEN 4 THEN
+		'UT兑换VFS'
+		WHEN 5 THEN
+		'加盟费'
+		WHEN 6 THEN
+		'后台UT拨币'
+		WHEN 7 THEN
+		'后台UT扣币'
+		WHEN 9 THEN
+		'动态收益'
+		WHEN 10 THEN
+		'分享收益奖励'
+		WHEN 11 THEN
+		'UT定期买入'
+		WHEN 12 THEN
+		'UT定期赎回'
+		WHEN 13 THEN
+		'UT活期买入'
+		WHEN 14 THEN
+		'UT活期赎回'
+		WHEN 20
+		THEN
+		'UT共振消费'
+		WHEN 25 THEN
+		'社区分享收益'
+		WHEN 99 THEN
+		'零售制度收益'
+		WHEN 999 THEN
+		'商城制度收益'
+		ELSE
+		'其他'
+		END )as assetsName,
+		l.assets_change as assetsNum from t_front_flowing_record_ut l
+		where
+		l.user_id = #{userId}
+		<!-- <if test="type==1"> and l.assets_change>0 </if> <if test="type==2"> 
+			and l.assets_change &lt; 0 </if> -->
+		ORDER BY l.create_time DESC
+	</select>
+	<!--用户的usdt消费流水 -->
+	<select id="getFlowerRecordUSDT" resultType="java.util.HashMap">
+		select DATE_FORMAT(l.create_time,'%Y-%m-%d %T') AS time,
+		(CASE l.type
+		WHEN 1 THEN
+		'退还加盟费'
+		WHEN 2 THEN
+		'USDT转账转出'
+		WHEN 3 THEN
+		'USDT转账转入'
+		WHEN 4 THEN
+		'USDT兑换VFS'
+		WHEN 5 THEN
+		'加盟费'
+		WHEN 6 THEN
+		'后台USDT拨币'
+		WHEN 7 THEN
+		'后台USDT扣币'
+		WHEN 10 THEN
+		'分享收益奖励'
+		WHEN 11 THEN
+		'USDT定期买入'
+		WHEN 12 THEN
+		'USDT定期赎回'
+		WHEN 13 THEN
+		'USDT活期买入'
+		WHEN 14 THEN
+		'USDT活期赎回'
+		WHEN 20
+		THEN
+		'USDT共振消费'
+		WHEN 500 THEN
+		'手续费'
+		ELSE
+		'其他'
+		END )as assetsName,
+		l.assets_change as assetsNum from t_front_flowing_record_usdt l
+		where
+		l.user_id = #{userId}
+		<!-- <if test="type==1"> and l.assets_change>0 </if> <if test="type==2"> 
+			and l.assets_change &lt; 0 </if> -->
+		ORDER BY l.create_time DESC
+	</select>
+	<!--用户的VFS消费流水 -->
+	<select id="getFlowerRecordVFS" resultType="java.util.HashMap">
+		select DATE_FORMAT(l.create_time,'%Y-%m-%d %T') AS time,
+		(CASE l.type
+		WHEN 1 THEN
+		'退还加盟费'
+		WHEN 2 THEN
+		'VFS转账转出'
+		WHEN 3 THEN
+		'VFS转账转入'
+		WHEN 4 THEN
+		'VFS提币'
+		WHEN 500 THEN
+		'交易手续费'
+		WHEN 6 THEN
+		'购物消费'
+		WHEN 7 THEN
+		'委托挂售收益'
+		WHEN 8 THEN
+		'店铺收益'
+		WHEN 9 THEN
+		'分享奖收益'
+		WHEN 10 THEN
+		'提币审核不通过退回'
+		WHEN 11 THEN
+		'VFS定期买入'
+		WHEN 12 THEN
+		'VS定期赎回'
+		WHEN 13 THEN
+		'VFS活期买入'
+		WHEN 14 THEN
+		'VFS活期赎回'
+		WHEN 15 THEN
+		'VFS活期收益'
+		WHEN 16 THEN
+		'VFS定期收益'
+		WHEN 20
+		THEN
+		'共振信仰者收益'
+		WHEN 21
+		THEN
+		'共振幸运者收益'
+		WHEN 22
+		THEN
+		'共振裂变者收益'
+		WHEN 23
+		THEN
+		'vs提币手续费'
+		WHEN 24
+		THEN
+		'VFS充币'
+		WHEN 151
+		THEN
+		'UT活期利息'
+		WHEN 152
+		THEN
+		'VFS活期利息'
+		WHEN 150
+		THEN
+		'USDT活期利息'
+		WHEN 160
+		THEN
+		'USDT定期利息'
+		WHEN 161
+		THEN
+		'UT定期利息'
+		WHEN 162
+		THEN
+		'VFS定期利息'
+
+		ELSE
+		'其他'
+		END )as assetsName,
+		l.assets_change as assetsNum from t_front_flowing_record_vfs l
+		where
+		l.user_id = #{userId}
+		<!-- <if test="type==1"> and l.assets_change>0 </if> <if test="type==2"> 
+			and l.assets_change &lt; 0 </if> -->
+		ORDER BY l.create_time DESC
+	</select>
+	<select id="getFlowerRecordCN" resultType="java.util.HashMap">
+		select DATE_FORMAT(l.create_time,'%Y-%m-%d %T') AS time,
+		(CASE l.type
+		WHEN 1 THEN
+		'提货积分收益'
+		WHEN 2 THEN
+		'买单批发仓单收益'
+		WHEN 3 THEN
+		'积分提货消费'
+		WHEN 4 THEN
+		'挂买单消费'
+		WHEN 5 THEN
+		'交易手续费'
+		WHEN 6 THEN
+		'挂卖单收益'
+		WHEN 7 THEN
+		'用户撤单'
+		WHEN 8
+		THEN
+		'卖单消费'
+		WHEN 9 THEN
+		'买单消费'
+		WHEN 10 THEN
+		'配批发单消费'
+		WHEN 11 THEN
+		'提币消费'
+		WHEN 12 THEN
+		'提币退款'
+		WHEN 13 THEN
+		'提币手续费消费'
+		WHEN 14 THEN
+		'后台增加余额'
+		WHEN 15
+		THEN
+		'后台扣减余额'
+		WHEN 16 THEN
+		'充币'
+		WHEN 17 THEN
+		'提币驳回'
+		WHEN 18 THEN
+		'资金可交易'
+		WHEN
+		19 THEN
+		'配票资金到账'
+		WHEN 20 THEN
+		'配票积分到账'
+		WHEN 22 THEN
+		'配票可提现'
+		WHEN 21 THEN
+		'配票可交易'
+		ELSE
+		'其他'
+		END )as assetsName,
+		<!-- IF(l.assets_change>0,1,2)as typeClass, -->
+		l.assets_change as assetsNum from t_front_flowing_record l
+		where
+		l.user_id = #{userId}
+		<!-- <if test="type==1"> and l.assets_change>0 </if> <if test="type==2"> 
+			and l.assets_change &lt; 0 </if> -->
+		ORDER BY l.create_time DESC
+	</select>
+	
+	<select id="get"
+		resultType="com.renegade.domain.FrontUserDO">
+		select * from t_front_user where user_id = #{value}
+	</select>
+	<select id="getLock"
+		resultType="com.renegade.domain.FrontUserDO">
+		select * from t_front_user where user_id = #{value} for
+		update
+	</select>
+	<!--忘记密码 -->
+	<update id="updateFrogetPass">
+		update t_front_user set login_password=#{newPass}
+		where user_tel=#{phone}
+	</update>
+	<!-- 减少封顶值额度 -->
+	<update id="updateReduceCapValue">
+		update t_front_user set
+		user_limitsss=user_limitsss-#{num}
+		where
+		user_id=#{userId} and
+		(user_limitsss-#{num})&gt;=0
+	</update>
+	<!-- 变为活跃用户 -->
+	<update id="updateActiveUser">
+		update t_front_user set is_active=1
+		where  user_id=#{userId}  AND (SELECT   usdt_freeze_balance   from t_wallet_manager WHERE  user_id=#{userId}) >=#{num}
+	</update>
+	<update id="updateLimitssssUser">
+		update t_front_user set user_limitsss=1
+		where
+		user_id=#{userId} and user_limitsss=0
+	</update>
+	<update id="updateLimitStatus"
+		parameterType="com.renegade.domain.FrontUserDO">
+		update t_front_user set user_limit=#{newStatus} where
+		user_limit=#{userLimit} and user_id=#{userId}
+	</update>
+	<!-- 修改支付密码 -->
+	<update id="updatePayPass">
+		update t_front_user set pay_password=#{newPass} where
+		user_tel=#{phone}
+	</update>
+	<!-- 查询昨天的直推排行榜 -->
+	<select id="getRowsYestoday" resultType="java.util.HashMap">
+		SELECT COUNT(*) total
+		,t2.user_name as user_name
+		FROM t_front_user t1
+		LEFT JOIN t_front_user
+		t2 on
+		t1.user_pid= t2.user_id
+		WHERE TO_DAYS(NOW())-TO_DAYS(
+		t1.user_regtimes)
+		&lt;= 1 GROUP BY t2.user_pid
+		ORDER BY total DESC
+		LIMIT
+		0,3
+	</select>
+	<select id="findUserByPhone"
+		resultType="com.renegade.domain.FrontUserDO"
+		parameterType="java.lang.String">
+		select * from t_front_user where user_tel = #{phone}
+	</select>
+	<select id="findUserByEmail"
+		resultType="com.renegade.domain.FrontUserDO">
+		select * from t_front_user where user_email = #{phone} or
+		user_tel = #{phone}
+	</select>
+	<!-- 根据邀请码查询用户信息 -->
+	<select id="findUserByCode"
+		resultType="com.renegade.domain.FrontUserDO">
+		select * from t_front_user where invitation_code =
+		#{invitationCode}
+	</select>
+	<!-- 注册增加直推人数 -->
+	<update id="updateParentDirectNum">
+		update t_front_user set direct_num=direct_num+1 where
+		user_id=#{value}
+	</update>
+	<select id="list"
+		resultType="com.renegade.domain.FrontUserDO">
+		select
+		*
+		from t_front_user
+		<where>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="accountId != null and accountId != ''"> and account_id = #{accountId} </if>
+			<if test="userName != null and userName != ''"> and user_name = #{userName} </if>
+			<if test="userTel != null and userTel != ''"> and user_tel = #{userTel} </if>
+			<if test="payPassword != null and payPassword != ''"> and pay_password = #{payPassword} </if>
+			<if test="loginPassword != null and loginPassword != ''"> and login_password = #{loginPassword} </if>
+			<if test="userBalance != null and userBalance != ''"> and user_balance = #{userBalance} </if>
+			<if test="headPhoto != null and headPhoto != ''"> and head_photo = #{headPhoto} </if>
+			<if test="userPid != null and userPid != ''"> and user_pid = #{userPid} </if>
+			<if test="userStatus != null and userStatus != ''"> and user_status = #{userStatus} </if>
+			<if test="completeRate != null and completeRate != ''"> and complete_rate = #{completeRate} </if>
+			<if test="occupation != null and occupation != ''"> and occupation = #{occupation} </if>
+			<if test="education != null and education != ''"> and education = #{education} </if>
+			<if test="profile != null and profile != ''"> and profile = #{profile} </if>
+			<if test="age != null and age != ''"> and age = #{age} </if>
+			<if test="sex != null and sex != ''"> and sex = #{sex} </if>
+			<if test="wxId != null and wxId != ''"> and wx_id = #{wxId} </if>
+			<if test="areaId != null and areaId != ''"> and area_id = #{areaId} </if>
+			<if test="userRegtime != null and userRegtime != ''"> and user_regtime = #{userRegtime} </if>
+			<if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+			<if test="benefitType != null and benefitType != ''"> and benefit_type = #{benefitType} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="invitationCode != null and invitationCode != ''"> and invitation_code = #{invitationCode} </if>
+			<if test="userRegtimes != null and userRegtimes != ''"> and user_regtimes = #{userRegtimes} </if>
+			<if test="lng != null and lng != ''"> and lng = #{lng} </if>
+			<if test="lat != null and lat != ''"> and lat = #{lat} </if>
+			<if test="realVerification != null and realVerification != ''"> and real_verification = #{realVerification} </if>
+			<if test="userLimit != null and userLimit != ''"> and user_limit = #{userLimit} </if>
+			<if test="userLimitss != null and userLimitss != ''"> and user_limitss = #{userLimitss} </if>
+			<if test="userLimitsss != null and userLimitsss != ''"> and user_limitsss = #{userLimitsss} </if>
+			<if test="parentChain != null and parentChain != ''"> and parent_chain = #{parentChain} </if>
+			<if test="algebra != null and algebra != ''"> and algebra = #{algebra} </if>
+			<if test="isActive != null and isActive != ''"> and is_active = #{isActive} </if>
+			<if test="userTicket != null and userTicket != ''"> and user_ticket = #{userTicket} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by user_id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_front_user
+		<where>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="accountId != null and accountId != ''"> and account_id = #{accountId} </if>
+			<if test="userName != null and userName != ''"> and user_name = #{userName} </if>
+			<if test="userTel != null and userTel != ''"> and user_tel = #{userTel} </if>
+			<if test="payPassword != null and payPassword != ''"> and pay_password = #{payPassword} </if>
+			<if test="loginPassword != null and loginPassword != ''"> and login_password = #{loginPassword} </if>
+			<if test="userBalance != null and userBalance != ''"> and user_balance = #{userBalance} </if>
+			<if test="headPhoto != null and headPhoto != ''"> and head_photo = #{headPhoto} </if>
+			<if test="userPid != null and userPid != ''"> and user_pid = #{userPid} </if>
+			<if test="userStatus != null and userStatus != ''"> and user_status = #{userStatus} </if>
+			<if test="completeRate != null and completeRate != ''"> and complete_rate = #{completeRate} </if>
+			<if test="occupation != null and occupation != ''"> and occupation = #{occupation} </if>
+			<if test="education != null and education != ''"> and education = #{education} </if>
+			<if test="profile != null and profile != ''"> and profile = #{profile} </if>
+			<if test="age != null and age != ''"> and age = #{age} </if>
+			<if test="sex != null and sex != ''"> and sex = #{sex} </if>
+			<if test="wxId != null and wxId != ''"> and wx_id = #{wxId} </if>
+			<if test="areaId != null and areaId != ''"> and area_id = #{areaId} </if>
+			<if test="userRegtime != null and userRegtime != ''"> and user_regtime = #{userRegtime} </if>
+			<if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+			<if test="benefitType != null and benefitType != ''"> and benefit_type = #{benefitType} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="invitationCode != null and invitationCode != ''"> and invitation_code = #{invitationCode} </if>
+			<if test="userRegtimes != null and userRegtimes != ''"> and user_regtimes = #{userRegtimes} </if>
+			<if test="lng != null and lng != ''"> and lng = #{lng} </if>
+			<if test="lat != null and lat != ''"> and lat = #{lat} </if>
+			<if test="realVerification != null and realVerification != ''"> and real_verification = #{realVerification} </if>
+			<if test="userLimit != null and userLimit != ''"> and user_limit = #{userLimit} </if>
+			<if test="userLimitss != null and userLimitss != ''"> and user_limitss = #{userLimitss} </if>
+			<if test="userLimitsss != null and userLimitsss != ''"> and user_limitsss = #{userLimitsss} </if>
+			<if test="parentChain != null and parentChain != ''"> and parent_chain = #{parentChain} </if>
+			<if test="algebra != null and algebra != ''"> and algebra = #{algebra} </if>
+			<if test="isActive != null and isActive != ''"> and is_active = #{isActive} </if>
+			<if test="userTicket != null and userTicket != ''"> and user_ticket = #{userTicket} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.FrontUserDO"
+		useGeneratedKeys="true" keyProperty="userId">
+		insert into t_front_user
+		(
+		`user_name`,
+		`user_tel`,
+		`pay_password`,
+		`login_password`,
+		`user_pid`,
+		`invitation_code`,
+		`user_regtimes`,
+		`parent_chain`,
+		`algebra`
+
+		)
+		values
+		(
+		#{userName},
+		#{userTel},
+		#{payPassword},
+		#{loginPassword},
+		#{userPid},
+		#{invitationCode},
+		Now(),
+		#{parentChain},
+		#{algebra}
+		)
+	</insert>
+	<update id="updateWalletAddress">
+		update t_front_user t LEFT JOIN t_sys_lock_address t1
+		ON t.user_id=t1.value
+		set
+		user_wallet_address=star_address,t1.status='1'
+		WHERE
+		user_tel=#{userTel} AND t1.status='0'
+	</update>
+	<update id="updateWalletAddressVfsUt">
+		update t_front_user t LEFT JOIN t_sys_lock_address_ut t1
+		ON t.user_id=t1.value
+		set
+		user_wallet_address_ut=star_address,t1.status='1'
+		WHERE
+		user_tel=#{userTel} AND t1.status='0'
+	</update>
+	<!-- 保存注册用户 -->
+	<insert id="insertUser"
+		parameterType="com.renegade.domain.FrontUserDO"
+		useGeneratedKeys="true" keyProperty="userId">
+		insert into t_front_user
+		(
+		`account_id`,
+		`user_name`,
+		`user_tel`,
+		`pay_password`,
+		`login_password`,
+		`user_pid`,
+		`invitation_code`,
+		`wx_id`,
+		`user_regtimes`,
+		`parent_chain`,
+		`algebra`
+
+		)
+		values
+		(
+		#{accountId},
+		#{userName},
+		#{userTel},
+		#{payPassword},
+		#{loginPassword},
+		#{userPid},
+		#{invitationCode},
+		#{wxId},
+		Now(),
+		#{parentChain},
+		#{algebra}
+		)
+	</insert>
+	
+
+	<delete id="remove">
+		delete from t_front_user where user_id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_front_user where user_id in
+		<foreach item="userId" collection="array" open="("
+			separator="," close=")">
+			#{userId}
+		</foreach>
+	</delete>
+  <!-- 根据商户查询商家名称 -->
+  <select id="findStoreNameById" parameterType="int" resultType="String">
+    select t.`profile` from t_front_user t where t.user_id=#{value}
+  </select>
+  <!-- 查找有效用户 -->
+	<select id="findIsActive" resultType="com.renegade.domain.FrontUserDO">
+	  select
+		`user_id`,`account_id`,`user_name`,`user_tel`,`pay_password`,`login_password`,`user_balance`,`head_photo`,`user_pid`,`user_status`,`profile`,`user_regtime`,`order_no`,`benefit_type`,`update_time`,`invitation_code`,`user_regtimes`,`user_limit`,`user_limitss`,`user_limitsss`,`parent_chain`,`algebra`,`is_active`,`user_ticket`,`direct_num`,`under_num`,`user_level`,user_wallet_address_ut,`user_wallet_address`
+		from t_front_user where `is_active`=1
+	</select>
+	<!-- 查询该用户有效直推人数 -->
+	<!--查询直推活跃人数人数 -->
+	<select id="getZhituiNum" resultType="int">
+		SELECT COUNT(*) FROM
+		t_front_user WHERE user_pid=#{userId} and is_active=1
+	</select>
+  
+	
+  <!-- 查询该用户直推用户下有效人数的级别人数 -->
+	<select id="findTeamLevel"  parameterType="java.util.HashMap" resultType="int">
+	   SELECT sum(num) from  (
+SELECT (SELECT COUNT(1) FROM t_front_user t WHERE FIND_IN_SET(rn.user_id,parent_chain)  AND user_level=#{oldLevel} and is_active=1 )AS num
+
+
+from
+
+(SELECT user_id FROM t_front_user WHERE user_pid=#{userId})AS rn GROUP BY user_id ORDER BY num desc limit 0,2  ) as a
+	</select>
+	
+	
+	<!-- 计算收益 -->
+	<select id="listProfit" resultType="com.renegade.domain.FrontUserDO">
+	select
+		`user_id`,`account_id`,`user_name`,`user_tel`,`pay_password`,`login_password`,`user_balance`,`head_photo`,`user_pid`,`user_status`,`complete_rate`,`occupation`,`education`,`profile`,`age`,`sex`,`wx_id`,`area_id`,`user_regtime`,`order_no`,`benefit_type`,`update_time`,`invitation_code`,`user_regtimes`,`lng`,`lat`,`user_limit`,`user_limitss`,`user_limitsss`,`parent_chain`,`algebra`,`is_active`,`user_ticket`,`direct_num`,`under_num`,`user_level`,user_wallet_address_ut,`user_wallet_address`
+		from t_front_user 
+	</select>
+</mapper>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>邀请详情</title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+			<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<style>
+			.frendlist{width: 100%;}
+			.frendlist ul{display: block;}
+			.frendlist ul li{background: white;margin-bottom: 1%;display: flex;flex-direction: row;justify-content: space-between;align-items: center;width: 92%;padding: 5%;}
+			.frendleft{display: flex;position: relative;align-items: center;}
+			.frendleft span{display: block;margin-left: 10%;}
+			.frendleft span h1{font-size: 1rem;font-weight: normal;color: #333333;}
+			.frendleft span p{font-size: .8rem;color: #666666;margin-top: 15%;}
+			.frendleft i{display: block;border-radius: 50%;}
+			.frendleft i img{width: 13vw;height: 13vw;border-radius: 50%;}
+			.frendright{display: flex;flex-direction: column;justify-content: flex-end;}
+			.frendright p{font-size: .85rem;text-align: right;color: #666666;}
+			.frendright p .inter{color: #EB4B40;font-size: 14px;}
+			.frendright p .nono{color: #333333;font-size: 14px;}
+			.frendright p:last-child{margin-top: 5%;}
+			
+		</style>
+	</head>
+	<body style="background: #EEEEEE;">
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>已入场和未入场会员</h1>
+		</div>
+		<div class="frendlist">
+			<ul  id="result">
+				
+			</ul>
+		</div>
+		<script>
+			<!-- 实现滚动条滚动start -->
+			var pageSize =0; // 当前每页条数
+			var lastId=0;
+			var winH = $(document).height();//页面可视区域高度
+			var p=0, t=0; // 顶部和底部的距离
+			$(function(){
+				getData();//初始获取数据，加载数据事件
+				//鼠标滚动事件
+				$(document).scroll(function() {
+					var pageH = $(document).height(); //当前文档总高度
+					var scrollT = $(window).scrollTop();  //滚动条top的值
+					var bottomH = (pageH - winH - scrollT) / winH;  // 当前所滚动位置到底部距离
+					p = $(this).scrollTop(); //顶部距离
+					if (bottomH <= 0) {
+							if (pageSize == 10) {
+								getData();
+							}else{ //没有数据
+								$(".nodata").show().html("别滚动了，已经到底了...");
+							}
+						}
+					setTimeout(function(){t = p;},2000);//延时2秒
+				});
+
+			})
+			function getData() {
+				var html = '';
+				$.ajax({
+					type: "post",
+					url:"/myTean",
+					//当前页由于是按照id倒序排列的，那么最后一个id就是下拉分页的最开始的一个ID
+					data:{"lastId":lastId},
+					success: function (result) {
+						if(result.success){
+							var list = result?result.data:null;
+							if (list!=null) {
+								pageSize =list.length;
+								console.log("data",result.data);
+								$.each(list, function(index, val) {
+									html += `<li>
+										<div class="frendleft">
+										<i>`
+										if (val.user_poto) {
+										html+=`<img src="${val.user_poto}"/>`
+										}else {
+											html+=`<img  src="http://jiasu.cjlapp.com/df6e950f-a7f6-4f8f-aa7c-303bcb15114f5a021b3911a54f7aa571b63ed07afa64.jpg"/>`
+										}
+											html += `</i>
+										<span>`
+										if (val.nick_name) {
+											html+=`<h1>${val.nick_name}</h1>`
+											}else {
+												html+=`<h1>${val.id}</h1>`
+											}
+											
+											html+=`<p>UID:${val.id}</p>
+										</span>
+									</div>
+									<div class="frendright">
+										<p>用户状态：`
+										if (val.user_limit == 1) {
+											html += `	<i class="inter">已进场</i></p>`
+										}else {
+											html += `	<i class="inter">未进场</i></p>`
+										}
+											html += `		<p>注册手机:<em>${val.telphone}</em></p>
+									</div>
+								</li>`;
+									if (index == 9) {
+										lastId=val.id;
+									}
+								});
+								$("#result").append(html);
+							}
+						}
+					}
+				});
+			}
+			<!--end-->
+
+
+		</script>
+		
+	</body>
+</html>

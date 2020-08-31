@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<style>
+		.con ul li span:nth-child(1){width: 30% !important;text-align: left;}
+		.con ul li span:nth-child(3){width: 30% !important;text-align: center;}
+		.con ul li span:nth-child(2){width: 20% !important;text-align: center;}
+		.con ul li span:nth-child(4){width: 20% !important;text-align: right;}
+		 /**加载效果旋转**/
+        @-webkit-keyframes rotate {0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
+        @keyframes rotate {0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);transform: rotate(360deg);}}
+
+        .loadmore {display:block;line-height: 50px;text-align:center;color:#ccc;font-size:14px;position: relative;margin:0px 0px 50px;}
+        .loadmore span{height:20px;width:20px;border-radius:100%;display:inline-block;margin:10px;border:2px solid #f60;border-bottom-color: transparent;vertical-align: middle;-webkit-animation: rotate 1.1s infinite linear;animation: rotate 1.1s infinite linear;}
+        .loadover{position:relative;margin:0px 0px 50px;padding:50px 0;height:20px;line-height:20px;color:#909090;text-align: center;}
+        .loadover span{position:relative;display:inline-block;padding:0 6px;height:20px;background:#F2F2F2;z-index:2}
+        .loadover:after {content:''position: absolute;left: 0;top:50%;width: 100%;height:1px;background:#DCDCDC;z-index:1;display:block;}
+		.blue{color: #4D80F0 !important;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>签到记录</h1>
+			
+		</div>
+		<div class="order-main">
+
+			<p style="width: 100%;background: #EEEEEE;height: 3px;"></p>
+			<div class="con on">
+				<div class="buy">
+					<span>时间</span>
+					<span>获得排单券</span>
+					<span>说明</span>
+				</div>
+				<ul class="mlist" id="result">
+<!--					<li>-->
+<!--						<span>19/11/11 </span>-->
+<!--						<span>+0.1</span>-->
+<!--						<span class="blue">签到成功</span>-->
+<!--					</li>-->
+				</ul>
+			</div>
+
+			
+		</div>
+		<script>
+			<!-- 实现滚动条滚动start -->
+			var pageSize =0; // 当前每页条数
+			var lastId=0;
+			var winH = $(document).height();//页面可视区域高度
+			var p=0, t=0; // 顶部和底部的距离
+			$(function(){
+				getData();//初始获取数据，加载数据事件
+				//鼠标滚动事件
+				$(document).scroll(function() {
+					var pageH = $(document).height(); //当前文档总高度
+					var scrollT = $(window).scrollTop();  //滚动条top的值
+					var bottomH = (pageH - winH - scrollT) / winH;  // 当前所滚动位置到底部距离
+					p = $(this).scrollTop(); //顶部距离
+					if (bottomH <= 0) {
+						if (pageSize == 10) {
+							getData();
+						}else{ //没有数据
+							$(".nodata").show().html("别滚动了，已经到底了...");
+						}
+					}
+					setTimeout(function(){t = p;},2000);//延时2秒
+				});
+
+			})
+			function getData() {
+				var html = '';
+				$.ajax({
+					type: "post",
+					url:"/m9/user/select_sign_record",
+					//当前页由于是按照id倒序排列的，那么最后一个id就是下拉分页的最开始的一个ID
+					data:{"lastId":lastId},
+					success: function (result) {
+						if(result.success){
+							var list = result?result.data:null;
+							if (list!=null) {
+								pageSize =list.length;
+								$.each(list, function(index, val) {
+									html += '<li>'+
+											'<span>'+val.sign_date.substring(0,10)+' </span>'+
+											'<span>'+'+'+val.prize+'</span>'+
+											'<span class="blue">签到成功</span>'+
+											'</li>';
+									if (index == 9) {
+										lastId=val.id;
+									}
+								});
+								$("#result").append(html);
+							}
+						}
+					}
+				});
+			}
+			<!--end-->
+		</script>
+	</body>
+</html>

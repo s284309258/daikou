@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.WalletManagerDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.WalletManagerDO">
+		select
+		`id`,`user_id`,`usdt_balance`,`usdt_due_balance`,`usdt_periodic_balance`,`usdt_active_balance`,`usdt_freeze_balance`,`ut_balance`,`ut_due_balance`,`ut_periodic_balance`,`ut_active_balance`,`ut_freeze_balance`,`vfs_balance`,`vfs_due_balance`,`vfs_periodic_balance`,`vfs_active_balance`,`vfs_freeze_balance`,`update_time`,`benefit_type`,`order_no`,`source_id`
+		from t_wallet_manager where id = #{value}
+	</select>
+	<select id="getDogsDetail" resultType="java.util.HashMap">
+		SELECT
+		IFNULL(SUM(IF(type=0,money,0)) ,0)
+		AS money1,IFNULL(SUM(IF(type=1,money,0)) ,0)
+		AS money2,IFNULL(SUM(IF(type=2,money,0)) ,0)
+		AS money3,
+		IFNULL(SUM(IF(type=0,robot_profit,0)) ,0)
+		AS moneyProfite1,IFNULL(SUM(IF(type=1,robot_profit,0)) ,0)
+		AS moneyProfite2,IFNULL(SUM(IF(type=2,robot_profit,0)) ,0)
+		AS moneyProfite3
+		FROM t_ai_robot_moves_bricks WHERE
+		TO_DAYS(update_time)=TO_DAYS(NOW()) and user_id=#{userId} and state=1
+	</select>
+	<select id="getUserIdWallet"
+		resultType="com.renegade.domain.WalletManagerDO">
+		select * from t_wallet_manager where user_id=#{userId}
+	</select>
+	<!-- usdt减少变冻结 -->
+	<update id="updateUsdtFreeze">
+		update t_wallet_manager set
+		usdt_balance=usdt_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		usdt_freeze_balance=usdt_freeze_balance+#{balacne}
+		where user_id=#{userId} and (usdt_balance-#{balacne})&gt;=0
+	</update>
+	<update id="updateVsFreeze">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		vfs_freeze_balance=vfs_freeze_balance+#{balacne}
+		where user_id=#{userId} and (vfs_balance-#{balacne})&gt;=0
+	</update>
+	<update id="updateUtFreeze">
+		update t_wallet_manager set
+		ut_balance=ut_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		ut_freeze_balance=ut_freeze_balance+#{balacne}
+		where user_id=#{userId} and (ut_balance-#{balacne})&gt;=0
+	</update>
+	<!-- usdt增加变解冻 -->
+	<update id="updateUsdtFreezeReduce">
+		update t_wallet_manager set
+		usdt_balance=usdt_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		usdt_freeze_balance=usdt_freeze_balance-#{balacne}
+		where user_id=#{userId} and (usdt_freeze_balance-#{balacne})&gt;=0
+	</update>
+	<update id="updateVsFreezeReduce">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		vfs_freeze_balance=vfs_freeze_balance-#{balacne}
+		where user_id=#{userId} and (vfs_freeze_balance-#{balacne})&gt;=0
+	</update>
+	<update id="updateUtFreezeReduce">
+		update t_wallet_manager set
+		ut_balance=ut_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		ut_freeze_balance=ut_freeze_balance-#{balacne}
+		where user_id=#{userId} and (ut_freeze_balance-#{balacne})&gt;=0
+	</update>
+	<!-- USDT兑换Vs -->
+	<update id="updateUsdtToVs">
+		update t_wallet_manager set
+		usdt_balance=usdt_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},vfs_balance=vfs_balance+#{vsbalacne}
+		where user_id=#{userId} and (usdt_balance-#{balacne})&gt;=0
+	</update>
+	<!-- UT兑换VS -->
+	<update id="updateUtToVs">
+		update t_wallet_manager set
+		ut_balance=ut_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},vfs_balance=vfs_balance+#{vsbalacne}
+		where user_id=#{userId} and (ut_balance-#{balacne})&gt;=0
+	</update>
+	<!-- usdt减少 -->
+	<update id="updateReduceUsdt">
+		update t_wallet_manager set
+		usdt_balance=usdt_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId} and (usdt_balance-#{balacne})&gt;=0
+	</update>
+	<!-- usdt增加 -->
+	<update id="updateAddUsdt">
+		update t_wallet_manager set
+		usdt_balance=usdt_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId}
+	</update>
+	<!-- ut减少 -->
+	<update id="updateReduceUt">
+		update t_wallet_manager set
+		ut_balance=ut_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId} and (ut_balance-#{balacne})&gt;=0
+	</update>
+	<!-- ut增加 -->
+	<update id="updateAddUt">
+		update t_wallet_manager set
+		ut_balance=ut_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId}
+	</update>
+	<!-- vs减少 -->
+	<update id="updateReduceVs">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance-#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId} and (vfs_balance-#{balacne})&gt;=0
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVs">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 活期-->
+	<update id="updateAddVsHuoqi">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		usdt_due_balance=usdt_due_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVsHuoqi2">
+		update t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		ut_due_balance=ut_due_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVsHuoqi3">
+		update  t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		vfs_due_balance=vfs_due_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVsDingqi">
+		update  t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		usdt_periodic_balance=usdt_periodic_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVsDingqi2">
+		update  t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		ut_periodic_balance=ut_periodic_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<!-- vs增加 -->
+	<update id="updateAddVsDingqi3">
+		update  t_wallet_manager set
+		vfs_balance=vfs_balance+#{balacne},update_time=now(),source_id=#{sourceId},benefit_type=#{benefitType},order_no=#{orderNo},
+		vfs_periodic_balance=vfs_periodic_balance+#{balacne}
+		where user_id=#{userId}
+	</update>
+	<select id="list"
+		resultType="com.renegade.domain.WalletManagerDO">
+		select
+		`id`,`user_id`,`usdt_balance`,`usdt_due_balance`,`usdt_periodic_balance`,`usdt_active_balance`,`usdt_freeze_balance`,`ut_balance`,
+		`ut_due_balance`,`ut_periodic_balance`,`ut_active_balance`,`ut_freeze_balance`,`vfs_balance`,`vfs_due_balance`,`vfs_periodic_balance`,
+		`vfs_active_balance`,`vfs_freeze_balance`,`update_time`,`benefit_type`,`order_no`,`source_id`
+		from t_wallet_manager
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="usdtBalance != null and usdtBalance != ''"> and usdt_balance = #{usdtBalance} </if>
+			<if test="usdtDueBalance != null and usdtDueBalance != ''"> and usdt_due_balance = #{usdtDueBalance} </if>
+			<if
+				test="usdtPeriodicBalance != null and usdtPeriodicBalance != ''"> and usdt_periodic_balance = #{usdtPeriodicBalance} </if>
+			<if test="usdtActiveBalance != null and usdtActiveBalance != ''"> and usdt_active_balance = #{usdtActiveBalance} </if>
+			<if test="usdtFreezeBalance != null and usdtFreezeBalance != ''"> and usdt_freeze_balance = #{usdtFreezeBalance} </if>
+			<if test="utBalance != null and utBalance != ''"> and ut_balance = #{utBalance} </if>
+			<if test="utDueBalance != null and utDueBalance != ''"> and ut_due_balance = #{utDueBalance} </if>
+			<if test="utPeriodicBalance != null and utPeriodicBalance != ''"> and ut_periodic_balance = #{utPeriodicBalance} </if>
+			<if test="utActiveBalance != null and utActiveBalance != ''"> and ut_active_balance = #{utActiveBalance} </if>
+			<if test="utFreezeBalance != null and utFreezeBalance != ''"> and ut_freeze_balance = #{utFreezeBalance} </if>
+			<if test="vfsBalance != null and vfsBalance != ''"> and vfs_balance = #{vfsBalance} </if>
+			<if test="vfsDueBalance != null and vfsDueBalance != ''"> and vfs_due_balance = #{vfsDueBalance} </if>
+			<if test="vfsPeriodicBalance != null and vfsPeriodicBalance != ''"> and vfs_periodic_balance = #{vfsPeriodicBalance} </if>
+			<if test="vfsActiveBalance != null and vfsActiveBalance != ''"> and vfs_active_balance = #{vfsActiveBalance} </if>
+			<if test="vfsFreezeBalance != null and vfsFreezeBalance != ''"> and vfs_freeze_balance = #{vfsFreezeBalance} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="benefitType != null and benefitType != ''"> and benefit_type = #{benefitType} </if>
+			<if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+			<if test="sourceId != null and sourceId != ''"> and source_id = #{sourceId} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_wallet_manager
+		<where>
+			<if test="id != null and id != ''"> and id = #{id} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="usdtBalance != null and usdtBalance != ''"> and usdt_balance = #{usdtBalance} </if>
+			<if test="usdtDueBalance != null and usdtDueBalance != ''"> and usdt_due_balance = #{usdtDueBalance} </if>
+			<if
+				test="usdtPeriodicBalance != null and usdtPeriodicBalance != ''"> and usdt_periodic_balance = #{usdtPeriodicBalance} </if>
+			<if test="usdtActiveBalance != null and usdtActiveBalance != ''"> and usdt_active_balance = #{usdtActiveBalance} </if>
+			<if test="usdtFreezeBalance != null and usdtFreezeBalance != ''"> and usdt_freeze_balance = #{usdtFreezeBalance} </if>
+			<if test="utBalance != null and utBalance != ''"> and ut_balance = #{utBalance} </if>
+			<if test="utDueBalance != null and utDueBalance != ''"> and ut_due_balance = #{utDueBalance} </if>
+			<if test="utPeriodicBalance != null and utPeriodicBalance != ''"> and ut_periodic_balance = #{utPeriodicBalance} </if>
+			<if test="utActiveBalance != null and utActiveBalance != ''"> and ut_active_balance = #{utActiveBalance} </if>
+			<if test="utFreezeBalance != null and utFreezeBalance != ''"> and ut_freeze_balance = #{utFreezeBalance} </if>
+			<if test="vfsBalance != null and vfsBalance != ''"> and vfs_balance = #{vfsBalance} </if>
+			<if test="vfsDueBalance != null and vfsDueBalance != ''"> and vfs_due_balance = #{vfsDueBalance} </if>
+			<if test="vfsPeriodicBalance != null and vfsPeriodicBalance != ''"> and vfs_periodic_balance = #{vfsPeriodicBalance} </if>
+			<if test="vfsActiveBalance != null and vfsActiveBalance != ''"> and vfs_active_balance = #{vfsActiveBalance} </if>
+			<if test="vfsFreezeBalance != null and vfsFreezeBalance != ''"> and vfs_freeze_balance = #{vfsFreezeBalance} </if>
+			<if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+			<if test="benefitType != null and benefitType != ''"> and benefit_type = #{benefitType} </if>
+			<if test="orderNo != null and orderNo != ''"> and order_no = #{orderNo} </if>
+			<if test="sourceId != null and sourceId != ''"> and source_id = #{sourceId} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_wallet_manager
+		(
+		`user_id`
+	
+		)
+		values
+		(
+		#{userId}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.WalletManagerDO">
+		update t_wallet_manager
+		<set>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="usdtBalance != null">`usdt_balance` = #{usdtBalance}, </if>
+			<if test="usdtDueBalance != null">`usdt_due_balance` = #{usdtDueBalance}, </if>
+			<if test="usdtPeriodicBalance != null">`usdt_periodic_balance` = #{usdtPeriodicBalance}, </if>
+			<if test="usdtActiveBalance != null">`usdt_active_balance` = #{usdtActiveBalance}, </if>
+			<if test="usdtFreezeBalance != null">`usdt_freeze_balance` = #{usdtFreezeBalance}, </if>
+			<if test="utBalance != null">`ut_balance` = #{utBalance}, </if>
+			<if test="utDueBalance != null">`ut_due_balance` = #{utDueBalance}, </if>
+			<if test="utPeriodicBalance != null">`ut_periodic_balance` = #{utPeriodicBalance}, </if>
+			<if test="utActiveBalance != null">`ut_active_balance` = #{utActiveBalance}, </if>
+			<if test="utFreezeBalance != null">`ut_freeze_balance` = #{utFreezeBalance}, </if>
+			<if test="vfsBalance != null">`vfs_balance` = #{vfsBalance}, </if>
+			<if test="vfsDueBalance != null">`vfs_due_balance` = #{vfsDueBalance}, </if>
+			<if test="vfsPeriodicBalance != null">`vfs_periodic_balance` = #{vfsPeriodicBalance}, </if>
+			<if test="vfsActiveBalance != null">`vfs_active_balance` = #{vfsActiveBalance}, </if>
+			<if test="vfsFreezeBalance != null">`vfs_freeze_balance` = #{vfsFreezeBalance}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="benefitType != null">`benefit_type` = #{benefitType}, </if>
+			<if test="orderNo != null">`order_no` = #{orderNo}, </if>
+			<if test="sourceId != null">`source_id` = #{sourceId}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="remove">
+		delete from t_wallet_manager where id = #{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_wallet_manager where id in
+		<foreach item="id" collection="array" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+<!-- 分享收益奖励ut -->
+	<update id="shareProfitByUtMap" parameterType="java.util.HashMap" >
+	  update t_wallet_manager 
+		<set>
+		 `update_time` =Now(),
+		<if test="benefitType != null">`benefit_type` = #{benefitType},</if>
+		<if test="vfsBalance != null">`vfs_balance` = `vfs_balance`+ #{vfsBalance}, </if>
+		<if test="orderNo != null">`order_no` = #{orderNo}, </if>
+		<if test="sourceId != null">`source_id` = #{sourceId}</if>
+		</set>
+		where user_id = #{userId} 
+	</update>
+	<select id="getTeamUsdtById" parameterType="int" resultType="java.math.BigDecimal">
+	    select IFNULL(sum(t.usdt_balance),0.0000) from t_wallet_manager t where t.user_id in(select u.user_id from t_front_user u where FIND_IN_SET(#{userId},u.parent_chain))
+	</select>
+</mapper>

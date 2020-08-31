@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/core.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/md5.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jsencrypt.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/public.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<style>
+			#result li time{width: 30%;}
+			#result li span{    display: block; width: 10%;}
+			#result li strong{width: 30%;text-align: right;display: block;overflow: scroll;}
+		</style>
+	</head>
+	<body>
+	<input type="hidden" id="zone" th:value="${zone}">
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>灯火明细</h1>
+		</div>
+		<div class="lamp_light">
+			<ul>
+				<li>
+					<img src="/static/backup/img/blue.png"/>
+					<p th:text="${user['light_blue']}"></p>
+				</li>
+				<li>
+					<img src="/static/backup/img/red.png"/>
+					<p th:text="${user['light_red']}">2</p>
+				</li>
+				<li>
+					<img src="/static/backup/img/green.png"/>
+					<p th:text="${user['light_green']}"></p>
+				</li>
+			</ul>
+			<input type="button" value="兑换绿灯" id="green-light"/>
+		</div>
+		<p class="line"></p>
+		<div class="light_Detailed">
+			<h1><i></i><span>明细</span><i></i></h1>
+			<div class="title-list">
+				<span>时间</span>
+				<span>变动</span>
+				<span>说明</span>
+				<span>手机</span>
+			</div>
+			<div class="Detailed_list">
+				<ul id="result">
+<!--					<li>-->
+<!--						<time>19/11/11 11:17</time>-->
+<!--						<span><i>蓝-1</i>,<i>红-2</i>,<i>绿+1</i></span>-->
+<!--						<strong>兑换绿灯</strong>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<time>19/11/11 11:17</time>-->
+<!--                        <span><i><script>explain2(2)</script></i></span>-->
+<!--						<strong>推荐好友激活账号</strong>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<time>19/11/11 11:17</time>-->
+<!--						<span><i>蓝+1</i></span>-->
+<!--						<strong>求购订单交易完成</strong>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<time>19/11/11 11:17</time>-->
+<!--						<span><i>绿-1</i></span>-->
+<!--						<strong>买出订单交易完成</strong>-->
+<!--					</li>-->
+				</ul>
+			</div>
+		</div>
+		<div class="mask" style="display: none;">
+			<div class="cl-box"><div class="lamp_box">
+				<h3>兑换绿灯</h3>
+				<label>
+					<span>兑换数量:</span>
+					<input type="number" id="num" placeholder="请输入兑换数量" />
+				</label>
+				<label>
+					<span>交易密码:</span>
+					<input type="password" id="pay_pwd" placeholder="请输入交易密码" />
+				</label>
+				<p>(1盏蓝灯 &nbsp; &nbsp;+&nbsp; &nbsp;2个红灯 &nbsp; &nbsp;=&nbsp; &nbsp;2个绿灯）</p>
+				<input type="button" onclick="exchange_light()" value="确认兑换" id="bu"/>
+			</div>
+			<span class="close_img"><img src="/static/backup/img/close.png"/></span>
+			</div>
+		</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script>
+			$('#green-light').click(function(){
+				$('.mask').fadeIn(500);
+			})
+			$('.close_img').click(function(){
+				$('.mask').fadeOut(500);
+			})
+         function exchange_light() {
+            	
+					var quantity = $("#zone").val();
+					var num = $("#num").val();
+						if(num%2 != 0){
+						layer.msg('兑换数量必须是2的倍数');
+						return false;
+					}
+						if(num == 0){
+						layer.msg('兑换数量不能为0');
+						return false;
+					}
+					var param = {
+						'pay_pwd': CryptoJS.MD5(document.getElementById("pay_pwd").value).toString().toUpperCase(),
+						'quantity':quantity,
+						'num':num
+					}
+					$.ajax({
+						type:'post',
+						url:'/m9/user/exchange_light',
+						dataType : "json",
+						cache : false,
+						data:{
+							pay_pwd: CryptoJS.MD5(document.getElementById("pay_pwd").value).toString().toUpperCase(),
+							quantity:quantity,
+                            num:num,
+							sign:md5Method(param)
+						},
+						success : function(result) {
+							if(result.success==true){
+								layer.msg(result.msg, {
+									icon: 1,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+									end:function(){
+										window.location.href = "/m9/user/index";
+									}
+								});
+							}else{
+								layer.msg(result.msg, {
+									icon: 2,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+									end:function(){
+
+									}
+								});
+							}
+						},
+						error : function(result){
+						}
+					});
+            }
+		</script>
+
+    <script>
+        <!-- 实现滚动条滚动start -->
+        var pageSize =0; // 当前每页条数
+        var lastId=0;
+        var winH = $(window).height();//页面可视区域高度
+        var p=0, t=0; // 顶部和底部的距离
+        $(function(){
+            getData();//初始获取数据，加载数据事件
+            //鼠标滚动事件
+            $(window).scroll(function() {
+                var pageH = $('#result').height(); //当前文档总高度
+                var scrollT = $(window).scrollTop();  //滚动条top的值
+                var bottomH = (pageH - winH - scrollT) / winH;  // 当前所滚动位置到底部距离
+                p = $(this).scrollTop(); //顶部距离
+                    if (bottomH < 1) {
+                        if (pageSize == 10) {
+                            getData();
+                        }else{ //没有数据
+                            $(".loadover span").eq(0).html('到底了～');
+                        }
+                    }
+                setTimeout(function(){t = p;},2000);//延时2秒
+            });
+
+        })
+        function getData() {
+            var html = '';
+            $.ajax({
+                type: "post",
+                url: '/m9/user/select_flowing_record_light',
+				async:false,
+                //当前页由于是按照id倒序排列的，那么最后一个id就是下拉分页的最开始的一个ID
+                data:{
+                    lastId:lastId,
+                    quantity:$("#zone").val()
+                },
+                success: function (result) {
+                    if(result.success){
+                        var list = result?result.data:null;
+                        if (list!=null) {
+                            pageSize =list.length;
+                            $.each(list, function(index, val) {
+                                html += '<li>'+
+                                        '<time>'+val.create_time+'</time>'+
+                                        '<span><i>'+explain2(val.type,val.assets_change)+'</i></span>'+
+                                        '<strong>'+explain3(val.type)+'</strong>'+
+										'<strong>'+val.order_no+'</strong>'+
+                                        '</li>'
+                                if (index == 9) {
+                                    lastId=val.flowing_id;
+                                }
+                            });
+                            $("#result").append(html);
+                        }
+                    }
+                }
+            });
+        }
+        <!--end-->
+        function copy(val){
+            var clipboard=new Clipboard(".iconfont");
+            clipboard.on("success",function(e){
+                layer.msg("复制成功",{ icon: 1,time: 2000});
+            });
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+
+        }
+
+        function explain2(type,assets_change){
+            if(type==6661){
+                return '红+1';
+            }
+            if(type==6662){
+                return '蓝+1';
+            }
+            if(type==6663){
+                return '绿-1';
+            }
+
+            if(type==6664){
+                return '蓝'+1*assets_change;
+            }
+            if(type==6665){
+                return '红'+1*assets_change;
+            }
+            if(type==6666){
+                return '绿+'+assets_change;
+            }
+            return '';
+        }
+
+        function explain3(type){
+            if(type==6661){
+                return '推荐好友激活账号';
+            }
+            if(type==6662){
+                return '完成入场';
+            }
+            if(type==6663){
+                return '完成出场';
+            }
+
+            if(type==6664){
+                return '兑换绿灯';
+            }
+            if(type==6665){
+                return '兑换绿灯';
+            }
+            if(type==6666){
+                return '兑换绿灯';
+            }
+        }
+    </script>
+	</body>
+</html>

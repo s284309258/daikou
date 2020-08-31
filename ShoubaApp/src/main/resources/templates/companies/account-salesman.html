@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<title>业务员开户</title>
+		<style>
+			#form1 label{border-bottom: 1px solid #E6E6E6;}
+			#form1 label:last-child{border-bottom: none;}
+			#form1  span{font-size: .95rem;}
+		</style>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>业务员开户</h1>
+		</header>
+		<div class="informmation-form">
+			<div id="form1">
+				<label>
+					<span>姓名</span>
+					<input type="text" placeholder="请输入业务员姓名" id="user"/>
+				</label>
+				<label>
+					<span>身份证号码</span>
+					<input type="text" placeholder="请输入身份证号码" id="idcard"/>
+				</label>
+				<label>
+					<span>电话</span>
+					<input type="text" placeholder="请输入联系电话" id="phone"/>
+				</label>
+			</div>
+
+			<div class="complete">
+				<button>完成</button>
+			</div>
+		</div>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			$('.complete').click(function(){
+				var user = $('#user').val();
+				var idcard = $('#idcard').val();
+				var phone = $('#phone').val();
+				if(!isKong(user,$('#user').attr('placeholder'))){
+					return false
+				}
+				if(!isKong(idcard,$('#idcard').attr('placeholder'))){
+					return false
+				}
+				if(!isKong(phone,$('#phone').attr('placeholder'))){
+					return false
+				}
+				if(!Idcard(idcard)){
+					return false
+				}
+				
+				
+			})
+			
+			
+				
+		</script>
+	</body>
+</html>

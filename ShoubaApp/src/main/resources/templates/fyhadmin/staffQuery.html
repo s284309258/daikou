@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/reset.css" />
+		<title>湖南大幅有限公司</title>
+		<style>
+			header{background:#0077FF !important;}
+			header h1{color: #FFFFFF;}
+			.seach-name{width: 100%;display: -wap-marquee;}
+			.fl{width: 100%;display: flex;justify-content: space-between;align-items: center;}
+			.starf-img{width: 50vw;height: 50vw;}
+		</style>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="/img/w-back.png"/></i>
+			<h1 th:text="${title}">湖南大幅有限公司</h1>
+		</header>
+		<main class="main">
+			<form name="form" method="get" action="/yilian/api/staffQueryName">
+			<input type="hidden" th:name="comp_id" th:value="${comp_id}"/>
+			<input type="hidden" th:name="id" th:value="${id}"/>
+			<div class="agent-seach">
+				<span>
+					<img src="/img/seach.png" />
+					<input type="search" th:name="real_name" placeholder="搜索业务员" />
+				</span>
+				<span onclick="staffRecordQuery()">查询</span>
+			</div>
+			<div class="seach-list-warp">
+				<ul class="seach-list" th:each="rd :${record}">
+					<li>
+						<a href="">
+							<span class="seach-name">
+								<p class="fl">
+									<span>姓名：</span><span th:text="${rd.real_name}">陈一</span>
+								</p>
+								<p class="fl">
+									<span>电话：</span><span th:text="${rd.user_tel}">15325544125</span>
+								</p>
+								<p class="fl">
+									<span>开户时间：</span><span th:text="${rd.create_datetime}"></span>
+								</p>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			</form>
+		</main>
+		
+		<script type="text/javascript">
+				function staffRecordQuery(){
+					document.forms[0].submit();
+				}
+			</script>
+	</body>
+</html>

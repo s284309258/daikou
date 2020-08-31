@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title></title>
+	<link rel="stylesheet" href="/static/backup/css/css.css" />
+	<link rel="stylesheet" href="/static/backup/css/font.css" />
+	<style>
+		#up_pop{background: none;outline: none;border: none;}
+		.maskBox img{width: 50%;}
+		.img_up{overflow: scroll;width: 100%;margin: 0px auto;text-align: center;background: #E5E5E5;border-radius: 6px;padding: 10px 0px;margin-top: 15px;}
+		.touImg{width: 100%;max-height: 30vh !important;}
+		.mask3{flex-direction: column;display: flex;justify-content: center;align-items: center;}
+		.check_qr{display: flex;justify-content: center; align-items: center;width: 50vw !important;height: 50vw !important;border: 1px solid #E5E5E5;}
+		.closeimg{margin-top: 3%;}
+		.touImg i{font-style: normal;color:#577AEF;}
+	</style>
+</head>
+<body>
+<div class="head">
+	<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>充币</h1>
+</div>
+<form enctype="multipart/form-data" id="author_form">
+
+
+
+	<div class="chartop">
+		<h2>充币地址</h2>
+		<p id="vi_code" th:text="${m9_eos_adress}"></p>
+		<div class="right"><span class="copyBtn" data-clipboard-target="#vi_code">复制收款地址</span><span id="check">查看地址二维码</span></div>
+	</div>
+	<div class="charform">
+		<label>
+			<span>充币数量</span>
+			<input type="number" id="change_num" name="change_num" placeholder="请输入充币数量" class="number"/>
+		</label>
+<!-- 		<label>
+			<span>充币总额</span>
+			<input type="number" value="40" readonly="readonly"/>
+		</label> -->
+		<label>
+			<span>充值单号</span>
+			<input type="" id="change_no" name="change_no" placeholder="请输入充值单号" class="num"/>
+		</label>
+		<label>
+			<div class="upload">
+				<p>交易凭证</p>
+				<div class="img_up">
+					<div id="xmTanDiv_1" class="touImg">
+	                         	<input type="hidden" id="uploadOrderid" name="id" value="">
+	                            <input type="file" name="browerfile" id="xdaTanFileImg_1" style="width: 55px; height: 50px;opacity:0;position:absolute;z-index:2;" onchange="xmTanUploadImg_1(this)" accept="image/*"/>
+	                         	<i style="border-radius: 50px;overflow:hidden;z-index:1;">
+	                         		<img src="/static/backup/img/up.png" id="xmTanImg_1"/>
+	                         		<p>点击上传图片</p>
+	                         	</i>
+                        	</div>
+				</div>
+			</div>
+		</label>
+	</div>
+	<p class="line"></p>
+	<div class="ok">确定</div>
+	<div class="mask3" style="display: none;" >
+		<div class="ckqr-box" style="padding-top: 10%;background: #F5F5F5;">
+			<div class="check_qr" >
+				<div id="qrcode">
+
+				</div>
+			</div>
+			<span class="blue">充币地址</span>
+			<p id="vi_code0" th:text="${m9_eos_adress}"></p>
+			<a class="copyBtn" data-clipboard-target="#vi_code0">复制地址</a>
+			<span class="blue">地址标签</span>
+			<p id="vi_code1" th:text="${eos_address_label}"></p>
+			<p style="color: #EB4B40;font-size: 12px;">请认真核对并填写地址标签,若遗漏标签将导致资金丢失！</p>
+			<a class="copyBtn" data-clipboard-target="#vi_code1">复制标签</a>
+			<div class="tis">
+				<p class="iconfont icon-zhuyi">充币注意事项：</p>
+				<p>1.EOS钱包禁止充值任何除EOS之外的其他资产,非EOS资产充值将不可找回,请确认所充数字币,以免发生不必要的损失。</p>
+				<p>2.请 务必确定网络安全，防止信息泄露或更改</p>
+			</div>
+		</div>
+		<img src="/static/backup/img/close.png" class="closeimg"/>
+	</div>
+
+
+
+
+
+
+
+</form>
+
+<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+<script>
+	jQuery(function(){
+
+
+	});
+	var clipboard=new Clipboard(".copyBtn");
+	clipboard.on("success",function(e){
+		layer.msg("复制成功",{ icon: 1,time: 2000});
+	});
+	function getObjectURL(file){
+		var url = null;
+		if(window.createObjectURL != undefined){
+			url = window.createObjectURL(file);//basic
+		}else if(window.URL != undefined){
+			url = window.URL.createObjectURL(file);
+		}else if(window.webkitURL != undefined){
+			url = window.webkitURL.createObjectURL(file);
+		}
+
+		return url;
+	}
+
+	//实现功能代码
+	function xmTanUploadImg_1(obj) {
+        var file = obj.files[0];
+		console.log(obj);console.log(file);
+		console.log("file.size = " + file.size); //file.size 单位为byte
+		var reader = new FileReader();
+		//读取文件过程方法
+		reader.onloadstart = function (e) {
+		console.log("开始读取....");
+		}
+		reader.onprogress = function (e) {
+		console.log("正在读取中....");
+		}
+		reader.onabort = function (e) {
+		console.log("中断读取....");
+		}
+		reader.onerror = function (e) {
+		console.log("读取异常....");
+		}
+		reader.onload = function (e) {
+		console.log("成功读取....");
+		var size = file.size/1024;
+		var size = size/1024;
+		if (size>4) {
+		alert('上传图片不能超过4MB，请重新选择!');return false;
+		}
+		var img = document.getElementById("xmTanImg_1");
+		img.src = e.target.result;
+		//或者 img.src = this.result; //e.target == this
+		}
+		reader.readAsDataURL(file)
+		}
+	$('#check').click(function(){
+		$("#qrcode").html("");
+		var address=$("#vi_code").text();
+		jQuery('#qrcode').qrcode({
+			width: 150,
+			height: 150,
+			text: address
+		});
+		$('.mask3').show();
+	})
+	$('.closeimg').click(function(){
+		$('.mask3').hide();
+	})
+
+	var t=0;
+	$(".ok").click(function(){
+		
+		var num1 = $('.number').val();
+		var num2 = $('.num').val();
+		if(num1 == ''){
+			layer.msg('充币数量不能为空');
+			return false;
+		}
+
+		if(num2 == '' ){
+			layer.msg('充值单号不能为空');
+			return false;
+		}
+		var formData = new FormData($('#author_form')[0]);
+		$.ajax({
+			type:'post',
+			dataType:'json',
+			url:'/m9/user/addCoin',
+			cache : false,
+			data : formData,
+			processData : false, //data值是FormData对象，不需要对数据做处理。
+			contentType : false,//设置contentType值，因为是由<form>表单构造的FormData对象，且已经声明了属性enctype="multipart/form-data"，所以这里设置为false。
+			success : function(result) {
+				if(result.success==true){
+					layer.msg(result.msg, {
+						icon: 1,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+							window.location.href = "/m9/user/index";
+						}
+					});
+				}else{
+					layer.msg(result.msg, {
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+
+						}
+					});
+				}
+			},
+			error : function(result){
+			}
+		});
+		t++;
+		if(t>1){
+			layer.msg('请勿重复提交');
+			return false;
+		}
+	});
+
+</script>
+</body>
+</html>

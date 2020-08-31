@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.renegade.dao.FrontTiBiLogDao">
+
+	<insert id="addTiBiLog"
+		parameterType="com.renegade.domain.FrontTiBiLogDo">
+		insert into
+		w_tibi_log(send_no,send_time,send_num,send_userid,send_status,send_address,send_check,charge)
+		values
+		(#{sendNo},NOW() ,#{sendNum},#{userId},#{sendStatus},#{sendAddress},#{sendCheck},#{charge})
+	</insert>
+
+	<select id="findTiBiLogByUserId" resultType="java.util.Map">
+		select send_num as sendNum,DATE_FORMAT(send_time,"%Y-%m-%d %T") as
+		time,send_address as sendAddress,
+		(CASE WHEN send_check=0 THEN '提现发起' WHEN send_check=1 THEN '审核不通过' WHEN
+		send_check=2 THEN '提现中' WHEN send_check=3 THEN '提现成功' WHEN
+		send_check=4 THEN '提现失败' ELSE '提现中' END) as status
+		from w_tibi_log where send_userid = #{userId} order by send_time desc
+	</select>
+
+	<update id="updateTiBiLogStatusBySendId">
+		update w_tibi_log set send_status = #{status} where send_id = #{sendId}
+	</update>
+
+</mapper>

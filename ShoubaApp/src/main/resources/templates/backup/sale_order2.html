@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			.Count_time{background: #A0A0A0 !important;}
+			.mask0{overflow-y: scroll;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,.5);top: 0px;left: 0px;z-index: 999;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.mask0 .check_img{width: 80vw;height: 60vh;background: white;border-radius: 10px;padding: 5%;overflow: scroll;}
+			.mask0 .check_img img{width: 100%;}
+			.mask0 .check_img h1{text-align: center;font-size: 1rem;padding: 5% 0px;}
+			.close_img{width: 100%;text-align: center;margin: 5%;}
+			.close_img img{width: 6%;}
+			.masks .check_qr{flex-direction: column;    background: white;padding: 20px; width: 50vw;height: 64vw !important;display: flex; justify-content: center;align-items: center;border-radius: 10px;}
+
+		</style>
+	</head>
+	<body>
+	<input type="hidden" id="eos_address" th:value="${order['eos_address']}"/>
+		<div class="mask" style="display: none;" >
+			<div class="check_qr">
+				<div id="qrcode">
+				
+			</div>
+		<div class="copydiv"><p id="vi_code4" style="width: 100%;word-break: break-all;">45h6dfh45dyhtehetetshdf</p><i class="iconfont  copyBtn" data-clipboard-target="#vi_code4" onclick="copy()">复制地址</i></div>
+
+			</div>
+		</div>
+		<div class="mask0" style="display: none;" >
+
+			<div class="check_img">
+				<h1>打款凭证</h1>
+				<div><img th:src="${order['eos_poto']}" alt=""/></div>
+			</div>
+			<div class="close_img"><img src="/static/backup/img/close.png"/></div>
+		</div>
+		<div class="head_order">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>订单详情</h1>
+			<div class="waiting">
+				<h2>交易已完成</h2>
+				<!--<div class="Count_time">
+					<span id="_h">00</span>:
+            		<span id="_m">00</span>:
+            		<span id="_s">00</span>
+				</div>-->
+<!--				<p>请在30分钟内完成操作,超出时间将取消订单 并对你的账号进行警告,累计3次将进行封号处理.</p>-->
+			</div>
+		</div>
+		<div class="order-list">
+			<ul>
+				<li>
+					<div class="list1">
+						<em><img src="/static/backup/img/EOS.png"/></em>
+						<div class="esolist">
+							<p><span>求购数量：</span><i th:text="${order['quantity']}"></i>EOS</p>
+							<!--<p ><span>求购单价：</span><i th:text="${order['quantity_price']}"></i></p>-->
+							<p style="margin-top: 3%;"><span>交易总额：</span><i th:text="${order['quantity_total']}"></i></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list2">
+					<span>买家联系方式</span>
+					<p th:text="${user['telphone']}?${user['telphone']}"></p>
+					</div>
+				</li>
+				<li>
+					<div class="list3">
+					<span>买家姓名</span>
+						<p th:text="${user['real_name']}?${user['real_name']}"></p>
+					</div>
+				</li>
+				<li>
+					<div class="list6" style="display: flex;">
+						<p>交易凭证</p>
+						<span class="iconfont icon-chakan chek0"><i style="font-size: .9rem">已上传</i></span>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script>
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			</script>
+			<script>
+			jQuery(function(){
+
+			jQuery('#qrcode').qrcode({
+				width: 150,
+				height: 150,
+				text: $("#eos_address").val()
+				});
+		});		
+	$(function () { 
+  $('.chek').click(function (event) { 
+    //取消事件冒泡 
+    event.stopPropagation(); 
+    //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。 
+  $('.mask').fadeToggle('slow'); 
+      return false;
+  }); 
+  
+    $('.mask').click(function(event){
+        var _con = $('.check_qr');  // 设置目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){ 
+           $('.mask').fadeToggle('slow');     //淡出消失
+        }
+   });
+});
+			$('.chek0').click(function(){
+				$('.mask0').show();
+			});
+			$('.close_img img').click(function(){
+				$('.mask0').hide();
+			});
+
+			</script>
+			
+	</body>
+</html>

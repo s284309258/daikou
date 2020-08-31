@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<style>
+			.layui-layer-content{text-align: center !important;font-size: 1rem !important;}
+			.layui-layer-title{display: none !important;}
+			.layui-layer-dialog{border-radius: 10px !important;}
+			.layui-layer-close1{display: none !important;}
+			.layui-layer-btn{display: flex !important;justify-content: space-between !important;border-top: 1px solid #E6E6E6 !important;}
+			.layui-layer-btn0{background: none !important;color: #0077FF !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.layui-layer-btn1{background: none !important;color: #777777 !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.audit-warp{border-bottom: 1px solid #E6E6E6;padding-bottom: 1rem;}
+		</style>
+		<title>代扣审核</title>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>代扣审核</h1>
+		</header>
+		<div class="main-list">
+			<ul>
+				<li class="audit-warp">
+					<dl>
+						<dt>
+							<span>姓名：</span>
+							<span>亚亚</span>
+						</dt>
+						<dt>
+							<span>金额：</span>
+							<span class="color-blue">￥1000.00</span>
+						</dt>
+						<dt>
+							<span>手机号：</span>
+							<span>13542124512</span>
+						</dt>
+						<dt>
+							<span>身份证号码：</span>
+							<span>54227819631118675X</span>
+						</dt>
+						<dt>
+							<span>开户行：</span>
+							<span></span>
+						</dt>
+						<!-- <dt>
+							<span>证件照：</span>
+							<a href="account-information.html"><img src="../../img/next.png" class="next" /></a>
+						</dt> -->
+						<dt>
+							<span>申请时间：</span>
+							<span>2018/09/05 15:34:07</span>
+						</dt>
+						<dt class="flex-right"><button type="button" id="agree">确认扣款</button></dt>
+					</dl>
+				</li>
+
+
+			</ul>
+		</div>
+
+		<!-- js -->
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			$('#agree').click(function() {
+				layer.confirm('确认扣款', {
+					// offset: [200, 600],
+					btn: ['确定', '取消'] //按钮
+				}, function() {
+					layer.msg('扣款成功')
+				}, function() {
+					layer.msg('扣款取消')
+				});
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="/static/backup/css/css.css" />
+<link rel="stylesheet" href="/static/backup/css/font.css" />
+<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/static/backup/layer/layer.js"></script>
+<script type="text/javascript" src="/static/backup/js/core.js"></script>
+<script type="text/javascript" src="/static/backup/js/jsencrypt.js"></script>
+<script type="text/javascript" src="/static/backup/js/md5.js"></script>
+<script type="text/javascript" src="/static/backup/js/public.js"></script>
+<style>
+#getcode, #vicode {
+	position: absolute;
+	right: 5%;
+}
+
+#getcode {
+	width: 35%;
+	text-align: center;
+	color: #577AEF;
+	font-size: .8rem;
+	border-left: 1px solid #577AEF;	
+}
+</style>
+</head>
+<body>
+	<div class="head">
+		<h1>
+			<i class="iconfont icon-fanhui"
+				onclick="javascript:window.history.back(-1);"></i>互转
+		</h1>
+	</div>
+	<div class="interturn">
+		<label> <span>账户余额</span><input type="text"
+			readonly="readonly" th:value="${user.user_lineup_coin}" />
+		</label>
+		<div class="">
+			<label> <span>验证号码</span><input type="text" class="code"
+				placeholder="请输入验证码" style="width: 30% !important;" />
+			<p id="getcode">获取验证码(60S)</p>
+			</label>
+		</div>
+
+		<p class="line"></p>
+		<label> <span>转入账户</span><input type="text"
+			placeholder="请输入转入手机账号" class="account" />
+		</label> <label> <span>转账数量</span><input type="text"
+			placeholder="请输入转账数量" class="number" />
+		</label> <label> <span>交易密码</span><input type="password"
+			placeholder="请输入交易密码" class="pwd" />
+		</label>
+	</div>
+	<div class="ok">确认</div>
+	<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/static/backup/js/check.js"></script>
+	<script type="text/javascript" src="/static/backup/js/gVerify.js"></script>
+	<script type="text/javascript" src="/static/backup/js/xtiper.min.js"></script>
+	<script>
+		//获取手机验证码
+		var t = 0;
+		$("#getcode").click(function() {
+			t++;
+			if (t > 1) {
+				layer.msg('请勿重复点击');
+				return false;
+			}
+			var that = this;
+			getcode(that);
+			$.ajax({
+				type : "POST",
+				url : '/sendCode/transferSendCode',
+				dataType : "json",
+				success : function(data) {
+					if (data.success == true) {
+						layer.msg("验证码已发送", {
+							icon : 6,
+							time : 1000
+						});
+					} else {
+						layer.msg(data.msg, {
+							icon : 5,
+							time : 1000
+						});
+					}
+				}
+			})
+			
+		});
+		$('.ok').click(function() {
+			var code = $('.code').val();
+			var logpwd = $('.pwd').val();
+			var account = $('.account').val();
+			var num = $('.number').val();
+			if(code == ''){
+				layer.msg('验证码不能为空');
+				return false;
+			}
+			if(account == ''){
+				layer.msg('账户不能为空');
+				return false;
+			}
+			if(num == ''){
+				layer.msg('转账数量不能为空');
+				return false;
+			}
+			
+			if(logpwd == ''){
+				layer.msg('交易密码不能为空');
+				return false;
+			}
+			var timeStamp = (new Date()).getTime();
+			var param = {
+				'passWord': CryptoJS.MD5(logpwd).toString().toUpperCase(),
+				'code': code,
+				'type': 1,
+				'tansferAcount': account,
+				'balacne': num,
+				'timeStamp':timeStamp
+			}
+			$.ajax({
+				type : "POST",
+				url : '/transferAccountsUser',
+				dataType : "json",
+				data:{
+					'passWord': CryptoJS.MD5(logpwd).toString().toUpperCase(),
+					'code': code,
+					'type': 1,
+					'tansferAcount': account,
+					'balacne': num,
+					'timeStamp':timeStamp,
+					sign:md5Method(param)
+				},
+				success : function(data) {
+					if (data.success == true) {
+						layer.msg("转账成功", {
+							icon : 6,
+							time : 1000,
+								end:function(){
+								window.location.reload();
+							}
+						});
+					} else {
+						layer.msg(data.msg, {
+							icon : 5,
+							time : 1000
+						});
+					}
+				}
+			})
+
+		})
+	</script>
+</body>
+</html>

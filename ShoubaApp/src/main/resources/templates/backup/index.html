@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/swiper.min.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/swiper.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/nav.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<style>
+		#footer ul li:nth-child(1) a i:nth-child(1){display: block !important;}
+		#footer ul li:nth-child(1) a i:nth-child(2){display: none !important;}
+		#footer ul li:nth-child(1) a p{color: #4D80F0;}
+		.header0 {position: relative;}
+		.header0  span{position: absolute !important;right: 3%;font-size: .95rem;display:flex;top: 30%;color: #4D80F0;}
+		.header0  span img{width:35%;vertical-align: middle;margin-right: 5%;}
+		.maskqd{overflow-y: scroll;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,.5);top: 0px;left: 0px;z-index: 99;display: flex; flex-direction: column;justify-content: center;align-items: center;}
+		.sign{width: 70vw;height:90vw;background: url(/static/backup/img/qiandao.png) no-repeat;background-size: 100% 100%;}
+		.sign h1{font-size: 1.8rem;color: white;text-align: center;margin-top: 50%;letter-spacing: 2px;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+		.sign p{text-align: center;font-size: .8rem;margin-top: 10%;}
+		.sign strong{font-size: 2rem;color: #EB6419;margin: 3% 0px;}
+		.sign span{font-size: 1rem;}
+		.sign span,.sign strong,.sign a{display: block;text-align: center;}
+		.sign a{border-radius: 20px;color: white;background:#4D80F0 ;width: 80%;margin: 3% auto;padding: 2% 0px;}
+		</style>
+	</head>
+	<body>
+		<div class="maskqd">
+			<div class="sign">
+				<h1>签到成功</h1>
+				<p>恭喜你通过签到获得</p>
+				<strong id="qdlabel"></strong>
+				<span>排单券</span>
+				<a href="javascript:;" class="comfire">确定</a>
+			</div>
+		</div>
+		<header class="header0">
+			<h1>首页</h1><span class="singin" id="singin"><img src="/static/backup/img/qdicon.png"/>签到</span>
+		</header>
+		<div class="index">
+		<!--轮播-->
+			<!-- Swiper -->
+			<div class="swiperRow">
+			  <div class="swiper-container">
+			    <div class="swiper-wrapper">
+			      	<div class="swiper-slide">
+			      	<a href="" style="position: relative;">
+			      		<img src="/static/backup/img/banner.png"/>
+			      	</a>
+			      	</div>
+			      	<div class="swiper-slide">
+			      		<a href=""><img src="/static/backup/img/banner.png"/>
+			      		
+			      		</a>
+			      	</div> 
+			    </div>
+			</div>
+			</div>	
+		<!--轮播js-->
+		<!--导航-->
+		<div class="nav_link">
+			<dl>
+				<dt><a href="#">
+					<i><img src="/static/backup/img/liuc.png"/></i>
+					<p>操作流程</p></a>
+				</dt>
+				<dt><a href="/code">
+					<i><img src="/static/backup/img/invte.png"/></i>
+					<p>我的推广码</p></a>
+				</dt>
+				<dt><a href="/myNoticeCenter">
+					<i><img src="/static/backup/img/notice.png"/></i>
+					<p>系统公告</p></a>
+				</dt>
+				<dt><a href="#" id="sever-btn">
+					<i><img src="/static/backup/img/server.png"/></i>
+					<p>联系客服</p></a>
+				</dt>
+			</dl>
+		</div>
+		<!--导航-->
+		<p class="line"></p>
+		<!--4币区-->
+		<div class="Four">
+			<div class="Four_area">
+				<h1><img src="/static/backup/img/bt.png" /><span>4币区</span><img src="/static/backup/img/bt.png" /></h1>
+				<div class="lamp">
+					<ul>
+						<li><a href="/m9/user/lamp?zone=4">灯火详情</a></li>
+						<li>
+							<img src="/static/backup/img/blue.png"/>
+							<p class="name" th:text="${user['light4_blue']}"></p>
+						</li>
+						<li>
+							<img src="/static/backup/img/red.png"/>
+							<p class="name" th:text="${user['light4_red']}"></p>
+						</li>
+						<li>
+							<img src="/static/backup/img/green.png"/>
+							<p class="name" th:text="${user['light4_green']}"></p>
+						</li>
+					</ul>
+				</div>
+				<div class="Trading_hall">
+					<p><strong>交易大厅</strong><span>Trading hall</span></p>
+					<a href="/m9/user/transaction?zone=4">点击进入</a>
+				</div>
+			</div>
+			</div>
+		<!--4币区-->
+		<p class="line"></p>
+		<!--40币区-->
+		<div class="Forty">
+		<div class="Forty_area">
+		<h1><img src="/static/backup/img/zcolor.png" /><span>40币区</span><img src="/static/backup/img/zcolor.png" /></h1>
+				<div class="lamp">
+					<ul>
+						<li><a href="/m9/user/lamp?zone=40">灯火详情</a></li>
+						<li>
+							<img src="/static/backup/img/blue.png"/>
+							<p class="name" th:text="${user['light40_blue']}"></p>
+						</li>
+						<li>
+							<img src="/static/backup/img/red.png"/>
+							<p class="name" th:text="${user['light40_red']}"></p>
+						</li>
+						<li>
+							<img src="/static/backup/img/green.png"/>
+							<p class="name" th:text="${user['light40_green']}"></p>
+						</li>
+					</ul>
+				</div>
+				<div class="Trading_hall">
+					<p><strong>交易大厅</strong><span>Trading hall</span></p>
+					<a href="/m9/user/transaction?zone=40">点击进入</a>
+				</div>
+			</div>
+			</div>
+		<!--40币区-->
+		</div>
+		<!--客服-->
+		<div class="mask" style="display: none;">
+			<div class="serve-box">
+				<div class="servetop">
+				<h1>联 系 客 服</h1>
+				<h6>Contact customer service</h6>
+				<input id="ssss" th:value = "${wx}"  type="hidden">
+				<div class="qrbox">
+					<div id="qrcode">
+						
+					</div>
+				</div>
+				</div>
+				<div class="buttom">
+					<ul>
+						<li>
+						<span >客服微信：</span>
+						<p id="vi_code1" >Retc001</p>
+						<strong data-clipboard-target="#vi_code1" onclick="copy()" class="copyBtn">复制</strong>	
+						</li>
+						<li>
+						<span>客服邮箱：</span>
+						<p id="vi_code2" >155555545225@163.com</p>
+						<strong data-clipboard-target="#vi_code2" onclick="copy()" class="copyBtn">复制</strong>	
+						</li>
+						<li>
+						<span>官方邮箱：</span>
+						<p id="vi_code3" >r657485@gmail.com</p>
+						<strong data-clipboard-target="#vi_code3" onclick="copy()" class="copyBtn">复制</strong>	
+						</li>
+					</ul>
+			</div>
+		<!--	<a href="javascript:;" id="save" onclick="downLoadCode()">保存图片</a>-->
+			<div class="tipss" style="margin-top: 3% !important;">
+			<p id="tss">客服工作时间:10:00-20:00</p>
+			<span>
+				禁止向任何人透露账号密码,客服不会 主动向你讨要账号密码,谨防上当受骗
+			</span>
+			</div>
+			</div>
+			<span class="close_img"><img src="/static/backup/img/close.png"/></span>
+		</div>
+			<div id="footer"></div>
+			<script>
+				jQuery(function(){
+
+			jQuery('#qrcode').qrcode({
+				width: 150,
+				height: 150,
+				text: $("#ssss").val(),
+				});
+		});
+//		function downLoadCode(){
+//      var img = $('#qrcode').children('img').attr("src");
+//      var alink = document.createElement("a");
+//      alink.href = img;
+//      alink.download = "Code.png";
+//      alink.click();
+//  }
+		  //打开的时候展示
+		$('#sever-btn').click(function(){
+			$.ajax({
+				type:'post',
+				url:'/kefuInfo',
+				cache : false,
+				dataType : "json",
+				success : function(data) {
+					console.log("data",data.data);
+					if(data.success==true){
+						$("#vi_code1").html(data.data.wx);
+						$("#vi_code2").html(data.data.email);
+						$("#vi_code3").html(data.data.emailGf);
+						$("#tss").html(data.data.workTimeKe);
+					}else{
+						layer.msg(data.msg, {
+							icon: 5,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+							}
+						});
+					}
+				},
+				error : function(data){
+				}
+			});
+			$('.mask').show();
+		})
+		$('.close_img').click(function(){
+			$('.mask').hide();
+		})
+		 </script>
+		 <script>
+		 	function copy(){
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			clipboard.on('error', function(e) {
+            console.log(e);
+        });
+
+}
+			</script>
+		<script>
+		   let mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    $('.maskqd').hide();
+    $('.singin').click(function(){
+		$.ajax({
+			type:'post',
+			url:'/m9/user/insert_sign_record',
+			cache : false,
+			dataType : "json",
+			// data:{"lastId":lastId},
+			success : function(data) {
+				if(data.success==true){
+					// document.getElementById("singin").innerHTML="已签到";
+					$("#qdlabel").html(data.msg);
+					$('.maskqd').show();
+				}else{
+					layer.msg(data.msg, {
+						icon: 5,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+						end:function(){
+						}
+					});
+				}
+			},
+			error : function(data){
+			}
+		});
+
+    })
+    $('.comfire').click(function(){
+    	$('.maskqd').hide();
+    })
+		 </script>
+		 
+		
+	</body>
+</html>

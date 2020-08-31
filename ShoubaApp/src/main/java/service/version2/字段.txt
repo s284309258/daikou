@@ -1,0 +1,13 @@
+account_id,user_id,user_status,user_regtimes,user_level,user_tel£¨HBMø…”√”‡∂Ó£¨HB”‡∂Ó£¨HBM∂≥Ω·”‡∂Ó£¨ª∑€HBM«Æ∞¸”‡∂Ó,direct_num,user_pid
+
+
+/monitor/operlog
+monitor:operlog:view
+
+
+/develop/tVerifyRecord	
+develop:tVerifyRecord:view
+
+
+/develop/tParam
+develop:tParam:view

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/reset.css" />
+			<link rel="stylesheet" href="../../css/layui.css" />
+			<script src="../../js/jquery-3.5.1.js"></script>
+			<script src="../../js/jquery-1.11.3.min.js"></script>
+			<script src="../../js/layer/layer.js"></script>
+			<script src="../../js/vercode.js"></script>
+			<script src="../../js/gVerify.js"></script>
+			<style>
+				#verifyCanvas{width: 100%;background: white !important;}
+			
+			</style>
+			<title>资料录入</title>
+	</head>
+	<body>
+		<header >
+			<i onclick="window.history.back();"><img src="../../img/w-back.png"/></i>
+			<h1>资料录入</h1>
+		</header>
+		<main class="main">
+			<div class="company-name">
+				<label class="border-bottom">
+					<span>姓名：</span>
+					<input type="text" placeholder="持卡人姓名" id="user"/>
+				</label>
+				<label class="border-bottom">
+					<span>身份证号：</span>
+					<input type="text" placeholder="请输入身份证号" id="idcard"/>
+				</label>
+				<label>
+					<span>金额：</span>
+					<input type="text" placeholder="请输入金额" id="money"/>
+				</label>
+			</div>
+			
+			<div class="company-name">
+				<label class="border-bottom">
+					<span>卡号：</span>
+					<input type="number" placeholder="请输入银行卡号（仅支持储蓄卡）" id="Card_number"/>
+				</label>
+				<!-- <label class="border-bottom">
+					<span>卡类型</span>
+					<input type="number" placeholder="卡类型"  id="phone" value="" placeholder="请输入手机号" maxlength="11" />
+				</label> -->
+				<label class="border-bottom ">
+					<span>手机号:</span>
+					<input type="text" placeholder="请填写银行预留手机号" id="phone" />
+				</label>
+				<label class="code-warp2">
+					<span>短信验证:</span>
+					<input type="text" placeholder="验证码" maxlength="6" id="verCode"/>
+					<input type="button" name="" id="verCodeBtn" value="获取验证码" />
+				</label>
+			</div>
+			<div class="account-btn">
+				<button type="button" class="next-btn" id="next-btn">下一步</button>
+			</div>
+		</main>
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+		<script type="text/javascript">
+			$('.next-btn').click(function(){
+				var user = $('#user').val();
+				var idcard = $('#idcard').val();
+				var phone = $('#phone').val();
+				var verCode = $('#verCode').val();
+				var Card_number = $('#Card_number').val();
+				var money = $('#money').val();
+				if(!isKong(user,$('#user').attr('placeholder'))){
+					return false
+				}
+				 if(!isKong(idcard,$('#idcard').attr('placeholder'))){
+					return false
+				} 
+				if(!Idcard(idcard)){
+					return false
+				}
+				if(!isKong(money,$('#money').attr('placeholder'))){
+					return false
+				}  				
+				if(!moneyreg(money)){
+					return false
+				}
+				if(!isKong(Card_number,$('#Card_number').attr('placeholder'))){
+					return false
+				}				
+				if(!regTest(Card_number)){
+					return false
+				}
+				 if(!isKong(phone,$('#phone').attr('placeholder'))){
+					return false
+				}
+				if(!telcheck(phone)){
+					return false
+				}
+				 if(!isKong(verCode,$('#verCode').attr('placeholder'))){
+					return false
+				} 
+				
+					window.location.href="Upload-ID.html"; 
+				
+				
+				
+			})
+		</script>
+	</body>
+</html>

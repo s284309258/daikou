@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<style>
+			#up_pop{background: none;outline: none;border: none;}
+			.maskBox img{width: 50%;}
+			.img_up{overflow: scroll;width: 100%;margin: 0px auto;text-align: center;background: #E5E5E5;border-radius: 6px;padding: 10px 0px;margin-top: 15px;}
+			.mask0{overflow-y: scroll;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,.5);top: 0px;left: 0px;z-index: 999;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.mask0 .check_img{width: 80vw;min-height: 60vh;background: white;border-radius: 10px;padding: 5%;}
+			.mask0 .check_img img{width: 100%;}
+			.mask0 .check_img h1{text-align: center;font-size: 1rem;padding: 5% 0px;}
+			.close_img{width: 100%;text-align: center;margin: 5%;}
+			.close_img img{width: 6%;}
+			.mask2 .check_qr{width: 80vw;background: #F5F5F5;padding: 20px;height: 70vh;border-radius: 10px;}
+			.mask2{overflow-y: scroll;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,.5);top: 0px;left: 0px;z-index: 99;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.mask2 .qrbox{padding: 5%;background: white;border: 1px solid rgba(102, 102, 102, .3);width: 45vw;text-align: center;margin: 5% auto;}
+			.check_qr h2{text-align: center;font-weight: normal;font-size: 1.1rem;}
+			.check_qr .codecopy{text-align: center;width: 90%;margin: 10% auto;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.check_qr .codecopy i{display: block;width: 30%;color: white;background: #007AFF;border-radius: 10px;padding: 3% 0px;margin-top:5% ;}
+			.list4 i{position: absolute;right: 5%;font-size: .8rem;color: #4D80F0;}
+			.tijiao1{display: none;}
+		</style>
+	</head>
+	<body>
+	<input type="hidden" id="oid" th:value="${order.id}">
+	<input type="hidden" id="quantity" th:value="${order.quantity}">
+	<input type="hidden" id="eos_address" th:value="${order['eos_address']}"/>
+	<input type="hidden" id="pay_date" th:value="${order['pay_date']}"/>
+
+	<div class="mask2" style="display: none;" >
+		<div class="check_qr" style="height: 70vh !important;">
+			<h2> 收款二维码</h2>
+			<div class="qrbox">
+				<div id="qrcode">
+
+				</div>
+
+			</div>
+			<div class="codecopy">
+
+				<p id="vi_code0">0x88c06160cf66503af479c24dfadeaff 372842710</p >
+				<i class="copyBtn" data-clipboard-target="#vi_code0" onclick="copy()" >复制地址</i>
+			</div>
+		</div>
+		<div class="close_img" style="margin: 5%;"><img src="/static/backup/img/close.png"/></div>
+	</div>
+	<div class="mask0" style="display: none;" >
+		<div class="check_img">
+			<h1>打款凭证</h1>
+			<img th:src="${order['eos_poto']}" alt=""/>
+		</div>
+		<div class="close_img"><img src="/static/backup/img/close.png"/></div>
+	</div>
+		<div class="head_order">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>订单详情</h1>
+			<div class="waiting">
+				<h2>待上传打款凭证</h2>
+				<div class="Count_time">
+					<span id="_h">00</span>:
+            		<span id="_m">00</span>:
+            		<span id="_s">00</span>
+				</div>
+				<p>请在<i th:text="${cancelTime}"></i>小时内完成操作,超出时间将取消订单 并对你的账号进行警告,累计<i th:text="${warn_count_saletota}"></i>次将进行封号处理.</p>
+			</div>
+		</div>
+		<div class="order-list">
+			<ul>
+				<li>
+					<div class="list1">
+						<em><img src="/static/backup/img/EOS.png"/></em>
+						<div class="esolist">
+							<p><span>求购数量：</span><i th:text="${order['quantity']}"></i>EOS</p>
+							<!--<p ><span>求购单价：</span><i th:text="${order['quantity_price']}"></i></p>-->
+							<p style="margin-top: 3%;"><span>交易总额：</span><i th:text="${order['quantity_total']}"></i></p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list2">
+					<span>卖家联系方式</span>
+					<p th:text="${buyer['telphone']}?${buyer['telphone']}"></p>
+					</div>
+				</li>
+				<li>
+					<div class="list3">
+					<span>卖家姓名</span>
+					<p th:text="${buyer['real_name']}?${buyer['real_name']}"></p>
+					</div>
+					<div class="list4">
+						<span>收币标签</span>
+						<p id="vi_code55"></p>
+						<i class="iconfont icon-fuzhi copyBtn" data-clipboard-target="#vi_code55" onclick="copy()">复制标签</i>
+					</div>
+					<div class="list4">
+						<span>收币地址</span>
+						<p id="vi_code44" th:text="${order['eos_address']}?${order['eos_address']}"></p>
+						<i class="iconfont icon-fuzhi copyBtn" data-clipboard-target="#vi_code44" onclick="copy()" style="color: #4D80F0;font-size: .8rem;">复制地址</i>
+					</div>
+				</li>
+				<li>
+					<div class="list5">
+						<span>收款二维码</span>
+						<span class="iconfont icon-chakan chek"><i>查看二维码</i></span>
+					</div>
+					<div class="list6" style="display: flex;">
+						<p>交易凭证</p>
+						<i class="iconfont icon-chakan chek0"><em style="font-size: .9rem">已上传</em></i>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="tijiao1"><a href="javascript:;">申诉</a></div>
+	<div class="mask" style="display: none;">
+		<div class="serve-box">
+			<div class="servetop">
+				<h1>联 系 客 服</h1>
+				<h6>Contact customer service</h6>
+				<div class="qrbox">
+					<div id="qrcode1">
+
+					</div>
+				</div>
+			</div>
+			<div class="buttom">
+				<ul>
+					<li>
+						<span>客服微信：</span>
+						<p id="vi_code1" >Retc001</p >
+						<strong data-clipboard-target="#vi_code1" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+					<li>
+						<span>客服邮箱：</span>
+						<p id="vi_code2" >155555545225@163.com</p >
+						<strong data-clipboard-target="#vi_code2" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+					<li>
+						<span>官方邮箱：</span>
+						<p id="vi_code3" >r657485@gmail.com</p >
+						<strong data-clipboard-target="#vi_code3" onclick="copy()" class="copyBtn">复制</strong>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tipss">
+				<p>客服工作时间:10:00-20:00</p >
+				<span>
+    禁止向任何人透露账号密码,客服不会 主动向你讨要账号密码,谨防上当受骗
+   </span>
+			</div>
+		</div>
+		<span class="close_img"><img src="/static/backup/img/close.png"/></span>
+	</div>
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/clipboard.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jquery.qrcode.min.js" ></script>
+		<script>
+						function copy(){
+			var clipboard=new Clipboard(".copyBtn");
+			clipboard.on("success",function(e){
+				layer.msg("复制成功",{ icon: 1,time: 2000});
+			});
+			clipboard.on('error', function(e) {
+            console.log(e);
+        });
+
+}
+			</script>
+			<script>
+			jQuery(function(){
+
+			jQuery('#qrcode').qrcode({
+				width: 150,
+				height: 150,
+				text: $("#eos_address").val()
+				});
+		});
+			$('.tijiao1').click(function(){
+				$('.mask').show();
+			});
+			$('.close_img').click(function(){
+				$('.mask').hide();
+			});
+			$('.chek').click(function(){
+				$('.mask2').show();
+			});
+			$('.close_img').click(function(){
+				$('.mask2').hide();
+			})
+			$('.chek0').click(function(){
+				$('.mask0').show();
+			});
+			$('.close_img img').click(function(){
+				$('.mask0').hide();
+			});
+
+			</script>
+			 <script type="text/javascript">
+            //倒计时
+        function GetRTime(){
+        	var pay_date = $("#pay_date").val();
+            var EndTime= new Date(pay_date);   //终止时间
+            var NowTime = new Date();
+            var t =EndTime.getTime() - NowTime.getTime();
+            var d=parseInt(t/ 1000 / 60 / 60 / 24);
+            h=parseInt(t/ 1000 / 60 / 60 % 24);
+            m=parseInt(t/ 1000 / 60 % 60);
+            s=parseInt(t/ 1000 % 60);
+            h <10 ? h = '0' +h :h =h;
+            m <10 ? m = '0' +m :m =m;
+            s <10 ? s = '0' +s :s =s;
+            //console.log(d+'天'+h+'时'+m+'分'+s+'秒');
+
+            //将倒计时赋值到div中
+            document.getElementById("_h").innerHTML = h ;
+            document.getElementById("_m").innerHTML = m ;
+            document.getElementById("_s").innerHTML = s ;
+            if(h<4){
+            	$('.tijiao1').show();
+            }
+            if(t < 0){
+            	document.getElementById("_h").innerHTML = '00';
+            	document.getElementById("_m").innerHTML = '00';
+            	document.getElementById("_s").innerHTML = '00' ;
+                clearTimeout(GetRTime);
+                return false;
+            }
+            setTimeout(GetRTime,1000);
+        }
+        GetRTime();
+       
+       </script>
+	
+	<script>
+		$(".tijiao2").onclick(function () {
+			$.ajax({
+				type : "POST",
+				url : '/m9/order/transfer_confirm',
+				dataType : "json",
+				data : {
+					id:$("#oid").val(),
+					quantity:$("#quantity").val()
+				},
+				success : function(data) {
+					if(data.success==true){
+						layer.msg(data.msg,{icon:6,time : 1000});
+					} else {
+						layer.msg(data.msg,{icon:5,time : 1000});
+					}
+				}
+			})
+		});
+
+		$(".tijiao1").onclick(function () {
+			$.ajax({
+				type : "POST",
+				url : '/m9/order/transfer_undo',
+				dataType : "json",
+				data : {
+					id:$("#oid").val(),
+					quantity:$("#quantity").val()
+				},
+				success : function(data) {
+					if(data.success==true){
+						layer.msg(data.msg,{icon:6,time : 1000});
+					} else {
+						layer.msg(data.msg,{icon:5,time : 1000});
+					}
+				}
+			})
+		});
+
+	</script>
+	</body>
+</html>

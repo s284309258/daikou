@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.UserAddressDao">
+
+	<select id="get"
+		resultType="com.renegade.domain.UserAddressDO">
+		select
+		`address_id`,`address_province`,`address_city`,`address_detailed`,`user_id`,`address_area`,`address_phone`,`address_user_name`,`address_state`,`address_dorp`,`province_code`,`city_code`,`area_code`,`address_user_name_en`
+		from t_user_address where address_id = #{value}
+	</select>
+	<!-- 查询用户的地址集合（未删除的） -->
+	<select id="findUserAddressListByUserId"
+		resultType="com.renegade.domain.UserAddressDO">
+		select * from t_user_address where user_id = #{userId} and
+		address_dorp =0 order by address_id desc
+	</select>
+	<update id="deleteAddres">
+		update t_user_address set address_dorp='1' where
+		address_dorp='0' and
+		address_id=#{addressId} and user_id=#{userId}
+	</update>
+	<select id="findUserDefutlAddress"
+		resultType="com.renegade.domain.UserAddressDO">
+		select * from t_user_address where user_id = #{userId} and address_dorp =0 and address_id=#{addressId}
+	</select>
+	<select id="list"
+		resultType="com.renegade.domain.UserAddressDO">
+		select
+		`address_id`,`address_province`,`address_city`,`address_detailed`,`user_id`,`address_area`,`address_phone`,`address_user_name`,`address_state`,`address_dorp`,`province_code`,`city_code`,`area_code`,`address_user_name_en`
+		from t_user_address
+		<where>
+			<if test="addressId != null and addressId != ''"> and address_id = #{addressId} </if>
+			<if test="addressProvince != null and addressProvince != ''"> and address_province = #{addressProvince} </if>
+			<if test="addressCity != null and addressCity != ''"> and address_city = #{addressCity} </if>
+			<if test="addressDetailed != null and addressDetailed != ''"> and address_detailed = #{addressDetailed} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="addressArea != null and addressArea != ''"> and address_area = #{addressArea} </if>
+			<if test="addressPhone != null and addressPhone != ''"> and address_phone = #{addressPhone} </if>
+			<if test="addressUserName != null and addressUserName != ''"> and address_user_name = #{addressUserName} </if>
+			<if test="addressState != null and addressState != ''"> and address_state = #{addressState} </if>
+			<if test="addressDorp != null and addressDorp != ''"> and address_dorp = #{addressDorp} </if>
+			<if test="provinceCode != null and provinceCode != ''"> and province_code = #{provinceCode} </if>
+			<if test="cityCode != null and cityCode != ''"> and city_code = #{cityCode} </if>
+			<if test="areaCode != null and areaCode != ''"> and area_code = #{areaCode} </if>
+			<if test="addressUserNameEn != null and addressUserNameEn != ''"> and address_user_name_en = #{addressUserNameEn} </if>
+		</where>
+		<choose>
+			<when test="sort != null and sort.trim() != ''">
+				order by ${sort} ${order}
+			</when>
+			<otherwise>
+				order by address_id desc
+			</otherwise>
+		</choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+
+	<select id="count" resultType="int">
+		select count(*) from t_user_address
+		<where>
+			<if test="addressId != null and addressId != ''"> and address_id = #{addressId} </if>
+			<if test="addressProvince != null and addressProvince != ''"> and address_province = #{addressProvince} </if>
+			<if test="addressCity != null and addressCity != ''"> and address_city = #{addressCity} </if>
+			<if test="addressDetailed != null and addressDetailed != ''"> and address_detailed = #{addressDetailed} </if>
+			<if test="userId != null and userId != ''"> and user_id = #{userId} </if>
+			<if test="addressArea != null and addressArea != ''"> and address_area = #{addressArea} </if>
+			<if test="addressPhone != null and addressPhone != ''"> and address_phone = #{addressPhone} </if>
+			<if test="addressUserName != null and addressUserName != ''"> and address_user_name = #{addressUserName} </if>
+			<if test="addressState != null and addressState != ''"> and address_state = #{addressState} </if>
+			<if test="addressDorp != null and addressDorp != ''"> and address_dorp = #{addressDorp} </if>
+			<if test="provinceCode != null and provinceCode != ''"> and province_code = #{provinceCode} </if>
+			<if test="cityCode != null and cityCode != ''"> and city_code = #{cityCode} </if>
+			<if test="areaCode != null and areaCode != ''"> and area_code = #{areaCode} </if>
+			<if test="addressUserNameEn != null and addressUserNameEn != ''"> and address_user_name_en = #{addressUserNameEn} </if>
+		</where>
+	</select>
+
+	<insert id="save"
+		parameterType="com.renegade.domain.UserAddressDO"
+		useGeneratedKeys="true" keyProperty="addressId">
+		insert into t_user_address
+		(
+		`address_province`,
+		`address_city`,
+		`address_detailed`,
+		`user_id`,
+		`address_area`,
+		`address_phone`,
+		`address_user_name`,
+		`address_state`,
+		`address_dorp`,
+		`province_code`,
+		`city_code`,
+		`area_code`
+		)
+		values
+		(
+		#{addressProvince},
+		#{addressCity},
+		#{addressDetailed},
+		#{userId},
+		#{addressArea},
+		#{addressPhone},
+		#{addressUserName},
+		#{addressState},
+		#{addressDorp},
+		#{provinceCode},
+		#{cityCode},
+		#{areaCode}
+		)
+	</insert>
+
+	<update id="update"
+		parameterType="com.renegade.domain.UserAddressDO">
+		update t_user_address
+		<set>
+			<if test="addressProvince != null">`address_province` = #{addressProvince}, </if>
+			<if test="addressCity != null">`address_city` = #{addressCity}, </if>
+			<if test="addressDetailed != null">`address_detailed` = #{addressDetailed}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="addressArea != null">`address_area` = #{addressArea}, </if>
+			<if test="addressPhone != null">`address_phone` = #{addressPhone}, </if>
+			<if test="addressUserName != null">`address_user_name` = #{addressUserName}, </if>
+			<if test="addressState != null">`address_state` = #{addressState}, </if>
+			<if test="addressDorp != null">`address_dorp` = #{addressDorp}, </if>
+			<if test="provinceCode != null">`province_code` = #{provinceCode}, </if>
+			<if test="cityCode != null">`city_code` = #{cityCode}, </if>
+			<if test="areaCode != null">`area_code` = #{areaCode}, </if>
+			<if test="addressUserNameEn != null">`address_user_name_en` = #{addressUserNameEn}</if>
+		</set>
+		where address_id = #{addressId}
+	</update>
+
+	<delete id="remove">
+		delete from t_user_address where address_id =
+		#{value}
+	</delete>
+
+	<delete id="batchRemove">
+		delete from t_user_address where address_id in
+		<foreach item="addressId" collection="array" open="("
+			separator="," close=")">
+			#{addressId}
+		</foreach>
+	</delete>
+
+</mapper>

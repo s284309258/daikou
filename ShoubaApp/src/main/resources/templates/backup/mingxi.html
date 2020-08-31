@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<style>
+		.con ul li span:nth-child(1){width: 30% !important;text-align: left;}
+		.con ul li span:nth-child(3){width: 30% !important;text-align: center;}
+		.con ul li span:nth-child(2){width: 20% !important;text-align: center;}
+		.con ul li span:nth-child(4){width: 20% !important;text-align: right;}
+		
+		</style>
+	</head>
+	<body style="background:#eeeeee ">
+		<div class="head">
+			<h1><i class="iconfont icon-fanhui" onclick="javascript:window.history.back(-1);"></i>排单币明细</h1>
+			
+		</div>
+		<div class="order-main">
+
+			<p style="width: 100%;background: #EEEEEE;height: 3px;"></p>
+			<div class="con on">
+				<div class="buy">
+					<span>时间</span>
+					<span>变动</span>
+					<span>说明</span>
+					<span>余额</span>
+				</div>
+				<ul id="result">
+<!--					<li>-->
+<!--						<span>19/11/11 11:17</span>-->
+<!--						<span>-10</span>-->
+<!--						<span class="blue"><a href="Order_detail2.html">挂求购单</a></span>-->
+<!--						<span>25.00</span>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<span th:text="${lineupOrder['create_time']}"></span>-->
+<!--						<span th:text="${lineupOrder['assets_change']}"></span>-->
+<!--						<span class="blue">-->
+<!--							<a th:if="${lineupOrder['type']}=='1'">挂求购单</a>-->
+<!--							<a th:if="${lineupOrder['type']}=='2'">充币</a>-->
+<!--							<a th:if="${lineupOrder['type']}=='3'">账户激活</a>-->
+<!--							<a th:if="${lineupOrder['type']}=='4'">转入</a>-->
+<!--							<a th:if="${lineupOrder['type']}=='6'">转出</a>-->
+<!--							<a th:if="${lineupOrder['type']} =='28'">拨币</a>-->
+<!--						</span>-->
+<!--						<span th:text="${lineupOrder['assets_after']}"></span>-->
+<!--						-->
+<!--					</li>-->
+				</ul>
+			</div>
+
+			
+		</div>
+
+
+		<script>
+			<!-- 实现滚动条滚动start -->
+			var pageSize =0; // 当前每页条数
+			var lastId=0;
+			var winH = $(document).height();//页面可视区域高度
+			var p=0, t=0; // 顶部和底部的距离
+			$(function(){
+				getData();//初始获取数据，加载数据事件
+				//鼠标滚动事件
+				$(document).scroll(function() {
+					var pageH = $(document).height(); //当前文档总高度
+					var scrollT = $(window).scrollTop();  //滚动条top的值
+					var bottomH = (pageH - winH - scrollT) / winH;  // 当前所滚动位置到底部距离
+					p = $(this).scrollTop(); //顶部距离
+					if (bottomH <= 0) {
+							if (pageSize == 10) {
+								getData();
+							}else{ //没有数据
+								$(".nodata").show().html("别滚动了，已经到底了...");
+							}
+						}
+					setTimeout(function(){t = p;},2000);//延时2秒
+				});
+
+			})
+			function getData() {
+				var html = '';
+				$.ajax({
+					type: "post",
+					url:"/m9/user/select_flowing_record",
+					//当前页由于是按照id倒序排列的，那么最后一个id就是下拉分页的最开始的一个ID
+					data:{"lastId":lastId},
+					success: function (result) {
+						if(result.success){
+							var list = result?result.data:null;
+							if (list!=null) {
+								pageSize =list.length;
+								$.each(list, function(index, val) {
+									html += '<li>' +
+											'<span>'+val.create_time+'</span>' +
+											'<span>'+val.assets_change+'</span>' +
+											'<span class="blue"><a href="javascript:;">'+explain3(val.type,val.order_no)+'</a></span>' +
+											'<span>'+val.assets_after+'</span>' +
+											'</li>';
+									if (index == 9) {
+										lastId=val.flowing_id;
+									}
+								});
+								$("#result").append(html);
+							}
+						}
+					}
+				});
+			}
+			<!--end-->
+
+
+			function explain3(type,orderno){
+				if(type==1){
+					return '挂求购单';
+				}
+				if(type==2){
+					return '充币';
+				}
+				if(type==3){
+					return '账户激活';
+				}
+
+				if(type==4){
+					return '排单币转账转入(打款人:'+orderno+')';
+				}
+				if(type==5){
+					return '转账手续费';
+				}
+				if(type==6){
+					return '排单币转账转出(收款人:'+orderno+')';
+				}
+				if(type==36){
+					return '撤单退回';
+				}
+
+			}
+		</script>
+		
+	</body>
+	
+</html>

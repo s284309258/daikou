@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.LockAddressDao">
+
+	<select id="get" resultType="com.renegade.domain.LockAddressDO">
+		select `id`,`star_address`,`value`,`status`,`star_pass`,`create_time` from t_sys_lock_address where id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.LockAddressDO">
+		select `id`,`star_address`,`value`,`status`,`star_pass`,`create_time` from t_sys_lock_address
+        <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="starAddress != null and starAddress != ''"> and star_address = #{starAddress} </if>
+		  		  <if test="value != null and value != ''"> and value = #{value} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		  <if test="starPass != null and starPass != ''"> and star_pass = #{starPass} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_sys_lock_address
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="starAddress != null and starAddress != ''"> and star_address = #{starAddress} </if>
+		  		  <if test="value != null and value != ''"> and value = #{value} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		  <if test="starPass != null and starPass != ''"> and star_pass = #{starPass} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.LockAddressDO" useGeneratedKeys="true" keyProperty="id">
+		insert into t_sys_lock_address
+		(
+			`star_address`, 
+			`value`, 
+			`status`, 
+			`star_pass`, 
+			`create_time`
+		)
+		values
+		(
+			#{starAddress}, 
+			#{value}, 
+			#{status}, 
+			#{starPass}, 
+			#{createTime}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.LockAddressDO">
+		update t_sys_lock_address 
+		<set>
+			<if test="starAddress != null">`star_address` = #{starAddress}, </if>
+			<if test="value != null">`value` = #{value}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="starPass != null">`star_pass` = #{starPass}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from t_sys_lock_address where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_sys_lock_address where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

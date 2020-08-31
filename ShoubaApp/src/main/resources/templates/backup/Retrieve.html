@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="../../static/backup/css/css.css" />
+<link rel="stylesheet" href="../../static/backup/css/font.css" />
+<script type="text/javascript" src="../../static/backup/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../static/backup/js/gVerify.js"></script>
+<script type="text/javascript" src="../../static/backup/layer/layer.js"></script>
+<script type="text/javascript" src="/static/backup/js/core.js"></script>
+<script type="text/javascript" src="/static/backup/js/jsencrypt.js"></script>
+<script type="text/javascript" src="/static/backup/js/md5.js"></script>
+<script type="text/javascript" src="/static/backup/js/public.js"></script>
+<style>
+.getcode2 {
+	display: block;
+	width: 35%;
+	border-left: 1px solid #577AEF;
+	position: absolute;
+	right: 0px;
+	text-align: center;
+}
+
+.getcode2 em {
+	font-style: normal;
+}
+
+.get_code {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #577AEF;
+	font-weight: normal;
+}
+
+.get_code1 {
+	display: none;
+}
+
+.v_container {
+	position: absolute;
+	right: 10px;
+}
+
+.logo {
+	width: 100%;
+	padding-top: 5%;
+}
+
+.regster {
+	margin-top: 10%;
+}
+
+.regster h2 {
+	text-align: center;
+	color: white;
+	font-size: 1.3rem;
+	font-weight: normal;
+	letter-spacing: 2px;
+}
+
+html, body {
+	position: relative;
+	background: url(../../static/backup/img/logonbg.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	overflow-y: scroll;
+}
+</style>
+</head>
+<body>
+	<h1 class="h1">
+		<i class="iconfont icon-fanhui"
+			onclick="javascript:window.history.back(-1);">返回</i>
+	</h1>
+	<div class="logo">
+		<h1>YDF</h1>
+	</div>
+	<div class="regster">
+		<h2>找回密码</h2>
+		<label> <span><img src="../../static/backup/img/1.png" /></span> <input
+			type="text" placeholder="请输入您的手机号" id="phone" />
+			<div id="v_container"></div>
+		</label> <label> <span><img src="../../static/backup/img/3.png" /></span> <input
+			type="text" placeholder="请输入您的短信验证码" id="verCode" />
+			<p class="getcode2">
+				<strong class="get_code" onclick="getCode(this)" id="J_getCode">获取验证码</strong>
+				<strong class="get_code get_code1">(<em id="J_second">60</em>)s<em>后重发</em></strong>
+			</p>
+		</label> <label> <span><img src="../../static/backup/img/0000.png" /></span> <input
+			type="password" placeholder="请输入您的登录密码"  id="newPass"/>
+		</label> <label> <span><img src="../../static/backup/img/00.png" /></span> <input
+			type="password" placeholder="请再次输入您的登录密码"  id="secondPass"/>
+		</label>
+
+
+	</div>
+	<div class="loginbtn">
+		<a href="#" id="reg-btn">确定</a>
+	</div>
+	<script>
+		// var verifyCode = new GVerify("v_container");
+		//		var res = verifyCode.validate(document.getElementById("ver").value);
+		var isPhone = 1;
+		function getCode(e) {
+			checkPhone(); //验证手机号码
+			if (isPhone) {
+				//发送手机验证码
+				var timeStamp = new Date().getTime()
+				var phone = $('#phone').val();
+				var param = {
+					'phone' : phone,
+					'timeStamp' : timeStamp
+				}
+				
+				$.ajax({
+					type : "POST",
+					url : '/sendCode/findPassSendCode',
+					dataType : "json",
+					data : {
+						phone: phone,
+						timeStamp : timeStamp,
+						sign : md5Method(param)
+					},
+					success : function(data) {
+						if (data.success == true) {
+							layer.msg("验证码已发送", {
+								icon : 6,
+								time : 1000
+							});
+						} else {
+							layer.msg(data.msg, {
+								icon : 5,
+								time : 1000
+							});
+						}
+					}
+				})
+
+				resetCode(); //倒计时
+			} else {
+				$('#phone').focus();
+			}
+
+		}
+		//验证手机号码
+		function checkPhone() {
+			var phone = $('#phone').val();
+			var pattern = /^((1[0-9])+\d{9})$/;
+			isPhone = 1;
+			if (phone == '') {
+				layer.msg("请输入手机号", {
+					icon : 2,
+					time : 2000,
+				});
+				isPhone = 0;
+				return;
+			}
+			if (!pattern.test(phone)) {
+				layer.msg("请输入正确的手机号码", {
+					icon : 2,
+					time : 2000,
+				});
+				isPhone = 0;
+				return;
+			}
+		}
+		//倒计时
+		function resetCode() {
+			$('#J_getCode').hide();
+			$('#J_second').html('60');
+			$('.get_code1').show();
+			var second = 60;
+			var timer = null;
+			timer = setInterval(function() {
+				second -= 1;
+				if (second > 0) {
+					$('#J_second').html(second);
+				} else {
+					clearInterval(timer);
+					$('#J_getCode').show();
+					$('.get_code1').hide();
+				}
+			}, 1000);
+		};
+		
+		$("#reg-btn").click(function(){
+		//点击修改密码
+				var phone = $('#phone').val();
+				var Code = $('#verCode').val();
+				var newPass = $('#newPass').val();
+				var secondPass = $('#secondPass').val();
+				if( phone == ''){
+					layer.msg('请输入您的手机号');
+					return false;
+				}
+				if(Code == ''){
+					layer.msg('请输入您的验证码');
+					return false;
+				}
+				if(newPass == ''){
+					layer.msg('请输入您的登录密码');
+					return false;
+				}
+				if(secondPass == ''){
+					layer.msg('请再次输入您的登录密码');
+					return false;
+				}
+				var newPass =CryptoJS.MD5($('#newPass').val()).toString().toUpperCase();
+				var secondPass =CryptoJS.MD5($('#secondPass').val()).toString().toUpperCase();
+		        var verCode= $('#verCode').val();
+		        var timeStamp = new Date().getTime()
+				var param = {
+					'phone' : phone,
+					'code' : verCode,
+					'newPass' : newPass,
+					'secondPass' : secondPass,
+					'timeStamp' : timeStamp
+				}
+				
+		        $.ajax({
+					type : "POST",
+					url : '/m9/user/frogetLoginPassWordM9',
+					dataType : "json",
+					data : {
+						phone: phone,
+						'newPass' : newPass,
+						'secondPass' : secondPass,
+						code: verCode,
+						timeStamp : timeStamp,
+						sign : md5Method(param)
+					},
+					success : function(data) {
+						if (data.success == true) {
+							layer.msg("找回成功", {
+								icon : 6,
+								time : 1000,
+								end:function(){
+									window.location.href = "/login";
+								}
+							});
+						} else {
+							layer.msg(data.msg, {
+								icon : 5,
+								time : 1000
+							});
+						}
+					}
+				})
+			
+		})
+	</script>
+</body>
+</html>

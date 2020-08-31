@@ -1,0 +1,69 @@
+	
+<div class="height1"></div>
+<div class="footer">
+	<ul>
+		
+		<li>
+			<a href="indexView">
+			<div class="/footer-div">
+			<p><img src="/static/backup/images/home.png"/></p>
+			<p class="" >首页</p>
+			</div>
+			</a>
+		</li>
+		
+		<li>
+			<a href="quotation">
+			<div class="footer-div">
+			<p><img src="/static/backup/images/quotation.png"/></p>
+			<p class="">行情</p>
+			</div>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;" onclick="msg()">
+			<div class="footer-div">
+			<p><img src="/static/backup/images/trade.png"/></p>
+			<p class="" >交易</p>
+			</div>
+			</a>
+		</li>
+		<li>
+			<a href="/goodsStoreView">
+			<div class="footer-div">
+			<p><img src="/static/backup/images/shop.png"/></p>
+			<p class="" >商城</p>
+			</div>
+			</a>
+		</li>
+		
+		<li>
+			<a href="getUserInfo">
+			<div class="footer-div">
+			<p><img src="/static/backup/images/user.png"/></p>
+			<p class="" >我的</p>
+			</div>
+			</a>
+		</li>
+		
+		
+	</ul>
+</div>
+<script>
+	function msg(){
+		mui.toast('暂未开放，敬请期待！')
+	}
+	
+	var name=$('#footer').attr('name');
+	console.log("name:"+name)
+	show_footer(name)
+	function show_footer(name){
+		var src=$(".footer li:nth-of-type("+name+") img").attr("src");
+		src=src.slice(0,-4)
+		// console.log("src:"+src)
+		src=src+"_selected.png";
+	//	console.log("src:"+src)
+		$(".footer li:nth-of-type("+name+")").addClass("selected");
+		$(".footer li:nth-of-type("+name+") img").attr("src",src);
+	}
+</script>

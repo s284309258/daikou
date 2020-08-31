@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.renegade.dao.FrontInformationDao">
+
+	<select id="get" resultType="com.renegade.domain.FrontInformationDO">
+		select * from w_front_information where notice_id = #{value}
+	</select>
+
+	<select id="list" resultType="com.renegade.domain.FrontInformationDO">
+		select * from w_front_information
+        <where>  
+		  		  <if test="noticeId != null and noticeId != ''"> and notice_id = #{noticeId} </if>
+		  		  <if test="boticeTip != null and boticeTip != ''"> and botice_tip = #{boticeTip} </if>
+		  		  <if test="noticeDesc != null and noticeDesc != ''"> and notice_desc = #{noticeDesc} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+		  		  <if test="startTime != null and startTime != ''"> and start_time = #{startTime} </if>
+		  		  <if test="endTime != null and endTime != ''"> and end_time = #{endTime} </if>
+		  		  <if test="lookNum != null and lookNum != ''"> and look_num = #{lookNum} </if>
+		  		  <if test="noticeInt != null and noticeInt != ''"> and notice_int = #{noticeInt} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by  update_time DESC, ${sort} ${order}
+            </when>
+			<otherwise>
+                order by notice_id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from w_front_information
+		 <where>  
+		  		  <if test="noticeId != null and noticeId != ''"> and notice_id = #{noticeId} </if>
+		  		  <if test="boticeTip != null and boticeTip != ''"> and botice_tip = #{boticeTip} </if>
+		  		  <if test="noticeDesc != null and noticeDesc != ''"> and notice_desc = #{noticeDesc} </if>
+		  		  <if test="createTime != null and createTime != ''"> and create_time = #{createTime} </if>
+		  		  <if test="updateTime != null and updateTime != ''"> and update_time = #{updateTime} </if>
+		  		  <if test="startTime != null and startTime != ''"> and start_time = #{startTime} </if>
+		  		  <if test="endTime != null and endTime != ''"> and end_time = #{endTime} </if>
+		  		  <if test="lookNum != null and lookNum != ''"> and look_num = #{lookNum} </if>
+		  		  <if test="noticeInt != null and noticeInt != ''"> and notice_int = #{noticeInt} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.renegade.domain.FrontInformationDO" useGeneratedKeys="true" keyProperty="noticeId">
+		insert into w_front_information
+		(
+			`botice_tip`, 
+			`notice_desc`, 
+			`create_time`, 
+			`update_time`, 
+			`start_time`, 
+			`end_time`, 
+			`look_num`, 
+			`notice_int`
+		)
+		values
+		(
+			#{boticeTip}, 
+			#{noticeDesc}, 
+			#{createTime}, 
+			#{updateTime}, 
+			#{startTime}, 
+			#{endTime}, 
+			#{lookNum}, 
+			#{noticeInt}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.renegade.domain.FrontInformationDO">
+		update w_front_information 
+		<set>
+			<if test="lookNum != null">`look_num` = #{lookNum}, </if>
+		</set>
+		where notice_id = #{noticeId}
+	</update>
+	
+	<delete id="remove">
+		delete from w_front_information where notice_id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from w_front_information where notice_id in 
+		<foreach item="noticeId" collection="array" open="(" separator="," close=")">
+			#{noticeId}
+		</foreach>
+	</delete>
+
+</mapper>

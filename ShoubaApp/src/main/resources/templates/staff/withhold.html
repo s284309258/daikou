@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<style>
+			.layui-layer-content{text-align: center !important;font-size: 1rem !important;}
+			.layui-layer-title{display: none !important;}
+			.layui-layer-dialog{border-radius: 10px !important;}
+			.layui-layer-close1{display: none !important;}
+			.btn-bg{background: #0077FF !important;}
+			.border-bottom{padding-bottom: 1rem;}
+			#withhold{background: #0077FF !important;border: none !important;color: white !important;}
+			#withholdTest{background: #0077FF !important;border: none !important;color: white !important;}
+			#verCodeBtn{text-align: center !important;font-size: .8rem !important;padding: 1px 0px;width: 100px !important;background: none !important;border-bottom: 1px solid #EEEEEE !important;color: #777777 !important;}
+			.layui-layer-btn{display: flex !important;justify-content: space-between !important;border-top: 1px solid #E6E6E6 !important;}
+			.layui-layer-btn0{background: none !important;color: #0077FF !important;font-weight: bold !important;border: none !important;outline: none !important;}
+			.layui-layer-btn1{background: none !important;color: #777777 !important;font-weight: bold !important;border: none !important;outline: none !important;}
+		</style>
+		<title>发起扣款</title>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>发起扣款</h1>
+		</header>
+		<div class="information-list">
+			<ul th:each="user: ${record}" class="border-bottom">
+				<li>
+					<span>姓名：</span>
+					<span th:text="${user.real_name}">姜伟</span>
+				</li>
+				<li>
+					<span>手机号：</span>
+					<input readonly="readonly" th:value="${user.user_tel}" th:id="@{'phone'+${user.id}}"></input>
+				</li>
+				<li  class="code-warp2">
+					<span>短信验证:</span>
+					<input type="text" placeholder="验证码" maxlength="8" th:id="@{'sms'+${user.id}}" class="verCode"/>
+					<input type="button" id="verCodeBtn" th:onclick="sendCodeWithHold([[${user.id}]])" value="获取验证码" />
+				</li>
+				<li>
+					<span>扣款协议：</span>
+					<a th:href="@{'/yilian/api/sign/'+${user.id}}">已签订<img class="next" src="../../img/next.png" /></a>
+				</li>
+				<li>
+					<span>扣款金额：</span>
+					<input type="number" placeholder="请输入金额" readonly th:value="${user.amount}" th:id="@{'amt'+${user.id}}" class="money"/>
+				</li>
+				<p class="withhold-btn">
+					<button type="button" style="width: auto;" id="withholdTest" th:onclick="withholdTest([[${user.id}]])">扣款一元验证银行卡</button>
+					<button type="button" id="withhold" th:onclick="withhold([[${user.id}]])">发起扣款</button>
+				</p>
+			</ul>
+			
+		</div>
+
+		<!-- js -->
+		<script src="../../js/jquery-1.7.2.min.js"></script>
+		<script src="../../js/check.js"></script>
+		<script src="../../js/layer/layer.js"></script>
+
+		<script type="text/javascript">
+			
+			function getcode(){
+			       //获取验证码
+			       var colock = '';
+			       var num = 60;
+			       // $("#verCodeBtn").on("click", function(){
+			           $("#verCodeBtn").attr("disabled","true");
+			           console.log("222");
+			           $("#verCodeBtn").val(num+"秒后获取");
+			           colock = setInterval(doLoop, 1000);//一秒一次
+			       // })
+			       
+			       function doLoop(){
+			           num--;
+			           if(num > 0) {
+			               $("#verCodeBtn").val(num+"秒后获取");
+			           }else {
+			               clearInterval(colock);//
+			               $("#verCodeBtn").removeAttr("disabled");
+			               $("#verCodeBtn").val("获取验证码");
+			               num = 30;
+			           }
+			       };
+																																}
+			 
+			// $(function(){
+				
+			//   $('input').bind('input propertychange change', function() {			
+			//    if($.trim($('.money').val()) !== "" && $.trim($('.verCode').val()) !== ""){
+			//       $('#withhold').css({"background-color":"#0077FF","color":"white","border":"none" ,"border":"1px solid #0077FF"});
+			// 	  $('#withhold').prop('disabled','true');				  
+			//     } else {
+			//        $('#withhold').css({"background-color":"#ffffff","color":"#777777","border":"1px solid #707070"});
+			// 	   $('#withhold').prop('disabled','disabled');
+			//     }
+			//   });
+			
+			// });
+				
+			function sendCodeWithHold(user_id){
+				
+				var phone = document.getElementById('phone'+user_id).value;
+				if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){
+					layer.msg("手机号码不正确",{
+						icon: 1,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}else{
+					$.ajax({
+						url:'/yilian/api/sendCodeWithHold/'+user_id,
+						type:'post',
+						data:{
+							user_tel:$('#user_tel').val(),
+							code_type:'withhold'
+						},
+						success : function(result) {
+							if(result.errorCode=="00000"){
+								layer.msg(result.message, {
+									icon: 1,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								});
+								getcode();
+							}else{
+								layer.msg(result.message, {
+									icon: 2,//提示的样式
+									time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								});
+							}
+
+						}
+					});
+				}
+				
+			}
+
+
+				// var t = 0;
+			function withhold(user_id){
+				// t = t++;
+				// if(t>=2){
+				// 	layer.msg('请勿重复操作');
+				// 	return false
+				// }
+				var phone = document.getElementById('phone'+user_id).value;
+				if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){
+					layer.msg("手机号码不正确",{
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}
+				var sms = document.getElementById('sms'+user_id).value;
+				if(sms==null || sms==""){
+					layer.msg("验证码不能为空",{
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}
+
+				var amt = document.getElementById('amt'+user_id).value;
+				if(amt==null || amt==""){
+					layer.msg("扣款金额不能为空",{
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}
+
+				$.ajax({
+					url:'/yilian/api/withhold/'+user_id,
+					type:'post',
+					data:{
+						user_id:user_id,
+						verfiy_code:document.getElementById('sms'+user_id).value,
+						amount:document.getElementById('amt'+user_id).value
+					},
+					success:function(result){
+						layer.msg(result.message, {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+								window.location.href='/yilian/api/index';
+							}
+						});
+					}
+				});
+				
+			}
+
+			function withholdTest(user_id){
+				var phone = document.getElementById('phone'+user_id).value;
+				if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){
+					layer.msg("手机号码不正确",{
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}
+				var sms = document.getElementById('sms'+user_id).value;
+				if(sms==null || sms==""){
+					layer.msg("验证码不能为空",{
+						icon: 2,//提示的样式
+						time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+					});
+					return false;
+				}
+				$.ajax({
+					url:'/yilian/api/withholdTest/'+user_id,
+					type:'post',
+					data:{
+						user_id:user_id,
+						verfiy_code:document.getElementById('sms'+user_id).value,
+						amount:1
+					},
+					success:function(result){
+						//debugger
+						if(result.errorCode="00000"){
+							layer.msg(result.message, {
+								icon: 1,//提示的样式
+								time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								end:function(){
+									window.location.href='/yilian/api/index';
+								}
+							});
+						}else{
+							layer.msg(result.message, {
+								icon: 2,//提示的样式
+								time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+								end:function(){
+									// window.location.href='/yilian/api/index';
+								}
+							});
+						}
+
+					}
+				});
+			}
+
+		</script>
+	</body>
+</html>

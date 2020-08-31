@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/nav.js" ></script>
+		<style>
+		#footer ul li:nth-child(3) a i:nth-child(1){display: block !important;}
+		#footer ul li:nth-child(3) a i:nth-child(2){display: none !important;}
+		#footer ul li:nth-child(3) a p{color: #4D80F0;}
+		.Platoon dl{display: flex;justify-content: space-around;align-items: center;padding: 3% 0px;}
+		.Platoon dl a span{color: #333333;font-size: 14px !important;}
+		.Platoon dl a img{vertical-align: middle;}
+		.pai p{font-size: 12px;color: #666666;}
+		.pai{position: relative;border-bottom: 1px solid rgba(220, 220, 220, .5);}
+		.pai h2{font-size: 1.2rem !important;}
+		.pai dt{display: block;width: 50%;text-align: center;}
+		.tuichu{position: absolute;right: 10%;width: 25%;top: 10%;}
+		.tuichu a{display: block;font-size: .95rem;box-shadow: 0px -2px 5px rgba(255,255,255,.5) inset;border-radius: 10px;padding: 5% 0px;text-align: center;}
+		.pai dt:first-child::before{content: '';position: absolute;height: 9vw;width: 1px;background:#DCDCDC;left: 50%;}
+		</style>
+	</head>
+	<body style="background: #EEEEEE;">
+		<div class="myhead">
+			<h1>我的</h1>
+			<div class="myupimg" style="position: relative;">
+			<div class="yg_content">
+			<div class="showimg">
+<!--				<img id="img" src="/img/EOS.png" alt="">-->
+				<img id="img" th:src="${user['user_poto']}" alt="">
+			</div>
+			</div>
+			<!--  ${user.nick_name}-->
+				<div class="describe">
+					<h2>
+					<p   th:text="${user['nick_name']}?${user['nick_name']}"></p>
+					</h2>
+					<p>UID:<span th:text="${user.id}"></span></p>
+					<p>注册时间:<time th:text="${user.cre_date}" style="font-size: 0.8rem;"></time></p>
+				</div>
+				<div class="tuichu"><a href="/logout" style="color: white;">退出登录</a></div>
+			</div>
+			</div>
+		</div>
+		<div class="mymian">
+			<div class="Platoon">
+				<p><img src="/static/backup/img/walt.png"/>我的排单币</p>
+				<dl class="pai">
+					<dt>
+						<p>排单币</p>
+						<h2 th:text="${user.user_lineup_coin}"></h2>
+					</dt>
+					<dt>
+						<p>排单券</p>
+						<h2 th:text="${user['user_lineup_coin_free']}"></h2>
+					</dt>
+				</dl>
+				
+				<dl>
+					<dt><a href="/m9/user/charging">
+						<img src="/static/backup/img/c.png"/>
+						<span>充币</span>
+						</a>
+					</dt>
+					<dt><a href="/transferAccountsUserView">
+						<img src="/static/backup/img/m.png"/>
+						<span>互转</span>
+						</a>
+					</dt>
+				</dl>
+			</div>
+
+			<div class="applicationlist">
+			<dl>
+				<dt>
+					<a href="/m9/user/mingxi">
+						<i class="iconfont icon-caiwufenxi"></i>
+						<span>财务明细</span>
+					</a>
+				</dt>
+				<dt>
+					<a href="/m9/user/set_my">
+						<i class="iconfont icon-wodeziliao"></i>
+						<span>个人中心</span>
+					</a>
+				</dt>
+				<dt>
+					<a href="/Safety">
+						<i class="iconfont icon-shezhi"></i>
+						<span>系统设置</span>
+					</a>
+				</dt>
+				<dt>
+					<a href="/Invitate">
+						<i class="iconfont icon-huiyuan"></i>
+						<span>我的会员</span>
+					</a>
+				</dt>
+			</dl>
+			</div>
+		</div>
+		<div id="footer"></div>
+		
+	
+	</body>
+</html>

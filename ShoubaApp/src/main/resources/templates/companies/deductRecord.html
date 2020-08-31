@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<title>扣款明细</title>
+		<style>
+			header{background:#0077FF !important;}
+				header h1{color: #FFFFFF;}
+			</style>
+	</head>
+	<body>
+		<header>
+			<i onclick="window.history.back();"><img src="../../img/w-back.png" /></i>
+			<h1>扣款记录</h1>
+		</header>
+		<main class="main">
+			<div class="agent-seach">
+				<span>
+					<img src="../../img/seach.png" />
+					<input type="search" placeholder="搜索姓名查询" id="keywords" v-model="keywords" />
+				</span>
+				<span @click="seach(keywords)">查询</span>
+			</div>
+			<div class="seach-list-warp">
+				<div class="details-warp">
+					<div class="details-item">
+						<ul class="item-txt" v-if="item.amount>1" v-for="item in seach(keywords)" :key="item.id">
+							<li>
+								<span>姓名：</span>
+								<span>{{item.real_name}}</span>
+							</li>
+							<li>
+								<span>持卡人电话：</span>
+								<span>{{item.user_tel}}</span>
+							</li>
+							<li>
+								<span>身份证号码：</span>
+								<span>{{item.user_card}}</span>
+							</li>
+							<li>
+								<span>银行卡号：</span>
+								<span>{{item.bank_account}}</span>
+							</li>
+							<li>
+								<span>开户行：</span>
+								<span>{{item.bank_name}}</span>
+							</li>
+							<li>
+								<span>所属业务员：</span>
+								<span>{{item.staff_name}}</span>
+							</li>
+							<li>
+								<span>金额：</span>
+								<span class="color-blue">￥{{item.amount}}</span>
+							</li>
+
+							<li>
+								<span>扣款凭证：</span>
+								<span>{{item.merch_order_id}}</span>
+							</li>
+							<li>
+								<span>扣款时间：</span>
+								<span>{{item.apply_datetime}}</span>
+							</li>
+							<li>
+								<span>拒绝原因：</span>
+								<span>{{item.approve1_mark}}</span>
+							</li>
+							<li>
+								<span class="">状态：</span>
+								<span :class="[item.status== '01' ? 'color-blue': 'color-errno']">{{item.status}}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="../../js/jquery-3.5.1.js"></script>
+		<script src="../../js/vue.js"></script>
+		<script type="text/javascript">
+			var vmm = new Vue({
+				el: ".main",
+				data: {
+					keywords: '',
+					auditlist: [],
+				},
+				created() {
+					this.getdata();
+					this.status();
+				},
+				methods: {
+					getdata() {
+						var that = this;
+						jQuery.ajax({
+							type: 'post',
+							dataType: 'json',
+							url: '/yilian/api/deductOrder',
+							success: function(res) {
+								console.log(res);
+								 //debugger
+								if (res.errorCode == 00000) {
+									that.auditlist = res.data
+								}
+							},
+							error: function(res) {
+								// console.log(res);
+								layer.msg(res)
+							}
+						})
+					},
+					seach(keywords) {
+						return this.auditlist.filter(item => {
+							// console.log(keywords);
+							if (item.real_name.indexOf(keywords) != -1) {
+								// console.log(keywords);
+								return item
+							} //filter方法来循环数组返回的是一个符合条件的新数组
+						})
+					},
+					status(){
+						this.auditlist.map(function (item) {
+						          if (item.status == '06') {
+									  item.status = '扣款中'
+								  }if (item.status == '91') {
+									  item.status = '扣款失败,请重新发起扣款'
+								  }else if (item.status == '99') {
+									  item.status = '扣款成功,结算失败'
+								  }else if (item.status == '94') {
+									  item.status = '扣款成功,待结算'
+								  }else if (item.status == '96') {
+									  item.status = '扣款成功,已结算'
+								  }else if (item.status == '90') {
+								      item.status = '审核拒绝'
+								  }else {
+						            return
+						          }
+						        })
+						
+					}
+					
+				}
+			})
+		</script>
+		</body>
+</html>

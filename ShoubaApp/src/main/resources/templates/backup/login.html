@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="/static/backup/css/css.css" />
+		<link rel="stylesheet" href="/static/backup/css/font.css" />
+		<script type="text/javascript" src="/static/backup/js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/gVerify.js" ></script>
+		<script type="text/javascript" src="/static/backup/layer/layer.js" ></script>
+	    <script type="text/javascript" src="/static/backup/js/core.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/jsencrypt.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/md5.js" ></script>
+		<script type="text/javascript" src="/static/backup/js/public.js" ></script>
+		<style>
+			html,body{position: relative;background: url(/static/backup/img/logonbg.png);background-size: 100% 100%;background-repeat: no-repeat;}
+		</style>
+
+		<script>
+
+		</script>
+	</head>
+	<body >
+		<div class="logo">
+			<h1>YDF</h1>
+		</div>
+		<div class="form">
+			<label>
+				<span ><img src="/static/backup/img/user.png"/></span>
+				<input type="number" id="telphone" placeholder="请输入您的手机号"/>
+			</label>
+			<label>
+				<span><img src="/static/backup/img/ys.png"/></span>
+				<input type="password" id="login_pwd" placeholder="请输入您的登录密码"/>
+			</label>
+			<p><a href="/frogetPassView">忘记密码</a></p>
+		</div>
+		<div class="loginbtn">
+			<a href="javascript:requestAjax()" id="reg-btn">登录</a>
+			<a href="/register">注册账号</a>
+		</div>
+
+	<script>
+		$("input").on("blur",function(){
+                var toFix=$(this).offset().top;
+                window.scroll(0,toFix);//失焦后强制让页面归位
+        });
+		//验证空值
+		function validateEmpty(val, msg){
+			if($.trim(val)==""){
+				layer.closeAll();
+				layer.msg(msg, {icon:5,time : 1000});
+				return false;
+			}
+			return true;
+		}
+		//验证字段值是否合法
+		function validateField(val, reg, msg){
+			if(!reg.test(val)){
+				layer.closeAll();
+				layer.msg(msg, {icon:5,time : 1000});
+				$ele.val('');
+				return false;
+			}
+			return true;
+		}
+
+		function requestAjax(){
+			var mobile=$("#telphone").val();
+			var pwd=$("#login_pwd").val();
+			if(!validateEmpty(mobile, "手机号不能为空")){
+				return false;
+			}
+			if(!validateField(mobile, /^\d{11}$/g, "手机号格式错误")){
+
+				return false;
+			}
+			if(!validateEmpty(pwd, "请输入密码")){
+				return false;
+			}
+			if(!validateField(pwd, /^[0-9A-Za-z]{6,20}$/g, "密码格式错误")){
+				return false;
+			}
+			var timeStamp = (new Date()).getTime();
+			var param = {
+				'login_pwd': CryptoJS.MD5(document.getElementById("login_pwd").value).toString().toUpperCase(),
+				'telphone': document.getElementById("telphone").value,
+				'timeStamp':timeStamp
+			}
+			$.ajax({
+				type:'post',
+				url:'/m9/user/login',
+				cache : false,
+				dataType : "json",
+				data:{
+					login_pwd:CryptoJS.MD5(document.getElementById("login_pwd").value).toString().toUpperCase(),
+					telphone:document.getElementById("telphone").value,
+					timeStamp: timeStamp,
+					sign:md5Method(param)
+				},
+				success : function(result) {
+					console.log("result",result.msg);
+					if(result.success==true){
+						layer.msg(result.msg, {
+							icon: 1,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+								window.location.href = "/m9/user/index";
+							}
+						});
+					}else{
+						layer.msg(result.msg, {
+							icon: 5,//提示的样式
+							time: 2000, //2秒关闭（如果不配置，默认是3秒）//设置后不需要自己写定时关闭了，单位是毫秒
+							end:function(){
+
+							}
+						});
+					}
+				},
+				error : function(result){
+				}
+			});
+		}
+	</script>
+	</body>
+</html>
